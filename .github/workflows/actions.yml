@@ -1,0 +1,66 @@
+name: Laravel
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  laravel-tests:
+
+    runs-on: ubuntu-18.04
+    services:
+      mysql:
+        image: 'mysql/mysql-server:8.0'
+        env:
+          MYSQL_DATABASE: test_velty
+          MYSQL_USER: test_velty
+          MYSQL_PASSWORD: test_velty
+          MYSQL_ROOT_PASSWORD: test_velty
+        ports:
+          - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        php-version: '8.1'
+    - name: Verify MySQL connection
+      run: |
+          mysql --version
+          sudo apt-get install -y mysql-client
+          mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -utest_velty -ptest_velty -e "SHOW DATABASES"
+
+
+    - name: Copiando .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+    - name: Cache composer dependencies
+      uses: actions/cache@v1
+      with:
+        path: vendor
+        key: composer-${{ hashFiles('composer.lock') }}
+    
+    - name: Instalando dependencias
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      env:
+        APP_ENV: local
+
+    - name: Gerando chave Laravel
+      run: php artisan key:generate
+
+    - name: Permissões para o diretório storage
+      run: chmod -R 777 storage bootstrap/cache
+
+    - name: Executando tests (Unitários and teste de funcionálidades) via PHPUnit
+      run: 
+        vendor/bin/phpunit --testdox
+      env:
+        DB_PORT: ${{ job.services.mysql.ports[3306] }}
+        APP_ENV: local
+        DB_CONNECTION: mysql
+        DB_HOST: 127.0.0.1
+        DB_DATABASE: test_velty
+        DB_USERNAME: test_velty
+        DB_PASSWORD: test_velty
