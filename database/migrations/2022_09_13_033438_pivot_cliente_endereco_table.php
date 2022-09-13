@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('cliente_endereco', function (Blueprint $table) {
-            $table->id();
-            $table->string('cliente_id');
-            $table->string('endereco_id');
-            $table->timestamps();
-        });
+      Schema::create('cliente_endereco', function (Blueprint $table) {
+        $table->id();
+        $table->string('cliente_id');
+        $table->string('endereco_id');
+        $table->timestamps();
+      });
     }
 
     /**

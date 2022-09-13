@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('salas', function (Blueprint $table) {
-            $table->id();         
-            $table->foreignId('tipagem_id')->constrained('tipagem');   
-            $table->foreignId('predio_id')->constrained('predios');   
-            $table->uuid('uuid');
-            $table->string('nome');
-            $table->string('numero');
-            $table->string('descricao');
-            $table->timestamps();
-        });
+      Schema::create('salas', function (Blueprint $table) {
+        $table->id();         
+        $table->foreignId('tipagem_id')->constrained('tipagem');   
+        $table->foreignId('predio_id')->constrained('predios');   
+        $table->uuid('uuid');
+        $table->string('nome');
+        $table->string('numero');
+        $table->string('descricao');
+        $table->timestamps();
+      });
     }
 
     /**

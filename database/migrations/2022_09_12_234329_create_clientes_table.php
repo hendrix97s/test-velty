@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->uuid('uuid');
-            $table->string('razao_social');
-            $table->string('nome_fantasia');
-            $table->string('cnpj')->unique();
-            $table->string('email')->unique();
-            $table->string('telefone');
-            $table->date('inicio_atividade');
-            $table->timestamps();
-        });
+      Schema::create('clientes', function (Blueprint $table) {
+        $table->id();
+        $table->uuid('uuid');
+        $table->string('razao_social');
+        $table->string('nome_fantasia');
+        $table->string('cnpj')->unique();
+        $table->string('email')->unique();
+        $table->string('telefone');
+        $table->date('inicio_atividade');
+        $table->timestamps();
+      });
     }
 
     /**
