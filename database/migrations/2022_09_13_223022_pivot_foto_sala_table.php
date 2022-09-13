@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipagem_salas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('foto_sala', function (Blueprint $table) {
+          $table->foreignId('foto_id')->constrained('fotos');
+          $table->foreignId('sala_id')->constrained('salas');
+          $table->primary(['foto_id', 'sala_id']);
+          $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipagem_salas');
+        Schema::dropIfExists('foto_sala');
     }
 };

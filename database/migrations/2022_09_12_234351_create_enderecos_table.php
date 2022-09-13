@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('cep');
-            $table->string('logradouro')->nullable();
-            $table->string('rua');
+            $table->string('logradouro');
             $table->string('numero');
             $table->string('complemento')->nullable();
             $table->string('bairro');

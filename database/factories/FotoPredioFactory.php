@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Foto;
+use App\Models\Predio;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\TipagemSala>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\FotoPredio>
  */
-class TipagemSalaFactory extends Factory
+class FotoPredioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +19,8 @@ class TipagemSalaFactory extends Factory
     public function definition()
     {
         return [
-            //
+          'predio_id' => Predio::factory(),
+          'foto_id'   => Foto::factory(),
         ];
     }
 }

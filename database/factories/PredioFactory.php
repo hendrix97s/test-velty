@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Cliente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class PredioFactory extends Factory
     public function definition()
     {
         return [
-            //
+          'cliente_id' => Cliente::factory(),
+          'nome'       => $this->faker->name,
+          'descricao'  => $this->faker->text,
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit;
 
 use App\Models\Cliente;
 use App\Models\ClienteEndereco;
@@ -26,8 +26,7 @@ class ClientTest extends TestCase
       ]);
 
       $c = Cliente::find($client->id);
-
-      $this->assertCount(10, $c->endereco->toArray());
+      $this->assertCount(9, $c->endereco->toArray());
       $this->assertEquals($c->endereco->cep, $endereco->cep);
     }
 }

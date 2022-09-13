@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-      Schema::create('predios', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('cliente_id')->constrained('clientes');
-        $table->uuid('uuid');
-        $table->string('nome');
-        $table->string('descricao');
-        $table->timestamps();
-      });
+        Schema::create('tipagem', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('uuid');
+            $table->string('nome');
+            $table->string('descricao');
+            $table->float('preco', 8, 2);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('predios');
+        Schema::dropIfExists('tipagem');
     }
 };

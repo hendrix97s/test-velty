@@ -13,10 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fotos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+      Schema::create('fotos', function (Blueprint $table) {
+        $table->id();
+        $table->uuid('uuid');
+        $table->string('url');
+        $table->string('path');
+        $table->string('nome');
+        $table->string('descricao');
+        $table->timestamps();
+      });
     }
 
     /**

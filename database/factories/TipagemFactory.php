@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Foto>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\TipagemSala>
  */
-class FotoFactory extends Factory
+class TipagemFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class FotoFactory extends Factory
     public function definition()
     {
       return [
-        'url'       => $this->faker->imageUrl(640, 480, 'cats', true, 'Faker'),
-        'path'      => $this->faker->filePath(),
         'nome'      => $this->faker->name,
+        'preco'     => $this->faker->randomFloat(2, 0, 1000),
         'descricao' => $this->faker->text,
       ];
     }

@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class EnderecoPredio extends Pivot
+class FotoPredio extends Pivot
 {
-  use HasFactory;
+    use HasFactory;
 
-  protected $table = 'endereco_predio';
-  protected $fillable = [
-    'predio_id',
-    'endereco_id',
-  ];
+    protected $table = 'foto_predio';
+
+    protected $fillable = [
+      'predio_id', 
+      'foto_id'
+    ];
 }

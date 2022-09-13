@@ -18,13 +18,12 @@ class EnderecoFactory extends Factory
     {
         return [
           'cep' => $this->faker->postcode,
-          'logradouro' => '',
-          'rua' => $this->faker->streetName,
-          'numero' => $this->faker->buildingNumber,
-          'complemento' => $this->faker->secondaryAddress,
-          'bairro' => $this->faker->citySuffix,
-          'cidade' => $this->faker->city,
-          'uf' => $this->faker->stateAbbr,
+          'logradouro'      => '',
+          'numero'          => $this->faker->buildingNumber,
+          'complemento'     => $this->faker->secondaryAddress,
+          'bairro'          => $this->faker->citySuffix,
+          'cidade'          => $this->faker->city,
+          'uf'              => $this->faker->stateAbbr,
           'url_google_maps' => '',
         ];
     }

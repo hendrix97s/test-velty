@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Cliente;
-use App\Models\ClienteEndereco;
 use App\Models\Endereco;
+use App\Models\EnderecoPredio;
+use App\Models\Predio;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ClienteEndereco>
  */
-class ClienteEnderecoFactory extends Factory
+class EnderecoPredioFactory extends Factory
 {
 
-   protected $model = ClienteEndereco::class;
+   protected $model = EnderecoPredio::class;
 
     /**
      * Define the model's default state.
@@ -23,8 +23,8 @@ class ClienteEnderecoFactory extends Factory
     public function definition()
     {
         return [
-          'cliente_id'  => Cliente::factory(),
-          'endereco_id' => Endereco::factory(),
+            'predio_id'   => Predio::factory(),
+            'endereco_id' => Endereco::factory(),
         ];
     }
 }
