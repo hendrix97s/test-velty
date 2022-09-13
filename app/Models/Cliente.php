@@ -11,8 +11,6 @@ class Cliente extends Model
 {
     use HasFactory, Uuid;
 
-    // protected $with = ['endereco'];
-
     protected $appends = ['endereco'];
 
     protected $fillable = [
@@ -29,11 +27,6 @@ class Cliente extends Model
         'created_at',
         'updated_at',
     ];
-
-    // public function endereco()
-    // {
-    //   return $this->belongsToMany(Endereco::class)->using(ClienteEndereco::class);
-    // }
 
     public function getEnderecoAttribute()
     {
