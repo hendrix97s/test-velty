@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        //
+        Schema::create('cliente_endereco', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid');
-            $table->string('razao_social');
-            $table->string('nome_fantasia');
-            $table->string('cnpj')->unique();
-            $table->string('email')->unique();
-            $table->string('telefone');
-            $table->date('inicio_atividade');
+            $table->string('cliente_id');
+            $table->string('endereco_id');
             $table->timestamps();
         });
     }
@@ -33,6 +29,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        //
+        Schema::dropIfExists('cliente_endereco');
     }
 };
