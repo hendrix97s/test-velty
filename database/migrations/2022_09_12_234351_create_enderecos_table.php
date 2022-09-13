@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+            $table->string('cep');
+            $table->string('logradouro')->nullable();
+            $table->string('rua');
+            $table->string('numero');
+            $table->string('complemento')->nullable();
+            $table->string('bairro');
+            $table->string('cidade');
+            $table->string('uf');
+            $table->string('url_google_maps')->nullable();
             $table->timestamps();
         });
     }
