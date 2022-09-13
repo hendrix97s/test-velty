@@ -20,11 +20,11 @@ class ClienteFactory extends Factory
       
 
       return [
-          'razao_social' => $this->faker->name,
-          'nome_fantasia' => $this->faker->name,
-          'cnpj' => $this->faker->name(),
-          'telefone' => $this->faker->phoneNumber,
-          'email' => $this->faker->email,
+          'razao_social'     => $this->faker->name,
+          'nome_fantasia'    => $this->faker->name,
+          'cnpj'             => $this->faker->name(),
+          'telefone'         => $this->faker->phoneNumber,
+          'email'            => $this->faker->email,
           'inicio_atividade' => $this->faker->date,
         ];
     }
