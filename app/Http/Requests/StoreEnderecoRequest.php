@@ -13,7 +13,7 @@ class StoreEnderecoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreEnderecoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'cep' => 'required|string|max:8',
+          'numero' => 'required|string|max:255',
+          'complemento' => 'nullable|string|max:255',
         ];
     }
 }

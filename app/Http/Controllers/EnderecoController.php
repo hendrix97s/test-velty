@@ -29,6 +29,7 @@ class EnderecoController extends Controller
     {
       $data = $request->validated();
       $response = $service->store($data);
+      return $this->response('create', $response);
     }
 
     /**
@@ -39,7 +40,7 @@ class EnderecoController extends Controller
      */
     public function show(Endereco $endereco)
     {
-        //
+        
     }
 
     /**

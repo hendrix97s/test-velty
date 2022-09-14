@@ -20,26 +20,18 @@ class ClienteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreClienteRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreClienteRequest $request)
+    public function store(StoreClienteRequest $request, ClienteRepository $repository)
     {
-        //
+        $data = $request->validated();
+        dd($data);
+        $response = $repository->create($data);
+        return $this->response('create', $response);
     }
-
     /**
      * Display the specified resource.
      *
