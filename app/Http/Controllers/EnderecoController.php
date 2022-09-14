@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEnderecoRequest;
 use App\Http\Requests\UpdateEnderecoRequest;
 use App\Models\Endereco;
+use App\Services\EnderecoService;
 
 class EnderecoController extends Controller
 {
@@ -19,24 +20,15 @@ class EnderecoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreEnderecoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEnderecoRequest $request)
+    public function store(StoreEnderecoRequest $request, EnderecoService $service)
     {
-        //
+      $data = $request->validated();
+      $response = $service->store($data);
     }
 
     /**
