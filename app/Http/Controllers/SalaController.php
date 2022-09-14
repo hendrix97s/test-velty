@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTipagemSalaRequest;
-use App\Http\Requests\UpdateTipagemSalaRequest;
-use App\Models\TipagemSala;
+use App\Http\Requests\StoreSalaRequest;
+use App\Http\Requests\UpdateSalaRequest;
+use App\Models\Sala;
 
-class TipagemSalaController extends Controller
+class SalaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class TipagemSalaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTipagemSalaRequest  $request
+     * @param  \App\Http\Requests\StoreModuloSalaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTipagemSalaRequest $request)
+    public function store(StoreSalaRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class TipagemSalaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TipagemSala  $tipagemSala
+     * @param  \App\Models\Sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function show(TipagemSala $tipagemSala)
+    public function show(Sala $sala)
     {
         //
     }
@@ -53,10 +53,10 @@ class TipagemSalaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TipagemSala  $tipagemSala
+     * @param  \App\Models\Sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipagemSala $tipagemSala)
+    public function edit(Sala $sala)
     {
         //
     }
@@ -64,11 +64,11 @@ class TipagemSalaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTipagemSalaRequest  $request
-     * @param  \App\Models\TipagemSala  $tipagemSala
+     * @param  \App\Http\Requests\UpdateSalaRequest  $request
+     * @param  \App\Models\sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTipagemSalaRequest $request, TipagemSala $tipagemSala)
+    public function update(UpdateSalaRequest $request, Sala $moduloSala)
     {
         //
     }
@@ -76,10 +76,10 @@ class TipagemSalaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TipagemSala  $tipagemSala
+     * @param  \App\Models\Sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipagemSala $tipagemSala)
+    public function destroy(Sala $sala)
     {
         //
     }
