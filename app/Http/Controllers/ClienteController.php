@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClienteRequest;
 use App\Http\Requests\UpdateClienteRequest;
 use App\Models\Cliente;
+use App\Repositories\ClienteRepository;
 
 class ClienteController extends Controller
 {
@@ -13,7 +14,7 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ClienteRepository $repository)
     {
         //
     }
