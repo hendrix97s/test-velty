@@ -28,7 +28,6 @@ class ClienteController extends Controller
     public function store(StoreClienteRequest $request, ClienteRepository $repository)
     {
         $data = $request->validated();
-        dd($data);
         $response = $repository->create($data);
         return $this->response('create', $response);
     }

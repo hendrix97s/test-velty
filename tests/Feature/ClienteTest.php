@@ -30,22 +30,22 @@ class ClienteTest extends TestCase
     /** @test*/
     public function when_create_a_cliente_with_existing_cnpj()
     {
-        // $this->withoutExceptionHandling();
-        Cliente::factory()->create([
-          'cnpj' => '43897291000175',
-        ]);
+      Cliente::factory()->create([
+        'cnpj' => '43897291000175',
+      ]);
 
-        $payload = [
-          'razao_social' => 'Luiz F. Lima',
-          'nome_fantasia' => 'lf system',
-          'cnpj' => '43897291000175',
-          'telefone' => '11999999999',
-          'email' => 'lf.system@outlook.com',
-          'inicio_atividade' => '2021-10-29',
-        ];
+      $payload = [
+        'razao_social' => 'Luiz F. Lima',
+        'nome_fantasia' => 'lf system',
+        'cnpj' => '43897291000175',
+        'telefone' => '11999999999',
+        'email' => 'lf.system@outlook.com',
+        'inicio_atividade' => '2021-10-29',
+      ];
 
-        $response = $this->post(route('cliente.store'), $payload);
-        dd($response->json());
-        $response->assertStatus(400);
+      $response = $this->post(route('cliente.store'), $payload);
+      $this->assertEquals('Falha ao processar requisição', $response->json('message'));
+      $this->assertEquals('O CNPJ já está cadastrado', $response->json('data.cnpj.0'));
+      $response->assertStatus(400);
     }
 }
