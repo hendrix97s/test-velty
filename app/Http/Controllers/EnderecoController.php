@@ -28,8 +28,8 @@ class EnderecoController extends Controller
     public function store(StoreEnderecoRequest $request, EnderecoService $service)
     {
       $data = $request->validated();
-      $response = $service->store($data);
-      return $this->response('create', $response);
+      $response = $service->store($request->uuid, $data);
+      return $this->response('response.create', $response);
     }
 
     /**
