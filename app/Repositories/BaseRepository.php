@@ -31,6 +31,12 @@ class BaseRepository{
     return $model->update($data);
   }
 
+  public function updateByUuid($uuid, $data){
+    $model = $this->model->where('uuid', $uuid)->first();
+    $r = $model->update($data);
+    return $r ? $model->first() : false;
+  }
+
   public function delete($id){
     $model = $this->model->find($id);
     return $model->delete();

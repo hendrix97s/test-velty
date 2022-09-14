@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::group(['prefix' => 'v1'], function (){
-  Route::resource('cliente', ClienteController::class)->only(['index', 'store', 'update', 'destroy'])->parameters(['cliente' => 'uuid']);
+  Route::resource('cliente', ClienteController::class)->only(['index', 'show', 'store', 'update', 'destroy'])->parameters(['cliente' => 'uuid']);
   Route::resource('cliente/{uuid}/predio', PredioController::class)->only(['index', 'store'])->parameters(['predio' => 'uuid']);
   Route::post('cliente/{uuid}/endereco', [EnderecoController::class ,'store'])->name('cliente.endereco.store');
   Route::delete('predio/{uuid}', [PredioController::class, 'destroy'])->name('predio.destroy');
