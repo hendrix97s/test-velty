@@ -39,6 +39,24 @@ class EnderecoService
     return $endereco ?? false;
   }
 
+
+  /**
+   * Undocumented function
+   *
+   * @param string $uuid
+   * @param array $data
+   * @return array
+   */
+  public function update($uuid, $data)
+  {
+    $repository = new EnderecoRepository();
+    $address = ViacepService::getAddress($data['cep']);
+    $data['cidade'] = $address['localidade'];
+    $data = [...$address, ...$data];
+    $endereco = $repository->updateByUuid($uuid, $data);
+    return $endereco ?? false;
+  }
+
   private function createClienteEndereco($uuid, $enderecoId)
   {
     $cliente = (new ClienteRepository())->findByUuid($uuid);

@@ -26,19 +26,61 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::group(['prefix' => 'v1'], function (){
-  Route::resource('cliente', ClienteController::class)->only(['index', 'show', 'store', 'update', 'destroy'])->parameters(['cliente' => 'uuid']);
-  Route::resource('cliente/{uuid}/predio', PredioController::class)->only(['index', 'store'])->parameters(['predio' => 'uuid']);
-  Route::post('cliente/{uuid}/endereco', [EnderecoController::class ,'store'])->name('cliente.endereco.store');
-  Route::delete('predio/{uuid}', [PredioController::class, 'destroy'])->name('predio.destroy');
-  Route::post('predio/{uuid}', [PredioController::class, 'update'])->name('predio.update');
-  Route::resource('predio/{uuid}/sala', SalaController::class)->only(['index', 'store']);
-  Route::post('predio/{uuid}/endereco', [EnderecoController::class ,'store'])->name('predio.endereco.store');
-  Route::resource('predio/{uuid}/foto', FotoController::class)->only(['index', 'store']);
-  Route::resource('sala/{uuid}/foto', FotoController::class)->only(['index', 'store']);
-  Route::delete('sala/{uuid}', [SalaController::class, 'destroy'])->name('sala.destroy');
-  Route::post('sala/{uuid}', [SalaController::class, 'update'])->name('sala.update');
-  Route::resource('sala/{uuid}/tipagem', TipagemController::class)->only(['index', 'store']);
-  Route::delete('tipagem/{uuid}', [TipagemController::class, 'destroy'])->name('tipagem.destroy');
-  Route::post('tipagem/{uuid}', [TipagemController::class, 'update'])->name('tipagem.update');
-  Route::resource('/endereco', EnderecoController::class)->only(['update', 'destroy'])->parameters(['endereco' => 'uuid']);
+  Route::resource('cliente', ClienteController::class)
+    ->only(['index', 'show', 'store', 'update', 'destroy'])
+    ->parameters(['cliente' => 'uuid']);
+
+  Route::resource('cliente/{uuid}/predio', PredioController::class)
+    ->only(['index', 'store'])
+    ->parameters(['predio' => 'uuid']);
+
+  Route::resource('cliente/{uuid}/endereco', EnderecoController::class)
+    ->only(['update', 'destroy', 'store'])
+    ->parameters(['endereco' => 'endereco_uuid'])
+    ->names([
+      'update'  => 'cliente.endereco.update',
+      'destroy' => 'cliente.endereco.destroy',
+      'store'   => 'cliente.endereco.store',
+    ]);
+
+  Route::resource('predio', PredioController::class)->only(['show', 'update', 'destroy'])
+    ->parameters(['predio' => 'uuid']);
+
+  Route::resource('predio/{uuid}/endereco', EnderecoController::class)
+  ->only(['update', 'destroy', 'store'])
+  ->parameters(['endereco' => 'endereco_uuid'])    
+  ->names([
+    'update'  => 'predio.endereco.update',
+    'destroy' => 'predio.endereco.destroy',
+    'store'   => 'predio.endereco.store'
+  ]);
+
+  Route::resource('predio/{uuid}/foto', FotoController::class)
+    ->only(['index', 'store', 'destroy', 'update'])
+    ->parameters(['foto' => 'foto_uuid'])
+    ->names([
+      'index'   => 'predio.foto.index',
+      'store'   => 'predio.foto.store',
+      'destroy' => 'predio.foto.destroy',
+      'update'  => 'predio.foto.update'
+    ]);
+  
+  Route::resource('sala/{uuid}/foto', FotoController::class)
+  ->only(['index', 'store', 'destroy', 'update'])
+  ->parameters(['foto' => 'foto_uuid'])
+  ->names([
+    'index'   => 'sala.foto.index',
+    'store'   => 'sala.foto.store',
+    'destroy' => 'sala.foto.destroy',
+    'update'  => 'sala.foto.update'
+  ]);
+  
+  
+  Route::resource('predio/{uuid}/sala', SalaController::class)
+    ->only(['index', 'store', 'destroy', 'update'])
+    ->parameters(['sala' => 'sala_uuid']);
+
+  Route::resource('sala/{uuid}/tipagem', TipagemController::class)
+    ->only(['index', 'store', 'destroy', 'update'])
+    ->parameters(['tipagem' => 'tipagem_uuid']);
 });

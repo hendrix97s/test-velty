@@ -56,6 +56,7 @@ class ClienteTest extends TestCase
       $response = $this->get(route('cliente.show', ['uuid' => $cliente->uuid]));
       $response->assertStatus(200);
       $response->assertJsonCount(8, 'data');
+      $this->assertEquals(__('response.show.success'), $response->json('message'));
     }
 
     /** @test*/
@@ -91,5 +92,26 @@ class ClienteTest extends TestCase
       $response = $this->delete(route('cliente.destroy', ['uuid' => $cliente->uuid]));
       $response->assertStatus(200);
       $this->assertEquals(__('response.delete.success'), $response->json('message'));
+    }
+
+    /** @test*/
+    public function when_create_a_cliente_with_address()
+    {
+
+      $cliente = Cliente::factory()->create();
+      
+      $payload = [
+        'cep'         => '13606-536',
+        'numero'      => '123',
+        'complemento' => 'casa',
+        'tipo'        => 'cliente',
+      ];
+
+      $this->post(route('cliente.endereco.store', ['uuid' => $cliente->uuid]), $payload);
+      $response = $this->get(route('cliente.show', ['uuid' => $cliente->uuid]));
+      $response->assertStatus(200);
+      $response->assertJsonCount(9, 'data.endereco');
+      $response->assertJsonCount(8, 'data');
+      $this->assertEquals(__('response.show.success'), $response->json('message'));
     }
 }

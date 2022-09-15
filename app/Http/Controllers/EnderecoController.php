@@ -5,20 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEnderecoRequest;
 use App\Http\Requests\UpdateEnderecoRequest;
 use App\Models\Endereco;
+use App\Repositories\EnderecoRepository;
 use App\Services\EnderecoService;
+use Illuminate\Http\Request;
 
 class EnderecoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -32,27 +24,6 @@ class EnderecoController extends Controller
       return $this->response('response.create', $response);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Endereco  $endereco
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Endereco $endereco)
-    {
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Endereco  $endereco
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Endereco $endereco)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -61,9 +32,11 @@ class EnderecoController extends Controller
      * @param  \App\Models\Endereco  $endereco
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEnderecoRequest $request, Endereco $endereco)
+    public function update(UpdateEnderecoRequest $request, EnderecoService $service)
     {
-        //
+      $data = $request->validated();
+      $response = $service->update($request->endereco_uuid, $data);
+      return $this->response('response.update', $response);
     }
 
     /**
@@ -72,8 +45,9 @@ class EnderecoController extends Controller
      * @param  \App\Models\Endereco  $endereco
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Endereco $endereco)
+    public function destroy(Request $request, EnderecoRepository $repository)
     {
-        //
+      $response = $repository->deleteByUuid($request->endereco_uuid);
+      return $this->response('response.delete', $response);
     }
 }
