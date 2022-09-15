@@ -21,6 +21,7 @@ class Predio extends Model
     ];
 
     protected $fillable = [
+      'cliente_id',
       'nome',
       'descricao',
     ];
@@ -30,6 +31,10 @@ class Predio extends Model
       'cliente_id',
       'created_at',
       'updated_at',
+      'cliente',
+      'fotos',
+      'salas',
+      'endereco',
       'pivot'
     ];
 
@@ -50,7 +55,9 @@ class Predio extends Model
 
     public function getClienteAttribute()
     {
-      return $this->hasOne(Cliente::class, 'id', 'cliente_id')->first();
+      $cliente = $this->hasOne(Cliente::class, 'id', 'cliente_id')->first();
+      $cliente->makeHidden(['endereco']);
+      return $cliente;
     }
 
 

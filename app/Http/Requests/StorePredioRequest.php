@@ -13,7 +13,7 @@ class StorePredioRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StorePredioRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'nome' => 'required|string|max:255',
+          'descricao' => 'required|string|max:255',
         ];
     }
 }

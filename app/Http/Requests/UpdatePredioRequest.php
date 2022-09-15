@@ -13,7 +13,7 @@ class UpdatePredioRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,9 @@ class UpdatePredioRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'nome' => 'sometimes|string|max:255',
+        'descricao' => 'sometimes|string|max:255',
+      ];
     }
 }

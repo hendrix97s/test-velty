@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFotoRequest;
 use App\Http\Requests\UpdateFotoRequest;
 use App\Models\Foto;
+use App\Services\FotoService;
 
 class FotoController extends Controller
 {
@@ -15,18 +16,9 @@ class FotoController extends Controller
      */
     public function index()
     {
-        //
+      
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,9 +26,12 @@ class FotoController extends Controller
      * @param  \App\Http\Requests\StoreFotoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFotoRequest $request)
+    public function store(StoreFotoRequest $request, FotoService $service)
     {
-        //
+      $data = $request->validated();
+
+      $response = $service->store($request->uuid, $data);
+      return $this->response('response.create', $response);
     }
 
     /**

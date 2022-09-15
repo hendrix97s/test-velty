@@ -23,6 +23,7 @@ class BaseRepository{
   }
 
   public function create($data){
+    // dd($data);
     return $this->model->create($data);
   }
 

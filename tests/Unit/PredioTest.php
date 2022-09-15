@@ -25,8 +25,8 @@ class PredioTest extends TestCase
         FotoPredio::factory()->create([
             'predio_id' => $predio->id,
         ]);
-        $this->assertCount(5, $predio->toArray());
-        $this->assertCount(8, $predio->cliente->toArray());
+        $this->assertCount(3, $predio->toArray());
+        $this->assertCount(7, $predio->cliente->toArray());
     }
 
     /** @test */
@@ -52,8 +52,8 @@ class PredioTest extends TestCase
             'predio_id' => $predio->id,
         ]);
 
-        $this->assertCount(5, $predio->toArray());
-        $this->assertCount(8, $predio->cliente->toArray());
+        $this->assertCount(3, $predio->toArray());
+        $this->assertCount(7, $predio->cliente->toArray());
         $this->assertCount(2, $predio->salas->toArray());
         $this->assertCount(3, $predio->fotos->toArray());
     }

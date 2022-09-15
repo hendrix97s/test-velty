@@ -13,7 +13,7 @@ class StoreFotoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,11 @@ class StoreFotoRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'nome' => 'required|string|max:255',
+        'descricao' => 'required|string|max:255',
+        'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        'tipo' => 'required|string|max:255|in:predio,sala',
+      ];
     }
 }

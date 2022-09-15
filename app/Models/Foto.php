@@ -13,11 +13,12 @@ class Foto extends Model
     protected $fillable = [
       'nome', 
       'descricao', 
+      'url',
+      'path'
     ];
 
     protected $hidden = [
       'id',
-      'path',
       'created_at', 
       'updated_at',
       'pivot'

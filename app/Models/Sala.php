@@ -22,6 +22,7 @@ class Sala extends Model
 
     protected $hidden = [
       'id',
+      'fotos',
       'tipagem_id',
       'created_at',
       'updated_at',
