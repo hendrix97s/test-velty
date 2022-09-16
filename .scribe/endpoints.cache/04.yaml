@@ -186,12 +186,12 @@ endpoints:
         name: foto_uuid
         description: ''
         required: true
-        example: 16
+        example: 15
         type: integer
         custom: []
     cleanUrlParameters:
       uuid: 746fe4d9-66de-4074-bf4b-077927164b03
-      foto_uuid: 16
+      foto_uuid: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -491,12 +491,12 @@ endpoints:
         name: foto_uuid
         description: ''
         required: true
-        example: 2
+        example: 6
         type: integer
         custom: []
     cleanUrlParameters:
       uuid: 746fe4d9-66de-4074-bf4b-077927164b03
-      foto_uuid: 2
+      foto_uuid: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:

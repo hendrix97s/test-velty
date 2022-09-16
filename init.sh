@@ -6,4 +6,6 @@ cp .env.example .env
 ./docker/bin/sail composer install
 ./docker/bin/sail artisan key:generate
 ./docker/bin/sail artisan migrate:fresh --seed
-./docker/bin/sail php artisan scribe:generate
+./docker/bin/sail artisan scribe:generate
+./docker/bin/sail artisan storage:link
+./docker/bin/sail artisan test

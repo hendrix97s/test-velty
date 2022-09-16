@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Velty",
-        "_postman_id": "aef9f52e-4454-499f-90c8-3602a3b083da",
+        "_postman_id": "03d7d52e-9ef3-4e28-b729-ccd21ddaebfb",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -157,7 +157,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu\",\"inicio_atividade\":\"2021-10-29\"}"
+                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"mlwrebwnlyitqzrfhopxulcnnewdgxuvoqiufbkddosgtmagtnsnjmwqvpfa\",\"inicio_atividade\":\"2021-10-29\"}"
                         },
                         "description": "",
                         "auth": {
@@ -667,7 +667,7 @@
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "16",
+                                    "value": "15",
                                     "description": ""
                                 }
                             ]
@@ -902,7 +902,7 @@
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "2",
+                                    "value": "6",
                                     "description": ""
                                 }
                             ]

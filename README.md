@@ -54,11 +54,12 @@ sh init.sh
 04. Execute o comando `./docker/bin/sail compose install` para instalar as dependências do projeto.
 05. Execute o comando `./docker/bin/sail artisan key:generate` para gerar a chave do projeto.
 06. Execute o comando `./docker/bin/sail artisan migrate:fresh --seed` para criar as tabelas e popular o banco de dados.
-07. Execute o comando `./docker/bin/sail artisan test`  para executar os testes do projeto.
-08. Execute o comando `./docker/bin/sail bash` para acessar o bash do container do projeto.
+07. Execute o comando `./docker/bin/sail artisan storage:link` para criar o link simbólico para o diretório de armazenamento do projeto.
+08. Execute o comando `./docker/bin/sail artisan test`  para executar os testes do projeto.
+09. Execute o comando `./docker/bin/sail bash` para acessar o bash do container do projeto.
 
 ## Documentação da api
 
-... 09. Execute o comando `./docker/bin/sail php artisan scribe:generate` para gerar a documentação da api.
+... 10. Execute o comando `./docker/bin/sail php artisan scribe:generate` para gerar a documentação da api.
 
 Clique [aqui](http://localhost:9000/docs) para acessar a documentação da api.

@@ -255,7 +255,7 @@ paths:
                 email:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu
+                  example: mlwrebwnlyitqzrfhopxulcnnewdgxuvoqiufbkddosgtmagtnsnjmwqvpfa
                 inicio_atividade:
                   type: string
                   description: 'date Data de inicio de atividade.'
@@ -986,7 +986,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 16
+        example: 15
         required: true
         schema:
           type: integer
@@ -1249,7 +1249,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 2
+        example: 6
         required: true
         schema:
           type: integer
