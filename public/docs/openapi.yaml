@@ -255,7 +255,7 @@ paths:
                 email:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ujeotrbbuoxnejhgjsozzsfwyyiwmgswxowjbkldtyatjooiettfwpelsphkqidyaiukfkjwrqmvhzbionznbkxybjylhyplyfsjlsfmcwbrwjgvoazrluckrondtzffgutnjhvxrrzwnhuugdbihsczxhahwcqvoqhcwnmpapjayqxhznojfpljbvzzphjacarmawantkvwvxmpoammiojdnqvcqtqqqeotxwtxywlzav
+                  example: kzrbogcafhcqoxgomnsqjdbbt
                 inicio_atividade:
                   type: string
                   description: 'date Data de inicio de atividade.'
@@ -294,6 +294,486 @@ paths:
         in: path
         name: uuid
         description: 'O Uuid de um cliente.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+  '/api/v1/cliente/{uuid}/endereco':
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    razao_social: 'Luiz F. Lima'
+                    nome_fantasia: 'lf system'
+                    cnpj: '43897291000175'
+                    telefone: '11999999999'
+                    email: lf.system@outlook.com
+                    inicio_atividade: '2021-10-29'
+                    uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      razao_social: 'Luiz F. Lima'
+                      nome_fantasia: 'lf system'
+                      cnpj: '43897291000175'
+                      telefone: '11999999999'
+                      email: lf.system@outlook.com
+                      inicio_atividade: '2021-10-29'
+                      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                      endereco: null
+      tags:
+        - Endereço
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: ''
+                  example: autem
+                numero:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: avkoiypwrcfecxckiw
+                complemento:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+                  example: cliente
+                razao_social:
+                  type: string
+                  description: 'Razão social do cliente.'
+                  example: 'Luiz F. Lima'
+                nome_fantasia:
+                  type: string
+                  description: 'string Nome fantasia do cliente.'
+                  example: 'lf system'
+                cnpj:
+                  type: string
+                  description: 'string CNPJ do cliente.'
+                  example: '43897291000175'
+                telefone:
+                  type: string
+                  description: 'string Telefone do cliente.'
+                  example: '11999999999'
+                email:
+                  type: string
+                  description: 'string Email do cliente.'
+                  example: lf.system@outlook.com
+                inicio_atividade:
+                  type: string
+                  description: 'date Data de inicio de atividade.'
+                  example: '2021-10-29'
+              required:
+                - cep
+                - numero
+                - tipo
+                - razao_social
+                - nome_fantasia
+                - cnpj
+                - telefone
+                - email
+                - inicio_atividade
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/v1/cliente/{uuid}/endereco/{endereco_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                    cep: 13606-536
+                    logradouro: 'Avenida Luiz Carlos Tunes'
+                    numero: '123'
+                    complemento: predio
+                    bairro: 'Jardim Morumbi'
+                    cidade: Araras
+                    uf: SP
+                    url_google_maps: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                      cep: 13606-536
+                      logradouro: 'Avenida Luiz Carlos Tunes'
+                      numero: '123'
+                      complemento: predio
+                      bairro: 'Jardim Morumbi'
+                      cidade: Araras
+                      uf: SP
+                      url_google_maps: null
+      tags:
+        - Endereço
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: 'CEP do endereço.'
+                  example: '12345678'
+                numero:
+                  type: string
+                  description: 'Número do endereço.'
+                  example: '123'
+                complemento:
+                  type: string
+                  description: 'Complemento do endereço.'
+                  example: casa
+                tipo:
+                  type: required
+                  description: 'Tipo do recurso a ser utilizado (predio ou cliente).'
+                  example: cliente
+      security: []
+    delete:
+      summary: 'Removendo o endereço de um cliente ou Prédio.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endereço
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid de um cliente.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: endereco_uuid
+        description: 'O Uuid de um endereço.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+  '/api/v1/predio/{uuid}/endereco':
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    razao_social: 'Luiz F. Lima'
+                    nome_fantasia: 'lf system'
+                    cnpj: '43897291000175'
+                    telefone: '11999999999'
+                    email: lf.system@outlook.com
+                    inicio_atividade: '2021-10-29'
+                    uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      razao_social: 'Luiz F. Lima'
+                      nome_fantasia: 'lf system'
+                      cnpj: '43897291000175'
+                      telefone: '11999999999'
+                      email: lf.system@outlook.com
+                      inicio_atividade: '2021-10-29'
+                      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                      endereco: null
+      tags:
+        - Endereço
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: ''
+                  example: qui
+                numero:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq
+                complemento:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+                  example: predio
+                razao_social:
+                  type: string
+                  description: 'Razão social do cliente.'
+                  example: 'Luiz F. Lima'
+                nome_fantasia:
+                  type: string
+                  description: 'string Nome fantasia do cliente.'
+                  example: 'lf system'
+                cnpj:
+                  type: string
+                  description: 'string CNPJ do cliente.'
+                  example: '43897291000175'
+                telefone:
+                  type: string
+                  description: 'string Telefone do cliente.'
+                  example: '11999999999'
+                email:
+                  type: string
+                  description: 'string Email do cliente.'
+                  example: lf.system@outlook.com
+                inicio_atividade:
+                  type: string
+                  description: 'date Data de inicio de atividade.'
+                  example: '2021-10-29'
+              required:
+                - cep
+                - numero
+                - tipo
+                - razao_social
+                - nome_fantasia
+                - cnpj
+                - telefone
+                - email
+                - inicio_atividade
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}/endereco/{endereco_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                    cep: 13606-536
+                    logradouro: 'Avenida Luiz Carlos Tunes'
+                    numero: '123'
+                    complemento: predio
+                    bairro: 'Jardim Morumbi'
+                    cidade: Araras
+                    uf: SP
+                    url_google_maps: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                      cep: 13606-536
+                      logradouro: 'Avenida Luiz Carlos Tunes'
+                      numero: '123'
+                      complemento: predio
+                      bairro: 'Jardim Morumbi'
+                      cidade: Araras
+                      uf: SP
+                      url_google_maps: null
+      tags:
+        - Endereço
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: 'CEP do endereço.'
+                  example: '12345678'
+                numero:
+                  type: string
+                  description: 'Número do endereço.'
+                  example: '123'
+                complemento:
+                  type: string
+                  description: 'Complemento do endereço.'
+                  example: casa
+                tipo:
+                  type: required
+                  description: 'Tipo do recurso a ser utilizado (predio ou cliente).'
+                  example: cliente
+      security: []
+    delete:
+      summary: 'Removendo o endereço de um cliente ou Prédio.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endereço
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid de um cliente.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: endereco_uuid
+        description: 'O Uuid de um endereço.'
         example: 006902ab-ae1c-4315-aa5c-9edd856630ac
         required: true
         schema:
@@ -340,11 +820,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku
+                  example: ihcxtcznknujmhqwpvjrbmrpxxsfbanchzzjjkhpmeskyfbknyizbqaotfmszteuvfzpdqkuxhwqrivcobssuxjifleejdakzjokwazrlcvhlsofznjmolrpfhwtdjnktjhygfpmjkdbqljigbopbohp
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl
+                  example: pbrelpydofcdtsdhyagjeettjuuhuwhntoawpsapesvokawceptsrggcfkzkpskkxtykpwpuumyuurejlfbfzupwkazuqyykaiwgsxvoltbrdxwaztnlceucgbeibwkavnughzufeiwpeqhyzvjtsrwpqojxrexngqchdqpfrwwita
               required:
                 - nome
                 - descricao
@@ -354,126 +834,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 20
-        required: true
-        schema:
-          type: integer
-  '/api/v1/cliente/{uuid}/endereco':
-    post:
-      summary: 'Store a newly created resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                cep:
-                  type: string
-                  description: ''
-                  example: aut
-                numero:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: eqlrjhsaivgsegdaitoup
-                complemento:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf
-                tipo:
-                  type: string
-                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
-                  example: cliente
-              required:
-                - cep
-                - numero
-                - tipo
-      security: []
-    parameters:
-      -
-        in: path
-        name: uuid
-        description: ''
-        example: 9
-        required: true
-        schema:
-          type: integer
-  '/api/v1/cliente/{uuid}/endereco/{endereco_uuid}':
-    put:
-      summary: 'Update the specified resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                cep:
-                  type: string
-                  description: ''
-                  example: quia
-                numero:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf
-                complemento:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: bokanifoxrsslsth
-                tipo:
-                  type: string
-                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
-                  example: cliente
-              required:
-                - cep
-                - tipo
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: uuid
-        description: ''
-        example: 10
-        required: true
-        schema:
-          type: integer
-      -
-        in: path
-        name: endereco_uuid
-        description: ''
-        example: 1
+        example: 16
         required: true
         schema:
           type: integer
@@ -510,11 +871,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl
+                  example: heiialzmzmjmeutluluuukxehkdxuhcbiqsyplxwyyrzibudgyqizyxemkrokmpyomuelos
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu
+                  example: wzybjssnnlhxtzcxjkircxhzdaeixdzaacjrkbzretgobnawfkdezqcdxiukfrqypzddnborbqwsnohxzmaqyggosumkzrejfphohrjhowowhfesxygjizzwtklmkjcsvcdbdwmrhreixeoqwmehtotfxzblquwgueiybdumgtrfddterhfrgedcahutppitahnquokbnaaguzksdawwriquwbkn
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -529,126 +890,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 16
-        required: true
-        schema:
-          type: integer
-  '/api/v1/predio/{uuid}/endereco':
-    post:
-      summary: 'Store a newly created resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                cep:
-                  type: string
-                  description: ''
-                  example: consequatur
-                numero:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: sebqyde
-                complemento:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda
-                tipo:
-                  type: string
-                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
-                  example: predio
-              required:
-                - cep
-                - numero
-                - tipo
-      security: []
-    parameters:
-      -
-        in: path
-        name: uuid
-        description: ''
-        example: 9
-        required: true
-        schema:
-          type: integer
-  '/api/v1/predio/{uuid}/endereco/{endereco_uuid}':
-    put:
-      summary: 'Update the specified resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                cep:
-                  type: string
-                  description: ''
-                  example: natus
-                numero:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: lasuvibfpinstfunuevnehnfaldamy
-                complemento:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr
-                tipo:
-                  type: string
-                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
-                  example: predio
-              required:
-                - cep
-                - tipo
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: uuid
-        description: ''
-        example: 16
-        required: true
-        schema:
-          type: integer
-      -
-        in: path
-        name: endereco_uuid
-        description: ''
-        example: 6
+        example: 7
         required: true
         schema:
           type: integer
@@ -685,11 +927,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kky
+                  example: msdcparspwsaqiplprfixsetpyjsnshqxpanonsnvonhgguaznlqtbuijsfjswthkiwdltohwjvyi
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia
+                  example: lwqwykdhhyujxwzgzttzpqguzppxgbpsnrkrznoxlcoyiiqcwqblkpz
                 foto:
                   type: string
                   format: binary
@@ -697,7 +939,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd
+                  example: nqqfaqlgueqqekacrisofooeqekubcfcygtjedsnjtzvyhporvxjewndvpfhrbamc
               required:
                 - nome
                 - descricao
@@ -709,7 +951,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 12
+        example: 14
         required: true
         schema:
           type: integer
@@ -738,11 +980,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn
+                  example: kekmmiztineftcddykfisdbotipvbtheoccetfntlyjqnayqkwfanotppjrhvsavzuenzfagvzdqrjouboeexuvazkmjkabvsunsunbxbmiuhxztcxnzhxqwxyopsiagrynebsqjuaeibfmoxanucvctgydxoqrvtbyzrngwntrcpmwemmv
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc
+                  example: rcjzjvxwfxnogdaokykfqoncmhwqyxvrwfkgqk
                 foto:
                   type: string
                   format: binary
@@ -750,7 +992,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: lgaenatwbbefqt
+                  example: iehsismxwjttytngmanjqkpmozgqqaygoqhhpohqezsxrjkpdk
               required:
                 - tipo
       security: []
@@ -767,7 +1009,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 2
+        example: 14
         required: true
         schema:
           type: integer
@@ -812,11 +1054,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb
+                  example: wuahuovcsgbpzfwtjjbpsffkciyslnjzzpqznkbeldhqytqaaakxshxbjhlpjzgvrtntiurbejgmqfemmsuircuoznhivphedjwwwwwjkuhrsqgfhdvjwpxjlcqpxwobeyofiqcgbjsselfluexcjjbxwzwwxcpxsoanzfkemrvtkghwhaiqpleopyagvbrftlsrtcwyjlsbiilbau
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv
+                  example: fofhutzahzemvhwkjaojnwictbjsdvgtrqukctmegsjcabkzjdhjwvncqjhahfjqaeypawnapjwqtpwlgvrduygqkqzstepwwbarvvueleqciebitdiaaskcathxetoqhvgvhghzwdoyzlpwba
                 foto:
                   type: string
                   format: binary
@@ -824,7 +1066,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: milprenzbqmxwajuz
+                  example: uhotdiuafsutxvyvuqjutkdnkixdyqtxxbcxxcqdtgzuvbzx
               required:
                 - nome
                 - descricao
@@ -836,7 +1078,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 4
+        example: 15
         required: true
         schema:
           type: integer
@@ -865,11 +1107,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx
+                  example: chjjbchodiwhfafqlwtyjicavrebhkknfyvnlocupcoyonjnzfkvdzyoebxajbzdk
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji
+                  example: vadjtmnigbosgvrfbvlkpewidqldqbyemfgauinheqonubkacqmjcflgsyjkcjgmrivkzetkmbqccisdcihytbcafvvdgcnmmbdwcbrfvehhlebvpxomhnohgystrdmsvepkzvvzwqnpbvxbhoaqfxmnwlhvaskhpcvykxwirvpdrrwqcolcpipjwtk
                 foto:
                   type: string
                   format: binary
@@ -877,7 +1119,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq
+                  example: aznbcqligtybrtcaryfwtvgnkwfduvniqfbhhrixckh
               required:
                 - tipo
       security: []
@@ -894,7 +1136,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 8
+        example: 18
         required: true
         schema:
           type: integer
@@ -902,7 +1144,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 15
+        example: 18
         required: true
         schema:
           type: integer
@@ -939,19 +1181,19 @@ paths:
                 nome:
                   type: string
                   description: ''
-                  example: laborum
+                  example: est
                 numero:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 10
                 descricao:
                   type: string
                   description: ''
-                  example: quaerat
+                  example: atque
                 tipagem_uuid:
                   type: string
                   description: ''
-                  example: dolores
+                  example: pariatur
               required:
                 - nome
                 - numero
@@ -963,7 +1205,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 18
+        example: 12
         required: true
         schema:
           type: integer
@@ -1000,15 +1242,15 @@ paths:
                 nome:
                   type: string
                   description: ''
-                  example: exercitationem
+                  example: inventore
                 numero:
                   type: integer
                   description: ''
-                  example: 14
+                  example: 5
                 descricao:
                   type: string
                   description: ''
-                  example: sed
+                  example: minima
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -1023,7 +1265,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 11
+        example: 19
         required: true
         schema:
           type: integer
@@ -1031,7 +1273,7 @@ paths:
         in: path
         name: sala_uuid
         description: ''
-        example: 11
+        example: 10
         required: true
         schema:
           type: integer
@@ -1068,15 +1310,15 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar
+                  example: ylpoyobisbvmvkyjjpguqindkmqv
                 preco:
                   type: number
                   description: ''
-                  example: 29343137.72
+                  example: 1.022
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse
+                  example: abqkizgheiflxhrmvcalccnwwpkgwccgycehkqsfmjxblwlnzkcbhexjedinkxxodknllyuphyjjffvdhaaiqolnhnvsyhfkhllxfqlqzjjalfndodnalrblgaqwkufqauhggyuend
               required:
                 - nome
                 - preco
@@ -1107,15 +1349,15 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto
+                  example: ffntrfmadwqcfbhxnjatzpfqxfuqkmikwkegydxhjxpdkdysrcfgzfjmwllinnjhpatdowbtqykasftsimobufxehzgdpkhmjqtastqzgyidxdygcdhljwtahzszjmmrovxmdchphlvwdqtjituatjgcwijkuzbchgjjhlmwoyxmtgqvqwbnizljgwzwugzvnoipmyrvnkrfdhbae
                 preco:
                   type: number
                   description: ''
-                  example: 343285.13776
+                  example: 388652.1
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee
+                  example: psjylhsxjkzqnekjnbvgaeermbgwkafiehpwxbvrynahujlfewwsupcmkvszzsafbyzxwe
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -1130,13 +1372,16 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 14
+        example: 20
         required: true
         schema:
           type: integer
 tags:
   -
     name: Cliente
+    description: ''
+  -
+    name: Endereço
     description: ''
   -
     name: Endpoints

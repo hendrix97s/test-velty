@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Velty",
-        "_postman_id": "77da265e-1bff-43e5-97a3-1f8699f65b53",
+        "_postman_id": "23a29a4d-ee0e-45ab-b2c7-bff7fcbbf972",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -157,7 +157,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"ujeotrbbuoxnejhgjsozzsfwyyiwmgswxowjbkldtyatjooiettfwpelsphkqidyaiukfkjwrqmvhzbionznbkxybjylhyplyfsjlsfmcwbrwjgvoazrluckrondtzffgutnjhvxrrzwnhuugdbihsczxhahwcqvoqhcwnmpapjayqxhznojfpljbvzzphjacarmawantkvwvxmpoammiojdnqvcqtqqqeotxwtxywlzav\",\"inicio_atividade\":\"2021-10-29\"}"
+                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"kzrbogcafhcqoxgomnsqjdbbt\",\"inicio_atividade\":\"2021-10-29\"}"
                         },
                         "description": "",
                         "auth": {
@@ -187,6 +187,298 @@
                                     "key": "uuid",
                                     "value": "4816ac45-f3d8-46ce-95b3-bb718689d7af",
                                     "description": "O Uuid de um cliente."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endere\u00e7o",
+            "description": "",
+            "item": [
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente\/:uuid\/endereco",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/endereco",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "2",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"cep\":\"autem\",\"numero\":\"avkoiypwrcfecxckiw\",\"complemento\":\"mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj\",\"tipo\":\"cliente\",\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"lf.system@outlook.com\",\"inicio_atividade\":\"2021-10-29\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"razao_social\": \"Luiz F. Lima\",\n   \"nome_fantasia\": \"lf system\",\n   \"cnpj\": \"43897291000175\",\n   \"telefone\": \"11999999999\",\n   \"email\": \"lf.system@outlook.com\",\n   \"inicio_atividade\": \"2021-10-29\",\n   \"uuid\": \"32a29cbe-6cae-45d8-b8b7-610baca99a3b\",\n   \"endereco\": null\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "006902ab-ae1c-4315-aa5c-9edd856630ac",
+                                    "description": "O Uuid de um cliente."
+                                },
+                                {
+                                    "id": "endereco_uuid",
+                                    "key": "endereco_uuid",
+                                    "value": "006902ab-ae1c-4315-aa5c-9edd856630ac",
+                                    "description": "O Uuid de um endere\u00e7o."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"cep\":\"12345678\",\"numero\":\"123\",\"complemento\":\"casa\",\"tipo\":\"cliente\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro autalizado com sucesso\",\n \"data\": {\n   \"uuid\": \"97a119a3-d55e-425c-ae70-f4ee78ddf30d\",\n   \"cep\": \"13606-536\",\n   \"logradouro\": \"Avenida Luiz Carlos Tunes\",\n   \"numero\": \"123\",\n   \"complemento\": \"predio\",\n   \"bairro\": \"Jardim Morumbi\",\n   \"cidade\": \"Araras\",\n   \"uf\": \"SP\",\n   \"url_google_maps\": null\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Removendo o endere\u00e7o de um cliente ou Pr\u00e9dio.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "4816ac45-f3d8-46ce-95b3-bb718689d7af",
+                                    "description": "O Uuid de um cliente."
+                                },
+                                {
+                                    "id": "endereco_uuid",
+                                    "key": "endereco_uuid",
+                                    "value": "4816ac45-f3d8-46ce-95b3-bb718689d7af",
+                                    "description": "O Uuid de um endere\u00e7o."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/predio\/:uuid\/endereco",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/endereco",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"cep\":\"qui\",\"numero\":\"auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq\",\"complemento\":\"ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj\",\"tipo\":\"predio\",\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"lf.system@outlook.com\",\"inicio_atividade\":\"2021-10-29\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"razao_social\": \"Luiz F. Lima\",\n   \"nome_fantasia\": \"lf system\",\n   \"cnpj\": \"43897291000175\",\n   \"telefone\": \"11999999999\",\n   \"email\": \"lf.system@outlook.com\",\n   \"inicio_atividade\": \"2021-10-29\",\n   \"uuid\": \"32a29cbe-6cae-45d8-b8b7-610baca99a3b\",\n   \"endereco\": null\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "006902ab-ae1c-4315-aa5c-9edd856630ac",
+                                    "description": "O Uuid de um cliente."
+                                },
+                                {
+                                    "id": "endereco_uuid",
+                                    "key": "endereco_uuid",
+                                    "value": "006902ab-ae1c-4315-aa5c-9edd856630ac",
+                                    "description": "O Uuid de um endere\u00e7o."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"cep\":\"12345678\",\"numero\":\"123\",\"complemento\":\"casa\",\"tipo\":\"cliente\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro autalizado com sucesso\",\n \"data\": {\n   \"uuid\": \"97a119a3-d55e-425c-ae70-f4ee78ddf30d\",\n   \"cep\": \"13606-536\",\n   \"logradouro\": \"Avenida Luiz Carlos Tunes\",\n   \"numero\": \"123\",\n   \"complemento\": \"predio\",\n   \"bairro\": \"Jardim Morumbi\",\n   \"cidade\": \"Araras\",\n   \"uf\": \"SP\",\n   \"url_google_maps\": null\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Removendo o endere\u00e7o de um cliente ou Pr\u00e9dio.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "4816ac45-f3d8-46ce-95b3-bb718689d7af",
+                                    "description": "O Uuid de um cliente."
+                                },
+                                {
+                                    "id": "endereco_uuid",
+                                    "key": "endereco_uuid",
+                                    "value": "4816ac45-f3d8-46ce-95b3-bb718689d7af",
+                                    "description": "O Uuid de um endere\u00e7o."
                                 }
                             ]
                         },
@@ -254,7 +546,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "20",
+                                    "value": "16",
                                     "description": ""
                                 }
                             ]
@@ -286,148 +578,26 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "9",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"nome\":\"xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku\",\"descricao\":\"hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid\/endereco",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/endereco",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "9",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"cep\":\"aut\",\"numero\":\"eqlrjhsaivgsegdaitoup\",\"complemento\":\"zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf\",\"tipo\":\"cliente\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "10",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "endereco_uuid",
-                                    "key": "endereco_uuid",
-                                    "value": "1",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"cep\":\"quia\",\"numero\":\"pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf\",\"complemento\":\"bokanifoxrsslsth\",\"tipo\":\"cliente\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/endereco\/:endereco_uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "12",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "endereco_uuid",
-                                    "key": "endereco_uuid",
                                     "value": "17",
                                     "description": ""
                                 }
                             ]
                         },
-                        "method": "DELETE",
+                        "method": "POST",
                         "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"nome\":\"ihcxtcznknujmhqwpvjrbmrpxxsfbanchzzjjkhpmeskyfbknyizbqaotfmszteuvfzpdqkuxhwqrivcobssuxjifleejdakzjokwazrlcvhlsofznjmolrpfhwtdjnktjhygfpmjkdbqljigbopbohp\",\"descricao\":\"pbrelpydofcdtsdhyagjeettjuuhuwhntoawpsapesvokawceptsrggcfkzkpskkxtykpwpuumyuurejlfbfzupwkazuqyykaiwgsxvoltbrdxwaztnlceucgbeibwkavnughzufeiwpeqhyzvjtsrwpqojxrexngqchdqpfrwwita\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -447,7 +617,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "16",
+                                    "value": "7",
                                     "description": ""
                                 }
                             ]
@@ -479,7 +649,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "3",
+                                    "value": "5",
                                     "description": ""
                                 }
                             ]
@@ -497,7 +667,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl\",\"descricao\":\"nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu\"}"
+                            "raw": "{\"nome\":\"heiialzmzmjmeutluluuukxehkdxuhcbiqsyplxwyyrzibudgyqizyxemkrokmpyomuelos\",\"descricao\":\"wzybjssnnlhxtzcxjkircxhzdaeixdzaacjrkbzretgobnawfkdezqcdxiukfrqypzddnborbqwsnohxzmaqyggosumkzrejfphohrjhowowhfesxygjizzwtklmkjcsvcdbdwmrhreixeoqwmehtotfxzblquwgueiybdumgtrfddterhfrgedcahutppitahnquokbnaaguzksdawwriquwbkn\"}"
                         },
                         "description": "",
                         "auth": {
@@ -518,129 +688,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "20",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/endereco",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/endereco",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "9",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"cep\":\"consequatur\",\"numero\":\"sebqyde\",\"complemento\":\"ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda\",\"tipo\":\"predio\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "16",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "endereco_uuid",
-                                    "key": "endereco_uuid",
-                                    "value": "6",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"cep\":\"natus\",\"numero\":\"lasuvibfpinstfunuevnehnfaldamy\",\"complemento\":\"cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr\",\"tipo\":\"predio\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/endereco\/:endereco_uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "12",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "endereco_uuid",
-                                    "key": "endereco_uuid",
-                                    "value": "13",
+                                    "value": "2",
                                     "description": ""
                                 }
                             ]
@@ -672,7 +720,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "12",
+                                    "value": "14",
                                     "description": ""
                                 }
                             ]
@@ -704,7 +752,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "20",
+                                    "value": "7",
                                     "description": ""
                                 }
                             ]
@@ -725,19 +773,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "kky",
+                                    "value": "msdcparspwsaqiplprfixsetpyjsnshqxpanonsnvonhgguaznlqtbuijsfjswthkiwdltohwjvyi",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia",
+                                    "value": "lwqwykdhhyujxwzgzttzpqguzppxgbpsnrkrznoxlcoyiiqcwqblkpz",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd",
+                                    "value": "nqqfaqlgueqqekacrisofooeqekubcfcygtjedsnjtzvyhporvxjewndvpfhrbamc",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -767,7 +815,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "2",
+                                    "value": "14",
                                     "description": ""
                                 },
                                 {
@@ -794,19 +842,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn",
+                                    "value": "kekmmiztineftcddykfisdbotipvbtheoccetfntlyjqnayqkwfanotppjrhvsavzuenzfagvzdqrjouboeexuvazkmjkabvsunsunbxbmiuhxztcxnzhxqwxyopsiagrynebsqjuaeibfmoxanucvctgydxoqrvtbyzrngwntrcpmwemmv",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc",
+                                    "value": "rcjzjvxwfxnogdaokykfqoncmhwqyxvrwfkgqk",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "lgaenatwbbefqt",
+                                    "value": "iehsismxwjttytngmanjqkpmozgqqaygoqhhpohqezsxrjkpdk",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -841,13 +889,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "16",
+                                    "value": "4",
                                     "description": ""
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "5",
+                                    "value": "14",
                                     "description": ""
                                 }
                             ]
@@ -879,7 +927,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "4",
+                                    "value": "15",
                                     "description": ""
                                 }
                             ]
@@ -911,7 +959,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "4",
+                                    "value": "20",
                                     "description": ""
                                 }
                             ]
@@ -932,19 +980,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb",
+                                    "value": "wuahuovcsgbpzfwtjjbpsffkciyslnjzzpqznkbeldhqytqaaakxshxbjhlpjzgvrtntiurbejgmqfemmsuircuoznhivphedjwwwwwjkuhrsqgfhdvjwpxjlcqpxwobeyofiqcgbjsselfluexcjjbxwzwwxcpxsoanzfkemrvtkghwhaiqpleopyagvbrftlsrtcwyjlsbiilbau",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv",
+                                    "value": "fofhutzahzemvhwkjaojnwictbjsdvgtrqukctmegsjcabkzjdhjwvncqjhahfjqaeypawnapjwqtpwlgvrduygqkqzstepwwbarvvueleqciebitdiaaskcathxetoqhvgvhghzwdoyzlpwba",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "milprenzbqmxwajuz",
+                                    "value": "uhotdiuafsutxvyvuqjutkdnkixdyqtxxbcxxcqdtgzuvbzx",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -974,13 +1022,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "8",
+                                    "value": "18",
                                     "description": ""
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "15",
+                                    "value": "18",
                                     "description": ""
                                 }
                             ]
@@ -1001,19 +1049,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx",
+                                    "value": "chjjbchodiwhfafqlwtyjicavrebhkknfyvnlocupcoyonjnzfkvdzyoebxajbzdk",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji",
+                                    "value": "vadjtmnigbosgvrfbvlkpewidqldqbyemfgauinheqonubkacqmjcflgsyjkcjgmrivkzetkmbqccisdcihytbcafvvdgcnmmbdwcbrfvehhlebvpxomhnohgystrdmsvepkzvvzwqnpbvxbhoaqfxmnwlhvaskhpcvykxwirvpdrrwqcolcpipjwtk",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq",
+                                    "value": "aznbcqligtybrtcaryfwtvgnkwfduvniqfbhhrixckh",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -1048,13 +1096,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "15",
+                                    "value": "2",
                                     "description": ""
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "5",
+                                    "value": "4",
                                     "description": ""
                                 }
                             ]
@@ -1086,7 +1134,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "18",
+                                    "value": "12",
                                     "description": ""
                                 }
                             ]
@@ -1118,7 +1166,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "2",
+                                    "value": "3",
                                     "description": ""
                                 }
                             ]
@@ -1136,7 +1184,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"laborum\",\"numero\":7,\"descricao\":\"quaerat\",\"tipagem_uuid\":\"dolores\"}"
+                            "raw": "{\"nome\":\"est\",\"numero\":10,\"descricao\":\"atque\",\"tipagem_uuid\":\"pariatur\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1157,13 +1205,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "11",
+                                    "value": "19",
                                     "description": ""
                                 },
                                 {
                                     "id": "sala_uuid",
                                     "key": "sala_uuid",
-                                    "value": "11",
+                                    "value": "10",
                                     "description": ""
                                 }
                             ]
@@ -1195,13 +1243,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "7",
+                                    "value": "10",
                                     "description": ""
                                 },
                                 {
                                     "id": "sala_uuid",
                                     "key": "sala_uuid",
-                                    "value": "1",
+                                    "value": "5",
                                     "description": ""
                                 }
                             ]
@@ -1219,7 +1267,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"exercitationem\",\"numero\":14,\"descricao\":\"sed\"}"
+                            "raw": "{\"nome\":\"inventore\",\"numero\":5,\"descricao\":\"minima\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1240,7 +1288,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "20",
+                                    "value": "18",
                                     "description": ""
                                 },
                                 {
@@ -1312,7 +1360,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar\",\"preco\":29343137.72,\"descricao\":\"oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse\"}"
+                            "raw": "{\"nome\":\"ylpoyobisbvmvkyjjpguqindkmqv\",\"preco\":1.022,\"descricao\":\"abqkizgheiflxhrmvcalccnwwpkgwccgycehkqsfmjxblwlnzkcbhexjedinkxxodknllyuphyjjffvdhaaiqolnhnvsyhfkhllxfqlqzjjalfndodnalrblgaqwkufqauhggyuend\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1333,7 +1381,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "14",
+                                    "value": "20",
                                     "description": ""
                                 }
                             ]
@@ -1351,7 +1399,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto\",\"preco\":343285.13776,\"descricao\":\"ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee\"}"
+                            "raw": "{\"nome\":\"ffntrfmadwqcfbhxnjatzpfqxfuqkmikwkegydxhjxpdkdysrcfgzfjmwllinnjhpatdowbtqykasftsimobufxehzgdpkhmjqtastqzgyidxdygcdhljwtahzszjmmrovxmdchphlvwdqtjituatjgcwijkuzbchgjjhlmwoyxmtgqvqwbnizljgwzwugzvnoipmyrvnkrfdhbae\",\"preco\":388652.1,\"descricao\":\"psjylhsxjkzqnekjnbvgaeermbgwkafiehpwxbvrynahujlfewwsupcmkvszzsafbyzxwe\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1372,7 +1420,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "13",
+                                    "value": "15",
                                     "description": ""
                                 }
                             ]
