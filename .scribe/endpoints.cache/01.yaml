@@ -277,7 +277,7 @@ endpoints:
         name: email
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: aqitkhuwctoxmwjehkwninvzhpxfgkqnphbotwcazznatdwhicetyyazdltuldhyemdfsxneopygaemsqvahiyrnmjqgzlyispywbbjabhwhwslagudmkdjjpjuziamxtizyknntzymnfopbstrscnpopmcdiangupvfvtailrsabigfzzmqashfgrmcbawm
+        example: dufunjstiyqvhfmwbxftfbacmejvrphiwfjbbodjorttohhejfdupnooyzibaviyiymcxixdigyhxjmvnppopmcexczfgpszpqltbdvrngtpxindxuxmo
         type: string
         custom: []
       inicio_atividade:
@@ -292,7 +292,7 @@ endpoints:
       nome_fantasia: 'lf system'
       cnpj: '43897291000175'
       telefone: '11999999999'
-      email: aqitkhuwctoxmwjehkwninvzhpxfgkqnphbotwcazznatdwhicetyyazdltuldhyemdfsxneopygaemsqvahiyrnmjqgzlyispywbbjabhwhwslagudmkdjjpjuziamxtizyknntzymnfopbstrscnpopmcdiangupvfvtailrsabigfzzmqashfgrmcbawm
+      email: dufunjstiyqvhfmwbxftfbacmejvrphiwfjbbodjorttohhejfdupnooyzibaviyiymcxixdigyhxjmvnppopmcexczfgpszpqltbdvrngtpxindxuxmo
       inicio_atividade: '2021-10-29'
     fileParameters: []
     responses:

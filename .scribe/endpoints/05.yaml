@@ -1,16 +1,16 @@
-name: Prédio
+name: Sala
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/cliente/{uuid}/predio'
+    uri: 'api/v1/predio/{uuid}/sala'
     metadata:
-      groupName: Prédio
+      groupName: Sala
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Listagem de prédios relacionado a um cliente'
+      title: 'Listagem de salas relacionadas a um prédio'
       description: ''
       authenticated: false
       custom: []
@@ -18,13 +18,13 @@ endpoints:
     urlParameters:
       uuid:
         name: uuid
-        description: 'uuid do cliente.'
+        description: 'uuid do prédio.'
         required: true
-        example: 1436a969-96b1-4e70-976d-426601fc4d55
+        example: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
         type: string
         custom: []
     cleanUrlParameters:
-      uuid: 1436a969-96b1-4e70-976d-426601fc4d55
+      uuid: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -39,19 +39,22 @@ endpoints:
            "message": "Listagem retornada com sucesso",
            "data": [
              {
-               "uuid": "1436a969-96b1-4e70-976d-426601fc4d55",
-               "nome": "Price Blanda",
-               "descricao": "Qui laudantium eos asperiores rerum. Sapiente voluptatum ea tempore et pariatur dicta consequuntur. Rem ut voluptas et sunt."
+               "uuid": "ac07ae3c-79aa-4460-bc17-1b9b5ae9be01",
+               "nome": "Ms. Amina Mosciski",
+               "numero": "67",
+               "descricao": "Quisquam sed et optio. Eius sunt assumenda dolor eligendi magni unde quia. Quia quos exercitationem nihil iste dolorem in."
              },
              {
-               "uuid": "cd3aa9b8-51fb-4858-bb59-40dad883de83",
-               "nome": "Emile Dooley",
-               "descricao": "Fuga occaecati molestiae sequi quibusdam veritatis. Qui dolores sunt aut labore. Molestiae dignissimos inventore perferendis et qui."
+               "uuid": "2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1",
+               "nome": "Ines Raynor",
+               "numero": "47",
+               "descricao": "Possimus quaerat accusantium ad deleniti consectetur cumque. Debitis et aperiam beatae aliquid. Ex qui aperiam amet unde non."
              },
              {
-               "uuid": "544d13f4-7b1b-46e0-aa9d-e30c54b2a286",
-               "nome": "Devon Feil",
-               "descricao": "Deleniti sint quia veritatis asperiores quisquam aut. Numquam pariatur expedita voluptas voluptas soluta. Molestiae est perferendis ipsa et."
+               "uuid": "147fd51f-9683-4950-84fa-1eb5247bdc1a",
+               "nome": "Raquel Weissnat",
+               "numero": "38",
+               "descricao": "Nobis consectetur hic dicta ut hic. Molestiae mollitia autem et sint veniam reprehenderit eaque. Quia sit dolore et voluptates ducimus. Debitis temporibus dolor voluptatem alias omnis et."
              }
            ]
           }
@@ -67,14 +70,14 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/v1/cliente/{uuid}/predio'
+    uri: 'api/v1/predio/{uuid}/sala'
     metadata:
-      groupName: Prédio
+      groupName: Sala
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Cadastrando um prédio relacionado a um cliente'
-      description: ''
+      title: 'Store a newly created resource in storage.'
+      description: 'Cadastrando um prédio relacionado a um cliente'
       authenticated: false
       custom: []
     headers:
@@ -82,47 +85,64 @@ endpoints:
     urlParameters:
       uuid:
         name: uuid
-        description: 'uuid do cliente.'
+        description: 'uuid do prédio.'
         required: true
-        example: 1436a969-96b1-4e70-976d-426601fc4d55
+        example: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
         type: string
         custom: []
     cleanUrlParameters:
-      uuid: 1436a969-96b1-4e70-976d-426601fc4d55
+      uuid: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       nome:
         name: nome
-        description: 'Nome do prédio.'
+        description: 'Nome da sala.'
         required: true
-        example: 'Prédio 1'
+        example: 'Sala 1'
+        type: string
+        custom: []
+      numero:
+        name: numero
+        description: 'Número da sala.'
+        required: true
+        example: '1'
         type: string
         custom: []
       descricao:
         name: descricao
-        description: 'Descrição do prédio.'
+        description: 'Descrição da sala.'
         required: true
-        example: 'Prédio 1'
+        example: 'Sala de reunião'
+        type: string
+        custom: []
+      tipagem_uuid:
+        name: tipagem_uuid
+        description: 'Uuid da tipagem.'
+        required: true
+        example: 2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1
         type: string
         custom: []
     cleanBodyParameters:
-      nome: 'Prédio 1'
-      descricao: 'Prédio 1'
+      nome: 'Sala 1'
+      numero: '1'
+      descricao: 'Sala de reunião'
+      tipagem_uuid: 2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1
     fileParameters: []
     responses:
       -
         status: 200
         content: |-
           {
-             "status": true,
-             "message": "Registro cadastrado com sucesso",
-             "data": {
-               "nome": "Predio 1",
-               "descricao": "Predio 1",
-               "uuid": "cecd43a5-46a6-44f6-a016-584a88e264e2"
-             }
+           "status": true,
+           "message": "Registro cadastrado com sucesso",
+           "data": {
+             "nome": "Sala 1",
+             "numero": 1,
+             "descricao": "Sala 1",
+             "uuid": "9bf7502d-a7ab-4874-9279-272bd2b8ff04"
            }
+          }
         headers: []
         description: '200'
         custom: []
@@ -135,13 +155,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/predio/{uuid}'
+    uri: 'api/v1/predio/{uuid}/sala/{sala_uuid}'
     metadata:
-      groupName: Prédio
+      groupName: Sala
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Retornando o registro de um prédio.'
+      title: 'Retornando o registro de uma sala.'
       description: ''
       authenticated: false
       custom: []
@@ -154,8 +174,16 @@ endpoints:
         example: 746fe4d9-66de-4074-bf4b-077927164b03
         type: string
         custom: []
+      sala_uuid:
+        name: sala_uuid
+        description: 'uuid da sala.'
+        required: true
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        type: string
+        custom: []
     cleanUrlParameters:
       uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+      sala_uuid: 746fe4d9-66de-4074-bf4b-077927164b03
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -169,20 +197,10 @@ endpoints:
            "status": true,
            "message": "Registro encontrado com sucesso",
            "data": {
-             "uuid": "746fe4d9-66de-4074-bf4b-077927164b03",
-             "nome": "Rogers Crist",
-             "descricao": "Iure labore odit sint ipsa quo. Laboriosam corrupti et deserunt id quisquam. Et est ad a quidem.",
-             "endereco": {
-               "uuid": "892f84b8-7761-4ff0-b50b-03928e76812d",
-               "cep": "66599",
-               "logradouro": "",
-               "numero": "78394",
-               "complemento": "Suite 357",
-               "bairro": "side",
-               "cidade": "Erdmanberg",
-               "uf": "ND",
-               "url_google_maps": ""
-             }
+             "uuid": "02f26f7c-6ac4-4dbd-ab89-d87d1f3dd02e",
+             "nome": "Dr. Donato Gerhold",
+             "numero": "47",
+             "descricao": "Magnam dolor vero culpa a. Praesentium sit totam unde aut et doloribus nam officiis. Sint et veritatis est qui velit dolor tempora. Nam dolor architecto atque tenetur commodi architecto."
            }
           }
         headers: []
@@ -198,13 +216,13 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/v1/predio/{uuid}'
+    uri: 'api/v1/predio/{uuid}/sala/{sala_uuid}'
     metadata:
-      groupName: Prédio
+      groupName: Sala
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Atualização de registro de um prédio'
+      title: 'Atualização de registro de uma sala'
       description: ''
       authenticated: false
       custom: []
@@ -213,33 +231,49 @@ endpoints:
     urlParameters:
       uuid:
         name: uuid
-        description: 'O Uuid do predio.'
+        description: 'uuid do prédio.'
+        required: true
+        example: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
+        type: string
+        custom: []
+      sala_uuid:
+        name: sala_uuid
+        description: 'uuid da sala.'
         required: true
         example: 746fe4d9-66de-4074-bf4b-077927164b03
         type: string
         custom: []
     cleanUrlParameters:
-      uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+      uuid: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
+      sala_uuid: 746fe4d9-66de-4074-bf4b-077927164b03
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       nome:
         name: nome
-        description: 'Nome do prédio.'
-        required: true
-        example: 'Prédio 1 Updated'
+        description: 'Nome da sala.'
+        required: false
+        example: 'Sala 1'
+        type: string
+        custom: []
+      numero:
+        name: numero
+        description: 'Número da sala.'
+        required: false
+        example: '1'
         type: string
         custom: []
       descricao:
         name: descricao
-        description: 'Descrição do prédio.'
-        required: true
-        example: 'Prédio 1 Updated'
+        description: 'Descrição da sala.'
+        required: false
+        example: 'Sala de reunião'
         type: string
         custom: []
     cleanBodyParameters:
-      nome: 'Prédio 1 Updated'
-      descricao: 'Prédio 1 Updated'
+      nome: 'Sala 1'
+      numero: '1'
+      descricao: 'Sala de reunião'
     fileParameters: []
     responses:
       -
@@ -249,9 +283,10 @@ endpoints:
            "status": true,
            "message": "Registro autalizado com sucesso",
            "data": {
-             "uuid": "a36b1b02-38b0-4a00-916b-fbb306ead110",
-             "nome": "Predio updated",
-             "descricao": "Predio updated"
+             "uuid": "e9cb6c8b-496e-469b-8048-e38003afd846",
+             "nome": "Sala updated",
+             "numero": "5",
+             "descricao": "Sala 5"
            }
           }
         headers: []
@@ -266,13 +301,13 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/predio/{uuid}'
+    uri: 'api/v1/predio/{uuid}/sala/{sala_uuid}'
     metadata:
-      groupName: Prédio
+      groupName: Sala
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Removendo o registro de um prédio'
+      title: 'Removendo o registro de uma sala'
       description: ''
       authenticated: false
       custom: []
@@ -285,8 +320,16 @@ endpoints:
         example: 746fe4d9-66de-4074-bf4b-077927164b03
         type: string
         custom: []
+      sala_uuid:
+        name: sala_uuid
+        description: 'O Uuid da sala.'
+        required: true
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        type: string
+        custom: []
     cleanUrlParameters:
       uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+      sala_uuid: 746fe4d9-66de-4074-bf4b-077927164b03
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

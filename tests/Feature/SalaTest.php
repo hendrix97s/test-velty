@@ -51,7 +51,7 @@ class SalaTest extends TestCase
 
     $response = $this->post(route('sala.store', $params), $payload);
     $response->assertStatus(200);
-    $this->assertEquals(__('response.store.success'), $response->json('message'));
+    $this->assertEquals(__('response.create.success'), $response->json('message'));
   }
 
   /** @test */

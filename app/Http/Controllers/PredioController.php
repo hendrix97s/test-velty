@@ -75,7 +75,7 @@ class PredioController extends Controller
     /**
      * Retornando o registro de um prédio.
      * @group Prédio
-     * @urlParam predio required uuid do prédio. Example: 746fe4d9-66de-4074-bf4b-077927164b03
+     * @urlParam uuid required uuid do prédio. Example: 746fe4d9-66de-4074-bf4b-077927164b03
      * @response {
      *  "status": true,
      *  "message": "Registro encontrado com sucesso",
@@ -158,7 +158,7 @@ class PredioController extends Controller
 
     /**
      * Listagem de fotos do prédio
-     * @group Fotos
+     * @group Foto
      * 
      * @urlParam uuid required O Uuid do prédio. Example: 746fe4d9-66de-4074-bf4b-077927164b03
      * @response {

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Velty",
-        "_postman_id": "307dd3a3-ffe5-40d5-ad52-a2283615884e",
+        "_postman_id": "95ea300a-8aaa-4676-afa6-69080fbda5a4",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -157,7 +157,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"aqitkhuwctoxmwjehkwninvzhpxfgkqnphbotwcazznatdwhicetyyazdltuldhyemdfsxneopygaemsqvahiyrnmjqgzlyispywbbjabhwhwslagudmkdjjpjuziamxtizyknntzymnfopbstrscnpopmcdiangupvfvtailrsabigfzzmqashfgrmcbawm\",\"inicio_atividade\":\"2021-10-29\"}"
+                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"dufunjstiyqvhfmwbxftfbacmejvrphiwfjbbodjorttohhejfdupnooyzibaviyiymcxixdigyhxjmvnppopmcexczfgpszpqltbdvrngtpxindxuxmo\",\"inicio_atividade\":\"2021-10-29\"}"
                         },
                         "description": "",
                         "auth": {
@@ -539,17 +539,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid\/predio",
+                            "path": "api\/v1\/tipagem",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/predio",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "16",
-                                    "description": ""
-                                }
-                            ]
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
                         },
                         "method": "GET",
                         "header": [
@@ -571,17 +563,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid\/predio",
+                            "path": "api\/v1\/tipagem",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/predio",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "15",
-                                    "description": ""
-                                }
-                            ]
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
                         },
                         "method": "POST",
                         "header": [
@@ -596,205 +580,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"utlyevdikuznvjsiwzsnlemjdsyyjijrxmrqlbdidhstvpvllgcxdzejurvuanrtatnpqxokdtiwfnupryrgsonbfakergwtuwyztimmvtpuyfdukltggkpaxthfoctpqpnkdfcgwjhnml\",\"descricao\":\"rlwtvlvivonnvxsezvlqvlwzwhaohykdtvfivzeybufdvedmowzxfftquxonjrdkyxuvfgusgfnrdcjawehqopvbmcrwsiabfqtsugtwwzheyndjxuvixhgnimdutipinayzerejeapdefnnvumthireykdmtsdzihxrxdcpnhucsamtgcdrvbjizmndpfscfztyioydykzttrsqcpehmyujavhgnjrhznfydmqrudkybisyvxkrdav\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "1",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "18",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"nome\":\"ozhvufmbutfhhpiremcdyydubdrwyscsxpjmvttvn\",\"descricao\":\"sxijldkhacjwqfhjgsrvsobjcxfnykwdzoppxymtbgmpbrznbbxvennvxwnmxxprqqhjbedoxhmdldkxrhqplpftgekiemgsigkbgrr\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "18",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/v1\/predio\/{uuid}\/foto",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/foto",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "13",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/foto",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "5",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "multipart\/form-data"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "formdata",
-                            "formdata": [
-                                {
-                                    "key": "nome",
-                                    "value": "flbfzlhuqluemtfqylpqiztdbewyeiucdsuntpssojioeqqvicwxusaeyepzqtullmvsaoqgxhgjmsprclddmdgyvniykjkljht",
-                                    "type": "text",
-                                    "description": "Must not be greater than 255 characters."
-                                },
-                                {
-                                    "key": "descricao",
-                                    "value": "oaqhhxqzofwalgstpimdmqmwpkcrnl",
-                                    "type": "text",
-                                    "description": "Must not be greater than 255 characters."
-                                },
-                                {
-                                    "key": "tipo",
-                                    "value": "fxeimmduxrzmcoatlwpfzlywtcoqycktqmbuimqyvenmzavitfnddxjcknnuwbprtovoxnhqhgbxxzbekaxxhuydnlcwvfzxokvyowgkdnnysjrqoqjdhjjvlhgptvlarbiljqzzqxugjxzpchmabjeiyjozzdblehgdssuscesoybbfkstjcsqludidxdobeinufnssqhecyhfbrwxxvj",
-                                    "type": "text",
-                                    "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
-                                },
-                                {
-                                    "key": "foto",
-                                    "src": [],
-                                    "type": "file"
-                                }
-                            ]
+                            "raw": "{\"nome\":\"pxnxpdkoazkwiaygexsltjfhjcaizmzlfypoptgisoaduxqwvratzapczodeujvjhzsoupfveqpmirmokvqrmjonejtkoeboirsicimbzjyddaansdeviyansrukoriqmuqbqayvsfvqtd\",\"preco\":63.53,\"descricao\":\"tksjpcdsypymsorttvtkkqqtkoxvrsjmcniakepzipfbqpgmnbvbgqqqyanalfcpdanvoppkhhleqyvopjyuwafylwkaqizfswwmtc\"}"
                         },
                         "description": "",
                         "auth": {
@@ -808,153 +594,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
+                            "path": "api\/v1\/tipagem\/:uuid",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "9",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "foto_uuid",
-                                    "key": "foto_uuid",
-                                    "value": "1",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "multipart\/form-data"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "formdata",
-                            "formdata": [
-                                {
-                                    "key": "nome",
-                                    "value": "zrtgusstomzlwtvgxmyqlhgyjetrmifbxyugbhghuiwmimcgrvwspspwhadbbzgnqprqbhovgkfxknjnkjgfccywpnuwuxbozniwjdzewbxsitszhccvbqifhfcwcstfwutranxpzajrhthjkhwopxalcqlfipgqhjvgegaqdiwhunxiyhaeaymiamkarnoadfilczfkrfmuxoboqavfjfhncxebzhthhvb",
-                                    "type": "text",
-                                    "description": "Must not be greater than 255 characters."
-                                },
-                                {
-                                    "key": "descricao",
-                                    "value": "xkywierkkbauqgtqabz",
-                                    "type": "text",
-                                    "description": "Must not be greater than 255 characters."
-                                },
-                                {
-                                    "key": "tipo",
-                                    "value": "kxgndxozvpfgqrjgzevwypcmawpqwatpwplymsfjzffihwzpgwmjcexyartdhykldkayabzhzgcgxzcjlrplsvhzvszxkiuatxgpfnqdbhodfxrfunbfoofjlqfysajaonwkwazhxvmboqcdcbijtyouuovyorecaptzdgicqxyebcucxsnznvlfrnybkimdujormssmjvxpqgkjayhtpsnozsjrhexvtwzavcdvuxdmdnhli",
-                                    "type": "text",
-                                    "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
-                                },
-                                {
-                                    "key": "foto",
-                                    "src": [],
-                                    "type": "file"
-                                },
-                                {
-                                    "key": "_method",
-                                    "value": "PUT",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "17",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "foto_uuid",
-                                    "key": "foto_uuid",
-                                    "value": "1",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/v1\/sala\/{uuid}\/foto",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/sala\/:uuid\/foto",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/sala\/:uuid\/foto",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "20",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/sala\/:uuid\/foto",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/sala\/:uuid\/foto",
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
                             "variable": [
                                 {
                                     "id": "uuid",
@@ -964,6 +606,122 @@
                                 }
                             ]
                         },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"nome\":\"ytmckfcmqpbmvtuwhsqobfahurkdhrzbedijyjgmdpcbrjcvlmrewouvqorkbqjhpdsocxfburzzkhtlpnttcqaehhuhspurrrmwnkgahqbmozxqemsdbrhrtvwsvdxbayurugqxbqwbbkgigslkhtrrcybdzjhjcflokqhkmcyvautxxdahvfybtolxkllpstikomvcdytxffuvofapyolzdwlmbtgvwgi\",\"preco\":9.012,\"descricao\":\"ecaikniharbmrhbaxhvnounnhpyxhvgnjbdaeusmpkfisxvqfrtdqmxlrchkuokdfhglueqnwsmsywshfvxkfcvnppnfdzrsrkqjuqdogroqzdqrjuorkqsaaajmglqylnrrocwzrcieunsjdvsvgdhceavnhadqku\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tipagem\/:uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "5",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Foto",
+            "description": "",
+            "item": [
+                {
+                    "name": "Listagem de fotos do pr\u00e9dio",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/predio\/:uuid\/foto",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do pr\u00e9dio."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Listagem retornada com sucesso\",\n \"data\": [\n   {\n     \"uuid\": \"8056d5b1-9440-4714-9513-ce9f7bf987b9\",\n     \"url\": \"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ffbb?text=cats+Faker+eaque\",\n     \"path\": \"\\\/tmp\\\/fakerzPQd5C\",\n     \"nome\": \"Miss Bridgette Wiegand DDS\",\n     \"descricao\": \"Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.\"\n   },\n   {\n     \"uuid\": \"87a06252-d370-4606-977a-61c66e6cc1a6\",\n     \"url\": \"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00dd22?text=cats+Faker+et\",\n     \"path\": \"\\\/tmp\\\/fakerzrVQzN\",\n     \"nome\": \"Prof. Ellsworth Schowalter DVM\",\n     \"descricao\": \"Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.\"\n   },\n   {\n     \"uuid\": \"2bb22bf1-5050-468d-a02d-9d45a229e005\",\n     \"url\": \"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/000011?text=cats+Faker+omnis\",\n     \"path\": \"\\\/tmp\\\/fakerRqcyRF\",\n     \"nome\": \"Aryanna Murphy\",\n     \"descricao\": \"Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.\"\n   }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Cadastrando a foto de um predio ou sala",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/predio\/:uuid\/foto",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "1436a969-96b1-4e70-976d-426601fc4d55",
+                                    "description": "uuid do Sala ou Pr\u00e9dio."
+                                }
+                            ]
+                        },
                         "method": "POST",
                         "header": [
                             {
@@ -980,21 +738,21 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "myjwlbihngdibuihorjtuirbdmlbbzkbahaxwvffbxmhmmwcwmnttqty",
+                                    "value": "Foto 1",
                                     "type": "text",
-                                    "description": "Must not be greater than 255 characters."
+                                    "description": "Nome da foto."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "pwqerfxerlnuoaduwlhpxlsuqbegffdozrarvhefkxqnmqtomkdofbjndqsmgxhthvgbapzmwfpjmafhdrjdouzkgpawbumtfxyvexqxyxhyqxgoszvqyccwisaexy",
+                                    "value": "Foto 1",
                                     "type": "text",
-                                    "description": "Must not be greater than 255 characters."
+                                    "description": "Descri\u00e7\u00e3o da foto."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "jpdfyxvuonocvgstrpbbmjkmkqnfcknzpyzequtuxzsmtpqfirhqkjfpmkwyxmhlxyddgvollookcenuqnlvlhyznoikluqshshgzrsxmqxhnnhqnguozapojttztoihuqvpobkqtqzjfsmmxxhetzabgalefknamuvsiilcbwpnxiacvsugqcjcfimktyctsaqwmewxfnzyamtrstjbvpckuzhrygpjruekxgckeuszyxcltiokpcxkezm",
+                                    "value": "predio",
                                     "type": "text",
-                                    "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
+                                    "description": "Tipo do recurso a ser utilizado (sala ou predio)."
                                 },
                                 {
                                     "key": "foto",
@@ -1008,27 +766,34 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"nome\": \"foto test\",\n   \"descricao\": \"description foto test\",\n   \"url\": \"http:\\\/\\\/localhost:9000\\\/storage\\\/predio\\\/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg\",\n   \"path\": \"predio\\\/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg\",\n   \"uuid\": \"46a3d089-dc55-4432-bf56-ea8f1f13fdc7\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Atualiza\u00e7\u00e3o de registro de uma foto",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/sala\/:uuid\/foto\/:foto_uuid",
+                            "path": "api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/sala\/:uuid\/foto\/:foto_uuid",
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "5",
-                                    "description": ""
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do Sala ou Pr\u00e9dio."
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "1",
+                                    "value": "20",
                                     "description": ""
                                 }
                             ]
@@ -1049,21 +814,21 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "rpdlvbllpeyquehrijeqwktvycoweeqypgjqyzwjvgfmnyfveegyyzlqyinhjxvkqbxoixjjotpkfbykjufdwmrqcztxdynavyukqlnaodbfspesyrscgvasqtksyllrynmbqisqtbjcpnufmxyjmntihpmwzrnoxxwzobctyyfrlctcywlmsyaxekeatfhdfqsdvnhbwawriqedmejapjvqysigkuapwjzo",
+                                    "value": "Foto 1",
                                     "type": "text",
-                                    "description": "Must not be greater than 255 characters."
+                                    "description": "Nome da foto."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "zlmycyrk",
+                                    "value": "Foto 1",
                                     "type": "text",
-                                    "description": "Must not be greater than 255 characters."
+                                    "description": "Descri\u00e7\u00e3o da foto."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "fvgkmyzqmevelmjzemjofqkhzceecmuglhsbrepujrdrmobpmvxngbrootabiyzeeayirqnuvcjgqgwfpftysqgvjaikororcbozceymrnehimbvrkdzwrivytsvnzuamjvsmzuuidkgmwqrlawyopmidulocbktbuhnezbqmpstcniljnnjowlsjxhcegmazozhmfytglcwxvdcupziyscavomqffierlszb",
+                                    "value": "predio",
                                     "type": "text",
-                                    "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
+                                    "description": "Tipo do recurso a ser utilizado (sala ou predio)."
                                 },
                                 {
                                     "key": "foto",
@@ -1082,10 +847,171 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"nome\": \"foto test\",\n   \"descricao\": \"description foto test\",\n   \"url\": \"http:\\\/\\\/localhost:9000\\\/storage\\\/predio\\\/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg\",\n   \"path\": \"predio\\\/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg\",\n   \"uuid\": \"e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Removendo o registro de um pr\u00e9dio",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/foto\/:foto_uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do Pr\u00e9dio ou Sala."
+                                },
+                                {
+                                    "id": "foto_uuid",
+                                    "key": "foto_uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid da foto a ser removida."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Listagem de fotos da sala",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/sala\/:uuid\/foto",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/sala\/:uuid\/foto",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid da sala."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Listagem retornada com sucesso\",\n \"data\": [\n   {\n     \"uuid\": \"8056d5b1-9440-4714-9513-ce9f7bf987b9\",\n     \"url\": \"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ffbb?text=cats+Faker+eaque\",\n     \"path\": \"\\\/tmp\\\/fakerzPQd5C\",\n     \"nome\": \"Miss Bridgette Wiegand DDS\",\n     \"descricao\": \"Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.\"\n   },\n   {\n     \"uuid\": \"87a06252-d370-4606-977a-61c66e6cc1a6\",\n     \"url\": \"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00dd22?text=cats+Faker+et\",\n     \"path\": \"\\\/tmp\\\/fakerzrVQzN\",\n     \"nome\": \"Prof. Ellsworth Schowalter DVM\",\n     \"descricao\": \"Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.\"\n   },\n   {\n     \"uuid\": \"2bb22bf1-5050-468d-a02d-9d45a229e005\",\n     \"url\": \"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/000011?text=cats+Faker+omnis\",\n     \"path\": \"\\\/tmp\\\/fakerRqcyRF\",\n     \"nome\": \"Aryanna Murphy\",\n     \"descricao\": \"Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.\"\n   }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Cadastrando a foto de um predio ou sala",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/sala\/:uuid\/foto",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/sala\/:uuid\/foto",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "1436a969-96b1-4e70-976d-426601fc4d55",
+                                    "description": "uuid do Sala ou Pr\u00e9dio."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "nome",
+                                    "value": "Foto 1",
+                                    "type": "text",
+                                    "description": "Nome da foto."
+                                },
+                                {
+                                    "key": "descricao",
+                                    "value": "Foto 1",
+                                    "type": "text",
+                                    "description": "Descri\u00e7\u00e3o da foto."
+                                },
+                                {
+                                    "key": "tipo",
+                                    "value": "predio",
+                                    "type": "text",
+                                    "description": "Tipo do recurso a ser utilizado (sala ou predio)."
+                                },
+                                {
+                                    "key": "foto",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"nome\": \"foto test\",\n   \"descricao\": \"description foto test\",\n   \"url\": \"http:\\\/\\\/localhost:9000\\\/storage\\\/predio\\\/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg\",\n   \"path\": \"predio\\\/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg\",\n   \"uuid\": \"46a3d089-dc55-4432-bf56-ea8f1f13fdc7\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Atualiza\u00e7\u00e3o de registro de uma foto",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -1096,14 +1022,95 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "17",
-                                    "description": ""
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do Sala ou Pr\u00e9dio."
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "2",
+                                    "value": "10",
                                     "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "nome",
+                                    "value": "Foto 1",
+                                    "type": "text",
+                                    "description": "Nome da foto."
+                                },
+                                {
+                                    "key": "descricao",
+                                    "value": "Foto 1",
+                                    "type": "text",
+                                    "description": "Descri\u00e7\u00e3o da foto."
+                                },
+                                {
+                                    "key": "tipo",
+                                    "value": "predio",
+                                    "type": "text",
+                                    "description": "Tipo do recurso a ser utilizado (sala ou predio)."
+                                },
+                                {
+                                    "key": "foto",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "_method",
+                                    "value": "PUT",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"nome\": \"foto test\",\n   \"descricao\": \"description foto test\",\n   \"url\": \"http:\\\/\\\/localhost:9000\\\/storage\\\/predio\\\/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg\",\n   \"path\": \"predio\\\/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg\",\n   \"uuid\": \"e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Removendo o registro de um pr\u00e9dio",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/sala\/:uuid\/foto\/:foto_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/sala\/:uuid\/foto\/:foto_uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do Pr\u00e9dio ou Sala."
+                                },
+                                {
+                                    "id": "foto_uuid",
+                                    "key": "foto_uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid da foto a ser removida."
                                 }
                             ]
                         },
@@ -1120,22 +1127,35 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
-                },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Pr\u00e9dio",
+            "description": "",
+            "item": [
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Listagem de pr\u00e9dios relacionado a um cliente",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/sala",
+                            "path": "api\/v1\/cliente\/:uuid\/predio",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala",
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/predio",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "11",
-                                    "description": ""
+                                    "value": "1436a969-96b1-4e70-976d-426601fc4d55",
+                                    "description": "uuid do cliente."
                                 }
                             ]
                         },
@@ -1152,22 +1172,29 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Listagem retornada com sucesso\",\n \"data\": [\n   {\n     \"uuid\": \"1436a969-96b1-4e70-976d-426601fc4d55\",\n     \"nome\": \"Price Blanda\",\n     \"descricao\": \"Qui laudantium eos asperiores rerum. Sapiente voluptatum ea tempore et pariatur dicta consequuntur. Rem ut voluptas et sunt.\"\n   },\n   {\n     \"uuid\": \"cd3aa9b8-51fb-4858-bb59-40dad883de83\",\n     \"nome\": \"Emile Dooley\",\n     \"descricao\": \"Fuga occaecati molestiae sequi quibusdam veritatis. Qui dolores sunt aut labore. Molestiae dignissimos inventore perferendis et qui.\"\n   },\n   {\n     \"uuid\": \"544d13f4-7b1b-46e0-aa9d-e30c54b2a286\",\n     \"nome\": \"Devon Feil\",\n     \"descricao\": \"Deleniti sint quia veritatis asperiores quisquam aut. Numquam pariatur expedita voluptas voluptas soluta. Molestiae est perferendis ipsa et.\"\n   }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Cadastrando um pr\u00e9dio relacionado a um cliente",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/sala",
+                            "path": "api\/v1\/cliente\/:uuid\/predio",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala",
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/predio",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "2",
-                                    "description": ""
+                                    "value": "1436a969-96b1-4e70-976d-426601fc4d55",
+                                    "description": "uuid do cliente."
                                 }
                             ]
                         },
@@ -1184,35 +1211,36 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"repudiandae\",\"numero\":17,\"descricao\":\"aut\",\"tipagem_uuid\":\"tenetur\"}"
+                            "raw": "{\"nome\":\"Pr\u00e9dio 1\",\"descricao\":\"Pr\u00e9dio 1\"}"
                         },
                         "description": "",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"status\": true,\n   \"message\": \"Registro cadastrado com sucesso\",\n   \"data\": {\n     \"nome\": \"Predio 1\",\n     \"descricao\": \"Predio 1\",\n     \"uuid\": \"cecd43a5-46a6-44f6-a016-584a88e264e2\"\n   }\n }",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "Retornando o registro de um pr\u00e9dio.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "path": "api\/v1\/predio\/:uuid",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "8",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "sala_uuid",
-                                    "key": "sala_uuid",
-                                    "value": "12",
-                                    "description": ""
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "uuid do pr\u00e9dio."
                                 }
                             ]
                         },
@@ -1229,28 +1257,29 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro encontrado com sucesso\",\n \"data\": {\n   \"uuid\": \"746fe4d9-66de-4074-bf4b-077927164b03\",\n   \"nome\": \"Rogers Crist\",\n   \"descricao\": \"Iure labore odit sint ipsa quo. Laboriosam corrupti et deserunt id quisquam. Et est ad a quidem.\",\n   \"endereco\": {\n     \"uuid\": \"892f84b8-7761-4ff0-b50b-03928e76812d\",\n     \"cep\": \"66599\",\n     \"logradouro\": \"\",\n     \"numero\": \"78394\",\n     \"complemento\": \"Suite 357\",\n     \"bairro\": \"side\",\n     \"cidade\": \"Erdmanberg\",\n     \"uf\": \"ND\",\n     \"url_google_maps\": \"\"\n   }\n }\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Atualiza\u00e7\u00e3o de registro de um pr\u00e9dio",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "path": "api\/v1\/predio\/:uuid",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "3",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "sala_uuid",
-                                    "key": "sala_uuid",
-                                    "value": "16",
-                                    "description": ""
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do predio."
                                 }
                             ]
                         },
@@ -1267,35 +1296,36 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"dolor\",\"numero\":8,\"descricao\":\"et\"}"
+                            "raw": "{\"nome\":\"Pr\u00e9dio 1 Updated\",\"descricao\":\"Pr\u00e9dio 1 Updated\"}"
                         },
                         "description": "",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro autalizado com sucesso\",\n \"data\": {\n   \"uuid\": \"a36b1b02-38b0-4a00-916b-fbb306ead110\",\n   \"nome\": \"Predio updated\",\n   \"descricao\": \"Predio updated\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Removendo o registro de um pr\u00e9dio",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "path": "api\/v1\/predio\/:uuid",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "5",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "sala_uuid",
-                                    "key": "sala_uuid",
-                                    "value": "18",
-                                    "description": ""
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do predio."
                                 }
                             ]
                         },
@@ -1312,16 +1342,37 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
-                },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Sala",
+            "description": "",
+            "item": [
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Listagem de salas relacionadas a um pr\u00e9dio",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem",
+                            "path": "api\/v1\/predio\/:uuid\/sala",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "ac07ae3c-79aa-4460-bc17-1b9b5ae9be01",
+                                    "description": "uuid do pr\u00e9dio."
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1336,16 +1387,31 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Listagem retornada com sucesso\",\n \"data\": [\n   {\n     \"uuid\": \"ac07ae3c-79aa-4460-bc17-1b9b5ae9be01\",\n     \"nome\": \"Ms. Amina Mosciski\",\n     \"numero\": \"67\",\n     \"descricao\": \"Quisquam sed et optio. Eius sunt assumenda dolor eligendi magni unde quia. Quia quos exercitationem nihil iste dolorem in.\"\n   },\n   {\n     \"uuid\": \"2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1\",\n     \"nome\": \"Ines Raynor\",\n     \"numero\": \"47\",\n     \"descricao\": \"Possimus quaerat accusantium ad deleniti consectetur cumque. Debitis et aperiam beatae aliquid. Ex qui aperiam amet unde non.\"\n   },\n   {\n     \"uuid\": \"147fd51f-9683-4950-84fa-1eb5247bdc1a\",\n     \"nome\": \"Raquel Weissnat\",\n     \"numero\": \"38\",\n     \"descricao\": \"Nobis consectetur hic dicta ut hic. Molestiae mollitia autem et sint veniam reprehenderit eaque. Quia sit dolore et voluptates ducimus. Debitis temporibus dolor voluptatem alias omnis et.\"\n   }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
                     "name": "Store a newly created resource in storage.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem",
+                            "path": "api\/v1\/predio\/:uuid\/sala",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "ac07ae3c-79aa-4460-bc17-1b9b5ae9be01",
+                                    "description": "uuid do pr\u00e9dio."
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -1360,29 +1426,87 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"fauuppkqilwlxeeobcaihndnqlucucwmqkofdzbbncskbbvm\",\"preco\":5299765.826648191,\"descricao\":\"pwikgwlxiamyndecnxbrjgsqfasbfifsq\"}"
+                            "raw": "{\"nome\":\"Sala 1\",\"numero\":\"1\",\"descricao\":\"Sala de reuni\u00e3o\",\"tipagem_uuid\":\"2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1\"}"
                         },
+                        "description": "Cadastrando um pr\u00e9dio relacionado a um cliente",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"nome\": \"Sala 1\",\n   \"numero\": 1,\n   \"descricao\": \"Sala 1\",\n   \"uuid\": \"9bf7502d-a7ab-4874-9279-272bd2b8ff04\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Retornando o registro de uma sala.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "uuid do pr\u00e9dio."
+                                },
+                                {
+                                    "id": "sala_uuid",
+                                    "key": "sala_uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "uuid da sala."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
                         "description": "",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro encontrado com sucesso\",\n \"data\": {\n   \"uuid\": \"02f26f7c-6ac4-4dbd-ab89-d87d1f3dd02e\",\n   \"nome\": \"Dr. Donato Gerhold\",\n   \"numero\": \"47\",\n   \"descricao\": \"Magnam dolor vero culpa a. Praesentium sit totam unde aut et doloribus nam officiis. Sint et veritatis est qui velit dolor tempora. Nam dolor architecto atque tenetur commodi architecto.\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Atualiza\u00e7\u00e3o de registro de uma sala",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem\/:uuid",
+                            "path": "api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "16",
-                                    "description": ""
+                                    "value": "ac07ae3c-79aa-4460-bc17-1b9b5ae9be01",
+                                    "description": "uuid do pr\u00e9dio."
+                                },
+                                {
+                                    "id": "sala_uuid",
+                                    "key": "sala_uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "uuid da sala."
                                 }
                             ]
                         },
@@ -1399,29 +1523,42 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"phkgjkfezriuviwzkaxdvtwsurajigauijseaqtmgexjl\",\"preco\":73.39,\"descricao\":\"dnfmlhtly\"}"
+                            "raw": "{\"nome\":\"Sala 1\",\"numero\":\"1\",\"descricao\":\"Sala de reuni\u00e3o\"}"
                         },
                         "description": "",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro autalizado com sucesso\",\n \"data\": {\n   \"uuid\": \"e9cb6c8b-496e-469b-8048-e38003afd846\",\n   \"nome\": \"Sala updated\",\n   \"numero\": \"5\",\n   \"descricao\": \"Sala 5\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Removendo o registro de uma sala",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem\/:uuid",
+                            "path": "api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
+                            "raw": "{{baseUrl}}\/api\/v1\/predio\/:uuid\/sala\/:sala_uuid",
                             "variable": [
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "5",
-                                    "description": ""
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid do predio."
+                                },
+                                {
+                                    "id": "sala_uuid",
+                                    "key": "sala_uuid",
+                                    "value": "746fe4d9-66de-4074-bf4b-077927164b03",
+                                    "description": "O Uuid da sala."
                                 }
                             ]
                         },
@@ -1438,7 +1575,14 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         }
