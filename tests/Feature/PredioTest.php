@@ -110,7 +110,7 @@ class PredioTest extends TestCase
 
     $response = $this->delete(route('predio.destroy', ['uuid' => $predio->uuid]));
     $response->assertStatus(200);
-    $this->assertEquals(__('response.delete.success'), $response->json('message'));
+    $this->assertEquals(__('response.destroy.success'), $response->json('message'));
   }
 
   /** @test */
@@ -124,7 +124,7 @@ class PredioTest extends TestCase
 
     $response = $this->delete(route('predio.destroy', ['uuid' => $predio->uuid]));
     $response->assertStatus(200);
-    $this->assertEquals(__('response.delete.success'), $response->json('message'));
+    $this->assertEquals(__('response.destroy.success'), $response->json('message'));
   }
 
   /** @test*/
@@ -209,7 +209,7 @@ class PredioTest extends TestCase
     $response = $this->delete(route('predio.endereco.destroy', ['uuid' => $predio->uuid, 'endereco_uuid' => $response->json('data.uuid')]));
     $response->assertStatus(200);
     $response->assertJsonCount(0, 'data');
-    $this->assertEquals(__('response.delete.success'), $response->json('message'));
+    $this->assertEquals(__('response.destroy.success'), $response->json('message'));
   }
 
   /** @test*/

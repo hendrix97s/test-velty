@@ -70,7 +70,45 @@ class SalaController extends Controller
         return $this->response('response.destroy', $response);
     }
 
-    public function listFotos($uuid, SalaRepository $repository)
+    /**
+     * 
+     * Listagem de fotos da sala
+     * @group Fotos
+     * 
+     * @urlParam uuid required O Uuid da sala. Example: 746fe4d9-66de-4074-bf4b-077927164b03
+     * @response {
+     *  "status": true,
+     *  "message": "Listagem retornada com sucesso",
+     *  "data": [
+     *    {
+     *      "uuid": "8056d5b1-9440-4714-9513-ce9f7bf987b9",
+     *      "url": "https:\/\/via.placeholder.com\/640x480.png\/00ffbb?text=cats+Faker+eaque",
+     *      "path": "\/tmp\/fakerzPQd5C",
+     *      "nome": "Miss Bridgette Wiegand DDS",
+     *      "descricao": "Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui."
+     *    },
+     *    {
+     *      "uuid": "87a06252-d370-4606-977a-61c66e6cc1a6",
+     *      "url": "https:\/\/via.placeholder.com\/640x480.png\/00dd22?text=cats+Faker+et",
+     *      "path": "\/tmp\/fakerzrVQzN",
+     *      "nome": "Prof. Ellsworth Schowalter DVM",
+     *      "descricao": "Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit."
+     *    },
+     *    {
+     *      "uuid": "2bb22bf1-5050-468d-a02d-9d45a229e005",
+     *      "url": "https:\/\/via.placeholder.com\/640x480.png\/000011?text=cats+Faker+omnis",
+     *      "path": "\/tmp\/fakerRqcyRF",
+     *      "nome": "Aryanna Murphy",
+     *      "descricao": "Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et."
+     *    }
+     *  ]
+     *}
+     *
+     * @param string $uuid
+     * @param SalaRepository $repository
+     * @return void
+     */
+    public function listFotos(string $uuid, SalaRepository $repository)
     {
       $fotos = $repository->findByUuid($uuid);
 
