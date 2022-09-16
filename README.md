@@ -30,6 +30,7 @@ O projeto foi desenvolvido com as seguintes técnologias
 
 
 ## Diagrama de Classes
+![velty-test](https://user-images.githubusercontent.com/32068444/190558722-fb9ce555-0076-4ae4-852f-b3a483071ae6.jpg)
 
 
 
