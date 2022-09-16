@@ -16,7 +16,6 @@ return new class extends Migration
       Schema::create('foto_sala', function (Blueprint $table) {
         $table->foreignId('foto_id')->constrained('fotos');
         $table->foreignId('sala_id')->constrained('salas');
-        $table->primary(['foto_id', 'sala_id']);
         $table->timestamps();
       });
     }

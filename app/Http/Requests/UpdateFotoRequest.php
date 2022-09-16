@@ -13,7 +13,7 @@ class UpdateFotoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,11 @@ class UpdateFotoRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'nome' => 'sometimes|string|max:255',
+        'descricao' => 'sometimes|string|max:255',
+        'foto' => 'sometimes|image|mimes:jpeg,png,jpg|max:2048',
+        'tipo' => 'required|string|max:255|in:predio,sala',
+      ];
     }
 }

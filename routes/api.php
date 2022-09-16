@@ -55,21 +55,21 @@ Route::group(['prefix' => 'v1'], function (){
     'store'   => 'predio.endereco.store'
   ]);
 
+  Route::get('predio/{uuid}/foto', [PredioController::class, 'listFotos'])->name('predio.foto.index');
   Route::resource('predio/{uuid}/foto', FotoController::class)
-    ->only(['index', 'store', 'destroy', 'update'])
+    ->only(['store', 'destroy', 'update'])
     ->parameters(['foto' => 'foto_uuid'])
     ->names([
-      'index'   => 'predio.foto.index',
       'store'   => 'predio.foto.store',
       'destroy' => 'predio.foto.destroy',
       'update'  => 'predio.foto.update'
     ]);
-  
+
+  Route::get('sala/{uuid}/foto', [SalaController::class, 'listFotos'])->name('sala.foto.index');
   Route::resource('sala/{uuid}/foto', FotoController::class)
-  ->only(['index', 'store', 'destroy', 'update'])
+  ->only(['store', 'destroy', 'update'])
   ->parameters(['foto' => 'foto_uuid'])
   ->names([
-    'index'   => 'sala.foto.index',
     'store'   => 'sala.foto.store',
     'destroy' => 'sala.foto.destroy',
     'update'  => 'sala.foto.update'

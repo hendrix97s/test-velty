@@ -33,19 +33,26 @@ class FotoService
       }
 
       return $response ?? false;
-
     }
 
     public function update($uuid, $data)
     {
-      
+      if(isset($data['foto'])){
+        $this->saveImage($data['tipo'], $data['foto'], $path, $url); 
+        $data['url'] = $url;
+        $data['path'] = $path;
+      }
+
+      $respository = new FotoRepository();
+      $response = $respository->updateByUuid($uuid, $data);
+      return $response ?? false;
     }
 
     public function createFotoPredio($uuid, $fotoId)
     {
       $predio = new PredioRepository();
       $predio = $predio->findByUuid($uuid);
-      FotoPredio::created([
+      FotoPredio::create([
         'foto_id' => $fotoId,
         'predio_id' => $predio->id
       ]);
@@ -54,8 +61,8 @@ class FotoService
     public function createFotoSala($uuid, $fotoId)
     {
       $sala = new SalaRepository();
-      $sala->findByUuid($uuid);
-      FotoSala::created([
+      $sala = $sala->findByUuid($uuid);
+      FotoSala::create([
         'foto_id' => $fotoId,
         'sala_id' => $sala->id
       ]);
@@ -63,9 +70,7 @@ class FotoService
 
     private function saveImage($tipo, $image, &$path, &$url)
     {
-      // $path = $image->store('public/images/'.$tipo);
-      $path = Storage::disk('public')->putFile('predios', $image); 
+      $path = Storage::disk('public')->putFile($tipo, $image); 
       $url = Storage::disk('public')->url($path);
-      // $url = config('app.url').Storage::url($path);
     }
 }

@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Cliente;
 use App\Models\Endereco;
 use App\Models\EnderecoPredio;
+use App\Models\Foto;
 use App\Models\FotoPredio;
 use App\Models\Predio;
 use App\Models\Sala;
@@ -201,12 +202,47 @@ class PredioTest extends TestCase
   public function predio_foto_index()
   {
 
+    $predio = Predio::factory()->create();
+
+    FotoPredio::factory(3)->create([
+      'predio_id' => $predio->id,
+    ]);
+
+    $response = $this->get(route('predio.foto.index', ['uuid' => $predio->uuid]));
+    $response->assertStatus(200);
+    $response->assertJsonCount(3, 'data');
+    $this->assertEquals(__('response.list.success'), $response->json('message'));
   }
 
   /** @test*/
   public function predio_foto_store()
   {
     $this->withoutExceptionHandling();
+    
+    $predio = Predio::factory()->create();
+    $foto = UploadedFile::fake()->image('foto.jpg', 1000, 1000);
+
+    $payload = [
+      'nome' => 'foto test',
+      'descricao' => 'description foto test',
+      'foto' =>  $foto,
+      'tipo' => 'predio',
+    ];
+
+    $response = $this->post(route('predio.foto.store', ['uuid' => $predio->uuid]), $payload);
+    $response->assertStatus(200);
+    $response->assertJsonCount(5, 'data');
+
+    $this->assertEquals(__('response.create.success'), $response->json('message'));
+
+    Storage::disk('public')->assertExists($response->json('data.path'));
+  }
+
+  /** @test*/
+  public function predio_foto_update()
+  {
+    $this->withoutExceptionHandling();
+    
     $predio = Predio::factory()->create();
     $foto = UploadedFile::fake()->image('foto.jpg', 1000, 1000);
 
@@ -221,19 +257,49 @@ class PredioTest extends TestCase
     $response->assertStatus(200);
     $response->assertJsonCount(5, 'data');
     $this->assertEquals(__('response.create.success'), $response->json('message'));
-
     Storage::disk('public')->assertExists($response->json('data.path'));
-  }
 
-  /** @test*/
-  public function predio_foto_update()
-  {
+    $payload = [
+      'nome' => 'foto test update',
+      'descricao' => 'description foto test update',
+      'tipo' => 'predio',
+    ];
 
+    $fotoUuid = $response->json('data.uuid');
+    $params = ['uuid' => $predio->uuid, 'foto_uuid' => $fotoUuid];
+    $response = $this->put(route('predio.foto.update', $params), $payload);
+
+  $response->assertStatus(200);
+    $response->assertJsonCount(5, 'data');
+    $this->assertEquals(__('response.update.success'), $response->json('message'));
+    Storage::disk('public')->assertExists($response->json('data.path'));
   }
 
   /** @test*/
   public function predio_foto_destroy()
   {
+    $this->withoutExceptionHandling();
 
+    $predio = Predio::factory()->create();
+    $foto = UploadedFile::fake()->image('foto.jpg', 1000, 1000);
+
+    $payload = [
+      'nome' => 'foto test',
+      'descricao' => 'description foto test',
+      'foto' =>  $foto,
+      'tipo' => 'predio',
+    ];
+
+    $responseFoto = $this->post(route('predio.foto.store', ['uuid' => $predio->uuid]), $payload);
+    $responseFoto->assertStatus(200);
+    $responseFoto->assertJsonCount(5, 'data');
+    $this->assertEquals(__('response.create.success'), $responseFoto->json('message'));
+    Storage::disk('public')->assertExists($responseFoto->json('data.path'));
+
+    $response = $this->delete(route('predio.foto.destroy', ['uuid' => $predio->uuid, 'foto_uuid' => $responseFoto->json('data.uuid')]));
+    $response->assertStatus(200);
+    $response->assertJsonCount(0, 'data');
+    $this->assertEquals(__('response.delete.success'), $response->json('message'));
+    $this->assertNull(Foto::find($responseFoto->json('data.id')));
   }
 }

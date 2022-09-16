@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreSalaRequest;
 use App\Http\Requests\UpdateSalaRequest;
 use App\Models\Sala;
+use App\Repositories\SalaRepository;
 
 class SalaController extends Controller
 {
@@ -82,5 +83,17 @@ class SalaController extends Controller
     public function destroy(Sala $sala)
     {
         //
+    }
+
+    public function listFotos($uuid, SalaRepository $repository)
+    {
+      $fotos = $repository->findByUuid($uuid);
+
+      if($fotos){
+        $fotos->makeVisible(['fotos']);
+        $fotos = $fotos->fotos;
+      }
+      
+      return $this->response('response.list', $fotos);
     }
 }

@@ -16,7 +16,6 @@ return new class extends Migration
       Schema::create('endereco_predio', function (Blueprint $table) {
         $table->foreignId('predio_id')->constrained('predios');
         $table->foreignId('endereco_id')->constrained('enderecos');
-        $table->primary(['endereco_id','predio_id']);
         $table->timestamps();
       });
     }

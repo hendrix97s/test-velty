@@ -76,4 +76,14 @@ class PredioController extends Controller
       $predio = $repository->deleteByUuid($uuid);
       return $this->response('response.delete', $predio);
     }
+
+    public function listFotos($uuid, PredioRepository $repository)
+    {
+      $fotos = $repository->findByUuid($uuid);
+      if($fotos){
+        $fotos->makeVisible(['fotos']);
+        $fotos = $fotos->fotos;
+      }
+      return $this->response('response.list', $fotos);
+    }
 }
