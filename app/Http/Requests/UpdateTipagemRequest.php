@@ -24,7 +24,9 @@ class UpdateTipagemRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'nome' => 'sometimes|string|max:255',
+          'preco' => 'sometimes|numeric',
+          'descricao' => 'sometimes|string|max:255',
         ];
     }
 }

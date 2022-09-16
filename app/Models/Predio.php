@@ -35,6 +35,7 @@ class Predio extends Model
       'fotos',
       'salas',
       'endereco',
+      'enderecos',
       'pivot'
     ];
 
@@ -48,6 +49,11 @@ class Predio extends Model
       return $this->hasMany(Sala::class, 'predio_id', 'id');
     }
 
+    public function enderecos()
+    {
+      return $this->belongsToMany(Endereco::class)->using(EnderecoPredio::class);
+    }
+
     public function getEnderecoAttribute()
     {
       return $this->belongsToMany(Endereco::class)->using(EnderecoPredio::class)->first();
@@ -59,8 +65,4 @@ class Predio extends Model
       $cliente->makeHidden(['endereco']);
       return $cliente;
     }
-
-
-
-    
 }

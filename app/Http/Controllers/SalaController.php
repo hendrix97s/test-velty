@@ -6,6 +6,8 @@ use App\Http\Requests\StoreSalaRequest;
 use App\Http\Requests\UpdateSalaRequest;
 use App\Models\Sala;
 use App\Repositories\SalaRepository;
+use App\Repositories\TipagemRepository;
+use Illuminate\Http\Request;
 
 class SalaController extends Controller
 {
@@ -14,19 +16,10 @@ class SalaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($uuid, SalaRepository $repository)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $salas = $repository->getSalasByPredioUuid($uuid);
+        return $this->response('response.list', $salas);
     }
 
     /**
@@ -35,31 +28,21 @@ class SalaController extends Controller
      * @param  \App\Http\Requests\StoreModuloSalaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSalaRequest $request)
+    public function store(StoreSalaRequest $request, SalaRepository $repository)
     {
-        //
+      $sala = $repository->createByPredioUuidAndTipagemUuid($request->uuid, $request->validated());
+      return $this->response('response.store', $sala);
     }
-
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function show(Sala $sala)
+    public function show(Request $request, SalaRepository $repository)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Sala  $sala
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Sala $sala)
-    {
-        //
+        $sala = $repository->findByUuid($request->sala_uuid);
+        return $this->response('response.show', $sala);
     }
 
     /**
@@ -69,9 +52,10 @@ class SalaController extends Controller
      * @param  \App\Models\sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSalaRequest $request, Sala $moduloSala)
+    public function update(UpdateSalaRequest $request, SalaRepository $repository)
     {
-        //
+        $response = $repository->updateByUuid($request->sala_uuid, $request->validated());
+        return $this->response('response.update', $response);
     }
 
     /**
@@ -80,9 +64,10 @@ class SalaController extends Controller
      * @param  \App\Models\Sala  $sala
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sala $sala)
+    public function destroy(Request $request, SalaRepository $repository)
     {
-        //
+        $response = $repository->deleteByUuid($request->sala_uuid);
+        return $this->response('response.destroy', $response);
     }
 
     public function listFotos($uuid, SalaRepository $repository)

@@ -24,7 +24,9 @@ class UpdateSalaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'nome' => 'sometimes|string',
+          'numero' => 'sometimes|integer', 
+          'descricao' => 'sometimes|string', 
         ];
     }
 }

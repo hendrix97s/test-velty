@@ -23,8 +23,10 @@ class StoreTipagemRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'nome' => 'required|string|max:255',
+        'preco' => 'required|numeric',
+        'descricao' => 'required|string|max:255',
+      ];
     }
 }

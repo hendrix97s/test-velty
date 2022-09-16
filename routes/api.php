@@ -77,10 +77,10 @@ Route::group(['prefix' => 'v1'], function (){
   
   
   Route::resource('predio/{uuid}/sala', SalaController::class)
-    ->only(['index', 'store', 'destroy', 'update'])
+    ->only(['index', 'store', 'destroy', 'update', 'show'])
     ->parameters(['sala' => 'sala_uuid']);
 
-  Route::resource('sala/{uuid}/tipagem', TipagemController::class)
+  Route::resource('/tipagem', TipagemController::class)
     ->only(['index', 'store', 'destroy', 'update'])
-    ->parameters(['tipagem' => 'tipagem_uuid']);
+    ->parameters(['tipagem' => 'uuid']);
 });

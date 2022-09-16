@@ -23,8 +23,11 @@ class StoreSalaRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'nome' => 'required|string',
+        'numero' => 'required|integer', 
+        'descricao' => 'required|string', 
+        'tipagem_uuid' => 'required|string|exists:tipagem,uuid',
+      ];
     }
 }

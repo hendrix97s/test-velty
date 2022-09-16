@@ -15,9 +15,9 @@ return new class extends Migration
     {
       Schema::create('salas', function (Blueprint $table) {
         $table->id();         
+        $table->uuid('uuid');
         $table->foreignId('tipagem_id')->constrained('tipagem');   
         $table->foreignId('predio_id')->constrained('predios');   
-        $table->uuid('uuid');
         $table->string('nome');
         $table->string('numero');
         $table->string('descricao');

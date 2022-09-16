@@ -113,6 +113,20 @@ class PredioTest extends TestCase
     $this->assertEquals(__('response.delete.success'), $response->json('message'));
   }
 
+  /** @test */
+  public function predio_destroy_with_related_sala(){
+    $this->withoutExceptionHandling();
+    $predio = Predio::factory()->create();
+
+    Sala::factory()->create([
+      'predio_id' => $predio->id,
+    ]);
+
+    $response = $this->delete(route('predio.destroy', ['uuid' => $predio->uuid]));
+    $response->assertStatus(200);
+    $this->assertEquals(__('response.delete.success'), $response->json('message'));
+  }
+
   /** @test*/
   public function predio_endereco_store()
   {

@@ -5,82 +5,56 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTipagemRequest;
 use App\Http\Requests\UpdateTipagemRequest;
 use App\Models\Tipagem;
+use App\Repositories\TipagemRepository;
 
 class TipagemController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  TipagemRepository  $repository
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TipagemRepository $repository)
     {
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $tipagens = $repository->all();
+        return $this->response('response.list',$tipagens);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreTipagemRequest  $request
+     * @param  TipagemRepository  $repository
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTipagemRequest $request)
+    public function store(StoreTipagemRequest $request, TipagemRepository $repository)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Tipagem  $tipagem
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tipagem $tipagem)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Tipagem  $tipagem
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Tipagem $tipagem)
-    {
-        //
+        $tipagem = $repository->create($request->all());
+        return $this->response('response.store',$tipagem);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateTipagemRequest  $request
-     * @param  \App\Models\Tipagem  $tipagem
+     * @param  TipagemRepository  $repository
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTipagemRequest $request, Tipagem $tipagem)
+    public function update(UpdateTipagemRequest $request, TipagemRepository $repository)
     {
-        //
+        $tipagem = $repository->updateByUuid($request->uuid, $request->validated());
+        return $this->response('response.update',$tipagem);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tipagem  $tipagem
+     * @param  TipagemRepository  $repository
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tipagem $tipagem)
+    public function destroy(string $uuid, TipagemRepository $repository)
     {
-        //
+        $tipagem = $repository->deleteByUuid($uuid);
+        return $this->response('response.destroy',$tipagem);
     }
 }
