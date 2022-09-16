@@ -35,9 +35,11 @@ class PredioController extends Controller
      *    }
      *  ]
      *}
+     * @param  string $uuid uuid do cliente
+     * @param  PredioRepository  $repository
      * @return \Illuminate\Http\Response
      */
-    public function index($uuid, PredioRepository $repository)
+    public function index(string $uuid, PredioRepository $repository)
     {
       $predios = $repository->getPrediosByClienteUuid($uuid);
       return $this->response('response.list',$predios);

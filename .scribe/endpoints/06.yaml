@@ -1,0 +1,255 @@
+name: Tipagem
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/tipagem
+    metadata:
+      groupName: Tipagem
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Listagem de tipagem de salas'
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Listagem retornada com sucesso",
+           "data": [
+             {
+               "uuid": "162d1a32-74bf-4e39-b528-8f2ff4eff152",
+               "nome": "Cali Schowalter",
+               "descricao": "Qui blanditiis alias id porro omnis itaque laudantium. Et rerum in aperiam ea maiores nulla et. Voluptatem maxime qui maiores. Suscipit accusamus eum quia dolorem saepe et eos.",
+               "preco": 417.76
+             },
+             {
+               "uuid": "6d4fadb6-c385-4cbc-a161-6c9a91c5ed56",
+               "nome": "Dr. Coby Harris",
+               "descricao": "Et rerum aut est deserunt pariatur debitis asperiores. Et non qui voluptatem. Qui illum at assumenda minus nihil soluta.",
+               "preco": 513.02
+             },
+             {
+               "uuid": "ec84da4a-b8d9-4574-871c-202343271485",
+               "nome": "Prof. Cesar Oberbrunner III",
+               "descricao": "Est ipsa aut accusantium vero eaque omnis ullam. Ducimus nam quos dolor ab. Maxime hic dolorem asperiores laboriosam.",
+               "preco": 332.79
+             }
+           ]
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/tipagem
+    metadata:
+      groupName: Tipagem
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Cadastrando uma tipagem de sala'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Nome da tipagem.'
+        required: true
+        example: 'Sala de reunião'
+        type: string
+        custom: []
+      preco:
+        name: preco
+        description: 'Preço da tipagem.'
+        required: true
+        example: 100.0
+        type: number
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Descrição da tipagem.'
+        required: true
+        example: 'Sala de reunião para 10 pessoas'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: 'Sala de reunião'
+      preco: 100.0
+      descricao: 'Sala de reunião para 10 pessoas'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Registro cadastrado com sucesso",
+           "data": {
+             "nome": "Tipagem Teste",
+             "preco": 10,
+             "descricao": "Descri\u00e7\u00e3o da tipagem teste",
+             "uuid": "49a7fb54-9ef7-4559-8ec8-9e933eaad9b0"
+           }
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/tipagem/{uuid}'
+    metadata:
+      groupName: Tipagem
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Atualizando uma tipagem de sala'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters:
+      uuid:
+        name: uuid
+        description: 'UUID da tipagem.'
+        required: true
+        example: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+        type: string
+        custom: []
+    cleanUrlParameters:
+      uuid: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Nome da tipagem.'
+        required: false
+        example: 'Sala de reunião'
+        type: string
+        custom: []
+      preco:
+        name: preco
+        description: 'Preço da tipagem.'
+        required: false
+        example: 100.0
+        type: number
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Descrição da tipagem.'
+        required: false
+        example: 'Sala de reunião para 10 pessoas'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: 'Sala de reunião'
+      preco: 100.0
+      descricao: 'Sala de reunião para 10 pessoas'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Registro autalizado com sucesso",
+           "data": {
+             "uuid": "4d845a8f-aa41-4b81-85f9-78839a77167f",
+             "nome": "Tipagem Teste",
+             "descricao": "Descri\u00e7\u00e3o da tipagem teste",
+             "preco": 10
+           }
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/tipagem/{uuid}'
+    metadata:
+      groupName: Tipagem
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Removendo o registro de uma tipagem de sala'
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters:
+      uuid:
+        name: uuid
+        description: 'UUID da tipagem.'
+        required: true
+        example: 49
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      uuid: 49
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Registro removido com sucesso",
+           "data": []
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

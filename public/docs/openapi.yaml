@@ -255,7 +255,7 @@ paths:
                 email:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: dufunjstiyqvhfmwbxftfbacmejvrphiwfjbbodjorttohhejfdupnooyzibaviyiymcxixdigyhxjmvnppopmcexczfgpszpqltbdvrngtpxindxuxmo
+                  example: tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu
                 inicio_atividade:
                   type: string
                   description: 'date Data de inicio de atividade.'
@@ -727,105 +727,6 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/v1/tipagem:
-    get:
-      summary: 'Display a listing of the resource.'
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    post:
-      summary: 'Store a newly created resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                nome:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: pxnxpdkoazkwiaygexsltjfhjcaizmzlfypoptgisoaduxqwvratzapczodeujvjhzsoupfveqpmirmokvqrmjonejtkoeboirsicimbzjyddaansdeviyansrukoriqmuqbqayvsfvqtd
-                preco:
-                  type: number
-                  description: ''
-                  example: 63.53
-                descricao:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: tksjpcdsypymsorttvtkkqqtkoxvrsjmcniakepzipfbqpgmnbvbgqqqyanalfcpdanvoppkhhleqyvopjyuwafylwkaqizfswwmtc
-              required:
-                - nome
-                - preco
-                - descricao
-      security: []
-  '/api/v1/tipagem/{uuid}':
-    put:
-      summary: 'Update the specified resource in storage.'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                nome:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ytmckfcmqpbmvtuwhsqobfahurkdhrzbedijyjgmdpcbrjcvlmrewouvqorkbqjhpdsocxfburzzkhtlpnttcqaehhuhspurrrmwnkgahqbmozxqemsdbrhrtvwsvdxbayurugqxbqwbbkgigslkhtrrcybdzjhjcflokqhkmcyvautxxdahvfybtolxkllpstikomvcdytxffuvofapyolzdwlmbtgvwgi
-                preco:
-                  type: number
-                  description: ''
-                  example: 9.012
-                descricao:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ecaikniharbmrhbaxhvnounnhpyxhvgnjbdaeusmpkfisxvqfrtdqmxlrchkuokdfhglueqnwsmsywshfvxkfcvnppnfdzrsrkqjuqdogroqzdqrjuorkqsaaajmglqylnrrocwzrcieunsjdvsvgdhceavnhadqku
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: uuid
-        description: ''
-        example: 7
-        required: true
-        schema:
-          type: integer
   '/api/v1/predio/{uuid}/foto':
     get:
       summary: 'Listagem de fotos do prédio'
@@ -1085,7 +986,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 20
+        example: 16
         required: true
         schema:
           type: integer
@@ -1348,7 +1249,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 10
+        example: 2
         required: true
         schema:
           type: integer
@@ -1911,6 +1812,233 @@ paths:
         required: true
         schema:
           type: string
+  /api/v1/tipagem:
+    get:
+      summary: 'Listagem de tipagem de salas'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: 162d1a32-74bf-4e39-b528-8f2ff4eff152
+                      nome: 'Cali Schowalter'
+                      descricao: 'Qui blanditiis alias id porro omnis itaque laudantium. Et rerum in aperiam ea maiores nulla et. Voluptatem maxime qui maiores. Suscipit accusamus eum quia dolorem saepe et eos.'
+                      preco: 417.76
+                    -
+                      uuid: 6d4fadb6-c385-4cbc-a161-6c9a91c5ed56
+                      nome: 'Dr. Coby Harris'
+                      descricao: 'Et rerum aut est deserunt pariatur debitis asperiores. Et non qui voluptatem. Qui illum at assumenda minus nihil soluta.'
+                      preco: 513.02
+                    -
+                      uuid: ec84da4a-b8d9-4574-871c-202343271485
+                      nome: 'Prof. Cesar Oberbrunner III'
+                      descricao: 'Est ipsa aut accusantium vero eaque omnis ullam. Ducimus nam quos dolor ab. Maxime hic dolorem asperiores laboriosam.'
+                      preco: 332.79
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: 162d1a32-74bf-4e39-b528-8f2ff4eff152
+                        nome: 'Cali Schowalter'
+                        descricao: 'Qui blanditiis alias id porro omnis itaque laudantium. Et rerum in aperiam ea maiores nulla et. Voluptatem maxime qui maiores. Suscipit accusamus eum quia dolorem saepe et eos.'
+                        preco: 417.76
+                      -
+                        uuid: 6d4fadb6-c385-4cbc-a161-6c9a91c5ed56
+                        nome: 'Dr. Coby Harris'
+                        descricao: 'Et rerum aut est deserunt pariatur debitis asperiores. Et non qui voluptatem. Qui illum at assumenda minus nihil soluta.'
+                        preco: 513.02
+                      -
+                        uuid: ec84da4a-b8d9-4574-871c-202343271485
+                        nome: 'Prof. Cesar Oberbrunner III'
+                        descricao: 'Est ipsa aut accusantium vero eaque omnis ullam. Ducimus nam quos dolor ab. Maxime hic dolorem asperiores laboriosam.'
+                        preco: 332.79
+                    items:
+                      type: object
+      tags:
+        - Tipagem
+      security: []
+    post:
+      summary: 'Cadastrando uma tipagem de sala'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'Tipagem Teste'
+                    preco: 10
+                    descricao: 'Descrição da tipagem teste'
+                    uuid: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'Tipagem Teste'
+                      preco: 10
+                      descricao: 'Descrição da tipagem teste'
+                      uuid: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+      tags:
+        - Tipagem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da tipagem.'
+                  example: 'Sala de reunião'
+                preco:
+                  type: number
+                  description: 'Preço da tipagem.'
+                  example: 100.0
+                descricao:
+                  type: string
+                  description: 'Descrição da tipagem.'
+                  example: 'Sala de reunião para 10 pessoas'
+              required:
+                - nome
+                - preco
+                - descricao
+      security: []
+  '/api/v1/tipagem/{uuid}':
+    put:
+      summary: 'Atualizando uma tipagem de sala'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: 4d845a8f-aa41-4b81-85f9-78839a77167f
+                    nome: 'Tipagem Teste'
+                    descricao: 'Descrição da tipagem teste'
+                    preco: 10
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 4d845a8f-aa41-4b81-85f9-78839a77167f
+                      nome: 'Tipagem Teste'
+                      descricao: 'Descrição da tipagem teste'
+                      preco: 10
+      tags:
+        - Tipagem
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da tipagem.'
+                  example: 'Sala de reunião'
+                preco:
+                  type: number
+                  description: 'Preço da tipagem.'
+                  example: 100.0
+                descricao:
+                  type: string
+                  description: 'Descrição da tipagem.'
+                  example: 'Sala de reunião para 10 pessoas'
+      security: []
+    delete:
+      summary: 'Removendo o registro de uma tipagem de sala'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Tipagem
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'UUID da tipagem.'
+        example: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+        required: true
+        schema:
+          type: string
 tags:
   -
     name: Cliente
@@ -1929,4 +2057,7 @@ tags:
     description: ''
   -
     name: Sala
+    description: ''
+  -
+    name: Tipagem
     description: ''

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Velty",
-        "_postman_id": "95ea300a-8aaa-4676-afa6-69080fbda5a4",
+        "_postman_id": "aef9f52e-4454-499f-90c8-3602a3b083da",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -157,7 +157,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"dufunjstiyqvhfmwbxftfbacmejvrphiwfjbbodjorttohhejfdupnooyzibaviyiymcxixdigyhxjmvnppopmcexczfgpszpqltbdvrngtpxindxuxmo\",\"inicio_atividade\":\"2021-10-29\"}"
+                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu\",\"inicio_atividade\":\"2021-10-29\"}"
                         },
                         "description": "",
                         "auth": {
@@ -533,132 +533,6 @@
                         }
                     },
                     "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"nome\":\"pxnxpdkoazkwiaygexsltjfhjcaizmzlfypoptgisoaduxqwvratzapczodeujvjhzsoupfveqpmirmokvqrmjonejtkoeboirsicimbzjyddaansdeviyansrukoriqmuqbqayvsfvqtd\",\"preco\":63.53,\"descricao\":\"tksjpcdsypymsorttvtkkqqtkoxvrsjmcniakepzipfbqpgmnbvbgqqqyanalfcpdanvoppkhhleqyvopjyuwafylwkaqizfswwmtc\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "7",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"nome\":\"ytmckfcmqpbmvtuwhsqobfahurkdhrzbedijyjgmdpcbrjcvlmrewouvqorkbqjhpdsocxfburzzkhtlpnttcqaehhuhspurrrmwnkgahqbmozxqemsdbrhrtvwsvdxbayurugqxbqwbbkgigslkhtrrcybdzjhjcflokqhkmcyvautxxdahvfybtolxkllpstikomvcdytxffuvofapyolzdwlmbtgvwgi\",\"preco\":9.012,\"descricao\":\"ecaikniharbmrhbaxhvnounnhpyxhvgnjbdaeusmpkfisxvqfrtdqmxlrchkuokdfhglueqnwsmsywshfvxkfcvnppnfdzrsrkqjuqdogroqzdqrjuorkqsaaajmglqylnrrocwzrcieunsjdvsvgdhceavnhadqku\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tipagem\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "5",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 }
             ]
         },
@@ -793,7 +667,7 @@
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "20",
+                                    "value": "16",
                                     "description": ""
                                 }
                             ]
@@ -1028,7 +902,7 @@
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "10",
+                                    "value": "2",
                                     "description": ""
                                 }
                             ]
@@ -1559,6 +1433,166 @@
                                     "key": "sala_uuid",
                                     "value": "746fe4d9-66de-4074-bf4b-077927164b03",
                                     "description": "O Uuid da sala."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Tipagem",
+            "description": "",
+            "item": [
+                {
+                    "name": "Listagem de tipagem de salas",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tipagem",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Listagem retornada com sucesso\",\n \"data\": [\n   {\n     \"uuid\": \"162d1a32-74bf-4e39-b528-8f2ff4eff152\",\n     \"nome\": \"Cali Schowalter\",\n     \"descricao\": \"Qui blanditiis alias id porro omnis itaque laudantium. Et rerum in aperiam ea maiores nulla et. Voluptatem maxime qui maiores. Suscipit accusamus eum quia dolorem saepe et eos.\",\n     \"preco\": 417.76\n   },\n   {\n     \"uuid\": \"6d4fadb6-c385-4cbc-a161-6c9a91c5ed56\",\n     \"nome\": \"Dr. Coby Harris\",\n     \"descricao\": \"Et rerum aut est deserunt pariatur debitis asperiores. Et non qui voluptatem. Qui illum at assumenda minus nihil soluta.\",\n     \"preco\": 513.02\n   },\n   {\n     \"uuid\": \"ec84da4a-b8d9-4574-871c-202343271485\",\n     \"nome\": \"Prof. Cesar Oberbrunner III\",\n     \"descricao\": \"Est ipsa aut accusantium vero eaque omnis ullam. Ducimus nam quos dolor ab. Maxime hic dolorem asperiores laboriosam.\",\n     \"preco\": 332.79\n   }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Cadastrando uma tipagem de sala",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tipagem",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"nome\":\"Sala de reuni\u00e3o\",\"preco\":100,\"descricao\":\"Sala de reuni\u00e3o para 10 pessoas\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"nome\": \"Tipagem Teste\",\n   \"preco\": 10,\n   \"descricao\": \"Descri\\u00e7\\u00e3o da tipagem teste\",\n   \"uuid\": \"49a7fb54-9ef7-4559-8ec8-9e933eaad9b0\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Atualizando uma tipagem de sala",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tipagem\/:uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "49a7fb54-9ef7-4559-8ec8-9e933eaad9b0",
+                                    "description": "UUID da tipagem."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"nome\":\"Sala de reuni\u00e3o\",\"preco\":100,\"descricao\":\"Sala de reuni\u00e3o para 10 pessoas\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro autalizado com sucesso\",\n \"data\": {\n   \"uuid\": \"4d845a8f-aa41-4b81-85f9-78839a77167f\",\n   \"nome\": \"Tipagem Teste\",\n   \"descricao\": \"Descri\\u00e7\\u00e3o da tipagem teste\",\n   \"preco\": 10\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Removendo o registro de uma tipagem de sala",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tipagem\/:uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tipagem\/:uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "49",
+                                    "description": "UUID da tipagem."
                                 }
                             ]
                         },
