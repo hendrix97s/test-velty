@@ -66,6 +66,28 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-cliente" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="cliente">
+                    <a href="#cliente">Cliente</a>
+                </li>
+                                    <ul id="tocify-subheader-cliente" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="cliente-GETapi-v1-cliente">
+                                <a href="#cliente-GETapi-v1-cliente">Listagem de clientes.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-POSTapi-v1-cliente">
+                                <a href="#cliente-POSTapi-v1-cliente">Cadastrando um novo cliente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-GETapi-v1-cliente--uuid-">
+                                <a href="#cliente-GETapi-v1-cliente--uuid-">Retornando um cliente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-PUTapi-v1-cliente--uuid-">
+                                <a href="#cliente-PUTapi-v1-cliente--uuid-">Atualizando o registro de um cliente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-DELETEapi-v1-cliente--uuid-">
+                                <a href="#cliente-DELETEapi-v1-cliente--uuid-">Removendo um cliente.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
@@ -73,21 +95,6 @@
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-cliente">
-                                <a href="#endpoints-GETapi-v1-cliente">Display a listing of the resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-cliente">
-                                <a href="#endpoints-POSTapi-v1-cliente">Store a newly created resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-cliente--uuid-">
-                                <a href="#endpoints-GETapi-v1-cliente--uuid-">Display the specified resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-cliente--uuid-">
-                                <a href="#endpoints-PUTapi-v1-cliente--uuid-">Update the specified resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-cliente--uuid-">
-                                <a href="#endpoints-DELETEapi-v1-cliente--uuid-">Remove the specified resource from storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-cliente--uuid--predio">
                                 <a href="#endpoints-GETapi-v1-cliente--uuid--predio">Display a listing of the resource.</a>
@@ -202,7 +209,704 @@ You can switch the language used with the tabs at the top right (or from the nav
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        <h1 id="endpoints">Endpoints</h1>
+        <h1 id="cliente">Cliente</h1>
+
+    
+
+                                <h2 id="cliente-GETapi-v1-cliente">Listagem de clientes.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cliente">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/cliente"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-cliente">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Listagem retornada com sucesso&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;e26e6e0c-b259-42ea-8699-711f0ef2728b&quot;,
+            &quot;razao_social&quot;: &quot;Margie Jenkins Sr.&quot;,
+            &quot;nome_fantasia&quot;: &quot;Earline Hyatt&quot;,
+            &quot;cnpj&quot;: &quot;Johnathan Ledner Sr.&quot;,
+            &quot;email&quot;: &quot;okon.doris@schmidt.org&quot;,
+            &quot;telefone&quot;: &quot;+1 (520) 262-6602&quot;,
+            &quot;inicio_atividade&quot;: &quot;1985-03-27&quot;,
+            &quot;endereco&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;26a70a69-1e91-4b32-8c91-5d2ceca26141&quot;,
+            &quot;razao_social&quot;: &quot;Alta Nicolas III&quot;,
+            &quot;nome_fantasia&quot;: &quot;Tiffany Kohler&quot;,
+            &quot;cnpj&quot;: &quot;Carlos Bosco DVM&quot;,
+            &quot;email&quot;: &quot;nhowe@emmerich.com&quot;,
+            &quot;telefone&quot;: &quot;1-484-677-1592&quot;,
+            &quot;inicio_atividade&quot;: &quot;1974-11-04&quot;,
+            &quot;endereco&quot;: null
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cliente" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cliente"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cliente"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cliente" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cliente"></code></pre>
+</span>
+<form id="form-GETapi-v1-cliente" data-method="GET"
+      data-path="api/v1/cliente"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cliente', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cliente"
+                    onclick="tryItOut('GETapi-v1-cliente');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cliente"
+                    onclick="cancelTryOut('GETapi-v1-cliente');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cliente" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cliente</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="cliente-POSTapi-v1-cliente">Cadastrando um novo cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-cliente">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/cliente" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"razao_social\": \"Luiz F. Lima\",
+    \"nome_fantasia\": \"lf system\",
+    \"cnpj\": \"43897291000175\",
+    \"telefone\": \"11999999999\",
+    \"email\": \"lf.system@outlook.com\",
+    \"inicio_atividade\": \"2021-10-29\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "razao_social": "Luiz F. Lima",
+    "nome_fantasia": "lf system",
+    "cnpj": "43897291000175",
+    "telefone": "11999999999",
+    "email": "lf.system@outlook.com",
+    "inicio_atividade": "2021-10-29"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-cliente">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;razao_social&quot;: &quot;Luiz F. Lima&quot;,
+        &quot;nome_fantasia&quot;: &quot;lf system&quot;,
+        &quot;cnpj&quot;: &quot;43897291000175&quot;,
+        &quot;telefone&quot;: &quot;11999999999&quot;,
+        &quot;email&quot;: &quot;lf.system@outlook.com&quot;,
+        &quot;inicio_atividade&quot;: &quot;2021-10-29&quot;,
+        &quot;uuid&quot;: &quot;32a29cbe-6cae-45d8-b8b7-610baca99a3b&quot;,
+        &quot;endereco&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-cliente" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-cliente"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-cliente"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-cliente" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-cliente"></code></pre>
+</span>
+<form id="form-POSTapi-v1-cliente" data-method="POST"
+      data-path="api/v1/cliente"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-cliente', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-cliente"
+                    onclick="tryItOut('POSTapi-v1-cliente');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-cliente"
+                    onclick="cancelTryOut('POSTapi-v1-cliente');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-cliente" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/cliente</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>razao_social</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="razao_social"
+               data-endpoint="POSTapi-v1-cliente"
+               value="Luiz F. Lima"
+               data-component="body" hidden>
+    <br>
+<p>Razão social do cliente.</p>
+        </p>
+                <p>
+            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome_fantasia"
+               data-endpoint="POSTapi-v1-cliente"
+               value="lf system"
+               data-component="body" hidden>
+    <br>
+<p>string Nome fantasia do cliente.</p>
+        </p>
+                <p>
+            <b><code>cnpj</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="cnpj"
+               data-endpoint="POSTapi-v1-cliente"
+               value="43897291000175"
+               data-component="body" hidden>
+    <br>
+<p>string CNPJ do cliente.</p>
+        </p>
+                <p>
+            <b><code>telefone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="telefone"
+               data-endpoint="POSTapi-v1-cliente"
+               value="11999999999"
+               data-component="body" hidden>
+    <br>
+<p>string Telefone do cliente.</p>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-cliente"
+               value="lf.system@outlook.com"
+               data-component="body" hidden>
+    <br>
+<p>string Email do cliente.</p>
+        </p>
+                <p>
+            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="inicio_atividade"
+               data-endpoint="POSTapi-v1-cliente"
+               value="2021-10-29"
+               data-component="body" hidden>
+    <br>
+<p>date Data de inicio de atividade.</p>
+        </p>
+        </form>
+
+                    <h2 id="cliente-GETapi-v1-cliente--uuid-">Retornando um cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cliente--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/cliente/006902ab-ae1c-4315-aa5c-9edd856630ac"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/006902ab-ae1c-4315-aa5c-9edd856630ac"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-cliente--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro encontrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;006902ab-ae1c-4315-aa5c-9edd856630ac&quot;,
+        &quot;razao_social&quot;: &quot;Luella Satterfield&quot;,
+        &quot;nome_fantasia&quot;: &quot;Clarabelle Sipes&quot;,
+        &quot;cnpj&quot;: &quot;Evangeline Barrows&quot;,
+        &quot;email&quot;: &quot;cameron.gleichner@cassin.com&quot;,
+        &quot;telefone&quot;: &quot;+1.323.234.0959&quot;,
+        &quot;inicio_atividade&quot;: &quot;1972-01-22&quot;,
+        &quot;endereco&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cliente--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cliente--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cliente--uuid-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cliente--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cliente--uuid-"></code></pre>
+</span>
+<form id="form-GETapi-v1-cliente--uuid-" data-method="GET"
+      data-path="api/v1/cliente/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cliente--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cliente--uuid-"
+                    onclick="tryItOut('GETapi-v1-cliente--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cliente--uuid-"
+                    onclick="cancelTryOut('GETapi-v1-cliente--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cliente--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-cliente--uuid-"
+               value="006902ab-ae1c-4315-aa5c-9edd856630ac"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    </form>
+
+                    <h2 id="cliente-PUTapi-v1-cliente--uuid-">Atualizando o registro de um cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-cliente--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"razao_social\": \"Luiz F. Lima\",
+    \"nome_fantasia\": \"lf system\",
+    \"cnpj\": \"43897291000175\",
+    \"telefone\": \"11999999999\",
+    \"email\": \"ujeotrbbuoxnejhgjsozzsfwyyiwmgswxowjbkldtyatjooiettfwpelsphkqidyaiukfkjwrqmvhzbionznbkxybjylhyplyfsjlsfmcwbrwjgvoazrluckrondtzffgutnjhvxrrzwnhuugdbihsczxhahwcqvoqhcwnmpapjayqxhznojfpljbvzzphjacarmawantkvwvxmpoammiojdnqvcqtqqqeotxwtxywlzav\",
+    \"inicio_atividade\": \"2021-10-29\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "razao_social": "Luiz F. Lima",
+    "nome_fantasia": "lf system",
+    "cnpj": "43897291000175",
+    "telefone": "11999999999",
+    "email": "ujeotrbbuoxnejhgjsozzsfwyyiwmgswxowjbkldtyatjooiettfwpelsphkqidyaiukfkjwrqmvhzbionznbkxybjylhyplyfsjlsfmcwbrwjgvoazrluckrondtzffgutnjhvxrrzwnhuugdbihsczxhahwcqvoqhcwnmpapjayqxhznojfpljbvzzphjacarmawantkvwvxmpoammiojdnqvcqtqqqeotxwtxywlzav",
+    "inicio_atividade": "2021-10-29"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-cliente--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+&quot;status&quot;: true,
+&quot;message&quot;: &quot;Registro autalizado com sucesso&quot;,
+&quot;data&quot;: {
+  &quot;uuid&quot;: &quot;4816ac45-f3d8-46ce-95b3-bb718689d7af&quot;,
+  &quot;razao_social&quot;: &quot;Luiz F. Lima updated&quot;,
+  &quot;nome_fantasia&quot;: &quot;lf system&quot;,
+  &quot;cnpj&quot;: &quot;43897291000175&quot;,
+  &quot;email&quot;: &quot;ruben80@smitham.com&quot;,
+  &quot;telefone&quot;: &quot;11999999999&quot;,
+  &quot;inicio_atividade&quot;: &quot;2005-10-29&quot;,
+  &quot;endereco&quot;: null
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-cliente--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-cliente--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-cliente--uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-cliente--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-cliente--uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-cliente--uuid-" data-method="PUT"
+      data-path="api/v1/cliente/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-cliente--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-cliente--uuid-"
+                    onclick="tryItOut('PUTapi-v1-cliente--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-cliente--uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-cliente--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-cliente--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>razao_social</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="razao_social"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="Luiz F. Lima"
+               data-component="body" hidden>
+    <br>
+<p>Razão social do cliente.</p>
+        </p>
+                <p>
+            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="nome_fantasia"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="lf system"
+               data-component="body" hidden>
+    <br>
+<p>string Nome fantasia do cliente.</p>
+        </p>
+                <p>
+            <b><code>cnpj</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="cnpj"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="43897291000175"
+               data-component="body" hidden>
+    <br>
+<p>string CNPJ do cliente.</p>
+        </p>
+                <p>
+            <b><code>telefone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="telefone"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="11999999999"
+               data-component="body" hidden>
+    <br>
+<p>string Telefone do cliente.</p>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="ujeotrbbuoxnejhgjsozzsfwyyiwmgswxowjbkldtyatjooiettfwpelsphkqidyaiukfkjwrqmvhzbionznbkxybjylhyplyfsjlsfmcwbrwjgvoazrluckrondtzffgutnjhvxrrzwnhuugdbihsczxhahwcqvoqhcwnmpapjayqxhznojfpljbvzzphjacarmawantkvwvxmpoammiojdnqvcqtqqqeotxwtxywlzav"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="inicio_atividade"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="2021-10-29"
+               data-component="body" hidden>
+    <br>
+<p>date Data de inicio de atividade.</p>
+        </p>
+        </form>
+
+                    <h2 id="cliente-DELETEapi-v1-cliente--uuid-">Removendo um cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-cliente--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-cliente--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-cliente--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-cliente--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-cliente--uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-cliente--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-cliente--uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-cliente--uuid-" data-method="DELETE"
+      data-path="api/v1/cliente/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-cliente--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-cliente--uuid-"
+                    onclick="tryItOut('DELETEapi-v1-cliente--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-cliente--uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-cliente--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-cliente--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-cliente--uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    </form>
+
+                <h1 id="endpoints">Endpoints</h1>
 
     
 
@@ -276,597 +980,6 @@ fetch(url, {
         </p>
                     </form>
 
-                    <h2 id="endpoints-GETapi-v1-cliente">Display a listing of the resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-cliente">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/cliente"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente"
-);
-
-fetch(url, {
-    method: "GET",
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-cliente">
-    </span>
-<span id="execution-results-GETapi-v1-cliente" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-cliente"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-cliente"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-cliente" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-cliente"></code></pre>
-</span>
-<form id="form-GETapi-v1-cliente" data-method="GET"
-      data-path="api/v1/cliente"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='[]'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cliente', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-cliente"
-                    onclick="tryItOut('GETapi-v1-cliente');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-cliente"
-                    onclick="cancelTryOut('GETapi-v1-cliente');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-cliente" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/cliente</code></b>
-        </p>
-                    </form>
-
-                    <h2 id="endpoints-POSTapi-v1-cliente">Store a newly created resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-v1-cliente">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/cliente" \
-    --header "Content-Type: application/json" \
-    --data "{
-    \"razao_social\": \"hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok\",
-    \"nome_fantasia\": \"wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib\",
-    \"cnpj\": \"rpexghwaiizcq\",
-    \"telefone\": \"kgalna\",
-    \"email\": \"dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx\",
-    \"inicio_atividade\": \"2022-09-16T02:16:47\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "razao_social": "hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok",
-    "nome_fantasia": "wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib",
-    "cnpj": "rpexghwaiizcq",
-    "telefone": "kgalna",
-    "email": "dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx",
-    "inicio_atividade": "2022-09-16T02:16:47"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-cliente">
-</span>
-<span id="execution-results-POSTapi-v1-cliente" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-cliente"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-cliente"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-cliente" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-cliente"></code></pre>
-</span>
-<form id="form-POSTapi-v1-cliente" data-method="POST"
-      data-path="api/v1/cliente"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-cliente', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-cliente"
-                    onclick="tryItOut('POSTapi-v1-cliente');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-cliente"
-                    onclick="cancelTryOut('POSTapi-v1-cliente');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-cliente" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/cliente</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>razao_social</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="razao_social"
-               data-endpoint="POSTapi-v1-cliente"
-               value="hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="nome_fantasia"
-               data-endpoint="POSTapi-v1-cliente"
-               value="wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>cnpj</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="cnpj"
-               data-endpoint="POSTapi-v1-cliente"
-               value="rpexghwaiizcq"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 17 characters.</p>
-        </p>
-                <p>
-            <b><code>telefone</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="telefone"
-               data-endpoint="POSTapi-v1-cliente"
-               value="kgalna"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 20 characters.</p>
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="POSTapi-v1-cliente"
-               value="dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="inicio_atividade"
-               data-endpoint="POSTapi-v1-cliente"
-               value="2022-09-16T02:16:47"
-               data-component="body" hidden>
-    <br>
-<p>Must be a valid date.</p>
-        </p>
-        </form>
-
-                    <h2 id="endpoints-GETapi-v1-cliente--uuid-">Display the specified resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-cliente--uuid-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/cliente/5"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/5"
-);
-
-fetch(url, {
-    method: "GET",
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-cliente--uuid-">
-    </span>
-<span id="execution-results-GETapi-v1-cliente--uuid-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-cliente--uuid-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-cliente--uuid-"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-cliente--uuid-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-cliente--uuid-"></code></pre>
-</span>
-<form id="form-GETapi-v1-cliente--uuid-" data-method="GET"
-      data-path="api/v1/cliente/{uuid}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='[]'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cliente--uuid-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-cliente--uuid-"
-                    onclick="tryItOut('GETapi-v1-cliente--uuid-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-cliente--uuid-"
-                    onclick="cancelTryOut('GETapi-v1-cliente--uuid-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-cliente--uuid-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/cliente/{uuid}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>uuid</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number"
-               name="uuid"
-               data-endpoint="GETapi-v1-cliente--uuid-"
-               value="5"
-               data-component="url" hidden>
-    <br>
-
-            </p>
-                    </form>
-
-                    <h2 id="endpoints-PUTapi-v1-cliente--uuid-">Update the specified resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-v1-cliente--uuid-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/cliente/12" \
-    --header "Content-Type: application/json" \
-    --data "{
-    \"razao_social\": \"omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr\",
-    \"nome_fantasia\": \"psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb\",
-    \"cnpj\": \"ol\",
-    \"telefone\": \"rbrglevwciqmiahocst\",
-    \"email\": \"ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk\",
-    \"inicio_atividade\": \"2022-09-16T02:16:47\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/12"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "razao_social": "omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr",
-    "nome_fantasia": "psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb",
-    "cnpj": "ol",
-    "telefone": "rbrglevwciqmiahocst",
-    "email": "ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk",
-    "inicio_atividade": "2022-09-16T02:16:47"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-v1-cliente--uuid-">
-</span>
-<span id="execution-results-PUTapi-v1-cliente--uuid-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-v1-cliente--uuid-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-cliente--uuid-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-v1-cliente--uuid-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-cliente--uuid-"></code></pre>
-</span>
-<form id="form-PUTapi-v1-cliente--uuid-" data-method="PUT"
-      data-path="api/v1/cliente/{uuid}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-cliente--uuid-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-v1-cliente--uuid-"
-                    onclick="tryItOut('PUTapi-v1-cliente--uuid-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-v1-cliente--uuid-"
-                    onclick="cancelTryOut('PUTapi-v1-cliente--uuid-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-v1-cliente--uuid-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/v1/cliente/{uuid}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/v1/cliente/{uuid}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>uuid</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number"
-               name="uuid"
-               data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="12"
-               data-component="url" hidden>
-    <br>
-
-            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>razao_social</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text"
-               name="razao_social"
-               data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text"
-               name="nome_fantasia"
-               data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>cnpj</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text"
-               name="cnpj"
-               data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="ol"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 17 characters.</p>
-        </p>
-                <p>
-            <b><code>telefone</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text"
-               name="telefone"
-               data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="rbrglevwciqmiahocst"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 20 characters.</p>
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 255 characters.</p>
-        </p>
-                <p>
-            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text"
-               name="inicio_atividade"
-               data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="2022-09-16T02:16:47"
-               data-component="body" hidden>
-    <br>
-<p>Must be a valid date.</p>
-        </p>
-        </form>
-
-                    <h2 id="endpoints-DELETEapi-v1-cliente--uuid-">Remove the specified resource from storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-v1-cliente--uuid-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/cliente/10"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/10"
-);
-
-fetch(url, {
-    method: "DELETE",
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-v1-cliente--uuid-">
-</span>
-<span id="execution-results-DELETEapi-v1-cliente--uuid-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-v1-cliente--uuid-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-v1-cliente--uuid-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-v1-cliente--uuid-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-v1-cliente--uuid-"></code></pre>
-</span>
-<form id="form-DELETEapi-v1-cliente--uuid-" data-method="DELETE"
-      data-path="api/v1/cliente/{uuid}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='[]'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-cliente--uuid-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-v1-cliente--uuid-"
-                    onclick="tryItOut('DELETEapi-v1-cliente--uuid-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-v1-cliente--uuid-"
-                    onclick="cancelTryOut('DELETEapi-v1-cliente--uuid-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-v1-cliente--uuid-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/v1/cliente/{uuid}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>uuid</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number"
-               name="uuid"
-               data-endpoint="DELETEapi-v1-cliente--uuid-"
-               value="10"
-               data-component="url" hidden>
-    <br>
-
-            </p>
-                    </form>
-
                     <h2 id="endpoints-GETapi-v1-cliente--uuid--predio">Display a listing of the resource.</h2>
 
 <p>
@@ -880,12 +993,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/cliente/2/predio"</code></pre></div>
+    --get "http://localhost:9000/api/v1/cliente/20/predio"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/2/predio"
+    "http://localhost:9000/api/v1/cliente/20/predio"
 );
 
 fetch(url, {
@@ -943,7 +1056,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-cliente--uuid--predio"
-               value="2"
+               value="20"
                data-component="url" hidden>
     <br>
 
@@ -963,18 +1076,18 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/cliente/10/predio" \
+    "http://localhost:9000/api/v1/cliente/9/predio" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn\",
-    \"descricao\": \"obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl\"
+    \"nome\": \"xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku\",
+    \"descricao\": \"hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/10/predio"
+    "http://localhost:9000/api/v1/cliente/9/predio"
 );
 
 const headers = {
@@ -983,8 +1096,8 @@ const headers = {
 };
 
 let body = {
-    "nome": "qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn",
-    "descricao": "obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl"
+    "nome": "xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku",
+    "descricao": "hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl"
 };
 
 fetch(url, {
@@ -1044,7 +1157,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-cliente--uuid--predio"
-               value="10"
+               value="9"
                data-component="url" hidden>
     <br>
 
@@ -1057,7 +1170,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-cliente--uuid--predio"
-               value="qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn"
+               value="xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1069,7 +1182,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-cliente--uuid--predio"
-               value="obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl"
+               value="hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1089,20 +1202,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/cliente/16/endereco" \
+    "http://localhost:9000/api/v1/cliente/9/endereco" \
     --header "Content-Type: application/json" \
     --data "{
-    \"cep\": \"dolores\",
-    \"numero\": \"zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot\",
-    \"complemento\": \"vsegxegvwljeh\",
-    \"tipo\": \"predio\"
+    \"cep\": \"aut\",
+    \"numero\": \"eqlrjhsaivgsegdaitoup\",
+    \"complemento\": \"zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf\",
+    \"tipo\": \"cliente\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/16/endereco"
+    "http://localhost:9000/api/v1/cliente/9/endereco"
 );
 
 const headers = {
@@ -1111,10 +1224,10 @@ const headers = {
 };
 
 let body = {
-    "cep": "dolores",
-    "numero": "zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot",
-    "complemento": "vsegxegvwljeh",
-    "tipo": "predio"
+    "cep": "aut",
+    "numero": "eqlrjhsaivgsegdaitoup",
+    "complemento": "zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf",
+    "tipo": "cliente"
 };
 
 fetch(url, {
@@ -1174,7 +1287,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="16"
+               value="9"
                data-component="url" hidden>
     <br>
 
@@ -1187,7 +1300,7 @@ fetch(url, {
                 <input type="text"
                name="cep"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="dolores"
+               value="aut"
                data-component="body" hidden>
     <br>
 
@@ -1199,7 +1312,7 @@ fetch(url, {
                 <input type="text"
                name="numero"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot"
+               value="eqlrjhsaivgsegdaitoup"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1211,7 +1324,7 @@ fetch(url, {
                 <input type="text"
                name="complemento"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="vsegxegvwljeh"
+               value="zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1223,7 +1336,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="predio"
+               value="cliente"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>cliente</code> or <code>predio</code>.</p>
@@ -1243,12 +1356,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/cliente/20/endereco/7" \
+    "http://localhost:9000/api/v1/cliente/10/endereco/1" \
     --header "Content-Type: application/json" \
     --data "{
-    \"cep\": \"reprehenderit\",
-    \"numero\": \"abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd\",
-    \"complemento\": \"tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq\",
+    \"cep\": \"quia\",
+    \"numero\": \"pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf\",
+    \"complemento\": \"bokanifoxrsslsth\",
     \"tipo\": \"cliente\"
 }"
 </code></pre></div>
@@ -1256,7 +1369,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/20/endereco/7"
+    "http://localhost:9000/api/v1/cliente/10/endereco/1"
 );
 
 const headers = {
@@ -1265,9 +1378,9 @@ const headers = {
 };
 
 let body = {
-    "cep": "reprehenderit",
-    "numero": "abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd",
-    "complemento": "tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq",
+    "cep": "quia",
+    "numero": "pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf",
+    "complemento": "bokanifoxrsslsth",
     "tipo": "cliente"
 };
 
@@ -1332,7 +1445,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
-               value="20"
+               value="10"
                data-component="url" hidden>
     <br>
 
@@ -1344,7 +1457,7 @@ fetch(url, {
                 <input type="number"
                name="endereco_uuid"
                data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
-               value="7"
+               value="1"
                data-component="url" hidden>
     <br>
 
@@ -1357,7 +1470,7 @@ fetch(url, {
                 <input type="text"
                name="cep"
                data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
-               value="reprehenderit"
+               value="quia"
                data-component="body" hidden>
     <br>
 
@@ -1369,7 +1482,7 @@ fetch(url, {
                 <input type="text"
                name="numero"
                data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
-               value="abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd"
+               value="pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1381,7 +1494,7 @@ fetch(url, {
                 <input type="text"
                name="complemento"
                data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
-               value="tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq"
+               value="bokanifoxrsslsth"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1413,12 +1526,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/cliente/11/endereco/20"</code></pre></div>
+    "http://localhost:9000/api/v1/cliente/12/endereco/17"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/11/endereco/20"
+    "http://localhost:9000/api/v1/cliente/12/endereco/17"
 );
 
 fetch(url, {
@@ -1476,7 +1589,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"
-               value="11"
+               value="12"
                data-component="url" hidden>
     <br>
 
@@ -1488,7 +1601,7 @@ fetch(url, {
                 <input type="number"
                name="endereco_uuid"
                data-endpoint="DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"
-               value="20"
+               value="17"
                data-component="url" hidden>
     <br>
 
@@ -1508,12 +1621,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/17"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/16"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/17"
+    "http://localhost:9000/api/v1/predio/16"
 );
 
 fetch(url, {
@@ -1571,7 +1684,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid-"
-               value="17"
+               value="16"
                data-component="url" hidden>
     <br>
 
@@ -1594,8 +1707,8 @@ fetch(url, {
     "http://localhost:9000/api/v1/predio/3" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof\",
-    \"descricao\": \"nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh\"
+    \"nome\": \"fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl\",
+    \"descricao\": \"nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu\"
 }"
 </code></pre></div>
 
@@ -1611,8 +1724,8 @@ const headers = {
 };
 
 let body = {
-    "nome": "rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof",
-    "descricao": "nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh"
+    "nome": "fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl",
+    "descricao": "nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu"
 };
 
 fetch(url, {
@@ -1689,7 +1802,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-predio--uuid-"
-               value="rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof"
+               value="fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1701,7 +1814,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-predio--uuid-"
-               value="nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh"
+               value="nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1721,12 +1834,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/predio/11"</code></pre></div>
+    "http://localhost:9000/api/v1/predio/20"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/11"
+    "http://localhost:9000/api/v1/predio/20"
 );
 
 fetch(url, {
@@ -1784,7 +1897,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-predio--uuid-"
-               value="11"
+               value="20"
                data-component="url" hidden>
     <br>
 
@@ -1804,12 +1917,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/predio/14/endereco" \
+    "http://localhost:9000/api/v1/predio/9/endereco" \
     --header "Content-Type: application/json" \
     --data "{
-    \"cep\": \"excepturi\",
-    \"numero\": \"iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb\",
-    \"complemento\": \"mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc\",
+    \"cep\": \"consequatur\",
+    \"numero\": \"sebqyde\",
+    \"complemento\": \"ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda\",
     \"tipo\": \"predio\"
 }"
 </code></pre></div>
@@ -1817,7 +1930,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/14/endereco"
+    "http://localhost:9000/api/v1/predio/9/endereco"
 );
 
 const headers = {
@@ -1826,9 +1939,9 @@ const headers = {
 };
 
 let body = {
-    "cep": "excepturi",
-    "numero": "iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb",
-    "complemento": "mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc",
+    "cep": "consequatur",
+    "numero": "sebqyde",
+    "complemento": "ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda",
     "tipo": "predio"
 };
 
@@ -1889,7 +2002,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="14"
+               value="9"
                data-component="url" hidden>
     <br>
 
@@ -1902,7 +2015,7 @@ fetch(url, {
                 <input type="text"
                name="cep"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="excepturi"
+               value="consequatur"
                data-component="body" hidden>
     <br>
 
@@ -1914,7 +2027,7 @@ fetch(url, {
                 <input type="text"
                name="numero"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb"
+               value="sebqyde"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1926,7 +2039,7 @@ fetch(url, {
                 <input type="text"
                name="complemento"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc"
+               value="ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1958,20 +2071,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/predio/1/endereco/20" \
+    "http://localhost:9000/api/v1/predio/16/endereco/6" \
     --header "Content-Type: application/json" \
     --data "{
-    \"cep\": \"expedita\",
-    \"numero\": \"tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek\",
-    \"complemento\": \"dxazewnjpurhc\",
-    \"tipo\": \"cliente\"
+    \"cep\": \"natus\",
+    \"numero\": \"lasuvibfpinstfunuevnehnfaldamy\",
+    \"complemento\": \"cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr\",
+    \"tipo\": \"predio\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/1/endereco/20"
+    "http://localhost:9000/api/v1/predio/16/endereco/6"
 );
 
 const headers = {
@@ -1980,10 +2093,10 @@ const headers = {
 };
 
 let body = {
-    "cep": "expedita",
-    "numero": "tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek",
-    "complemento": "dxazewnjpurhc",
-    "tipo": "cliente"
+    "cep": "natus",
+    "numero": "lasuvibfpinstfunuevnehnfaldamy",
+    "complemento": "cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr",
+    "tipo": "predio"
 };
 
 fetch(url, {
@@ -2047,7 +2160,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="1"
+               value="16"
                data-component="url" hidden>
     <br>
 
@@ -2059,7 +2172,7 @@ fetch(url, {
                 <input type="number"
                name="endereco_uuid"
                data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="20"
+               value="6"
                data-component="url" hidden>
     <br>
 
@@ -2072,7 +2185,7 @@ fetch(url, {
                 <input type="text"
                name="cep"
                data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="expedita"
+               value="natus"
                data-component="body" hidden>
     <br>
 
@@ -2084,7 +2197,7 @@ fetch(url, {
                 <input type="text"
                name="numero"
                data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek"
+               value="lasuvibfpinstfunuevnehnfaldamy"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2096,7 +2209,7 @@ fetch(url, {
                 <input type="text"
                name="complemento"
                data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="dxazewnjpurhc"
+               value="cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2108,7 +2221,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="cliente"
+               value="predio"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>cliente</code> or <code>predio</code>.</p>
@@ -2128,12 +2241,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/predio/4/endereco/11"</code></pre></div>
+    "http://localhost:9000/api/v1/predio/12/endereco/13"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/4/endereco/11"
+    "http://localhost:9000/api/v1/predio/12/endereco/13"
 );
 
 fetch(url, {
@@ -2191,7 +2304,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="4"
+               value="12"
                data-component="url" hidden>
     <br>
 
@@ -2203,7 +2316,7 @@ fetch(url, {
                 <input type="number"
                name="endereco_uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"
-               value="11"
+               value="13"
                data-component="url" hidden>
     <br>
 
@@ -2223,12 +2336,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/2/foto"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/12/foto"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/2/foto"
+    "http://localhost:9000/api/v1/predio/12/foto"
 );
 
 fetch(url, {
@@ -2286,7 +2399,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid--foto"
-               value="2"
+               value="12"
                data-component="url" hidden>
     <br>
 
@@ -2306,17 +2419,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/predio/14/foto" \
+    "http://localhost:9000/api/v1/predio/20/foto" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss" \
-    --form "descricao=snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay" \
-    --form "tipo=owbiihknxamrixfkoqte" \
-    --form "foto=@/tmp/php2BlRFi" </code></pre></div>
+    --form "nome=kky" \
+    --form "descricao=xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia" \
+    --form "tipo=fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd" \
+    --form "foto=@/tmp/phpXw5fSb" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/14/foto"
+    "http://localhost:9000/api/v1/predio/20/foto"
 );
 
 const headers = {
@@ -2325,9 +2438,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss');
-body.append('descricao', 'snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay');
-body.append('tipo', 'owbiihknxamrixfkoqte');
+body.append('nome', 'kky');
+body.append('descricao', 'xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia');
+body.append('tipo', 'fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -2387,7 +2500,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="14"
+               value="20"
                data-component="url" hidden>
     <br>
 
@@ -2400,7 +2513,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss"
+               value="kky"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2412,7 +2525,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay"
+               value="xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2436,7 +2549,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="owbiihknxamrixfkoqte"
+               value="fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -2456,17 +2569,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/predio/18/foto/14" \
+    "http://localhost:9000/api/v1/predio/2/foto/18" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp" \
-    --form "descricao=pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk" \
-    --form "tipo=bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty" \
-    --form "foto=@/tmp/phpQreuPW" </code></pre></div>
+    --form "nome=ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn" \
+    --form "descricao=muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc" \
+    --form "tipo=lgaenatwbbefqt" \
+    --form "foto=@/tmp/phpv7rPOu" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/18/foto/14"
+    "http://localhost:9000/api/v1/predio/2/foto/18"
 );
 
 const headers = {
@@ -2475,9 +2588,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp');
-body.append('descricao', 'pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk');
-body.append('tipo', 'bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty');
+body.append('nome', 'ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn');
+body.append('descricao', 'muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc');
+body.append('tipo', 'lgaenatwbbefqt');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -2541,7 +2654,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="18"
+               value="2"
                data-component="url" hidden>
     <br>
 
@@ -2553,7 +2666,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="14"
+               value="18"
                data-component="url" hidden>
     <br>
 
@@ -2566,7 +2679,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp"
+               value="ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2578,7 +2691,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk"
+               value="muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2602,7 +2715,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty"
+               value="lgaenatwbbefqt"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -2622,12 +2735,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/predio/14/foto/19"</code></pre></div>
+    "http://localhost:9000/api/v1/predio/16/foto/5"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/14/foto/19"
+    "http://localhost:9000/api/v1/predio/16/foto/5"
 );
 
 fetch(url, {
@@ -2685,7 +2798,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--foto--foto_uuid-"
-               value="14"
+               value="16"
                data-component="url" hidden>
     <br>
 
@@ -2697,7 +2810,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--foto--foto_uuid-"
-               value="19"
+               value="5"
                data-component="url" hidden>
     <br>
 
@@ -2717,12 +2830,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/sala/2/foto"</code></pre></div>
+    --get "http://localhost:9000/api/v1/sala/4/foto"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/2/foto"
+    "http://localhost:9000/api/v1/sala/4/foto"
 );
 
 fetch(url, {
@@ -2780,7 +2893,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-sala--uuid--foto"
-               value="2"
+               value="4"
                data-component="url" hidden>
     <br>
 
@@ -2800,17 +2913,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/sala/15/foto" \
+    "http://localhost:9000/api/v1/sala/4/foto" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=teqipyogjlmq" \
-    --form "descricao=rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt" \
-    --form "tipo=etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb" \
-    --form "foto=@/tmp/phpWVEwYW" </code></pre></div>
+    --form "nome=xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb" \
+    --form "descricao=vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv" \
+    --form "tipo=milprenzbqmxwajuz" \
+    --form "foto=@/tmp/phpaaPGsx" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/15/foto"
+    "http://localhost:9000/api/v1/sala/4/foto"
 );
 
 const headers = {
@@ -2819,9 +2932,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'teqipyogjlmq');
-body.append('descricao', 'rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt');
-body.append('tipo', 'etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb');
+body.append('nome', 'xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb');
+body.append('descricao', 'vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv');
+body.append('tipo', 'milprenzbqmxwajuz');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -2881,7 +2994,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="15"
+               value="4"
                data-component="url" hidden>
     <br>
 
@@ -2894,7 +3007,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="teqipyogjlmq"
+               value="xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2906,7 +3019,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt"
+               value="vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2930,7 +3043,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb"
+               value="milprenzbqmxwajuz"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -2950,17 +3063,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/sala/9/foto/10" \
+    "http://localhost:9000/api/v1/sala/8/foto/15" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=bxmiledczcwxciylqwtaqtgjmjpkjsgel" \
-    --form "descricao=ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd" \
-    --form "tipo=qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw" \
-    --form "foto=@/tmp/php9tKgEY" </code></pre></div>
+    --form "nome=nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx" \
+    --form "descricao=eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji" \
+    --form "tipo=akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq" \
+    --form "foto=@/tmp/phpKfgGPS" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/9/foto/10"
+    "http://localhost:9000/api/v1/sala/8/foto/15"
 );
 
 const headers = {
@@ -2969,9 +3082,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'bxmiledczcwxciylqwtaqtgjmjpkjsgel');
-body.append('descricao', 'ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd');
-body.append('tipo', 'qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw');
+body.append('nome', 'nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx');
+body.append('descricao', 'eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji');
+body.append('tipo', 'akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -3035,7 +3148,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="9"
+               value="8"
                data-component="url" hidden>
     <br>
 
@@ -3047,7 +3160,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="10"
+               value="15"
                data-component="url" hidden>
     <br>
 
@@ -3060,7 +3173,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="bxmiledczcwxciylqwtaqtgjmjpkjsgel"
+               value="nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3072,7 +3185,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd"
+               value="eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3096,7 +3209,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw"
+               value="akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -3116,12 +3229,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/sala/20/foto/19"</code></pre></div>
+    "http://localhost:9000/api/v1/sala/15/foto/5"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/20/foto/19"
+    "http://localhost:9000/api/v1/sala/15/foto/5"
 );
 
 fetch(url, {
@@ -3179,7 +3292,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-sala--uuid--foto--foto_uuid-"
-               value="20"
+               value="15"
                data-component="url" hidden>
     <br>
 
@@ -3191,7 +3304,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="DELETEapi-v1-sala--uuid--foto--foto_uuid-"
-               value="19"
+               value="5"
                data-component="url" hidden>
     <br>
 
@@ -3211,12 +3324,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/7/sala"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/18/sala"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/7/sala"
+    "http://localhost:9000/api/v1/predio/18/sala"
 );
 
 fetch(url, {
@@ -3274,7 +3387,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid--sala"
-               value="7"
+               value="18"
                data-component="url" hidden>
     <br>
 
@@ -3294,20 +3407,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/predio/16/sala" \
+    "http://localhost:9000/api/v1/predio/2/sala" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"ab\",
-    \"numero\": 3,
-    \"descricao\": \"aliquid\",
-    \"tipagem_uuid\": \"ut\"
+    \"nome\": \"laborum\",
+    \"numero\": 7,
+    \"descricao\": \"quaerat\",
+    \"tipagem_uuid\": \"dolores\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/16/sala"
+    "http://localhost:9000/api/v1/predio/2/sala"
 );
 
 const headers = {
@@ -3316,10 +3429,10 @@ const headers = {
 };
 
 let body = {
-    "nome": "ab",
-    "numero": 3,
-    "descricao": "aliquid",
-    "tipagem_uuid": "ut"
+    "nome": "laborum",
+    "numero": 7,
+    "descricao": "quaerat",
+    "tipagem_uuid": "dolores"
 };
 
 fetch(url, {
@@ -3379,7 +3492,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="16"
+               value="2"
                data-component="url" hidden>
     <br>
 
@@ -3392,7 +3505,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="ab"
+               value="laborum"
                data-component="body" hidden>
     <br>
 
@@ -3404,7 +3517,7 @@ fetch(url, {
                 <input type="number"
                name="numero"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="3"
+               value="7"
                data-component="body" hidden>
     <br>
 
@@ -3416,7 +3529,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="aliquid"
+               value="quaerat"
                data-component="body" hidden>
     <br>
 
@@ -3428,7 +3541,7 @@ fetch(url, {
                 <input type="text"
                name="tipagem_uuid"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="ut"
+               value="dolores"
                data-component="body" hidden>
     <br>
 
@@ -3448,12 +3561,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/20/sala/20"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/11/sala/11"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/20/sala/20"
+    "http://localhost:9000/api/v1/predio/11/sala/11"
 );
 
 fetch(url, {
@@ -3511,7 +3624,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid--sala--sala_uuid-"
-               value="20"
+               value="11"
                data-component="url" hidden>
     <br>
 
@@ -3523,7 +3636,7 @@ fetch(url, {
                 <input type="number"
                name="sala_uuid"
                data-endpoint="GETapi-v1-predio--uuid--sala--sala_uuid-"
-               value="20"
+               value="11"
                data-component="url" hidden>
     <br>
 
@@ -3543,19 +3656,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/predio/10/sala/15" \
+    "http://localhost:9000/api/v1/predio/7/sala/1" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"dicta\",
-    \"numero\": 8,
-    \"descricao\": \"commodi\"
+    \"nome\": \"exercitationem\",
+    \"numero\": 14,
+    \"descricao\": \"sed\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/10/sala/15"
+    "http://localhost:9000/api/v1/predio/7/sala/1"
 );
 
 const headers = {
@@ -3564,9 +3677,9 @@ const headers = {
 };
 
 let body = {
-    "nome": "dicta",
-    "numero": 8,
-    "descricao": "commodi"
+    "nome": "exercitationem",
+    "numero": 14,
+    "descricao": "sed"
 };
 
 fetch(url, {
@@ -3630,7 +3743,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="10"
+               value="7"
                data-component="url" hidden>
     <br>
 
@@ -3642,7 +3755,7 @@ fetch(url, {
                 <input type="number"
                name="sala_uuid"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="15"
+               value="1"
                data-component="url" hidden>
     <br>
 
@@ -3655,7 +3768,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="dicta"
+               value="exercitationem"
                data-component="body" hidden>
     <br>
 
@@ -3667,7 +3780,7 @@ fetch(url, {
                 <input type="number"
                name="numero"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="8"
+               value="14"
                data-component="body" hidden>
     <br>
 
@@ -3679,7 +3792,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="commodi"
+               value="sed"
                data-component="body" hidden>
     <br>
 
@@ -3699,12 +3812,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/predio/5/sala/18"</code></pre></div>
+    "http://localhost:9000/api/v1/predio/20/sala/16"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/5/sala/18"
+    "http://localhost:9000/api/v1/predio/20/sala/16"
 );
 
 fetch(url, {
@@ -3762,7 +3875,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--sala--sala_uuid-"
-               value="5"
+               value="20"
                data-component="url" hidden>
     <br>
 
@@ -3774,7 +3887,7 @@ fetch(url, {
                 <input type="number"
                name="sala_uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--sala--sala_uuid-"
-               value="18"
+               value="16"
                data-component="url" hidden>
     <br>
 
@@ -3867,9 +3980,9 @@ fetch(url, {
     "http://localhost:9000/api/v1/tipagem" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb\",
-    \"preco\": 5.7738179,
-    \"descricao\": \"zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba\"
+    \"nome\": \"kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar\",
+    \"preco\": 29343137.72,
+    \"descricao\": \"oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse\"
 }"
 </code></pre></div>
 
@@ -3885,9 +3998,9 @@ const headers = {
 };
 
 let body = {
-    "nome": "llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb",
-    "preco": 5.7738179,
-    "descricao": "zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba"
+    "nome": "kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar",
+    "preco": 29343137.72,
+    "descricao": "oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse"
 };
 
 fetch(url, {
@@ -3947,7 +4060,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-tipagem"
-               value="llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb"
+               value="kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3959,7 +4072,7 @@ fetch(url, {
                 <input type="number"
                name="preco"
                data-endpoint="POSTapi-v1-tipagem"
-               value="5.7738179"
+               value="29343137.72"
                data-component="body" hidden>
     <br>
 
@@ -3971,7 +4084,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-tipagem"
-               value="zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba"
+               value="oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3991,19 +4104,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/tipagem/5" \
+    "http://localhost:9000/api/v1/tipagem/14" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk\",
-    \"preco\": 2179233.58664104,
-    \"descricao\": \"wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx\"
+    \"nome\": \"yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto\",
+    \"preco\": 343285.13776,
+    \"descricao\": \"ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/tipagem/5"
+    "http://localhost:9000/api/v1/tipagem/14"
 );
 
 const headers = {
@@ -4012,9 +4125,9 @@ const headers = {
 };
 
 let body = {
-    "nome": "crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk",
-    "preco": 2179233.58664104,
-    "descricao": "wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx"
+    "nome": "yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto",
+    "preco": 343285.13776,
+    "descricao": "ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee"
 };
 
 fetch(url, {
@@ -4078,7 +4191,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="5"
+               value="14"
                data-component="url" hidden>
     <br>
 
@@ -4091,7 +4204,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk"
+               value="yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4103,7 +4216,7 @@ fetch(url, {
                 <input type="number"
                name="preco"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="2179233.586641"
+               value="343285.13776"
                data-component="body" hidden>
     <br>
 
@@ -4115,7 +4228,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx"
+               value="ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4135,12 +4248,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/tipagem/15"</code></pre></div>
+    "http://localhost:9000/api/v1/tipagem/13"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/tipagem/15"
+    "http://localhost:9000/api/v1/tipagem/13"
 );
 
 fetch(url, {
@@ -4198,7 +4311,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-tipagem--uuid-"
-               value="15"
+               value="13"
                data-component="url" hidden>
     <br>
 

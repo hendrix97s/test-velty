@@ -10,11 +10,210 @@
     ],
     "info": {
         "name": "Velty",
-        "_postman_id": "9e4a1cd5-2c1f-4d99-a934-84c659d037a0",
+        "_postman_id": "77da265e-1bff-43e5-97a3-1f8699f65b53",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Cliente",
+            "description": "",
+            "item": [
+                {
+                    "name": "Listagem de clientes.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": true,\n  \"message\": \"Listagem retornada com sucesso\",\n  \"data\": [\n    {\n      \"uuid\": \"e26e6e0c-b259-42ea-8699-711f0ef2728b\",\n      \"razao_social\": \"Margie Jenkins Sr.\",\n      \"nome_fantasia\": \"Earline Hyatt\",\n      \"cnpj\": \"Johnathan Ledner Sr.\",\n      \"email\": \"okon.doris@schmidt.org\",\n      \"telefone\": \"+1 (520) 262-6602\",\n      \"inicio_atividade\": \"1985-03-27\",\n      \"endereco\": null\n    },\n    {\n      \"uuid\": \"26a70a69-1e91-4b32-8c91-5d2ceca26141\",\n      \"razao_social\": \"Alta Nicolas III\",\n      \"nome_fantasia\": \"Tiffany Kohler\",\n      \"cnpj\": \"Carlos Bosco DVM\",\n      \"email\": \"nhowe@emmerich.com\",\n      \"telefone\": \"1-484-677-1592\",\n      \"inicio_atividade\": \"1974-11-04\",\n      \"endereco\": null\n    }\n  ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Cadastrando um novo cliente.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"lf.system@outlook.com\",\"inicio_atividade\":\"2021-10-29\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro cadastrado com sucesso\",\n \"data\": {\n   \"razao_social\": \"Luiz F. Lima\",\n   \"nome_fantasia\": \"lf system\",\n   \"cnpj\": \"43897291000175\",\n   \"telefone\": \"11999999999\",\n   \"email\": \"lf.system@outlook.com\",\n   \"inicio_atividade\": \"2021-10-29\",\n   \"uuid\": \"32a29cbe-6cae-45d8-b8b7-610baca99a3b\",\n   \"endereco\": null\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Retornando um cliente.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente\/:uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "006902ab-ae1c-4315-aa5c-9edd856630ac",
+                                    "description": "O Uuid de um cliente."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro encontrado com sucesso\",\n \"data\": {\n   \"uuid\": \"006902ab-ae1c-4315-aa5c-9edd856630ac\",\n   \"razao_social\": \"Luella Satterfield\",\n   \"nome_fantasia\": \"Clarabelle Sipes\",\n   \"cnpj\": \"Evangeline Barrows\",\n   \"email\": \"cameron.gleichner@cassin.com\",\n   \"telefone\": \"+1.323.234.0959\",\n   \"inicio_atividade\": \"1972-01-22\",\n   \"endereco\": null\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Atualizando o registro de um cliente.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente\/:uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "4816ac45-f3d8-46ce-95b3-bb718689d7af",
+                                    "description": "O Uuid de um cliente."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"razao_social\":\"Luiz F. Lima\",\"nome_fantasia\":\"lf system\",\"cnpj\":\"43897291000175\",\"telefone\":\"11999999999\",\"email\":\"ujeotrbbuoxnejhgjsozzsfwyyiwmgswxowjbkldtyatjooiettfwpelsphkqidyaiukfkjwrqmvhzbionznbkxybjylhyplyfsjlsfmcwbrwjgvoazrluckrondtzffgutnjhvxrrzwnhuugdbihsczxhahwcqvoqhcwnmpapjayqxhznojfpljbvzzphjacarmawantkvwvxmpoammiojdnqvcqtqqqeotxwtxywlzav\",\"inicio_atividade\":\"2021-10-29\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"message\": \"Registro autalizado com sucesso\",\n\"data\": {\n  \"uuid\": \"4816ac45-f3d8-46ce-95b3-bb718689d7af\",\n  \"razao_social\": \"Luiz F. Lima updated\",\n  \"nome_fantasia\": \"lf system\",\n  \"cnpj\": \"43897291000175\",\n  \"email\": \"ruben80@smitham.com\",\n  \"telefone\": \"11999999999\",\n  \"inicio_atividade\": \"2005-10-29\",\n  \"endereco\": null\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Removendo um cliente.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/cliente\/:uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "4816ac45-f3d8-46ce-95b3-bb718689d7af",
+                                    "description": "O Uuid de um cliente."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": true,\n \"message\": \"Registro removido com sucesso\",\n \"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "Endpoints",
             "description": "",
@@ -48,164 +247,6 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"razao_social\":\"hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok\",\"nome_fantasia\":\"wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib\",\"cnpj\":\"rpexghwaiizcq\",\"telefone\":\"kgalna\",\"email\":\"dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx\",\"inicio_atividade\":\"2022-09-16T02:16:47\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "5",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "12",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"razao_social\":\"omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr\",\"nome_fantasia\":\"psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb\",\"cnpj\":\"ol\",\"telefone\":\"rbrglevwciqmiahocst\",\"email\":\"ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk\",\"inicio_atividade\":\"2022-09-16T02:16:47\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/cliente\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "10",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
                             "path": "api\/v1\/cliente\/:uuid\/predio",
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/v1\/cliente\/:uuid\/predio",
@@ -213,7 +254,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "2",
+                                    "value": "20",
                                     "description": ""
                                 }
                             ]
@@ -245,7 +286,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "10",
+                                    "value": "9",
                                     "description": ""
                                 }
                             ]
@@ -263,7 +304,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn\",\"descricao\":\"obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl\"}"
+                            "raw": "{\"nome\":\"xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku\",\"descricao\":\"hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl\"}"
                         },
                         "description": "",
                         "auth": {
@@ -284,7 +325,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "16",
+                                    "value": "9",
                                     "description": ""
                                 }
                             ]
@@ -302,7 +343,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"cep\":\"dolores\",\"numero\":\"zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot\",\"complemento\":\"vsegxegvwljeh\",\"tipo\":\"predio\"}"
+                            "raw": "{\"cep\":\"aut\",\"numero\":\"eqlrjhsaivgsegdaitoup\",\"complemento\":\"zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf\",\"tipo\":\"cliente\"}"
                         },
                         "description": "",
                         "auth": {
@@ -323,13 +364,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "20",
+                                    "value": "10",
                                     "description": ""
                                 },
                                 {
                                     "id": "endereco_uuid",
                                     "key": "endereco_uuid",
-                                    "value": "7",
+                                    "value": "1",
                                     "description": ""
                                 }
                             ]
@@ -347,7 +388,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"cep\":\"reprehenderit\",\"numero\":\"abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd\",\"complemento\":\"tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq\",\"tipo\":\"cliente\"}"
+                            "raw": "{\"cep\":\"quia\",\"numero\":\"pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf\",\"complemento\":\"bokanifoxrsslsth\",\"tipo\":\"cliente\"}"
                         },
                         "description": "",
                         "auth": {
@@ -368,13 +409,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "11",
+                                    "value": "12",
                                     "description": ""
                                 },
                                 {
                                     "id": "endereco_uuid",
                                     "key": "endereco_uuid",
-                                    "value": "20",
+                                    "value": "17",
                                     "description": ""
                                 }
                             ]
@@ -406,7 +447,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "17",
+                                    "value": "16",
                                     "description": ""
                                 }
                             ]
@@ -456,7 +497,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof\",\"descricao\":\"nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh\"}"
+                            "raw": "{\"nome\":\"fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl\",\"descricao\":\"nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu\"}"
                         },
                         "description": "",
                         "auth": {
@@ -477,7 +518,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "11",
+                                    "value": "20",
                                     "description": ""
                                 }
                             ]
@@ -509,7 +550,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "14",
+                                    "value": "9",
                                     "description": ""
                                 }
                             ]
@@ -527,7 +568,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"cep\":\"excepturi\",\"numero\":\"iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb\",\"complemento\":\"mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc\",\"tipo\":\"predio\"}"
+                            "raw": "{\"cep\":\"consequatur\",\"numero\":\"sebqyde\",\"complemento\":\"ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda\",\"tipo\":\"predio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -548,13 +589,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "1",
+                                    "value": "16",
                                     "description": ""
                                 },
                                 {
                                     "id": "endereco_uuid",
                                     "key": "endereco_uuid",
-                                    "value": "20",
+                                    "value": "6",
                                     "description": ""
                                 }
                             ]
@@ -572,7 +613,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"cep\":\"expedita\",\"numero\":\"tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek\",\"complemento\":\"dxazewnjpurhc\",\"tipo\":\"cliente\"}"
+                            "raw": "{\"cep\":\"natus\",\"numero\":\"lasuvibfpinstfunuevnehnfaldamy\",\"complemento\":\"cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr\",\"tipo\":\"predio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -593,13 +634,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "4",
+                                    "value": "12",
                                     "description": ""
                                 },
                                 {
                                     "id": "endereco_uuid",
                                     "key": "endereco_uuid",
-                                    "value": "11",
+                                    "value": "13",
                                     "description": ""
                                 }
                             ]
@@ -631,7 +672,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "2",
+                                    "value": "12",
                                     "description": ""
                                 }
                             ]
@@ -663,7 +704,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "14",
+                                    "value": "20",
                                     "description": ""
                                 }
                             ]
@@ -684,19 +725,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss",
+                                    "value": "kky",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay",
+                                    "value": "xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "owbiihknxamrixfkoqte",
+                                    "value": "fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -726,13 +767,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "18",
+                                    "value": "2",
                                     "description": ""
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "14",
+                                    "value": "18",
                                     "description": ""
                                 }
                             ]
@@ -753,19 +794,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp",
+                                    "value": "ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk",
+                                    "value": "muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty",
+                                    "value": "lgaenatwbbefqt",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -800,13 +841,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "14",
+                                    "value": "16",
                                     "description": ""
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "19",
+                                    "value": "5",
                                     "description": ""
                                 }
                             ]
@@ -838,7 +879,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "2",
+                                    "value": "4",
                                     "description": ""
                                 }
                             ]
@@ -870,7 +911,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "15",
+                                    "value": "4",
                                     "description": ""
                                 }
                             ]
@@ -891,19 +932,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "teqipyogjlmq",
+                                    "value": "xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt",
+                                    "value": "vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb",
+                                    "value": "milprenzbqmxwajuz",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -933,13 +974,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "9",
+                                    "value": "8",
                                     "description": ""
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "10",
+                                    "value": "15",
                                     "description": ""
                                 }
                             ]
@@ -960,19 +1001,19 @@
                             "formdata": [
                                 {
                                     "key": "nome",
-                                    "value": "bxmiledczcwxciylqwtaqtgjmjpkjsgel",
+                                    "value": "nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd",
+                                    "value": "eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji",
                                     "type": "text",
                                     "description": "Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "tipo",
-                                    "value": "qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw",
+                                    "value": "akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq",
                                     "type": "text",
                                     "description": "Must be one of <code>predio<\/code> or <code>sala<\/code> Must not be greater than 255 characters."
                                 },
@@ -1007,13 +1048,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "20",
+                                    "value": "15",
                                     "description": ""
                                 },
                                 {
                                     "id": "foto_uuid",
                                     "key": "foto_uuid",
-                                    "value": "19",
+                                    "value": "5",
                                     "description": ""
                                 }
                             ]
@@ -1045,7 +1086,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "7",
+                                    "value": "18",
                                     "description": ""
                                 }
                             ]
@@ -1077,7 +1118,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "16",
+                                    "value": "2",
                                     "description": ""
                                 }
                             ]
@@ -1095,7 +1136,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"ab\",\"numero\":3,\"descricao\":\"aliquid\",\"tipagem_uuid\":\"ut\"}"
+                            "raw": "{\"nome\":\"laborum\",\"numero\":7,\"descricao\":\"quaerat\",\"tipagem_uuid\":\"dolores\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1116,13 +1157,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "20",
+                                    "value": "11",
                                     "description": ""
                                 },
                                 {
                                     "id": "sala_uuid",
                                     "key": "sala_uuid",
-                                    "value": "20",
+                                    "value": "11",
                                     "description": ""
                                 }
                             ]
@@ -1154,13 +1195,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "10",
+                                    "value": "7",
                                     "description": ""
                                 },
                                 {
                                     "id": "sala_uuid",
                                     "key": "sala_uuid",
-                                    "value": "15",
+                                    "value": "1",
                                     "description": ""
                                 }
                             ]
@@ -1178,7 +1219,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"dicta\",\"numero\":8,\"descricao\":\"commodi\"}"
+                            "raw": "{\"nome\":\"exercitationem\",\"numero\":14,\"descricao\":\"sed\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1199,13 +1240,13 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "5",
+                                    "value": "20",
                                     "description": ""
                                 },
                                 {
                                     "id": "sala_uuid",
                                     "key": "sala_uuid",
-                                    "value": "18",
+                                    "value": "16",
                                     "description": ""
                                 }
                             ]
@@ -1271,7 +1312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb\",\"preco\":5.7738179,\"descricao\":\"zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba\"}"
+                            "raw": "{\"nome\":\"kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar\",\"preco\":29343137.72,\"descricao\":\"oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1292,7 +1333,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "5",
+                                    "value": "14",
                                     "description": ""
                                 }
                             ]
@@ -1310,7 +1351,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"nome\":\"crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk\",\"preco\":2179233.58664104,\"descricao\":\"wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx\"}"
+                            "raw": "{\"nome\":\"yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto\",\"preco\":343285.13776,\"descricao\":\"ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1331,7 +1372,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "15",
+                                    "value": "13",
                                     "description": ""
                                 }
                             ]

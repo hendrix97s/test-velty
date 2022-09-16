@@ -32,269 +32,6 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/cliente
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers: []
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/cliente
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      razao_social:
-        name: razao_social
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok
-        type: string
-        custom: []
-      nome_fantasia:
-        name: nome_fantasia
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib
-        type: string
-        custom: []
-      cnpj:
-        name: cnpj
-        description: 'Must not be greater than 17 characters.'
-        required: true
-        example: rpexghwaiizcq
-        type: string
-        custom: []
-      telefone:
-        name: telefone
-        description: 'Must not be greater than 20 characters.'
-        required: true
-        example: kgalna
-        type: string
-        custom: []
-      email:
-        name: email
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx
-        type: string
-        custom: []
-      inicio_atividade:
-        name: inicio_atividade
-        description: 'Must be a valid date.'
-        required: true
-        example: '2022-09-16T02:16:47'
-        type: string
-        custom: []
-    cleanBodyParameters:
-      razao_social: hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok
-      nome_fantasia: wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib
-      cnpj: rpexghwaiizcq
-      telefone: kgalna
-      email: dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx
-      inicio_atividade: '2022-09-16T02:16:47'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/cliente/{uuid}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display the specified resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers: []
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 5
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 5
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/v1/cliente/{uuid}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 12
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 12
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      razao_social:
-        name: razao_social
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr
-        type: string
-        custom: []
-      nome_fantasia:
-        name: nome_fantasia
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb
-        type: string
-        custom: []
-      cnpj:
-        name: cnpj
-        description: 'Must not be greater than 17 characters.'
-        required: false
-        example: ol
-        type: string
-        custom: []
-      telefone:
-        name: telefone
-        description: 'Must not be greater than 20 characters.'
-        required: false
-        example: rbrglevwciqmiahocst
-        type: string
-        custom: []
-      email:
-        name: email
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk
-        type: string
-        custom: []
-      inicio_atividade:
-        name: inicio_atividade
-        description: 'Must be a valid date.'
-        required: false
-        example: '2022-09-16T02:16:47'
-        type: string
-        custom: []
-    cleanBodyParameters:
-      razao_social: omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr
-      nome_fantasia: psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb
-      cnpj: ol
-      telefone: rbrglevwciqmiahocst
-      email: ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk
-      inicio_atividade: '2022-09-16T02:16:47'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/cliente/{uuid}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers: []
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 10
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 10
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
     uri: 'api/v1/cliente/{uuid}/predio'
     metadata:
       groupName: Endpoints
@@ -311,11 +48,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 2
+        example: 20
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 2
+      uuid: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -348,11 +85,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 10
+        example: 9
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 10
+      uuid: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -360,19 +97,19 @@ endpoints:
         name: nome
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn
+        example: xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku
         type: string
         custom: []
       descricao:
         name: descricao
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl
+        example: hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl
         type: string
         custom: []
     cleanBodyParameters:
-      nome: qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn
-      descricao: obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl
+      nome: xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku
+      descricao: hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl
     fileParameters: []
     responses: []
     responseFields: []
@@ -401,11 +138,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 16
+        example: 9
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 16
+      uuid: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -413,35 +150,35 @@ endpoints:
         name: cep
         description: ''
         required: true
-        example: dolores
+        example: aut
         type: string
         custom: []
       numero:
         name: numero
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot
+        example: eqlrjhsaivgsegdaitoup
         type: string
         custom: []
       complemento:
         name: complemento
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: vsegxegvwljeh
+        example: zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf
         type: string
         custom: []
       tipo:
         name: tipo
         description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
         required: true
-        example: predio
+        example: cliente
         type: string
         custom: []
     cleanBodyParameters:
-      cep: dolores
-      numero: zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot
-      complemento: vsegxegvwljeh
-      tipo: predio
+      cep: aut
+      numero: eqlrjhsaivgsegdaitoup
+      complemento: zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf
+      tipo: cliente
     fileParameters: []
     responses: []
     responseFields: []
@@ -471,19 +208,19 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 20
+        example: 10
         type: integer
         custom: []
       endereco_uuid:
         name: endereco_uuid
         description: ''
         required: true
-        example: 7
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 20
-      endereco_uuid: 7
+      uuid: 10
+      endereco_uuid: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -491,21 +228,21 @@ endpoints:
         name: cep
         description: ''
         required: true
-        example: reprehenderit
+        example: quia
         type: string
         custom: []
       numero:
         name: numero
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd
+        example: pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf
         type: string
         custom: []
       complemento:
         name: complemento
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq
+        example: bokanifoxrsslsth
         type: string
         custom: []
       tipo:
@@ -516,9 +253,9 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      cep: reprehenderit
-      numero: abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd
-      complemento: tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq
+      cep: quia
+      numero: pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf
+      complemento: bokanifoxrsslsth
       tipo: cliente
     fileParameters: []
     responses: []
@@ -547,19 +284,19 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 11
+        example: 12
         type: integer
         custom: []
       endereco_uuid:
         name: endereco_uuid
         description: ''
         required: true
-        example: 20
+        example: 17
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 11
-      endereco_uuid: 20
+      uuid: 12
+      endereco_uuid: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -591,11 +328,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 17
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 17
+      uuid: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -641,19 +378,19 @@ endpoints:
         name: nome
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof
+        example: fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl
         type: string
         custom: []
       descricao:
         name: descricao
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh
+        example: nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu
         type: string
         custom: []
     cleanBodyParameters:
-      nome: rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof
-      descricao: nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh
+      nome: fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl
+      descricao: nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu
     fileParameters: []
     responses: []
     responseFields: []
@@ -681,11 +418,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 11
+        example: 20
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 11
+      uuid: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -718,11 +455,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 14
+        example: 9
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 14
+      uuid: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -730,21 +467,21 @@ endpoints:
         name: cep
         description: ''
         required: true
-        example: excepturi
+        example: consequatur
         type: string
         custom: []
       numero:
         name: numero
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb
+        example: sebqyde
         type: string
         custom: []
       complemento:
         name: complemento
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc
+        example: ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda
         type: string
         custom: []
       tipo:
@@ -755,9 +492,9 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      cep: excepturi
-      numero: iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb
-      complemento: mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc
+      cep: consequatur
+      numero: sebqyde
+      complemento: ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda
       tipo: predio
     fileParameters: []
     responses: []
@@ -788,19 +525,19 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 1
+        example: 16
         type: integer
         custom: []
       endereco_uuid:
         name: endereco_uuid
         description: ''
         required: true
-        example: 20
+        example: 6
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 1
-      endereco_uuid: 20
+      uuid: 16
+      endereco_uuid: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -808,35 +545,35 @@ endpoints:
         name: cep
         description: ''
         required: true
-        example: expedita
+        example: natus
         type: string
         custom: []
       numero:
         name: numero
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek
+        example: lasuvibfpinstfunuevnehnfaldamy
         type: string
         custom: []
       complemento:
         name: complemento
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: dxazewnjpurhc
+        example: cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr
         type: string
         custom: []
       tipo:
         name: tipo
         description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
         required: true
-        example: cliente
+        example: predio
         type: string
         custom: []
     cleanBodyParameters:
-      cep: expedita
-      numero: tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek
-      complemento: dxazewnjpurhc
-      tipo: cliente
+      cep: natus
+      numero: lasuvibfpinstfunuevnehnfaldamy
+      complemento: cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr
+      tipo: predio
     fileParameters: []
     responses: []
     responseFields: []
@@ -864,19 +601,19 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 4
+        example: 12
         type: integer
         custom: []
       endereco_uuid:
         name: endereco_uuid
         description: ''
         required: true
-        example: 11
+        example: 13
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 4
-      endereco_uuid: 11
+      uuid: 12
+      endereco_uuid: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -908,11 +645,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 2
+        example: 12
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 2
+      uuid: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -940,379 +677,6 @@ endpoints:
       custom: []
     headers:
       Content-Type: multipart/form-data
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 14
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 14
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      nome:
-        name: nome
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss
-        type: string
-        custom: []
-      descricao:
-        name: descricao
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay
-        type: string
-        custom: []
-      foto:
-        name: foto
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: true
-        example: null
-        type: file
-        custom: []
-      tipo:
-        name: tipo
-        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-        required: true
-        example: owbiihknxamrixfkoqte
-        type: string
-        custom: []
-    cleanBodyParameters:
-      nome: lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss
-      descricao: snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay
-      tipo: owbiihknxamrixfkoqte
-    fileParameters:
-      foto: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/v1/predio/{uuid}/foto/{foto_uuid}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: multipart/form-data
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 18
-        type: integer
-        custom: []
-      foto_uuid:
-        name: foto_uuid
-        description: ''
-        required: true
-        example: 14
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 18
-      foto_uuid: 14
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      nome:
-        name: nome
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp
-        type: string
-        custom: []
-      descricao:
-        name: descricao
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk
-        type: string
-        custom: []
-      foto:
-        name: foto
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: false
-        example: null
-        type: file
-        custom: []
-      tipo:
-        name: tipo
-        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-        required: true
-        example: bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty
-        type: string
-        custom: []
-    cleanBodyParameters:
-      nome: valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp
-      descricao: pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk
-      tipo: bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty
-    fileParameters:
-      foto: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/predio/{uuid}/foto/{foto_uuid}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers: []
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 14
-        type: integer
-        custom: []
-      foto_uuid:
-        name: foto_uuid
-        description: ''
-        required: true
-        example: 19
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 14
-      foto_uuid: 19
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/sala/{uuid}/foto'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers: []
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 2
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 2
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/v1/sala/{uuid}/foto'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: multipart/form-data
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 15
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 15
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      nome:
-        name: nome
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: teqipyogjlmq
-        type: string
-        custom: []
-      descricao:
-        name: descricao
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt
-        type: string
-        custom: []
-      foto:
-        name: foto
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: true
-        example: null
-        type: file
-        custom: []
-      tipo:
-        name: tipo
-        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-        required: true
-        example: etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb
-        type: string
-        custom: []
-    cleanBodyParameters:
-      nome: teqipyogjlmq
-      descricao: rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt
-      tipo: etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb
-    fileParameters:
-      foto: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/v1/sala/{uuid}/foto/{foto_uuid}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: multipart/form-data
-    urlParameters:
-      uuid:
-        name: uuid
-        description: ''
-        required: true
-        example: 9
-        type: integer
-        custom: []
-      foto_uuid:
-        name: foto_uuid
-        description: ''
-        required: true
-        example: 10
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      uuid: 9
-      foto_uuid: 10
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      nome:
-        name: nome
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: bxmiledczcwxciylqwtaqtgjmjpkjsgel
-        type: string
-        custom: []
-      descricao:
-        name: descricao
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd
-        type: string
-        custom: []
-      foto:
-        name: foto
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: false
-        example: null
-        type: file
-        custom: []
-      tipo:
-        name: tipo
-        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-        required: true
-        example: qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw
-        type: string
-        custom: []
-    cleanBodyParameters:
-      nome: bxmiledczcwxciylqwtaqtgjmjpkjsgel
-      descricao: ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd
-      tipo: qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw
-    fileParameters:
-      foto: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/sala/{uuid}/foto/{foto_uuid}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers: []
     urlParameters:
       uuid:
         name: uuid
@@ -1321,16 +685,389 @@ endpoints:
         example: 20
         type: integer
         custom: []
+    cleanUrlParameters:
+      uuid: 20
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: kky
+        type: string
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia
+        type: string
+        custom: []
+      foto:
+        name: foto
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: true
+        example: null
+        type: file
+        custom: []
+      tipo:
+        name: tipo
+        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+        required: true
+        example: fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: kky
+      descricao: xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia
+      tipo: fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd
+    fileParameters:
+      foto: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/predio/{uuid}/foto/{foto_uuid}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+    urlParameters:
+      uuid:
+        name: uuid
+        description: ''
+        required: true
+        example: 2
+        type: integer
+        custom: []
       foto_uuid:
         name: foto_uuid
         description: ''
         required: true
-        example: 19
+        example: 18
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 20
-      foto_uuid: 19
+      uuid: 2
+      foto_uuid: 18
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn
+        type: string
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc
+        type: string
+        custom: []
+      foto:
+        name: foto
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example: null
+        type: file
+        custom: []
+      tipo:
+        name: tipo
+        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+        required: true
+        example: lgaenatwbbefqt
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn
+      descricao: muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc
+      tipo: lgaenatwbbefqt
+    fileParameters:
+      foto: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/predio/{uuid}/foto/{foto_uuid}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters:
+      uuid:
+        name: uuid
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        custom: []
+      foto_uuid:
+        name: foto_uuid
+        description: ''
+        required: true
+        example: 5
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      uuid: 16
+      foto_uuid: 5
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/sala/{uuid}/foto'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters:
+      uuid:
+        name: uuid
+        description: ''
+        required: true
+        example: 4
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      uuid: 4
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/sala/{uuid}/foto'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+    urlParameters:
+      uuid:
+        name: uuid
+        description: ''
+        required: true
+        example: 4
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      uuid: 4
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb
+        type: string
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv
+        type: string
+        custom: []
+      foto:
+        name: foto
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: true
+        example: null
+        type: file
+        custom: []
+      tipo:
+        name: tipo
+        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+        required: true
+        example: milprenzbqmxwajuz
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb
+      descricao: vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv
+      tipo: milprenzbqmxwajuz
+    fileParameters:
+      foto: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/sala/{uuid}/foto/{foto_uuid}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+    urlParameters:
+      uuid:
+        name: uuid
+        description: ''
+        required: true
+        example: 8
+        type: integer
+        custom: []
+      foto_uuid:
+        name: foto_uuid
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      uuid: 8
+      foto_uuid: 15
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx
+        type: string
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji
+        type: string
+        custom: []
+      foto:
+        name: foto
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example: null
+        type: file
+        custom: []
+      tipo:
+        name: tipo
+        description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+        required: true
+        example: akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx
+      descricao: eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji
+      tipo: akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq
+    fileParameters:
+      foto: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/sala/{uuid}/foto/{foto_uuid}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters:
+      uuid:
+        name: uuid
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        custom: []
+      foto_uuid:
+        name: foto_uuid
+        description: ''
+        required: true
+        example: 5
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      uuid: 15
+      foto_uuid: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1362,11 +1099,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 7
+        example: 18
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 7
+      uuid: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1399,11 +1136,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 16
+        example: 2
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 16
+      uuid: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1411,35 +1148,35 @@ endpoints:
         name: nome
         description: ''
         required: true
-        example: ab
+        example: laborum
         type: string
         custom: []
       numero:
         name: numero
         description: ''
         required: true
-        example: 3
+        example: 7
         type: integer
         custom: []
       descricao:
         name: descricao
         description: ''
         required: true
-        example: aliquid
+        example: quaerat
         type: string
         custom: []
       tipagem_uuid:
         name: tipagem_uuid
         description: ''
         required: true
-        example: ut
+        example: dolores
         type: string
         custom: []
     cleanBodyParameters:
-      nome: ab
-      numero: 3
-      descricao: aliquid
-      tipagem_uuid: ut
+      nome: laborum
+      numero: 7
+      descricao: quaerat
+      tipagem_uuid: dolores
     fileParameters: []
     responses: []
     responseFields: []
@@ -1467,19 +1204,19 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 20
+        example: 11
         type: integer
         custom: []
       sala_uuid:
         name: sala_uuid
         description: ''
         required: true
-        example: 20
+        example: 11
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 20
-      sala_uuid: 20
+      uuid: 11
+      sala_uuid: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1513,19 +1250,19 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 10
+        example: 7
         type: integer
         custom: []
       sala_uuid:
         name: sala_uuid
         description: ''
         required: true
-        example: 15
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 10
-      sala_uuid: 15
+      uuid: 7
+      sala_uuid: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1533,27 +1270,27 @@ endpoints:
         name: nome
         description: ''
         required: false
-        example: dicta
+        example: exercitationem
         type: string
         custom: []
       numero:
         name: numero
         description: ''
         required: false
-        example: 8
+        example: 14
         type: integer
         custom: []
       descricao:
         name: descricao
         description: ''
         required: false
-        example: commodi
+        example: sed
         type: string
         custom: []
     cleanBodyParameters:
-      nome: dicta
-      numero: 8
-      descricao: commodi
+      nome: exercitationem
+      numero: 14
+      descricao: sed
     fileParameters: []
     responses: []
     responseFields: []
@@ -1581,19 +1318,19 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 5
+        example: 20
         type: integer
         custom: []
       sala_uuid:
         name: sala_uuid
         description: ''
         required: true
-        example: 18
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 5
-      sala_uuid: 18
+      uuid: 20
+      sala_uuid: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1658,27 +1395,27 @@ endpoints:
         name: nome
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb
+        example: kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar
         type: string
         custom: []
       preco:
         name: preco
         description: ''
         required: true
-        example: 5.7738179
+        example: 29343137.72
         type: number
         custom: []
       descricao:
         name: descricao
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba
+        example: oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse
         type: string
         custom: []
     cleanBodyParameters:
-      nome: llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb
-      preco: 5.7738179
-      descricao: zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba
+      nome: kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar
+      preco: 29343137.72
+      descricao: oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse
     fileParameters: []
     responses: []
     responseFields: []
@@ -1708,11 +1445,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 5
+        example: 14
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 5
+      uuid: 14
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1720,27 +1457,27 @@ endpoints:
         name: nome
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk
+        example: yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto
         type: string
         custom: []
       preco:
         name: preco
         description: ''
         required: false
-        example: 2179233.586641
+        example: 343285.13776
         type: number
         custom: []
       descricao:
         name: descricao
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx
+        example: ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee
         type: string
         custom: []
     cleanBodyParameters:
-      nome: crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk
-      preco: 2179233.586641
-      descricao: wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx
+      nome: yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto
+      preco: 343285.13776
+      descricao: ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee
     fileParameters: []
     responses: []
     responseFields: []
@@ -1768,11 +1505,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 15
+        example: 13
         type: integer
         custom: []
     cleanUrlParameters:
-      uuid: 15
+      uuid: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

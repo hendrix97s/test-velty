@@ -26,7 +26,7 @@ class UpdateClienteRequest extends FormRequest
         return [
           'razao_social'     => 'sometimes|string|max:255',
           'nome_fantasia'    => 'sometimes|string|max:255',
-          'cnpj'             => 'sometimes|string|max:17|unique:clientes',
+          'cnpj'             => 'sometimes|string|max:17',
           'telefone'         => 'sometimes|string|max:20',
           'email'            => 'sometimes|string|max:255',
           'inicio_atividade' => 'sometimes|date',
@@ -44,8 +44,6 @@ class UpdateClienteRequest extends FormRequest
         return [
           'razao_social.required'     => 'A razão social é obrigatória',
           'nome_fantasia.required'    => 'O nome fantasia é obrigatório',
-          'cnpj.required'             => 'O CNPJ é obrigatório',
-          'cnpj.unique'               => 'O CNPJ já está cadastrado',
           'telefone.required'         => 'O telefone é obrigatório',
           'email.required'            => 'O e-mail é obrigatório',
           'inicio_atividade.required' => 'A data de início de atividade é obrigatória',

@@ -7,26 +7,75 @@ servers:
   -
     url: 'http://localhost:9000'
 paths:
-  /api/user:
-    get:
-      summary: ''
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
   /api/v1/cliente:
     get:
-      summary: 'Display a listing of the resource.'
+      summary: 'Listagem de clientes.'
       description: ''
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: e26e6e0c-b259-42ea-8699-711f0ef2728b
+                      razao_social: 'Margie Jenkins Sr.'
+                      nome_fantasia: 'Earline Hyatt'
+                      cnpj: 'Johnathan Ledner Sr.'
+                      email: okon.doris@schmidt.org
+                      telefone: '+1 (520) 262-6602'
+                      inicio_atividade: '1985-03-27'
+                      endereco: null
+                    -
+                      uuid: 26a70a69-1e91-4b32-8c91-5d2ceca26141
+                      razao_social: 'Alta Nicolas III'
+                      nome_fantasia: 'Tiffany Kohler'
+                      cnpj: 'Carlos Bosco DVM'
+                      email: nhowe@emmerich.com
+                      telefone: 1-484-677-1592
+                      inicio_atividade: '1974-11-04'
+                      endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: e26e6e0c-b259-42ea-8699-711f0ef2728b
+                        razao_social: 'Margie Jenkins Sr.'
+                        nome_fantasia: 'Earline Hyatt'
+                        cnpj: 'Johnathan Ledner Sr.'
+                        email: okon.doris@schmidt.org
+                        telefone: '+1 (520) 262-6602'
+                        inicio_atividade: '1985-03-27'
+                        endereco: null
+                      -
+                        uuid: 26a70a69-1e91-4b32-8c91-5d2ceca26141
+                        razao_social: 'Alta Nicolas III'
+                        nome_fantasia: 'Tiffany Kohler'
+                        cnpj: 'Carlos Bosco DVM'
+                        email: nhowe@emmerich.com
+                        telefone: 1-484-677-1592
+                        inicio_atividade: '1974-11-04'
+                        endereco: null
+                    items:
+                      type: object
       tags:
-        - Endpoints
+        - Cliente
       security: []
     post:
-      summary: 'Store a newly created resource in storage.'
+      summary: 'Cadastrando um novo cliente.'
       description: ''
       parameters:
         -
@@ -36,9 +85,45 @@ paths:
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    razao_social: 'Luiz F. Lima'
+                    nome_fantasia: 'lf system'
+                    cnpj: '43897291000175'
+                    telefone: '11999999999'
+                    email: lf.system@outlook.com
+                    inicio_atividade: '2021-10-29'
+                    uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      razao_social: 'Luiz F. Lima'
+                      nome_fantasia: 'lf system'
+                      cnpj: '43897291000175'
+                      telefone: '11999999999'
+                      email: lf.system@outlook.com
+                      inicio_atividade: '2021-10-29'
+                      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                      endereco: null
       tags:
-        - Endpoints
+        - Cliente
       requestBody:
         required: true
         content:
@@ -48,28 +133,28 @@ paths:
               properties:
                 razao_social:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok
+                  description: 'Razão social do cliente.'
+                  example: 'Luiz F. Lima'
                 nome_fantasia:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib
+                  description: 'string Nome fantasia do cliente.'
+                  example: 'lf system'
                 cnpj:
                   type: string
-                  description: 'Must not be greater than 17 characters.'
-                  example: rpexghwaiizcq
+                  description: 'string CNPJ do cliente.'
+                  example: '43897291000175'
                 telefone:
                   type: string
-                  description: 'Must not be greater than 20 characters.'
-                  example: kgalna
+                  description: 'string Telefone do cliente.'
+                  example: '11999999999'
                 email:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx
+                  description: 'string Email do cliente.'
+                  example: lf.system@outlook.com
                 inicio_atividade:
                   type: string
-                  description: 'Must be a valid date.'
-                  example: '2022-09-16T02:16:47'
+                  description: 'date Data de inicio de atividade.'
+                  example: '2021-10-29'
               required:
                 - razao_social
                 - nome_fantasia
@@ -80,15 +165,51 @@ paths:
       security: []
   '/api/v1/cliente/{uuid}':
     get:
-      summary: 'Display the specified resource.'
+      summary: 'Retornando um cliente.'
       description: ''
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro encontrado com sucesso'
+                  data:
+                    uuid: 006902ab-ae1c-4315-aa5c-9edd856630ac
+                    razao_social: 'Luella Satterfield'
+                    nome_fantasia: 'Clarabelle Sipes'
+                    cnpj: 'Evangeline Barrows'
+                    email: cameron.gleichner@cassin.com
+                    telefone: +1.323.234.0959
+                    inicio_atividade: '1972-01-22'
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro encontrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 006902ab-ae1c-4315-aa5c-9edd856630ac
+                      razao_social: 'Luella Satterfield'
+                      nome_fantasia: 'Clarabelle Sipes'
+                      cnpj: 'Evangeline Barrows'
+                      email: cameron.gleichner@cassin.com
+                      telefone: +1.323.234.0959
+                      inicio_atividade: '1972-01-22'
+                      endereco: null
       tags:
-        - Endpoints
+        - Cliente
       security: []
     put:
-      summary: 'Update the specified resource in storage.'
+      summary: 'Atualizando o registro de um cliente.'
       description: ''
       parameters:
         -
@@ -98,9 +219,16 @@ paths:
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": true,\n\"message\": \"Registro autalizado com sucesso\",\n\"data\": {\n  \"uuid\": \"4816ac45-f3d8-46ce-95b3-bb718689d7af\",\n  \"razao_social\": \"Luiz F. Lima updated\",\n  \"nome_fantasia\": \"lf system\",\n  \"cnpj\": \"43897291000175\",\n  \"email\": \"ruben80@smitham.com\",\n  \"telefone\": \"11999999999\",\n  \"inicio_atividade\": \"2005-10-29\",\n  \"endereco\": null\n}"
       tags:
-        - Endpoints
+        - Cliente
       requestBody:
         required: false
         content:
@@ -110,46 +238,75 @@ paths:
               properties:
                 razao_social:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr
+                  description: 'Razão social do cliente.'
+                  example: 'Luiz F. Lima'
                 nome_fantasia:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb
+                  description: 'string Nome fantasia do cliente.'
+                  example: 'lf system'
                 cnpj:
                   type: string
-                  description: 'Must not be greater than 17 characters.'
-                  example: ol
+                  description: 'string CNPJ do cliente.'
+                  example: '43897291000175'
                 telefone:
                   type: string
-                  description: 'Must not be greater than 20 characters.'
-                  example: rbrglevwciqmiahocst
+                  description: 'string Telefone do cliente.'
+                  example: '11999999999'
                 email:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk
+                  example: ujeotrbbuoxnejhgjsozzsfwyyiwmgswxowjbkldtyatjooiettfwpelsphkqidyaiukfkjwrqmvhzbionznbkxybjylhyplyfsjlsfmcwbrwjgvoazrluckrondtzffgutnjhvxrrzwnhuugdbihsczxhahwcqvoqhcwnmpapjayqxhznojfpljbvzzphjacarmawantkvwvxmpoammiojdnqvcqtqqqeotxwtxywlzav
                 inicio_atividade:
                   type: string
-                  description: 'Must be a valid date.'
-                  example: '2022-09-16T02:16:47'
+                  description: 'date Data de inicio de atividade.'
+                  example: '2021-10-29'
       security: []
     delete:
-      summary: 'Remove the specified resource from storage.'
+      summary: 'Removendo um cliente.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Cliente
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid de um cliente.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+  /api/user:
+    get:
+      summary: ''
       description: ''
       parameters: []
       responses: {  }
       tags:
         - Endpoints
       security: []
-    parameters:
-      -
-        in: path
-        name: uuid
-        description: ''
-        example: 5
-        required: true
-        schema:
-          type: integer
   '/api/v1/cliente/{uuid}/predio':
     get:
       summary: 'Display a listing of the resource.'
@@ -183,11 +340,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn
+                  example: xumbfhjgvwwbjxtzlzyvhqqptrsabpoqzbylfvufeelksbeepdfahskhhkyazibnnjypajcxrogfforrkpzybddwvkjvemftqxvqxielqwwophrqkgdvxbiktblhdzffjwirffczibsnzumzdsgrnwqovyuxsmwobyrvezmzrwfhbaumveeufwspyku
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl
+                  example: hoxqdlwqmmhhmbgqycxfzszypkaqpzcjgssrxmazpgztaunfykxbnnqaxhjownjsgqrwsikcazivowltorsvlieaelhikuptpfvvtdtrskugmacmjlgbapqdqzeueezmubokejniomjuafzvrefptyhweycyldmctmegfzrbzdfqfjqklhvvkypfl
               required:
                 - nome
                 - descricao
@@ -197,7 +354,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 2
+        example: 20
         required: true
         schema:
           type: integer
@@ -226,19 +383,19 @@ paths:
                 cep:
                   type: string
                   description: ''
-                  example: dolores
+                  example: aut
                 numero:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot
+                  example: eqlrjhsaivgsegdaitoup
                 complemento:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vsegxegvwljeh
+                  example: zggdaihwtnpgytrcyifeoflurwcknzqdxdxtxnlbcwqglirailfbepkfcetxqqqohsqpnbnandovjrnuehfxrhdsnhouxtavacmckdvkiddvujasdeiavgmgwotwsdthimlmasfprzibfpagavnhxzosilodednarpmefsctsdehuysinndplzvcnewwnnupqblmugdqtttgxfkaippudcaqlodfcgchnqovgcyxcf
                 tipo:
                   type: string
                   description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
-                  example: predio
+                  example: cliente
               required:
                 - cep
                 - numero
@@ -249,7 +406,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 16
+        example: 9
         required: true
         schema:
           type: integer
@@ -278,15 +435,15 @@ paths:
                 cep:
                   type: string
                   description: ''
-                  example: reprehenderit
+                  example: quia
                 numero:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd
+                  example: pddebzgrbvjqoxkschqhltvbxqkiydpxpajbqfsvzizdtgtaowfxszqyssrosqwbssalnmrjdtkmmenbkwfmwxkrbqywecsismgfeugiewxpijdeqywdtyvddwdkysuqphzauceyskvmqlnautyarvlbaatrypjrynvdmkfivklqpofijuoktjyyaygrbyzsdcyobkovwqxf
                 complemento:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq
+                  example: bokanifoxrsslsth
                 tipo:
                   type: string
                   description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
@@ -308,7 +465,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 20
+        example: 10
         required: true
         schema:
           type: integer
@@ -316,7 +473,7 @@ paths:
         in: path
         name: endereco_uuid
         description: ''
-        example: 7
+        example: 1
         required: true
         schema:
           type: integer
@@ -353,11 +510,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof
+                  example: fpezujdtneumxxgwjsspkkhtoljtbjizwvsrxcecjegvqacdgvoxbvjacpfbxcyztqdtorjafmkvifwgiklctfuvurnmioqcigdbqgrnjpcsxcejioscgtxhlpriyinesmsllbcdl
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh
+                  example: nuwtpcymxprvbxloqnxcyzxgrgtxmbqpsquvabeaudqwukfrxirgeellhuwvkqhhpjnsqmspyyufyhkulylawfqntsxbqsigkybbdbjjsblxotphxgusseotwqqneidcwdzrljgvatpngatnqdsrplcefu
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -372,7 +529,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 17
+        example: 16
         required: true
         schema:
           type: integer
@@ -401,15 +558,15 @@ paths:
                 cep:
                   type: string
                   description: ''
-                  example: excepturi
+                  example: consequatur
                 numero:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb
+                  example: sebqyde
                 complemento:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc
+                  example: ogyvgglwrfyrdlyuccszykfgyrxjeymthzksgdbndoladdgrcbxakjgydsdpdbtmvztduvnlemuozjrfmmpozfikrucatfpuwzrqllckuhhylyejtkzsthdda
                 tipo:
                   type: string
                   description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
@@ -424,7 +581,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 14
+        example: 9
         required: true
         schema:
           type: integer
@@ -453,19 +610,19 @@ paths:
                 cep:
                   type: string
                   description: ''
-                  example: expedita
+                  example: natus
                 numero:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek
+                  example: lasuvibfpinstfunuevnehnfaldamy
                 complemento:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: dxazewnjpurhc
+                  example: cqiullnsmmdvptfodqivhswntmalfhjvvewwenyhqrcpyyucibedqtkkyfpwxlfiyifrqwfdjlluwomepukclfgsyiwmkzr
                 tipo:
                   type: string
                   description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
-                  example: cliente
+                  example: predio
               required:
                 - cep
                 - tipo
@@ -483,7 +640,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 1
+        example: 16
         required: true
         schema:
           type: integer
@@ -491,7 +648,7 @@ paths:
         in: path
         name: endereco_uuid
         description: ''
-        example: 20
+        example: 6
         required: true
         schema:
           type: integer
@@ -528,11 +685,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss
+                  example: kky
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay
+                  example: xnrywqoadhtxtsilbhlbleklxmhefuvjxpgmuzebmjfofecrkqasoiyfynqnvmhftmrbrtdbcmifmczimcbqhqegyineefwymzjknjnofssztqqgyzlkcxia
                 foto:
                   type: string
                   format: binary
@@ -540,7 +697,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: owbiihknxamrixfkoqte
+                  example: fqsrwqttumxzgrsnkdtabzhqpcvkxklbofgdqakowicvwmmrraswcenwxfrqfftdjvimoxovcybjvrcbufwrexhqvkxgooonnimtwmciovveverpzqfduhiyuylxtrstrmkkbfuxeqjngd
               required:
                 - nome
                 - descricao
@@ -552,7 +709,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 2
+        example: 12
         required: true
         schema:
           type: integer
@@ -581,11 +738,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp
+                  example: ocnqqgcbiijynwewbvlmbspqglqrecpixzcsrkn
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk
+                  example: muhjibwsudoqudpdhspinkmbopochgrjctnzzkvavjmghlopvnfilcogxasfwhuyhmjgksbewperqdavnkxnnonnbavezjynqlnehoiewfmsgbhkqzuzffxrymgahpneysyvghvwmbfvmrqkimsotnqrhseqfffblylmscsdbyxzrbhxueeianbokxgvrrkireuwvrkicjidcoemjxjhdcqmiwwsjhxjtfvpefptyhc
                 foto:
                   type: string
                   format: binary
@@ -593,7 +750,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty
+                  example: lgaenatwbbefqt
               required:
                 - tipo
       security: []
@@ -610,7 +767,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 18
+        example: 2
         required: true
         schema:
           type: integer
@@ -618,7 +775,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 14
+        example: 18
         required: true
         schema:
           type: integer
@@ -655,11 +812,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: teqipyogjlmq
+                  example: xccfdgqvjckhcyhpefdccuazoxbydlwayxiuvsnxugrmikksxsldeedtkoejtuakwgvkstaltirpjynaimwqfxhnijqhcifmpsllxsvqjrhmcknwysichrdettjhapcggpcyakqwawdacimyqdvxlb
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt
+                  example: vcscbemihrkdhbghqejydmktrrojsfobtuigucrdbtbyhtwqwkfitmcmkkbvxfczwkyeshqjabxbwfnhhmytzqfjlhivxiaqsaotdvqkjheemzzmexyemeuapxtgzkerlcfmklwsoboefvjtfv
                 foto:
                   type: string
                   format: binary
@@ -667,7 +824,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb
+                  example: milprenzbqmxwajuz
               required:
                 - nome
                 - descricao
@@ -679,7 +836,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 2
+        example: 4
         required: true
         schema:
           type: integer
@@ -708,11 +865,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bxmiledczcwxciylqwtaqtgjmjpkjsgel
+                  example: nedlaphugqoypgtbujyfnxtoknzahdzhtfjlmtatidocotjjddxvjzypqnzhjyprdzquwijbzwpngduxpvkqttucuojgzagcdjlxpflcqasrnghrfkmgmnoafbojlmmahaccgqhsqgnxcwnzegassdcsbvnafebjaalucmmckxxaifljfiixomjfrkzphlhvcvkjgokumiwcytpeyhlrdxpfrgmuimrkewiwpvtbvlfmmcrsdxvzjblobx
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd
+                  example: eliesdnqhluzyixjufxvreyppcwackumqtfjixmlpovftwoetqkhwiqaygyanfsnlacjebpdbbhixflfchrhxzzkcsavtrjkpbqwaqzubcgbdokxiyeatkcjysfuolkfbguineiduibrosqwebbakigxtcainwubywiguazuorpnbrtmmdwzwlbryfqonsikvixxgfxkzjwzqxemthazvbkepqjloozeji
                 foto:
                   type: string
                   format: binary
@@ -720,7 +877,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw
+                  example: akvcrnwspzbmsewqwwfzivclatmxmxogzebacrtdopeamopmslcmydwkplbydkokhlgeeukjnlq
               required:
                 - tipo
       security: []
@@ -737,7 +894,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 9
+        example: 8
         required: true
         schema:
           type: integer
@@ -745,7 +902,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 10
+        example: 15
         required: true
         schema:
           type: integer
@@ -782,19 +939,19 @@ paths:
                 nome:
                   type: string
                   description: ''
-                  example: ab
+                  example: laborum
                 numero:
                   type: integer
                   description: ''
-                  example: 3
+                  example: 7
                 descricao:
                   type: string
                   description: ''
-                  example: aliquid
+                  example: quaerat
                 tipagem_uuid:
                   type: string
                   description: ''
-                  example: ut
+                  example: dolores
               required:
                 - nome
                 - numero
@@ -806,7 +963,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 7
+        example: 18
         required: true
         schema:
           type: integer
@@ -843,15 +1000,15 @@ paths:
                 nome:
                   type: string
                   description: ''
-                  example: dicta
+                  example: exercitationem
                 numero:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 14
                 descricao:
                   type: string
                   description: ''
-                  example: commodi
+                  example: sed
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -866,7 +1023,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 20
+        example: 11
         required: true
         schema:
           type: integer
@@ -874,7 +1031,7 @@ paths:
         in: path
         name: sala_uuid
         description: ''
-        example: 20
+        example: 11
         required: true
         schema:
           type: integer
@@ -911,15 +1068,15 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb
+                  example: kmhlyqyyocohnjpolqnznmgepeenjlamvrthzxwxwibsnhaasacjytpvstlvdjpar
                 preco:
                   type: number
                   description: ''
-                  example: 5.7738179
+                  example: 29343137.72
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba
+                  example: oewratihjyctrpfdgbiectxrwbdqryqmfahtkipsvuivpdvpkwnklcrwlzfhebgjtkkvjuwnjccsbxjfvnqaptkchcqqzgswhhnowoxtiwpmhjjnetrtpyfotvxgvdqzhpanzbse
               required:
                 - nome
                 - preco
@@ -950,15 +1107,15 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk
+                  example: yfbhrgeuofmqzujjytyfwnketoluuhewmzsppcrcmtlzkghqsqohimoulwlpykcvtprdmblekwwbfqtbwewdrbcrwhywcagnivygyduxpwdjcolrxfleocymlyiwqadouolncimlicdbmpewmnjgumbcrnalwbvjdobjyaeebqknujrorgngvfolvsniuxygggxfqycjmnuirguhpddcuipwupdfuqenlbwyaezkbbogto
                 preco:
                   type: number
                   description: ''
-                  example: 2179233.586641
+                  example: 343285.13776
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx
+                  example: ehalfeeyryoczaafopjfzgfzjcocbpqsczgtzwsugicrdbafjhzlvmvtrucqcqenuvnbhscxcmumhgvykgjolxxjzpamcdfnnbmyyewgrrogfkumcjnolqqqdvqhjelpicvnenucvnmpahklbnxuksfzhylvcqiklcackjqdee
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -973,11 +1130,14 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 5
+        example: 14
         required: true
         schema:
           type: integer
 tags:
+  -
+    name: Cliente
+    description: ''
   -
     name: Endpoints
     description: ''
