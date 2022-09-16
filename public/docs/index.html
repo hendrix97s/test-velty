@@ -1,0 +1,4904 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Velty Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://localhost:9000";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-4.0.0.js"></script>
+
+    <script src="../docs/js/theme-default-4.0.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-cliente" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="cliente">
+                    <a href="#cliente">Cliente</a>
+                </li>
+                                    <ul id="tocify-subheader-cliente" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="cliente-GETapi-v1-cliente">
+                                <a href="#cliente-GETapi-v1-cliente">Listagem de clientes.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-POSTapi-v1-cliente">
+                                <a href="#cliente-POSTapi-v1-cliente">Cadastrando um novo cliente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-GETapi-v1-cliente--uuid-">
+                                <a href="#cliente-GETapi-v1-cliente--uuid-">Retornando um cliente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-PUTapi-v1-cliente--uuid-">
+                                <a href="#cliente-PUTapi-v1-cliente--uuid-">Atualizando o registro de um cliente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cliente-DELETEapi-v1-cliente--uuid-">
+                                <a href="#cliente-DELETEapi-v1-cliente--uuid-">Removendo um cliente.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-endereco" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endereco">
+                    <a href="#endereco">Endereço</a>
+                </li>
+                                    <ul id="tocify-subheader-endereco" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endereco-POSTapi-v1-cliente--uuid--endereco">
+                                <a href="#endereco-POSTapi-v1-cliente--uuid--endereco">Cadastro de endereço</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endereco-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-">
+                                <a href="#endereco-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-">Update the specified resource in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endereco-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-">
+                                <a href="#endereco-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-">Removendo o endereço de um cliente ou Prédio.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endereco-POSTapi-v1-predio--uuid--endereco">
+                                <a href="#endereco-POSTapi-v1-predio--uuid--endereco">Cadastro de endereço</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endereco-PUTapi-v1-predio--uuid--endereco--endereco_uuid-">
+                                <a href="#endereco-PUTapi-v1-predio--uuid--endereco--endereco_uuid-">Update the specified resource in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endereco-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-">
+                                <a href="#endereco-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-">Removendo o endereço de um cliente ou Prédio.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                                <a href="#endpoints-GETapi-user">GET api/user</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-foto" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="foto">
+                    <a href="#foto">Foto</a>
+                </li>
+                                    <ul id="tocify-subheader-foto" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="foto-GETapi-v1-predio--uuid--foto">
+                                <a href="#foto-GETapi-v1-predio--uuid--foto">Listagem de fotos do prédio</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="foto-POSTapi-v1-predio--uuid--foto">
+                                <a href="#foto-POSTapi-v1-predio--uuid--foto">Cadastrando a foto de um predio ou sala</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="foto-PUTapi-v1-predio--uuid--foto--foto_uuid-">
+                                <a href="#foto-PUTapi-v1-predio--uuid--foto--foto_uuid-">Atualização de registro de uma foto</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="foto-DELETEapi-v1-predio--uuid--foto--foto_uuid-">
+                                <a href="#foto-DELETEapi-v1-predio--uuid--foto--foto_uuid-">Removendo o registro de um prédio</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="foto-GETapi-v1-sala--uuid--foto">
+                                <a href="#foto-GETapi-v1-sala--uuid--foto">Listagem de fotos da sala</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="foto-POSTapi-v1-sala--uuid--foto">
+                                <a href="#foto-POSTapi-v1-sala--uuid--foto">Cadastrando a foto de um predio ou sala</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="foto-PUTapi-v1-sala--uuid--foto--foto_uuid-">
+                                <a href="#foto-PUTapi-v1-sala--uuid--foto--foto_uuid-">Atualização de registro de uma foto</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="foto-DELETEapi-v1-sala--uuid--foto--foto_uuid-">
+                                <a href="#foto-DELETEapi-v1-sala--uuid--foto--foto_uuid-">Removendo o registro de um prédio</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-predio" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="predio">
+                    <a href="#predio">Prédio</a>
+                </li>
+                                    <ul id="tocify-subheader-predio" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="predio-GETapi-v1-cliente--uuid--predio">
+                                <a href="#predio-GETapi-v1-cliente--uuid--predio">Listagem de prédios relacionado a um cliente</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="predio-POSTapi-v1-cliente--uuid--predio">
+                                <a href="#predio-POSTapi-v1-cliente--uuid--predio">Cadastrando um prédio relacionado a um cliente</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="predio-GETapi-v1-predio--uuid-">
+                                <a href="#predio-GETapi-v1-predio--uuid-">Retornando o registro de um prédio.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="predio-PUTapi-v1-predio--uuid-">
+                                <a href="#predio-PUTapi-v1-predio--uuid-">Atualização de registro de um prédio</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="predio-DELETEapi-v1-predio--uuid-">
+                                <a href="#predio-DELETEapi-v1-predio--uuid-">Removendo o registro de um prédio</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-sala" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="sala">
+                    <a href="#sala">Sala</a>
+                </li>
+                                    <ul id="tocify-subheader-sala" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="sala-GETapi-v1-predio--uuid--sala">
+                                <a href="#sala-GETapi-v1-predio--uuid--sala">Listagem de salas relacionadas a um prédio</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="sala-POSTapi-v1-predio--uuid--sala">
+                                <a href="#sala-POSTapi-v1-predio--uuid--sala">Store a newly created resource in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="sala-GETapi-v1-predio--uuid--sala--sala_uuid-">
+                                <a href="#sala-GETapi-v1-predio--uuid--sala--sala_uuid-">Retornando o registro de uma sala.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="sala-PUTapi-v1-predio--uuid--sala--sala_uuid-">
+                                <a href="#sala-PUTapi-v1-predio--uuid--sala--sala_uuid-">Atualização de registro de uma sala</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="sala-DELETEapi-v1-predio--uuid--sala--sala_uuid-">
+                                <a href="#sala-DELETEapi-v1-predio--uuid--sala--sala_uuid-">Removendo o registro de uma sala</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-tipagem" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="tipagem">
+                    <a href="#tipagem">Tipagem</a>
+                </li>
+                                    <ul id="tocify-subheader-tipagem" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="tipagem-GETapi-v1-tipagem">
+                                <a href="#tipagem-GETapi-v1-tipagem">Listagem de tipagem de salas</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="tipagem-POSTapi-v1-tipagem">
+                                <a href="#tipagem-POSTapi-v1-tipagem">Cadastrando uma tipagem de sala</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="tipagem-PUTapi-v1-tipagem--uuid-">
+                                <a href="#tipagem-PUTapi-v1-tipagem--uuid-">Atualizando uma tipagem de sala</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="tipagem-DELETEapi-v1-tipagem--uuid-">
+                                <a href="#tipagem-DELETEapi-v1-tipagem--uuid-">Removendo o registro de uma tipagem de sala</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: September 16 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost:9000</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="cliente">Cliente</h1>
+
+    
+
+                                <h2 id="cliente-GETapi-v1-cliente">Listagem de clientes.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cliente">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/cliente"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-cliente">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Listagem retornada com sucesso&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;e26e6e0c-b259-42ea-8699-711f0ef2728b&quot;,
+            &quot;razao_social&quot;: &quot;Margie Jenkins Sr.&quot;,
+            &quot;nome_fantasia&quot;: &quot;Earline Hyatt&quot;,
+            &quot;cnpj&quot;: &quot;Johnathan Ledner Sr.&quot;,
+            &quot;email&quot;: &quot;okon.doris@schmidt.org&quot;,
+            &quot;telefone&quot;: &quot;+1 (520) 262-6602&quot;,
+            &quot;inicio_atividade&quot;: &quot;1985-03-27&quot;,
+            &quot;endereco&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;26a70a69-1e91-4b32-8c91-5d2ceca26141&quot;,
+            &quot;razao_social&quot;: &quot;Alta Nicolas III&quot;,
+            &quot;nome_fantasia&quot;: &quot;Tiffany Kohler&quot;,
+            &quot;cnpj&quot;: &quot;Carlos Bosco DVM&quot;,
+            &quot;email&quot;: &quot;nhowe@emmerich.com&quot;,
+            &quot;telefone&quot;: &quot;1-484-677-1592&quot;,
+            &quot;inicio_atividade&quot;: &quot;1974-11-04&quot;,
+            &quot;endereco&quot;: null
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cliente" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cliente"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cliente"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cliente" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cliente"></code></pre>
+</span>
+<form id="form-GETapi-v1-cliente" data-method="GET"
+      data-path="api/v1/cliente"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cliente', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cliente"
+                    onclick="tryItOut('GETapi-v1-cliente');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cliente"
+                    onclick="cancelTryOut('GETapi-v1-cliente');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cliente" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cliente</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="cliente-POSTapi-v1-cliente">Cadastrando um novo cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-cliente">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/cliente" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"razao_social\": \"Luiz F. Lima\",
+    \"nome_fantasia\": \"lf system\",
+    \"cnpj\": \"43897291000175\",
+    \"telefone\": \"11999999999\",
+    \"email\": \"lf.system@outlook.com\",
+    \"inicio_atividade\": \"2021-10-29\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "razao_social": "Luiz F. Lima",
+    "nome_fantasia": "lf system",
+    "cnpj": "43897291000175",
+    "telefone": "11999999999",
+    "email": "lf.system@outlook.com",
+    "inicio_atividade": "2021-10-29"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-cliente">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;razao_social&quot;: &quot;Luiz F. Lima&quot;,
+        &quot;nome_fantasia&quot;: &quot;lf system&quot;,
+        &quot;cnpj&quot;: &quot;43897291000175&quot;,
+        &quot;telefone&quot;: &quot;11999999999&quot;,
+        &quot;email&quot;: &quot;lf.system@outlook.com&quot;,
+        &quot;inicio_atividade&quot;: &quot;2021-10-29&quot;,
+        &quot;uuid&quot;: &quot;32a29cbe-6cae-45d8-b8b7-610baca99a3b&quot;,
+        &quot;endereco&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-cliente" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-cliente"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-cliente"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-cliente" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-cliente"></code></pre>
+</span>
+<form id="form-POSTapi-v1-cliente" data-method="POST"
+      data-path="api/v1/cliente"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-cliente', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-cliente"
+                    onclick="tryItOut('POSTapi-v1-cliente');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-cliente"
+                    onclick="cancelTryOut('POSTapi-v1-cliente');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-cliente" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/cliente</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>razao_social</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="razao_social"
+               data-endpoint="POSTapi-v1-cliente"
+               value="Luiz F. Lima"
+               data-component="body" hidden>
+    <br>
+<p>Razão social do cliente.</p>
+        </p>
+                <p>
+            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome_fantasia"
+               data-endpoint="POSTapi-v1-cliente"
+               value="lf system"
+               data-component="body" hidden>
+    <br>
+<p>string Nome fantasia do cliente.</p>
+        </p>
+                <p>
+            <b><code>cnpj</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="cnpj"
+               data-endpoint="POSTapi-v1-cliente"
+               value="43897291000175"
+               data-component="body" hidden>
+    <br>
+<p>string CNPJ do cliente.</p>
+        </p>
+                <p>
+            <b><code>telefone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="telefone"
+               data-endpoint="POSTapi-v1-cliente"
+               value="11999999999"
+               data-component="body" hidden>
+    <br>
+<p>string Telefone do cliente.</p>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-cliente"
+               value="lf.system@outlook.com"
+               data-component="body" hidden>
+    <br>
+<p>string Email do cliente.</p>
+        </p>
+                <p>
+            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="inicio_atividade"
+               data-endpoint="POSTapi-v1-cliente"
+               value="2021-10-29"
+               data-component="body" hidden>
+    <br>
+<p>date Data de inicio de atividade.</p>
+        </p>
+        </form>
+
+                    <h2 id="cliente-GETapi-v1-cliente--uuid-">Retornando um cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cliente--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/cliente/006902ab-ae1c-4315-aa5c-9edd856630ac"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/006902ab-ae1c-4315-aa5c-9edd856630ac"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-cliente--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro encontrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;006902ab-ae1c-4315-aa5c-9edd856630ac&quot;,
+        &quot;razao_social&quot;: &quot;Luella Satterfield&quot;,
+        &quot;nome_fantasia&quot;: &quot;Clarabelle Sipes&quot;,
+        &quot;cnpj&quot;: &quot;Evangeline Barrows&quot;,
+        &quot;email&quot;: &quot;cameron.gleichner@cassin.com&quot;,
+        &quot;telefone&quot;: &quot;+1.323.234.0959&quot;,
+        &quot;inicio_atividade&quot;: &quot;1972-01-22&quot;,
+        &quot;endereco&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cliente--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cliente--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cliente--uuid-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cliente--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cliente--uuid-"></code></pre>
+</span>
+<form id="form-GETapi-v1-cliente--uuid-" data-method="GET"
+      data-path="api/v1/cliente/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cliente--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cliente--uuid-"
+                    onclick="tryItOut('GETapi-v1-cliente--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cliente--uuid-"
+                    onclick="cancelTryOut('GETapi-v1-cliente--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cliente--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-cliente--uuid-"
+               value="006902ab-ae1c-4315-aa5c-9edd856630ac"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    </form>
+
+                    <h2 id="cliente-PUTapi-v1-cliente--uuid-">Atualizando o registro de um cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-cliente--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"razao_social\": \"Luiz F. Lima\",
+    \"nome_fantasia\": \"lf system\",
+    \"cnpj\": \"43897291000175\",
+    \"telefone\": \"11999999999\",
+    \"email\": \"tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu\",
+    \"inicio_atividade\": \"2021-10-29\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "razao_social": "Luiz F. Lima",
+    "nome_fantasia": "lf system",
+    "cnpj": "43897291000175",
+    "telefone": "11999999999",
+    "email": "tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu",
+    "inicio_atividade": "2021-10-29"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-cliente--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+&quot;status&quot;: true,
+&quot;message&quot;: &quot;Registro autalizado com sucesso&quot;,
+&quot;data&quot;: {
+  &quot;uuid&quot;: &quot;4816ac45-f3d8-46ce-95b3-bb718689d7af&quot;,
+  &quot;razao_social&quot;: &quot;Luiz F. Lima updated&quot;,
+  &quot;nome_fantasia&quot;: &quot;lf system&quot;,
+  &quot;cnpj&quot;: &quot;43897291000175&quot;,
+  &quot;email&quot;: &quot;ruben80@smitham.com&quot;,
+  &quot;telefone&quot;: &quot;11999999999&quot;,
+  &quot;inicio_atividade&quot;: &quot;2005-10-29&quot;,
+  &quot;endereco&quot;: null
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-cliente--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-cliente--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-cliente--uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-cliente--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-cliente--uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-cliente--uuid-" data-method="PUT"
+      data-path="api/v1/cliente/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-cliente--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-cliente--uuid-"
+                    onclick="tryItOut('PUTapi-v1-cliente--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-cliente--uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-cliente--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-cliente--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>razao_social</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="razao_social"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="Luiz F. Lima"
+               data-component="body" hidden>
+    <br>
+<p>Razão social do cliente.</p>
+        </p>
+                <p>
+            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="nome_fantasia"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="lf system"
+               data-component="body" hidden>
+    <br>
+<p>string Nome fantasia do cliente.</p>
+        </p>
+                <p>
+            <b><code>cnpj</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="cnpj"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="43897291000175"
+               data-component="body" hidden>
+    <br>
+<p>string CNPJ do cliente.</p>
+        </p>
+                <p>
+            <b><code>telefone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="telefone"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="11999999999"
+               data-component="body" hidden>
+    <br>
+<p>string Telefone do cliente.</p>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+                <p>
+            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="inicio_atividade"
+               data-endpoint="PUTapi-v1-cliente--uuid-"
+               value="2021-10-29"
+               data-component="body" hidden>
+    <br>
+<p>date Data de inicio de atividade.</p>
+        </p>
+        </form>
+
+                    <h2 id="cliente-DELETEapi-v1-cliente--uuid-">Removendo um cliente.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-cliente--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-cliente--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-cliente--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-cliente--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-cliente--uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-cliente--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-cliente--uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-cliente--uuid-" data-method="DELETE"
+      data-path="api/v1/cliente/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-cliente--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-cliente--uuid-"
+                    onclick="tryItOut('DELETEapi-v1-cliente--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-cliente--uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-cliente--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-cliente--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/cliente/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-cliente--uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    </form>
+
+                <h1 id="endereco">Endereço</h1>
+
+    
+
+                                <h2 id="endereco-POSTapi-v1-cliente--uuid--endereco">Cadastro de endereço</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-cliente--uuid--endereco">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/cliente/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"cep\": \"13606-536\",
+    \"numero\": \"123\",
+    \"complemento\": \"Apto 123\",
+    \"tipo\": \"cliente\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "cep": "13606-536",
+    "numero": "123",
+    "complemento": "Apto 123",
+    "tipo": "cliente"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-cliente--uuid--endereco">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;razao_social&quot;: &quot;Luiz F. Lima&quot;,
+        &quot;nome_fantasia&quot;: &quot;lf system&quot;,
+        &quot;cnpj&quot;: &quot;43897291000175&quot;,
+        &quot;telefone&quot;: &quot;11999999999&quot;,
+        &quot;email&quot;: &quot;lf.system@outlook.com&quot;,
+        &quot;inicio_atividade&quot;: &quot;2021-10-29&quot;,
+        &quot;uuid&quot;: &quot;32a29cbe-6cae-45d8-b8b7-610baca99a3b&quot;,
+        &quot;endereco&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-cliente--uuid--endereco" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-cliente--uuid--endereco"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-cliente--uuid--endereco"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-cliente--uuid--endereco" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-cliente--uuid--endereco"></code></pre>
+</span>
+<form id="form-POSTapi-v1-cliente--uuid--endereco" data-method="POST"
+      data-path="api/v1/cliente/{uuid}/endereco"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-cliente--uuid--endereco', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-cliente--uuid--endereco"
+                    onclick="tryItOut('POSTapi-v1-cliente--uuid--endereco');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-cliente--uuid--endereco"
+                    onclick="cancelTryOut('POSTapi-v1-cliente--uuid--endereco');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-cliente--uuid--endereco" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/cliente/{uuid}/endereco</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
+               value="32a29cbe-6cae-45d8-b8b7-610baca99a3b"
+               data-component="url" hidden>
+    <br>
+<p>O uuid do Cliente ou Prédio.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>cep</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="cep"
+               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
+               value="13606-536"
+               data-component="body" hidden>
+    <br>
+<p>O CEP do endereço.</p>
+        </p>
+                <p>
+            <b><code>numero</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="numero"
+               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
+               value="123"
+               data-component="body" hidden>
+    <br>
+<p>O número do endereço.</p>
+        </p>
+                <p>
+            <b><code>complemento</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="complemento"
+               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
+               value="Apto 123"
+               data-component="body" hidden>
+    <br>
+<p>O complemento do endereço.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
+               value="cliente"
+               data-component="body" hidden>
+    <br>
+<p>O tipo do recurso a ser utilizado (cliente ou predio).</p>
+        </p>
+        </form>
+
+                    <h2 id="endereco-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/cliente/006902ab-ae1c-4315-aa5c-9edd856630ac/endereco/006902ab-ae1c-4315-aa5c-9edd856630ac" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"cep\": \"12345678\",
+    \"numero\": \"123\",
+    \"complemento\": \"casa\",
+    \"tipo\": \"cliente\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/006902ab-ae1c-4315-aa5c-9edd856630ac/endereco/006902ab-ae1c-4315-aa5c-9edd856630ac"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "cep": "12345678",
+    "numero": "123",
+    "complemento": "casa",
+    "tipo": "cliente"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro autalizado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;97a119a3-d55e-425c-ae70-f4ee78ddf30d&quot;,
+        &quot;cep&quot;: &quot;13606-536&quot;,
+        &quot;logradouro&quot;: &quot;Avenida Luiz Carlos Tunes&quot;,
+        &quot;numero&quot;: &quot;123&quot;,
+        &quot;complemento&quot;: &quot;predio&quot;,
+        &quot;bairro&quot;: &quot;Jardim Morumbi&quot;,
+        &quot;cidade&quot;: &quot;Araras&quot;,
+        &quot;uf&quot;: &quot;SP&quot;,
+        &quot;url_google_maps&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-" data-method="PUT"
+      data-path="api/v1/cliente/{uuid}/endereco/{endereco_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-cliente--uuid--endereco--endereco_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+                    onclick="tryItOut('PUTapi-v1-cliente--uuid--endereco--endereco_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-cliente--uuid--endereco--endereco_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/cliente/{uuid}/endereco/{endereco_uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/cliente/{uuid}/endereco/{endereco_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="006902ab-ae1c-4315-aa5c-9edd856630ac"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    <p>
+                <b><code>endereco_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="endereco_uuid"
+               data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="006902ab-ae1c-4315-aa5c-9edd856630ac"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um endereço.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>cep</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="cep"
+               data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="12345678"
+               data-component="body" hidden>
+    <br>
+<p>CEP do endereço.</p>
+        </p>
+                <p>
+            <b><code>numero</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="numero"
+               data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="123"
+               data-component="body" hidden>
+    <br>
+<p>Número do endereço.</p>
+        </p>
+                <p>
+            <b><code>complemento</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="complemento"
+               data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="casa"
+               data-component="body" hidden>
+    <br>
+<p>Complemento do endereço.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="PUTapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="cliente"
+               data-component="body" hidden>
+    <br>
+<p>Tipo do recurso a ser utilizado (predio ou cliente).</p>
+        </p>
+        </form>
+
+                    <h2 id="endereco-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-">Removendo o endereço de um cliente ou Prédio.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af/endereco/4816ac45-f3d8-46ce-95b3-bb718689d7af"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/4816ac45-f3d8-46ce-95b3-bb718689d7af/endereco/4816ac45-f3d8-46ce-95b3-bb718689d7af"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-" data-method="DELETE"
+      data-path="api/v1/cliente/{uuid}/endereco/{endereco_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"
+                    onclick="tryItOut('DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/cliente/{uuid}/endereco/{endereco_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    <p>
+                <b><code>endereco_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="endereco_uuid"
+               data-endpoint="DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um endereço.</p>
+            </p>
+                    </form>
+
+                    <h2 id="endereco-POSTapi-v1-predio--uuid--endereco">Cadastro de endereço</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-predio--uuid--endereco">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/predio/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"cep\": \"13606-536\",
+    \"numero\": \"123\",
+    \"complemento\": \"Apto 123\",
+    \"tipo\": \"cliente\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "cep": "13606-536",
+    "numero": "123",
+    "complemento": "Apto 123",
+    "tipo": "cliente"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-predio--uuid--endereco">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;razao_social&quot;: &quot;Luiz F. Lima&quot;,
+        &quot;nome_fantasia&quot;: &quot;lf system&quot;,
+        &quot;cnpj&quot;: &quot;43897291000175&quot;,
+        &quot;telefone&quot;: &quot;11999999999&quot;,
+        &quot;email&quot;: &quot;lf.system@outlook.com&quot;,
+        &quot;inicio_atividade&quot;: &quot;2021-10-29&quot;,
+        &quot;uuid&quot;: &quot;32a29cbe-6cae-45d8-b8b7-610baca99a3b&quot;,
+        &quot;endereco&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-predio--uuid--endereco" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-predio--uuid--endereco"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-predio--uuid--endereco"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-predio--uuid--endereco" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-predio--uuid--endereco"></code></pre>
+</span>
+<form id="form-POSTapi-v1-predio--uuid--endereco" data-method="POST"
+      data-path="api/v1/predio/{uuid}/endereco"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-predio--uuid--endereco', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-predio--uuid--endereco"
+                    onclick="tryItOut('POSTapi-v1-predio--uuid--endereco');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-predio--uuid--endereco"
+                    onclick="cancelTryOut('POSTapi-v1-predio--uuid--endereco');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-predio--uuid--endereco" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/predio/{uuid}/endereco</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="POSTapi-v1-predio--uuid--endereco"
+               value="32a29cbe-6cae-45d8-b8b7-610baca99a3b"
+               data-component="url" hidden>
+    <br>
+<p>O uuid do Cliente ou Prédio.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>cep</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="cep"
+               data-endpoint="POSTapi-v1-predio--uuid--endereco"
+               value="13606-536"
+               data-component="body" hidden>
+    <br>
+<p>O CEP do endereço.</p>
+        </p>
+                <p>
+            <b><code>numero</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="numero"
+               data-endpoint="POSTapi-v1-predio--uuid--endereco"
+               value="123"
+               data-component="body" hidden>
+    <br>
+<p>O número do endereço.</p>
+        </p>
+                <p>
+            <b><code>complemento</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="complemento"
+               data-endpoint="POSTapi-v1-predio--uuid--endereco"
+               value="Apto 123"
+               data-component="body" hidden>
+    <br>
+<p>O complemento do endereço.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="POSTapi-v1-predio--uuid--endereco"
+               value="cliente"
+               data-component="body" hidden>
+    <br>
+<p>O tipo do recurso a ser utilizado (cliente ou predio).</p>
+        </p>
+        </form>
+
+                    <h2 id="endereco-PUTapi-v1-predio--uuid--endereco--endereco_uuid-">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-predio--uuid--endereco--endereco_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/predio/006902ab-ae1c-4315-aa5c-9edd856630ac/endereco/006902ab-ae1c-4315-aa5c-9edd856630ac" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"cep\": \"12345678\",
+    \"numero\": \"123\",
+    \"complemento\": \"casa\",
+    \"tipo\": \"cliente\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/006902ab-ae1c-4315-aa5c-9edd856630ac/endereco/006902ab-ae1c-4315-aa5c-9edd856630ac"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "cep": "12345678",
+    "numero": "123",
+    "complemento": "casa",
+    "tipo": "cliente"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-predio--uuid--endereco--endereco_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro autalizado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;97a119a3-d55e-425c-ae70-f4ee78ddf30d&quot;,
+        &quot;cep&quot;: &quot;13606-536&quot;,
+        &quot;logradouro&quot;: &quot;Avenida Luiz Carlos Tunes&quot;,
+        &quot;numero&quot;: &quot;123&quot;,
+        &quot;complemento&quot;: &quot;predio&quot;,
+        &quot;bairro&quot;: &quot;Jardim Morumbi&quot;,
+        &quot;cidade&quot;: &quot;Araras&quot;,
+        &quot;uf&quot;: &quot;SP&quot;,
+        &quot;url_google_maps&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-predio--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-predio--uuid--endereco--endereco_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-predio--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-predio--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-predio--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-predio--uuid--endereco--endereco_uuid-" data-method="PUT"
+      data-path="api/v1/predio/{uuid}/endereco/{endereco_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-predio--uuid--endereco--endereco_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+                    onclick="tryItOut('PUTapi-v1-predio--uuid--endereco--endereco_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-predio--uuid--endereco--endereco_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-predio--uuid--endereco--endereco_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/predio/{uuid}/endereco/{endereco_uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/predio/{uuid}/endereco/{endereco_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="006902ab-ae1c-4315-aa5c-9edd856630ac"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    <p>
+                <b><code>endereco_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="endereco_uuid"
+               data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="006902ab-ae1c-4315-aa5c-9edd856630ac"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um endereço.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>cep</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="cep"
+               data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="12345678"
+               data-component="body" hidden>
+    <br>
+<p>CEP do endereço.</p>
+        </p>
+                <p>
+            <b><code>numero</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="numero"
+               data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="123"
+               data-component="body" hidden>
+    <br>
+<p>Número do endereço.</p>
+        </p>
+                <p>
+            <b><code>complemento</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="complemento"
+               data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="casa"
+               data-component="body" hidden>
+    <br>
+<p>Complemento do endereço.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="PUTapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="cliente"
+               data-component="body" hidden>
+    <br>
+<p>Tipo do recurso a ser utilizado (predio ou cliente).</p>
+        </p>
+        </form>
+
+                    <h2 id="endereco-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-">Removendo o endereço de um cliente ou Prédio.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/predio/4816ac45-f3d8-46ce-95b3-bb718689d7af/endereco/4816ac45-f3d8-46ce-95b3-bb718689d7af"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/4816ac45-f3d8-46ce-95b3-bb718689d7af/endereco/4816ac45-f3d8-46ce-95b3-bb718689d7af"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-" data-method="DELETE"
+      data-path="api/v1/predio/{uuid}/endereco/{endereco_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-predio--uuid--endereco--endereco_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"
+                    onclick="tryItOut('DELETEapi-v1-predio--uuid--endereco--endereco_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-predio--uuid--endereco--endereco_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-predio--uuid--endereco--endereco_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/predio/{uuid}/endereco/{endereco_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um cliente.</p>
+            </p>
+                    <p>
+                <b><code>endereco_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="endereco_uuid"
+               data-endpoint="DELETEapi-v1-predio--uuid--endereco--endereco_uuid-"
+               value="4816ac45-f3d8-46ce-95b3-bb718689d7af"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid de um endereço.</p>
+            </p>
+                    </form>
+
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/user"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/user"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user"
+                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user"
+                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                    </form>
+
+                <h1 id="foto">Foto</h1>
+
+    
+
+                                <h2 id="foto-GETapi-v1-predio--uuid--foto">Listagem de fotos do prédio</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-predio--uuid--foto">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/foto"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/foto"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-predio--uuid--foto">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Listagem retornada com sucesso&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;8056d5b1-9440-4714-9513-ce9f7bf987b9&quot;,
+            &quot;url&quot;: &quot;https://via.placeholder.com/640x480.png/00ffbb?text=cats+Faker+eaque&quot;,
+            &quot;path&quot;: &quot;/tmp/fakerzPQd5C&quot;,
+            &quot;nome&quot;: &quot;Miss Bridgette Wiegand DDS&quot;,
+            &quot;descricao&quot;: &quot;Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;87a06252-d370-4606-977a-61c66e6cc1a6&quot;,
+            &quot;url&quot;: &quot;https://via.placeholder.com/640x480.png/00dd22?text=cats+Faker+et&quot;,
+            &quot;path&quot;: &quot;/tmp/fakerzrVQzN&quot;,
+            &quot;nome&quot;: &quot;Prof. Ellsworth Schowalter DVM&quot;,
+            &quot;descricao&quot;: &quot;Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;2bb22bf1-5050-468d-a02d-9d45a229e005&quot;,
+            &quot;url&quot;: &quot;https://via.placeholder.com/640x480.png/000011?text=cats+Faker+omnis&quot;,
+            &quot;path&quot;: &quot;/tmp/fakerRqcyRF&quot;,
+            &quot;nome&quot;: &quot;Aryanna Murphy&quot;,
+            &quot;descricao&quot;: &quot;Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-predio--uuid--foto" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-predio--uuid--foto"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-predio--uuid--foto"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-predio--uuid--foto" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-predio--uuid--foto"></code></pre>
+</span>
+<form id="form-GETapi-v1-predio--uuid--foto" data-method="GET"
+      data-path="api/v1/predio/{uuid}/foto"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-predio--uuid--foto', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-predio--uuid--foto"
+                    onclick="tryItOut('GETapi-v1-predio--uuid--foto');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-predio--uuid--foto"
+                    onclick="cancelTryOut('GETapi-v1-predio--uuid--foto');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-predio--uuid--foto" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/predio/{uuid}/foto</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-predio--uuid--foto"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do prédio.</p>
+            </p>
+                    </form>
+
+                    <h2 id="foto-POSTapi-v1-predio--uuid--foto">Cadastrando a foto de um predio ou sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-predio--uuid--foto">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/predio/1436a969-96b1-4e70-976d-426601fc4d55/foto" \
+    --header "Content-Type: multipart/form-data" \
+    --form "nome=Foto 1" \
+    --form "descricao=Foto 1" \
+    --form "tipo=predio" \
+    --form "foto=@/tmp/phpVQg0xZ" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/1436a969-96b1-4e70-976d-426601fc4d55/foto"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('nome', 'Foto 1');
+body.append('descricao', 'Foto 1');
+body.append('tipo', 'predio');
+body.append('foto', document.querySelector('input[name="foto"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-predio--uuid--foto">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;nome&quot;: &quot;foto test&quot;,
+        &quot;descricao&quot;: &quot;description foto test&quot;,
+        &quot;url&quot;: &quot;http://localhost:9000/storage/predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg&quot;,
+        &quot;path&quot;: &quot;predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg&quot;,
+        &quot;uuid&quot;: &quot;46a3d089-dc55-4432-bf56-ea8f1f13fdc7&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-predio--uuid--foto" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-predio--uuid--foto"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-predio--uuid--foto"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-predio--uuid--foto" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-predio--uuid--foto"></code></pre>
+</span>
+<form id="form-POSTapi-v1-predio--uuid--foto" data-method="POST"
+      data-path="api/v1/predio/{uuid}/foto"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"multipart\/form-data"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-predio--uuid--foto', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-predio--uuid--foto"
+                    onclick="tryItOut('POSTapi-v1-predio--uuid--foto');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-predio--uuid--foto"
+                    onclick="cancelTryOut('POSTapi-v1-predio--uuid--foto');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-predio--uuid--foto" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/predio/{uuid}/foto</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="POSTapi-v1-predio--uuid--foto"
+               value="1436a969-96b1-4e70-976d-426601fc4d55"
+               data-component="url" hidden>
+    <br>
+<p>uuid do Sala ou Prédio.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="POSTapi-v1-predio--uuid--foto"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Nome da foto.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="POSTapi-v1-predio--uuid--foto"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da foto.</p>
+        </p>
+                <p>
+            <b><code>foto</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+                <input type="file"
+               name="foto"
+               data-endpoint="POSTapi-v1-predio--uuid--foto"
+               value=""
+               data-component="body" hidden>
+    <br>
+<p>Foto.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="POSTapi-v1-predio--uuid--foto"
+               value="predio"
+               data-component="body" hidden>
+    <br>
+<p>Tipo do recurso a ser utilizado (sala ou predio).</p>
+        </p>
+        </form>
+
+                    <h2 id="foto-PUTapi-v1-predio--uuid--foto--foto_uuid-">Atualização de registro de uma foto</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-predio--uuid--foto--foto_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/foto/16" \
+    --header "Content-Type: multipart/form-data" \
+    --form "nome=Foto 1" \
+    --form "descricao=Foto 1" \
+    --form "tipo=predio" \
+    --form "foto=@/tmp/php5YBrB9" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/foto/16"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('nome', 'Foto 1');
+body.append('descricao', 'Foto 1');
+body.append('tipo', 'predio');
+body.append('foto', document.querySelector('input[name="foto"]').files[0]);
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-predio--uuid--foto--foto_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;nome&quot;: &quot;foto test&quot;,
+        &quot;descricao&quot;: &quot;description foto test&quot;,
+        &quot;url&quot;: &quot;http://localhost:9000/storage/predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg&quot;,
+        &quot;path&quot;: &quot;predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg&quot;,
+        &quot;uuid&quot;: &quot;e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-predio--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-predio--uuid--foto--foto_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-predio--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-predio--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-predio--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-predio--uuid--foto--foto_uuid-" data-method="PUT"
+      data-path="api/v1/predio/{uuid}/foto/{foto_uuid}"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"multipart\/form-data"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-predio--uuid--foto--foto_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-predio--uuid--foto--foto_uuid-"
+                    onclick="tryItOut('PUTapi-v1-predio--uuid--foto--foto_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-predio--uuid--foto--foto_uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-predio--uuid--foto--foto_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-predio--uuid--foto--foto_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/predio/{uuid}/foto/{foto_uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/predio/{uuid}/foto/{foto_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do Sala ou Prédio.</p>
+            </p>
+                    <p>
+                <b><code>foto_uuid</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="foto_uuid"
+               data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
+               value="16"
+               data-component="url" hidden>
+    <br>
+
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Nome da foto.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da foto.</p>
+        </p>
+                <p>
+            <b><code>foto</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file"
+               name="foto"
+               data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
+               value=""
+               data-component="body" hidden>
+    <br>
+<p>Foto.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
+               value="predio"
+               data-component="body" hidden>
+    <br>
+<p>Tipo do recurso a ser utilizado (sala ou predio).</p>
+        </p>
+        </form>
+
+                    <h2 id="foto-DELETEapi-v1-predio--uuid--foto--foto_uuid-">Removendo o registro de um prédio</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-predio--uuid--foto--foto_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/foto/746fe4d9-66de-4074-bf4b-077927164b03"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/foto/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-predio--uuid--foto--foto_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-predio--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-predio--uuid--foto--foto_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-predio--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-predio--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-predio--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-predio--uuid--foto--foto_uuid-" data-method="DELETE"
+      data-path="api/v1/predio/{uuid}/foto/{foto_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-predio--uuid--foto--foto_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-predio--uuid--foto--foto_uuid-"
+                    onclick="tryItOut('DELETEapi-v1-predio--uuid--foto--foto_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-predio--uuid--foto--foto_uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-predio--uuid--foto--foto_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-predio--uuid--foto--foto_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/predio/{uuid}/foto/{foto_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-predio--uuid--foto--foto_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do Prédio ou Sala.</p>
+            </p>
+                    <p>
+                <b><code>foto_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="foto_uuid"
+               data-endpoint="DELETEapi-v1-predio--uuid--foto--foto_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid da foto a ser removida.</p>
+            </p>
+                    </form>
+
+                    <h2 id="foto-GETapi-v1-sala--uuid--foto">Listagem de fotos da sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-sala--uuid--foto">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/sala/746fe4d9-66de-4074-bf4b-077927164b03/foto"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/sala/746fe4d9-66de-4074-bf4b-077927164b03/foto"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-sala--uuid--foto">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Listagem retornada com sucesso&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;8056d5b1-9440-4714-9513-ce9f7bf987b9&quot;,
+            &quot;url&quot;: &quot;https://via.placeholder.com/640x480.png/00ffbb?text=cats+Faker+eaque&quot;,
+            &quot;path&quot;: &quot;/tmp/fakerzPQd5C&quot;,
+            &quot;nome&quot;: &quot;Miss Bridgette Wiegand DDS&quot;,
+            &quot;descricao&quot;: &quot;Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;87a06252-d370-4606-977a-61c66e6cc1a6&quot;,
+            &quot;url&quot;: &quot;https://via.placeholder.com/640x480.png/00dd22?text=cats+Faker+et&quot;,
+            &quot;path&quot;: &quot;/tmp/fakerzrVQzN&quot;,
+            &quot;nome&quot;: &quot;Prof. Ellsworth Schowalter DVM&quot;,
+            &quot;descricao&quot;: &quot;Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;2bb22bf1-5050-468d-a02d-9d45a229e005&quot;,
+            &quot;url&quot;: &quot;https://via.placeholder.com/640x480.png/000011?text=cats+Faker+omnis&quot;,
+            &quot;path&quot;: &quot;/tmp/fakerRqcyRF&quot;,
+            &quot;nome&quot;: &quot;Aryanna Murphy&quot;,
+            &quot;descricao&quot;: &quot;Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-sala--uuid--foto" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-sala--uuid--foto"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-sala--uuid--foto"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-sala--uuid--foto" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-sala--uuid--foto"></code></pre>
+</span>
+<form id="form-GETapi-v1-sala--uuid--foto" data-method="GET"
+      data-path="api/v1/sala/{uuid}/foto"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-sala--uuid--foto', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-sala--uuid--foto"
+                    onclick="tryItOut('GETapi-v1-sala--uuid--foto');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-sala--uuid--foto"
+                    onclick="cancelTryOut('GETapi-v1-sala--uuid--foto');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-sala--uuid--foto" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/sala/{uuid}/foto</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-sala--uuid--foto"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid da sala.</p>
+            </p>
+                    </form>
+
+                    <h2 id="foto-POSTapi-v1-sala--uuid--foto">Cadastrando a foto de um predio ou sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-sala--uuid--foto">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/sala/1436a969-96b1-4e70-976d-426601fc4d55/foto" \
+    --header "Content-Type: multipart/form-data" \
+    --form "nome=Foto 1" \
+    --form "descricao=Foto 1" \
+    --form "tipo=predio" \
+    --form "foto=@/tmp/phpmnHFvl" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/sala/1436a969-96b1-4e70-976d-426601fc4d55/foto"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('nome', 'Foto 1');
+body.append('descricao', 'Foto 1');
+body.append('tipo', 'predio');
+body.append('foto', document.querySelector('input[name="foto"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-sala--uuid--foto">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;nome&quot;: &quot;foto test&quot;,
+        &quot;descricao&quot;: &quot;description foto test&quot;,
+        &quot;url&quot;: &quot;http://localhost:9000/storage/predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg&quot;,
+        &quot;path&quot;: &quot;predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg&quot;,
+        &quot;uuid&quot;: &quot;46a3d089-dc55-4432-bf56-ea8f1f13fdc7&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-sala--uuid--foto" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-sala--uuid--foto"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-sala--uuid--foto"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-sala--uuid--foto" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-sala--uuid--foto"></code></pre>
+</span>
+<form id="form-POSTapi-v1-sala--uuid--foto" data-method="POST"
+      data-path="api/v1/sala/{uuid}/foto"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"multipart\/form-data"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-sala--uuid--foto', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-sala--uuid--foto"
+                    onclick="tryItOut('POSTapi-v1-sala--uuid--foto');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-sala--uuid--foto"
+                    onclick="cancelTryOut('POSTapi-v1-sala--uuid--foto');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-sala--uuid--foto" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/sala/{uuid}/foto</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="POSTapi-v1-sala--uuid--foto"
+               value="1436a969-96b1-4e70-976d-426601fc4d55"
+               data-component="url" hidden>
+    <br>
+<p>uuid do Sala ou Prédio.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="POSTapi-v1-sala--uuid--foto"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Nome da foto.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="POSTapi-v1-sala--uuid--foto"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da foto.</p>
+        </p>
+                <p>
+            <b><code>foto</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+                <input type="file"
+               name="foto"
+               data-endpoint="POSTapi-v1-sala--uuid--foto"
+               value=""
+               data-component="body" hidden>
+    <br>
+<p>Foto.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="POSTapi-v1-sala--uuid--foto"
+               value="predio"
+               data-component="body" hidden>
+    <br>
+<p>Tipo do recurso a ser utilizado (sala ou predio).</p>
+        </p>
+        </form>
+
+                    <h2 id="foto-PUTapi-v1-sala--uuid--foto--foto_uuid-">Atualização de registro de uma foto</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-sala--uuid--foto--foto_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/sala/746fe4d9-66de-4074-bf4b-077927164b03/foto/2" \
+    --header "Content-Type: multipart/form-data" \
+    --form "nome=Foto 1" \
+    --form "descricao=Foto 1" \
+    --form "tipo=predio" \
+    --form "foto=@/tmp/php1aX3GU" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/sala/746fe4d9-66de-4074-bf4b-077927164b03/foto/2"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('nome', 'Foto 1');
+body.append('descricao', 'Foto 1');
+body.append('tipo', 'predio');
+body.append('foto', document.querySelector('input[name="foto"]').files[0]);
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-sala--uuid--foto--foto_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;nome&quot;: &quot;foto test&quot;,
+        &quot;descricao&quot;: &quot;description foto test&quot;,
+        &quot;url&quot;: &quot;http://localhost:9000/storage/predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg&quot;,
+        &quot;path&quot;: &quot;predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg&quot;,
+        &quot;uuid&quot;: &quot;e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-sala--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-sala--uuid--foto--foto_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-sala--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-sala--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-sala--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-sala--uuid--foto--foto_uuid-" data-method="PUT"
+      data-path="api/v1/sala/{uuid}/foto/{foto_uuid}"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"multipart\/form-data"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-sala--uuid--foto--foto_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-sala--uuid--foto--foto_uuid-"
+                    onclick="tryItOut('PUTapi-v1-sala--uuid--foto--foto_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-sala--uuid--foto--foto_uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-sala--uuid--foto--foto_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-sala--uuid--foto--foto_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/sala/{uuid}/foto/{foto_uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/sala/{uuid}/foto/{foto_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do Sala ou Prédio.</p>
+            </p>
+                    <p>
+                <b><code>foto_uuid</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="foto_uuid"
+               data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
+               value="2"
+               data-component="url" hidden>
+    <br>
+
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Nome da foto.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
+               value="Foto 1"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da foto.</p>
+        </p>
+                <p>
+            <b><code>foto</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file"
+               name="foto"
+               data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
+               value=""
+               data-component="body" hidden>
+    <br>
+<p>Foto.</p>
+        </p>
+                <p>
+            <b><code>tipo</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="tipo"
+               data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
+               value="predio"
+               data-component="body" hidden>
+    <br>
+<p>Tipo do recurso a ser utilizado (sala ou predio).</p>
+        </p>
+        </form>
+
+                    <h2 id="foto-DELETEapi-v1-sala--uuid--foto--foto_uuid-">Removendo o registro de um prédio</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-sala--uuid--foto--foto_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/sala/746fe4d9-66de-4074-bf4b-077927164b03/foto/746fe4d9-66de-4074-bf4b-077927164b03"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/sala/746fe4d9-66de-4074-bf4b-077927164b03/foto/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-sala--uuid--foto--foto_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-sala--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-sala--uuid--foto--foto_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-sala--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-sala--uuid--foto--foto_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-sala--uuid--foto--foto_uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-sala--uuid--foto--foto_uuid-" data-method="DELETE"
+      data-path="api/v1/sala/{uuid}/foto/{foto_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-sala--uuid--foto--foto_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-sala--uuid--foto--foto_uuid-"
+                    onclick="tryItOut('DELETEapi-v1-sala--uuid--foto--foto_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-sala--uuid--foto--foto_uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-sala--uuid--foto--foto_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-sala--uuid--foto--foto_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/sala/{uuid}/foto/{foto_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-sala--uuid--foto--foto_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do Prédio ou Sala.</p>
+            </p>
+                    <p>
+                <b><code>foto_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="foto_uuid"
+               data-endpoint="DELETEapi-v1-sala--uuid--foto--foto_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid da foto a ser removida.</p>
+            </p>
+                    </form>
+
+                <h1 id="predio">Prédio</h1>
+
+    
+
+                                <h2 id="predio-GETapi-v1-cliente--uuid--predio">Listagem de prédios relacionado a um cliente</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cliente--uuid--predio">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/cliente/1436a969-96b1-4e70-976d-426601fc4d55/predio"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/1436a969-96b1-4e70-976d-426601fc4d55/predio"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-cliente--uuid--predio">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Listagem retornada com sucesso&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;1436a969-96b1-4e70-976d-426601fc4d55&quot;,
+            &quot;nome&quot;: &quot;Price Blanda&quot;,
+            &quot;descricao&quot;: &quot;Qui laudantium eos asperiores rerum. Sapiente voluptatum ea tempore et pariatur dicta consequuntur. Rem ut voluptas et sunt.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;cd3aa9b8-51fb-4858-bb59-40dad883de83&quot;,
+            &quot;nome&quot;: &quot;Emile Dooley&quot;,
+            &quot;descricao&quot;: &quot;Fuga occaecati molestiae sequi quibusdam veritatis. Qui dolores sunt aut labore. Molestiae dignissimos inventore perferendis et qui.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;544d13f4-7b1b-46e0-aa9d-e30c54b2a286&quot;,
+            &quot;nome&quot;: &quot;Devon Feil&quot;,
+            &quot;descricao&quot;: &quot;Deleniti sint quia veritatis asperiores quisquam aut. Numquam pariatur expedita voluptas voluptas soluta. Molestiae est perferendis ipsa et.&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cliente--uuid--predio" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cliente--uuid--predio"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cliente--uuid--predio"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cliente--uuid--predio" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cliente--uuid--predio"></code></pre>
+</span>
+<form id="form-GETapi-v1-cliente--uuid--predio" data-method="GET"
+      data-path="api/v1/cliente/{uuid}/predio"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cliente--uuid--predio', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cliente--uuid--predio"
+                    onclick="tryItOut('GETapi-v1-cliente--uuid--predio');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cliente--uuid--predio"
+                    onclick="cancelTryOut('GETapi-v1-cliente--uuid--predio');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cliente--uuid--predio" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cliente/{uuid}/predio</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-cliente--uuid--predio"
+               value="1436a969-96b1-4e70-976d-426601fc4d55"
+               data-component="url" hidden>
+    <br>
+<p>uuid do cliente.</p>
+            </p>
+                    </form>
+
+                    <h2 id="predio-POSTapi-v1-cliente--uuid--predio">Cadastrando um prédio relacionado a um cliente</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-cliente--uuid--predio">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/cliente/1436a969-96b1-4e70-976d-426601fc4d55/predio" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"nome\": \"Prédio 1\",
+    \"descricao\": \"Prédio 1\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/cliente/1436a969-96b1-4e70-976d-426601fc4d55/predio"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nome": "Prédio 1",
+    "descricao": "Prédio 1"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-cliente--uuid--predio">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;nome&quot;: &quot;Predio 1&quot;,
+        &quot;descricao&quot;: &quot;Predio 1&quot;,
+        &quot;uuid&quot;: &quot;cecd43a5-46a6-44f6-a016-584a88e264e2&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-cliente--uuid--predio" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-cliente--uuid--predio"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-cliente--uuid--predio"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-cliente--uuid--predio" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-cliente--uuid--predio"></code></pre>
+</span>
+<form id="form-POSTapi-v1-cliente--uuid--predio" data-method="POST"
+      data-path="api/v1/cliente/{uuid}/predio"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-cliente--uuid--predio', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-cliente--uuid--predio"
+                    onclick="tryItOut('POSTapi-v1-cliente--uuid--predio');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-cliente--uuid--predio"
+                    onclick="cancelTryOut('POSTapi-v1-cliente--uuid--predio');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-cliente--uuid--predio" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/cliente/{uuid}/predio</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="POSTapi-v1-cliente--uuid--predio"
+               value="1436a969-96b1-4e70-976d-426601fc4d55"
+               data-component="url" hidden>
+    <br>
+<p>uuid do cliente.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="POSTapi-v1-cliente--uuid--predio"
+               value="Prédio 1"
+               data-component="body" hidden>
+    <br>
+<p>Nome do prédio.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="POSTapi-v1-cliente--uuid--predio"
+               value="Prédio 1"
+               data-component="body" hidden>
+    <br>
+<p>Descrição do prédio.</p>
+        </p>
+        </form>
+
+                    <h2 id="predio-GETapi-v1-predio--uuid-">Retornando o registro de um prédio.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-predio--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-predio--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro encontrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;746fe4d9-66de-4074-bf4b-077927164b03&quot;,
+        &quot;nome&quot;: &quot;Rogers Crist&quot;,
+        &quot;descricao&quot;: &quot;Iure labore odit sint ipsa quo. Laboriosam corrupti et deserunt id quisquam. Et est ad a quidem.&quot;,
+        &quot;endereco&quot;: {
+            &quot;uuid&quot;: &quot;892f84b8-7761-4ff0-b50b-03928e76812d&quot;,
+            &quot;cep&quot;: &quot;66599&quot;,
+            &quot;logradouro&quot;: &quot;&quot;,
+            &quot;numero&quot;: &quot;78394&quot;,
+            &quot;complemento&quot;: &quot;Suite 357&quot;,
+            &quot;bairro&quot;: &quot;side&quot;,
+            &quot;cidade&quot;: &quot;Erdmanberg&quot;,
+            &quot;uf&quot;: &quot;ND&quot;,
+            &quot;url_google_maps&quot;: &quot;&quot;
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-predio--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-predio--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-predio--uuid-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-predio--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-predio--uuid-"></code></pre>
+</span>
+<form id="form-GETapi-v1-predio--uuid-" data-method="GET"
+      data-path="api/v1/predio/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-predio--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-predio--uuid-"
+                    onclick="tryItOut('GETapi-v1-predio--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-predio--uuid-"
+                    onclick="cancelTryOut('GETapi-v1-predio--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-predio--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/predio/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-predio--uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>uuid do prédio.</p>
+            </p>
+                    </form>
+
+                    <h2 id="predio-PUTapi-v1-predio--uuid-">Atualização de registro de um prédio</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-predio--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"nome\": \"Prédio 1 Updated\",
+    \"descricao\": \"Prédio 1 Updated\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nome": "Prédio 1 Updated",
+    "descricao": "Prédio 1 Updated"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-predio--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro autalizado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;a36b1b02-38b0-4a00-916b-fbb306ead110&quot;,
+        &quot;nome&quot;: &quot;Predio updated&quot;,
+        &quot;descricao&quot;: &quot;Predio updated&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-predio--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-predio--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-predio--uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-predio--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-predio--uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-predio--uuid-" data-method="PUT"
+      data-path="api/v1/predio/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-predio--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-predio--uuid-"
+                    onclick="tryItOut('PUTapi-v1-predio--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-predio--uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-predio--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-predio--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/predio/{uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/predio/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-predio--uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do predio.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="PUTapi-v1-predio--uuid-"
+               value="Prédio 1 Updated"
+               data-component="body" hidden>
+    <br>
+<p>Nome do prédio.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="PUTapi-v1-predio--uuid-"
+               value="Prédio 1 Updated"
+               data-component="body" hidden>
+    <br>
+<p>Descrição do prédio.</p>
+        </p>
+        </form>
+
+                    <h2 id="predio-DELETEapi-v1-predio--uuid-">Removendo o registro de um prédio</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-predio--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-predio--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-predio--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-predio--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-predio--uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-predio--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-predio--uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-predio--uuid-" data-method="DELETE"
+      data-path="api/v1/predio/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-predio--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-predio--uuid-"
+                    onclick="tryItOut('DELETEapi-v1-predio--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-predio--uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-predio--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-predio--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/predio/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-predio--uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do predio.</p>
+            </p>
+                    </form>
+
+                <h1 id="sala">Sala</h1>
+
+    
+
+                                <h2 id="sala-GETapi-v1-predio--uuid--sala">Listagem de salas relacionadas a um prédio</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-predio--uuid--sala">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/predio/ac07ae3c-79aa-4460-bc17-1b9b5ae9be01/sala"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/ac07ae3c-79aa-4460-bc17-1b9b5ae9be01/sala"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-predio--uuid--sala">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Listagem retornada com sucesso&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;ac07ae3c-79aa-4460-bc17-1b9b5ae9be01&quot;,
+            &quot;nome&quot;: &quot;Ms. Amina Mosciski&quot;,
+            &quot;numero&quot;: &quot;67&quot;,
+            &quot;descricao&quot;: &quot;Quisquam sed et optio. Eius sunt assumenda dolor eligendi magni unde quia. Quia quos exercitationem nihil iste dolorem in.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1&quot;,
+            &quot;nome&quot;: &quot;Ines Raynor&quot;,
+            &quot;numero&quot;: &quot;47&quot;,
+            &quot;descricao&quot;: &quot;Possimus quaerat accusantium ad deleniti consectetur cumque. Debitis et aperiam beatae aliquid. Ex qui aperiam amet unde non.&quot;
+        },
+        {
+            &quot;uuid&quot;: &quot;147fd51f-9683-4950-84fa-1eb5247bdc1a&quot;,
+            &quot;nome&quot;: &quot;Raquel Weissnat&quot;,
+            &quot;numero&quot;: &quot;38&quot;,
+            &quot;descricao&quot;: &quot;Nobis consectetur hic dicta ut hic. Molestiae mollitia autem et sint veniam reprehenderit eaque. Quia sit dolore et voluptates ducimus. Debitis temporibus dolor voluptatem alias omnis et.&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-predio--uuid--sala" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-predio--uuid--sala"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-predio--uuid--sala"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-predio--uuid--sala" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-predio--uuid--sala"></code></pre>
+</span>
+<form id="form-GETapi-v1-predio--uuid--sala" data-method="GET"
+      data-path="api/v1/predio/{uuid}/sala"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-predio--uuid--sala', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-predio--uuid--sala"
+                    onclick="tryItOut('GETapi-v1-predio--uuid--sala');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-predio--uuid--sala"
+                    onclick="cancelTryOut('GETapi-v1-predio--uuid--sala');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-predio--uuid--sala" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/predio/{uuid}/sala</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-predio--uuid--sala"
+               value="ac07ae3c-79aa-4460-bc17-1b9b5ae9be01"
+               data-component="url" hidden>
+    <br>
+<p>uuid do prédio.</p>
+            </p>
+                    </form>
+
+                    <h2 id="sala-POSTapi-v1-predio--uuid--sala">Store a newly created resource in storage.</h2>
+
+<p>
+</p>
+
+<p>Cadastrando um prédio relacionado a um cliente</p>
+
+<span id="example-requests-POSTapi-v1-predio--uuid--sala">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/predio/ac07ae3c-79aa-4460-bc17-1b9b5ae9be01/sala" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"nome\": \"Sala 1\",
+    \"numero\": \"1\",
+    \"descricao\": \"Sala de reunião\",
+    \"tipagem_uuid\": \"2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/ac07ae3c-79aa-4460-bc17-1b9b5ae9be01/sala"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nome": "Sala 1",
+    "numero": "1",
+    "descricao": "Sala de reunião",
+    "tipagem_uuid": "2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-predio--uuid--sala">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;nome&quot;: &quot;Sala 1&quot;,
+        &quot;numero&quot;: 1,
+        &quot;descricao&quot;: &quot;Sala 1&quot;,
+        &quot;uuid&quot;: &quot;9bf7502d-a7ab-4874-9279-272bd2b8ff04&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-predio--uuid--sala" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-predio--uuid--sala"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-predio--uuid--sala"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-predio--uuid--sala" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-predio--uuid--sala"></code></pre>
+</span>
+<form id="form-POSTapi-v1-predio--uuid--sala" data-method="POST"
+      data-path="api/v1/predio/{uuid}/sala"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-predio--uuid--sala', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-predio--uuid--sala"
+                    onclick="tryItOut('POSTapi-v1-predio--uuid--sala');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-predio--uuid--sala"
+                    onclick="cancelTryOut('POSTapi-v1-predio--uuid--sala');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-predio--uuid--sala" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/predio/{uuid}/sala</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="POSTapi-v1-predio--uuid--sala"
+               value="ac07ae3c-79aa-4460-bc17-1b9b5ae9be01"
+               data-component="url" hidden>
+    <br>
+<p>uuid do prédio.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="POSTapi-v1-predio--uuid--sala"
+               value="Sala 1"
+               data-component="body" hidden>
+    <br>
+<p>Nome da sala.</p>
+        </p>
+                <p>
+            <b><code>numero</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="numero"
+               data-endpoint="POSTapi-v1-predio--uuid--sala"
+               value="1"
+               data-component="body" hidden>
+    <br>
+<p>Número da sala.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="POSTapi-v1-predio--uuid--sala"
+               value="Sala de reunião"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da sala.</p>
+        </p>
+                <p>
+            <b><code>tipagem_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="tipagem_uuid"
+               data-endpoint="POSTapi-v1-predio--uuid--sala"
+               value="2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1"
+               data-component="body" hidden>
+    <br>
+<p>Uuid da tipagem.</p>
+        </p>
+        </form>
+
+                    <h2 id="sala-GETapi-v1-predio--uuid--sala--sala_uuid-">Retornando o registro de uma sala.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-predio--uuid--sala--sala_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/sala/746fe4d9-66de-4074-bf4b-077927164b03"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/sala/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-predio--uuid--sala--sala_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro encontrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;02f26f7c-6ac4-4dbd-ab89-d87d1f3dd02e&quot;,
+        &quot;nome&quot;: &quot;Dr. Donato Gerhold&quot;,
+        &quot;numero&quot;: &quot;47&quot;,
+        &quot;descricao&quot;: &quot;Magnam dolor vero culpa a. Praesentium sit totam unde aut et doloribus nam officiis. Sint et veritatis est qui velit dolor tempora. Nam dolor architecto atque tenetur commodi architecto.&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-predio--uuid--sala--sala_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-predio--uuid--sala--sala_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-predio--uuid--sala--sala_uuid-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-predio--uuid--sala--sala_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-predio--uuid--sala--sala_uuid-"></code></pre>
+</span>
+<form id="form-GETapi-v1-predio--uuid--sala--sala_uuid-" data-method="GET"
+      data-path="api/v1/predio/{uuid}/sala/{sala_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-predio--uuid--sala--sala_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-predio--uuid--sala--sala_uuid-"
+                    onclick="tryItOut('GETapi-v1-predio--uuid--sala--sala_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-predio--uuid--sala--sala_uuid-"
+                    onclick="cancelTryOut('GETapi-v1-predio--uuid--sala--sala_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-predio--uuid--sala--sala_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/predio/{uuid}/sala/{sala_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="GETapi-v1-predio--uuid--sala--sala_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>uuid do prédio.</p>
+            </p>
+                    <p>
+                <b><code>sala_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="sala_uuid"
+               data-endpoint="GETapi-v1-predio--uuid--sala--sala_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>uuid da sala.</p>
+            </p>
+                    </form>
+
+                    <h2 id="sala-PUTapi-v1-predio--uuid--sala--sala_uuid-">Atualização de registro de uma sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-predio--uuid--sala--sala_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/predio/ac07ae3c-79aa-4460-bc17-1b9b5ae9be01/sala/746fe4d9-66de-4074-bf4b-077927164b03" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"nome\": \"Sala 1\",
+    \"numero\": \"1\",
+    \"descricao\": \"Sala de reunião\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/ac07ae3c-79aa-4460-bc17-1b9b5ae9be01/sala/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nome": "Sala 1",
+    "numero": "1",
+    "descricao": "Sala de reunião"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-predio--uuid--sala--sala_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro autalizado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;e9cb6c8b-496e-469b-8048-e38003afd846&quot;,
+        &quot;nome&quot;: &quot;Sala updated&quot;,
+        &quot;numero&quot;: &quot;5&quot;,
+        &quot;descricao&quot;: &quot;Sala 5&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-predio--uuid--sala--sala_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-predio--uuid--sala--sala_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-predio--uuid--sala--sala_uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-predio--uuid--sala--sala_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-predio--uuid--sala--sala_uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-predio--uuid--sala--sala_uuid-" data-method="PUT"
+      data-path="api/v1/predio/{uuid}/sala/{sala_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-predio--uuid--sala--sala_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-predio--uuid--sala--sala_uuid-"
+                    onclick="tryItOut('PUTapi-v1-predio--uuid--sala--sala_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-predio--uuid--sala--sala_uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-predio--uuid--sala--sala_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-predio--uuid--sala--sala_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/predio/{uuid}/sala/{sala_uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/predio/{uuid}/sala/{sala_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
+               value="ac07ae3c-79aa-4460-bc17-1b9b5ae9be01"
+               data-component="url" hidden>
+    <br>
+<p>uuid do prédio.</p>
+            </p>
+                    <p>
+                <b><code>sala_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="sala_uuid"
+               data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>uuid da sala.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
+               value="Sala 1"
+               data-component="body" hidden>
+    <br>
+<p>Nome da sala.</p>
+        </p>
+                <p>
+            <b><code>numero</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="numero"
+               data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
+               value="1"
+               data-component="body" hidden>
+    <br>
+<p>Número da sala.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
+               value="Sala de reunião"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da sala.</p>
+        </p>
+        </form>
+
+                    <h2 id="sala-DELETEapi-v1-predio--uuid--sala--sala_uuid-">Removendo o registro de uma sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-predio--uuid--sala--sala_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/sala/746fe4d9-66de-4074-bf4b-077927164b03"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/predio/746fe4d9-66de-4074-bf4b-077927164b03/sala/746fe4d9-66de-4074-bf4b-077927164b03"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-predio--uuid--sala--sala_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-predio--uuid--sala--sala_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-predio--uuid--sala--sala_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-predio--uuid--sala--sala_uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-predio--uuid--sala--sala_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-predio--uuid--sala--sala_uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-predio--uuid--sala--sala_uuid-" data-method="DELETE"
+      data-path="api/v1/predio/{uuid}/sala/{sala_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-predio--uuid--sala--sala_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-predio--uuid--sala--sala_uuid-"
+                    onclick="tryItOut('DELETEapi-v1-predio--uuid--sala--sala_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-predio--uuid--sala--sala_uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-predio--uuid--sala--sala_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-predio--uuid--sala--sala_uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/predio/{uuid}/sala/{sala_uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-predio--uuid--sala--sala_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid do predio.</p>
+            </p>
+                    <p>
+                <b><code>sala_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="sala_uuid"
+               data-endpoint="DELETEapi-v1-predio--uuid--sala--sala_uuid-"
+               value="746fe4d9-66de-4074-bf4b-077927164b03"
+               data-component="url" hidden>
+    <br>
+<p>O Uuid da sala.</p>
+            </p>
+                    </form>
+
+                <h1 id="tipagem">Tipagem</h1>
+
+    
+
+                                <h2 id="tipagem-GETapi-v1-tipagem">Listagem de tipagem de salas</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-tipagem">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:9000/api/v1/tipagem"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/tipagem"
+);
+
+fetch(url, {
+    method: "GET",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-tipagem">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Listagem retornada com sucesso&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;162d1a32-74bf-4e39-b528-8f2ff4eff152&quot;,
+            &quot;nome&quot;: &quot;Cali Schowalter&quot;,
+            &quot;descricao&quot;: &quot;Qui blanditiis alias id porro omnis itaque laudantium. Et rerum in aperiam ea maiores nulla et. Voluptatem maxime qui maiores. Suscipit accusamus eum quia dolorem saepe et eos.&quot;,
+            &quot;preco&quot;: 417.76
+        },
+        {
+            &quot;uuid&quot;: &quot;6d4fadb6-c385-4cbc-a161-6c9a91c5ed56&quot;,
+            &quot;nome&quot;: &quot;Dr. Coby Harris&quot;,
+            &quot;descricao&quot;: &quot;Et rerum aut est deserunt pariatur debitis asperiores. Et non qui voluptatem. Qui illum at assumenda minus nihil soluta.&quot;,
+            &quot;preco&quot;: 513.02
+        },
+        {
+            &quot;uuid&quot;: &quot;ec84da4a-b8d9-4574-871c-202343271485&quot;,
+            &quot;nome&quot;: &quot;Prof. Cesar Oberbrunner III&quot;,
+            &quot;descricao&quot;: &quot;Est ipsa aut accusantium vero eaque omnis ullam. Ducimus nam quos dolor ab. Maxime hic dolorem asperiores laboriosam.&quot;,
+            &quot;preco&quot;: 332.79
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-tipagem" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-tipagem"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-tipagem"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-tipagem" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-tipagem"></code></pre>
+</span>
+<form id="form-GETapi-v1-tipagem" data-method="GET"
+      data-path="api/v1/tipagem"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-tipagem', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-tipagem"
+                    onclick="tryItOut('GETapi-v1-tipagem');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-tipagem"
+                    onclick="cancelTryOut('GETapi-v1-tipagem');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-tipagem" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/tipagem</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="tipagem-POSTapi-v1-tipagem">Cadastrando uma tipagem de sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-tipagem">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:9000/api/v1/tipagem" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"nome\": \"Sala de reunião\",
+    \"preco\": 100,
+    \"descricao\": \"Sala de reunião para 10 pessoas\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/tipagem"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nome": "Sala de reunião",
+    "preco": 100,
+    "descricao": "Sala de reunião para 10 pessoas"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-tipagem">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro cadastrado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;nome&quot;: &quot;Tipagem Teste&quot;,
+        &quot;preco&quot;: 10,
+        &quot;descricao&quot;: &quot;Descri&ccedil;&atilde;o da tipagem teste&quot;,
+        &quot;uuid&quot;: &quot;49a7fb54-9ef7-4559-8ec8-9e933eaad9b0&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-tipagem" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-tipagem"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-tipagem"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-tipagem" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-tipagem"></code></pre>
+</span>
+<form id="form-POSTapi-v1-tipagem" data-method="POST"
+      data-path="api/v1/tipagem"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-tipagem', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-tipagem"
+                    onclick="tryItOut('POSTapi-v1-tipagem');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-tipagem"
+                    onclick="cancelTryOut('POSTapi-v1-tipagem');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-tipagem" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/tipagem</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="POSTapi-v1-tipagem"
+               value="Sala de reunião"
+               data-component="body" hidden>
+    <br>
+<p>Nome da tipagem.</p>
+        </p>
+                <p>
+            <b><code>preco</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="preco"
+               data-endpoint="POSTapi-v1-tipagem"
+               value="100"
+               data-component="body" hidden>
+    <br>
+<p>Preço da tipagem.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="POSTapi-v1-tipagem"
+               value="Sala de reunião para 10 pessoas"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da tipagem.</p>
+        </p>
+        </form>
+
+                    <h2 id="tipagem-PUTapi-v1-tipagem--uuid-">Atualizando uma tipagem de sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-tipagem--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:9000/api/v1/tipagem/49a7fb54-9ef7-4559-8ec8-9e933eaad9b0" \
+    --header "Content-Type: application/json" \
+    --data "{
+    \"nome\": \"Sala de reunião\",
+    \"preco\": 100,
+    \"descricao\": \"Sala de reunião para 10 pessoas\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/tipagem/49a7fb54-9ef7-4559-8ec8-9e933eaad9b0"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nome": "Sala de reunião",
+    "preco": 100,
+    "descricao": "Sala de reunião para 10 pessoas"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-tipagem--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro autalizado com sucesso&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;4d845a8f-aa41-4b81-85f9-78839a77167f&quot;,
+        &quot;nome&quot;: &quot;Tipagem Teste&quot;,
+        &quot;descricao&quot;: &quot;Descri&ccedil;&atilde;o da tipagem teste&quot;,
+        &quot;preco&quot;: 10
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-tipagem--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-tipagem--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-tipagem--uuid-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-tipagem--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-tipagem--uuid-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-tipagem--uuid-" data-method="PUT"
+      data-path="api/v1/tipagem/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-tipagem--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-tipagem--uuid-"
+                    onclick="tryItOut('PUTapi-v1-tipagem--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-tipagem--uuid-"
+                    onclick="cancelTryOut('PUTapi-v1-tipagem--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-tipagem--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/tipagem/{uuid}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/tipagem/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="uuid"
+               data-endpoint="PUTapi-v1-tipagem--uuid-"
+               value="49a7fb54-9ef7-4559-8ec8-9e933eaad9b0"
+               data-component="url" hidden>
+    <br>
+<p>UUID da tipagem.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>nome</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="nome"
+               data-endpoint="PUTapi-v1-tipagem--uuid-"
+               value="Sala de reunião"
+               data-component="body" hidden>
+    <br>
+<p>Nome da tipagem.</p>
+        </p>
+                <p>
+            <b><code>preco</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number"
+               name="preco"
+               data-endpoint="PUTapi-v1-tipagem--uuid-"
+               value="100"
+               data-component="body" hidden>
+    <br>
+<p>Preço da tipagem.</p>
+        </p>
+                <p>
+            <b><code>descricao</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="descricao"
+               data-endpoint="PUTapi-v1-tipagem--uuid-"
+               value="Sala de reunião para 10 pessoas"
+               data-component="body" hidden>
+    <br>
+<p>Descrição da tipagem.</p>
+        </p>
+        </form>
+
+                    <h2 id="tipagem-DELETEapi-v1-tipagem--uuid-">Removendo o registro de uma tipagem de sala</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-tipagem--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:9000/api/v1/tipagem/49"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:9000/api/v1/tipagem/49"
+);
+
+fetch(url, {
+    method: "DELETE",
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-tipagem--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Registro removido com sucesso&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-tipagem--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-tipagem--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-tipagem--uuid-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-tipagem--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-tipagem--uuid-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-tipagem--uuid-" data-method="DELETE"
+      data-path="api/v1/tipagem/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='[]'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-tipagem--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-tipagem--uuid-"
+                    onclick="tryItOut('DELETEapi-v1-tipagem--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-tipagem--uuid-"
+                    onclick="cancelTryOut('DELETEapi-v1-tipagem--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-tipagem--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/tipagem/{uuid}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>uuid</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="uuid"
+               data-endpoint="DELETEapi-v1-tipagem--uuid-"
+               value="49"
+               data-component="url" hidden>
+    <br>
+<p>UUID da tipagem.</p>
+            </p>
+                    </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

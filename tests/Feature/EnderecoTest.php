@@ -105,6 +105,6 @@ class EnderecoTest extends TestCase
     $response = $this->delete(route('cliente.endereco.destroy', ['uuid' => $cliente->uuid, 'endereco_uuid' => $response->json('data.uuid')]));
     $response->assertStatus(200);
     $response->assertJsonCount(0, 'data');
-    $this->assertEquals(__('response.delete.success'), $response->json('message'));
+    $this->assertEquals(__('response.destroy.success'), $response->json('message'));
   }
 }

@@ -1,0 +1,312 @@
+name: Prédio
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/cliente/{uuid}/predio'
+    metadata:
+      groupName: Prédio
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Listagem de prédios relacionado a um cliente'
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters:
+      uuid:
+        name: uuid
+        description: 'uuid do cliente.'
+        required: true
+        example: 1436a969-96b1-4e70-976d-426601fc4d55
+        type: string
+        custom: []
+    cleanUrlParameters:
+      uuid: 1436a969-96b1-4e70-976d-426601fc4d55
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Listagem retornada com sucesso",
+           "data": [
+             {
+               "uuid": "1436a969-96b1-4e70-976d-426601fc4d55",
+               "nome": "Price Blanda",
+               "descricao": "Qui laudantium eos asperiores rerum. Sapiente voluptatum ea tempore et pariatur dicta consequuntur. Rem ut voluptas et sunt."
+             },
+             {
+               "uuid": "cd3aa9b8-51fb-4858-bb59-40dad883de83",
+               "nome": "Emile Dooley",
+               "descricao": "Fuga occaecati molestiae sequi quibusdam veritatis. Qui dolores sunt aut labore. Molestiae dignissimos inventore perferendis et qui."
+             },
+             {
+               "uuid": "544d13f4-7b1b-46e0-aa9d-e30c54b2a286",
+               "nome": "Devon Feil",
+               "descricao": "Deleniti sint quia veritatis asperiores quisquam aut. Numquam pariatur expedita voluptas voluptas soluta. Molestiae est perferendis ipsa et."
+             }
+           ]
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/cliente/{uuid}/predio'
+    metadata:
+      groupName: Prédio
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Cadastrando um prédio relacionado a um cliente'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters:
+      uuid:
+        name: uuid
+        description: 'uuid do cliente.'
+        required: true
+        example: 1436a969-96b1-4e70-976d-426601fc4d55
+        type: string
+        custom: []
+    cleanUrlParameters:
+      uuid: 1436a969-96b1-4e70-976d-426601fc4d55
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Nome do prédio.'
+        required: true
+        example: 'Prédio 1'
+        type: string
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Descrição do prédio.'
+        required: true
+        example: 'Prédio 1'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: 'Prédio 1'
+      descricao: 'Prédio 1'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "status": true,
+             "message": "Registro cadastrado com sucesso",
+             "data": {
+               "nome": "Predio 1",
+               "descricao": "Predio 1",
+               "uuid": "cecd43a5-46a6-44f6-a016-584a88e264e2"
+             }
+           }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/predio/{uuid}'
+    metadata:
+      groupName: Prédio
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Retornando o registro de um prédio.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters:
+      uuid:
+        name: uuid
+        description: 'uuid do prédio.'
+        required: true
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        type: string
+        custom: []
+    cleanUrlParameters:
+      uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Registro encontrado com sucesso",
+           "data": {
+             "uuid": "746fe4d9-66de-4074-bf4b-077927164b03",
+             "nome": "Rogers Crist",
+             "descricao": "Iure labore odit sint ipsa quo. Laboriosam corrupti et deserunt id quisquam. Et est ad a quidem.",
+             "endereco": {
+               "uuid": "892f84b8-7761-4ff0-b50b-03928e76812d",
+               "cep": "66599",
+               "logradouro": "",
+               "numero": "78394",
+               "complemento": "Suite 357",
+               "bairro": "side",
+               "cidade": "Erdmanberg",
+               "uf": "ND",
+               "url_google_maps": ""
+             }
+           }
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/predio/{uuid}'
+    metadata:
+      groupName: Prédio
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Atualização de registro de um prédio'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+    urlParameters:
+      uuid:
+        name: uuid
+        description: 'O Uuid do predio.'
+        required: true
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        type: string
+        custom: []
+    cleanUrlParameters:
+      uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      nome:
+        name: nome
+        description: 'Nome do prédio.'
+        required: true
+        example: 'Prédio 1 Updated'
+        type: string
+        custom: []
+      descricao:
+        name: descricao
+        description: 'Descrição do prédio.'
+        required: true
+        example: 'Prédio 1 Updated'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      nome: 'Prédio 1 Updated'
+      descricao: 'Prédio 1 Updated'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Registro autalizado com sucesso",
+           "data": {
+             "uuid": "a36b1b02-38b0-4a00-916b-fbb306ead110",
+             "nome": "Predio updated",
+             "descricao": "Predio updated"
+           }
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/predio/{uuid}'
+    metadata:
+      groupName: Prédio
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Removendo o registro de um prédio'
+      description: ''
+      authenticated: false
+      custom: []
+    headers: []
+    urlParameters:
+      uuid:
+        name: uuid
+        description: 'O Uuid do predio.'
+        required: true
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        type: string
+        custom: []
+    cleanUrlParameters:
+      uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": true,
+           "message": "Registro removido com sucesso",
+           "data": []
+          }
+        headers: []
+        description: '200'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

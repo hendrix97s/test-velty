@@ -1,0 +1,2063 @@
+openapi: 3.0.3
+info:
+  title: Velty
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:9000'
+paths:
+  /api/v1/cliente:
+    get:
+      summary: 'Listagem de clientes.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: e26e6e0c-b259-42ea-8699-711f0ef2728b
+                      razao_social: 'Margie Jenkins Sr.'
+                      nome_fantasia: 'Earline Hyatt'
+                      cnpj: 'Johnathan Ledner Sr.'
+                      email: okon.doris@schmidt.org
+                      telefone: '+1 (520) 262-6602'
+                      inicio_atividade: '1985-03-27'
+                      endereco: null
+                    -
+                      uuid: 26a70a69-1e91-4b32-8c91-5d2ceca26141
+                      razao_social: 'Alta Nicolas III'
+                      nome_fantasia: 'Tiffany Kohler'
+                      cnpj: 'Carlos Bosco DVM'
+                      email: nhowe@emmerich.com
+                      telefone: 1-484-677-1592
+                      inicio_atividade: '1974-11-04'
+                      endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: e26e6e0c-b259-42ea-8699-711f0ef2728b
+                        razao_social: 'Margie Jenkins Sr.'
+                        nome_fantasia: 'Earline Hyatt'
+                        cnpj: 'Johnathan Ledner Sr.'
+                        email: okon.doris@schmidt.org
+                        telefone: '+1 (520) 262-6602'
+                        inicio_atividade: '1985-03-27'
+                        endereco: null
+                      -
+                        uuid: 26a70a69-1e91-4b32-8c91-5d2ceca26141
+                        razao_social: 'Alta Nicolas III'
+                        nome_fantasia: 'Tiffany Kohler'
+                        cnpj: 'Carlos Bosco DVM'
+                        email: nhowe@emmerich.com
+                        telefone: 1-484-677-1592
+                        inicio_atividade: '1974-11-04'
+                        endereco: null
+                    items:
+                      type: object
+      tags:
+        - Cliente
+      security: []
+    post:
+      summary: 'Cadastrando um novo cliente.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    razao_social: 'Luiz F. Lima'
+                    nome_fantasia: 'lf system'
+                    cnpj: '43897291000175'
+                    telefone: '11999999999'
+                    email: lf.system@outlook.com
+                    inicio_atividade: '2021-10-29'
+                    uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      razao_social: 'Luiz F. Lima'
+                      nome_fantasia: 'lf system'
+                      cnpj: '43897291000175'
+                      telefone: '11999999999'
+                      email: lf.system@outlook.com
+                      inicio_atividade: '2021-10-29'
+                      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                      endereco: null
+      tags:
+        - Cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                razao_social:
+                  type: string
+                  description: 'Razão social do cliente.'
+                  example: 'Luiz F. Lima'
+                nome_fantasia:
+                  type: string
+                  description: 'string Nome fantasia do cliente.'
+                  example: 'lf system'
+                cnpj:
+                  type: string
+                  description: 'string CNPJ do cliente.'
+                  example: '43897291000175'
+                telefone:
+                  type: string
+                  description: 'string Telefone do cliente.'
+                  example: '11999999999'
+                email:
+                  type: string
+                  description: 'string Email do cliente.'
+                  example: lf.system@outlook.com
+                inicio_atividade:
+                  type: string
+                  description: 'date Data de inicio de atividade.'
+                  example: '2021-10-29'
+              required:
+                - razao_social
+                - nome_fantasia
+                - cnpj
+                - telefone
+                - email
+                - inicio_atividade
+      security: []
+  '/api/v1/cliente/{uuid}':
+    get:
+      summary: 'Retornando um cliente.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro encontrado com sucesso'
+                  data:
+                    uuid: 006902ab-ae1c-4315-aa5c-9edd856630ac
+                    razao_social: 'Luella Satterfield'
+                    nome_fantasia: 'Clarabelle Sipes'
+                    cnpj: 'Evangeline Barrows'
+                    email: cameron.gleichner@cassin.com
+                    telefone: +1.323.234.0959
+                    inicio_atividade: '1972-01-22'
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro encontrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 006902ab-ae1c-4315-aa5c-9edd856630ac
+                      razao_social: 'Luella Satterfield'
+                      nome_fantasia: 'Clarabelle Sipes'
+                      cnpj: 'Evangeline Barrows'
+                      email: cameron.gleichner@cassin.com
+                      telefone: +1.323.234.0959
+                      inicio_atividade: '1972-01-22'
+                      endereco: null
+      tags:
+        - Cliente
+      security: []
+    put:
+      summary: 'Atualizando o registro de um cliente.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": true,\n\"message\": \"Registro autalizado com sucesso\",\n\"data\": {\n  \"uuid\": \"4816ac45-f3d8-46ce-95b3-bb718689d7af\",\n  \"razao_social\": \"Luiz F. Lima updated\",\n  \"nome_fantasia\": \"lf system\",\n  \"cnpj\": \"43897291000175\",\n  \"email\": \"ruben80@smitham.com\",\n  \"telefone\": \"11999999999\",\n  \"inicio_atividade\": \"2005-10-29\",\n  \"endereco\": null\n}"
+      tags:
+        - Cliente
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                razao_social:
+                  type: string
+                  description: 'Razão social do cliente.'
+                  example: 'Luiz F. Lima'
+                nome_fantasia:
+                  type: string
+                  description: 'string Nome fantasia do cliente.'
+                  example: 'lf system'
+                cnpj:
+                  type: string
+                  description: 'string CNPJ do cliente.'
+                  example: '43897291000175'
+                telefone:
+                  type: string
+                  description: 'string Telefone do cliente.'
+                  example: '11999999999'
+                email:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: tcqjkqaudpfbsuvncevclijjmcohdmchqymjtwvfosjaejqvsvmamu
+                inicio_atividade:
+                  type: string
+                  description: 'date Data de inicio de atividade.'
+                  example: '2021-10-29'
+      security: []
+    delete:
+      summary: 'Removendo um cliente.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Cliente
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid de um cliente.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+  '/api/v1/cliente/{uuid}/endereco':
+    post:
+      summary: 'Cadastro de endereço'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    razao_social: 'Luiz F. Lima'
+                    nome_fantasia: 'lf system'
+                    cnpj: '43897291000175'
+                    telefone: '11999999999'
+                    email: lf.system@outlook.com
+                    inicio_atividade: '2021-10-29'
+                    uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      razao_social: 'Luiz F. Lima'
+                      nome_fantasia: 'lf system'
+                      cnpj: '43897291000175'
+                      telefone: '11999999999'
+                      email: lf.system@outlook.com
+                      inicio_atividade: '2021-10-29'
+                      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                      endereco: null
+      tags:
+        - Endereço
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: 'O CEP do endereço.'
+                  example: 13606-536
+                numero:
+                  type: string
+                  description: 'O número do endereço.'
+                  example: '123'
+                complemento:
+                  type: string
+                  description: 'O complemento do endereço.'
+                  example: 'Apto 123'
+                tipo:
+                  type: string
+                  description: 'O tipo do recurso a ser utilizado (cliente ou predio).'
+                  example: cliente
+              required:
+                - cep
+                - numero
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O uuid do Cliente ou Prédio.'
+        example: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+        required: true
+        schema:
+          type: string
+  '/api/v1/cliente/{uuid}/endereco/{endereco_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                    cep: 13606-536
+                    logradouro: 'Avenida Luiz Carlos Tunes'
+                    numero: '123'
+                    complemento: predio
+                    bairro: 'Jardim Morumbi'
+                    cidade: Araras
+                    uf: SP
+                    url_google_maps: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                      cep: 13606-536
+                      logradouro: 'Avenida Luiz Carlos Tunes'
+                      numero: '123'
+                      complemento: predio
+                      bairro: 'Jardim Morumbi'
+                      cidade: Araras
+                      uf: SP
+                      url_google_maps: null
+      tags:
+        - Endereço
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: 'CEP do endereço.'
+                  example: '12345678'
+                numero:
+                  type: string
+                  description: 'Número do endereço.'
+                  example: '123'
+                complemento:
+                  type: string
+                  description: 'Complemento do endereço.'
+                  example: casa
+                tipo:
+                  type: required
+                  description: 'Tipo do recurso a ser utilizado (predio ou cliente).'
+                  example: cliente
+      security: []
+    delete:
+      summary: 'Removendo o endereço de um cliente ou Prédio.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endereço
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid de um cliente.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: endereco_uuid
+        description: 'O Uuid de um endereço.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+  '/api/v1/predio/{uuid}/endereco':
+    post:
+      summary: 'Cadastro de endereço'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    razao_social: 'Luiz F. Lima'
+                    nome_fantasia: 'lf system'
+                    cnpj: '43897291000175'
+                    telefone: '11999999999'
+                    email: lf.system@outlook.com
+                    inicio_atividade: '2021-10-29'
+                    uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                    endereco: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      razao_social: 'Luiz F. Lima'
+                      nome_fantasia: 'lf system'
+                      cnpj: '43897291000175'
+                      telefone: '11999999999'
+                      email: lf.system@outlook.com
+                      inicio_atividade: '2021-10-29'
+                      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+                      endereco: null
+      tags:
+        - Endereço
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: 'O CEP do endereço.'
+                  example: 13606-536
+                numero:
+                  type: string
+                  description: 'O número do endereço.'
+                  example: '123'
+                complemento:
+                  type: string
+                  description: 'O complemento do endereço.'
+                  example: 'Apto 123'
+                tipo:
+                  type: string
+                  description: 'O tipo do recurso a ser utilizado (cliente ou predio).'
+                  example: cliente
+              required:
+                - cep
+                - numero
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O uuid do Cliente ou Prédio.'
+        example: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+        required: true
+        schema:
+          type: string
+  '/api/v1/predio/{uuid}/endereco/{endereco_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                    cep: 13606-536
+                    logradouro: 'Avenida Luiz Carlos Tunes'
+                    numero: '123'
+                    complemento: predio
+                    bairro: 'Jardim Morumbi'
+                    cidade: Araras
+                    uf: SP
+                    url_google_maps: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 97a119a3-d55e-425c-ae70-f4ee78ddf30d
+                      cep: 13606-536
+                      logradouro: 'Avenida Luiz Carlos Tunes'
+                      numero: '123'
+                      complemento: predio
+                      bairro: 'Jardim Morumbi'
+                      cidade: Araras
+                      uf: SP
+                      url_google_maps: null
+      tags:
+        - Endereço
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: 'CEP do endereço.'
+                  example: '12345678'
+                numero:
+                  type: string
+                  description: 'Número do endereço.'
+                  example: '123'
+                complemento:
+                  type: string
+                  description: 'Complemento do endereço.'
+                  example: casa
+                tipo:
+                  type: required
+                  description: 'Tipo do recurso a ser utilizado (predio ou cliente).'
+                  example: cliente
+      security: []
+    delete:
+      summary: 'Removendo o endereço de um cliente ou Prédio.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endereço
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid de um cliente.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: endereco_uuid
+        description: 'O Uuid de um endereço.'
+        example: 006902ab-ae1c-4315-aa5c-9edd856630ac
+        required: true
+        schema:
+          type: string
+  /api/user:
+    get:
+      summary: ''
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/predio/{uuid}/foto':
+    get:
+      summary: 'Listagem de fotos do prédio'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: 8056d5b1-9440-4714-9513-ce9f7bf987b9
+                      url: 'https://via.placeholder.com/640x480.png/00ffbb?text=cats+Faker+eaque'
+                      path: /tmp/fakerzPQd5C
+                      nome: 'Miss Bridgette Wiegand DDS'
+                      descricao: 'Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.'
+                    -
+                      uuid: 87a06252-d370-4606-977a-61c66e6cc1a6
+                      url: 'https://via.placeholder.com/640x480.png/00dd22?text=cats+Faker+et'
+                      path: /tmp/fakerzrVQzN
+                      nome: 'Prof. Ellsworth Schowalter DVM'
+                      descricao: 'Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.'
+                    -
+                      uuid: 2bb22bf1-5050-468d-a02d-9d45a229e005
+                      url: 'https://via.placeholder.com/640x480.png/000011?text=cats+Faker+omnis'
+                      path: /tmp/fakerRqcyRF
+                      nome: 'Aryanna Murphy'
+                      descricao: 'Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: 8056d5b1-9440-4714-9513-ce9f7bf987b9
+                        url: 'https://via.placeholder.com/640x480.png/00ffbb?text=cats+Faker+eaque'
+                        path: /tmp/fakerzPQd5C
+                        nome: 'Miss Bridgette Wiegand DDS'
+                        descricao: 'Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.'
+                      -
+                        uuid: 87a06252-d370-4606-977a-61c66e6cc1a6
+                        url: 'https://via.placeholder.com/640x480.png/00dd22?text=cats+Faker+et'
+                        path: /tmp/fakerzrVQzN
+                        nome: 'Prof. Ellsworth Schowalter DVM'
+                        descricao: 'Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.'
+                      -
+                        uuid: 2bb22bf1-5050-468d-a02d-9d45a229e005
+                        url: 'https://via.placeholder.com/640x480.png/000011?text=cats+Faker+omnis'
+                        path: /tmp/fakerRqcyRF
+                        nome: 'Aryanna Murphy'
+                        descricao: 'Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.'
+                    items:
+                      type: object
+      tags:
+        - Foto
+      security: []
+    post:
+      summary: 'Cadastrando a foto de um predio ou sala'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'foto test'
+                    descricao: 'description foto test'
+                    url: 'http://localhost:9000/storage/predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg'
+                    path: predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg
+                    uuid: 46a3d089-dc55-4432-bf56-ea8f1f13fdc7
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'foto test'
+                      descricao: 'description foto test'
+                      url: 'http://localhost:9000/storage/predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg'
+                      path: predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg
+                      uuid: 46a3d089-dc55-4432-bf56-ea8f1f13fdc7
+      tags:
+        - Foto
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da foto.'
+                  example: 'Foto 1'
+                descricao:
+                  type: string
+                  description: 'Descrição da foto.'
+                  example: 'Foto 1'
+                foto:
+                  type: string
+                  format: binary
+                  description: Foto.
+                tipo:
+                  type: string
+                  description: 'Tipo do recurso a ser utilizado (sala ou predio).'
+                  example: predio
+              required:
+                - nome
+                - descricao
+                - foto
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid do prédio.'
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        required: true
+        schema:
+          type: string
+  '/api/v1/predio/{uuid}/foto/{foto_uuid}':
+    put:
+      summary: 'Atualização de registro de uma foto'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'foto test'
+                    descricao: 'description foto test'
+                    url: 'http://localhost:9000/storage/predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg'
+                    path: predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg
+                    uuid: e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'foto test'
+                      descricao: 'description foto test'
+                      url: 'http://localhost:9000/storage/predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg'
+                      path: predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg
+                      uuid: e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622
+      tags:
+        - Foto
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da foto.'
+                  example: 'Foto 1'
+                descricao:
+                  type: string
+                  description: 'Descrição da foto.'
+                  example: 'Foto 1'
+                foto:
+                  type: string
+                  format: binary
+                  description: Foto.
+                tipo:
+                  type: string
+                  description: 'Tipo do recurso a ser utilizado (sala ou predio).'
+                  example: predio
+      security: []
+    delete:
+      summary: 'Removendo o registro de um prédio'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Foto
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid do Sala ou Prédio.'
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: foto_uuid
+        description: ''
+        example: 16
+        required: true
+        schema:
+          type: integer
+  '/api/v1/sala/{uuid}/foto':
+    get:
+      summary: 'Listagem de fotos da sala'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: 8056d5b1-9440-4714-9513-ce9f7bf987b9
+                      url: 'https://via.placeholder.com/640x480.png/00ffbb?text=cats+Faker+eaque'
+                      path: /tmp/fakerzPQd5C
+                      nome: 'Miss Bridgette Wiegand DDS'
+                      descricao: 'Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.'
+                    -
+                      uuid: 87a06252-d370-4606-977a-61c66e6cc1a6
+                      url: 'https://via.placeholder.com/640x480.png/00dd22?text=cats+Faker+et'
+                      path: /tmp/fakerzrVQzN
+                      nome: 'Prof. Ellsworth Schowalter DVM'
+                      descricao: 'Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.'
+                    -
+                      uuid: 2bb22bf1-5050-468d-a02d-9d45a229e005
+                      url: 'https://via.placeholder.com/640x480.png/000011?text=cats+Faker+omnis'
+                      path: /tmp/fakerRqcyRF
+                      nome: 'Aryanna Murphy'
+                      descricao: 'Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: 8056d5b1-9440-4714-9513-ce9f7bf987b9
+                        url: 'https://via.placeholder.com/640x480.png/00ffbb?text=cats+Faker+eaque'
+                        path: /tmp/fakerzPQd5C
+                        nome: 'Miss Bridgette Wiegand DDS'
+                        descricao: 'Neque quisquam amet nostrum eos culpa unde dolor. Ipsa sequi eum laudantium. Iusto ipsam sapiente nisi veritatis maiores omnis et qui.'
+                      -
+                        uuid: 87a06252-d370-4606-977a-61c66e6cc1a6
+                        url: 'https://via.placeholder.com/640x480.png/00dd22?text=cats+Faker+et'
+                        path: /tmp/fakerzrVQzN
+                        nome: 'Prof. Ellsworth Schowalter DVM'
+                        descricao: 'Delectus consequuntur et voluptatum maxime. Et quia voluptatem voluptas. Quas vel voluptatum atque reprehenderit.'
+                      -
+                        uuid: 2bb22bf1-5050-468d-a02d-9d45a229e005
+                        url: 'https://via.placeholder.com/640x480.png/000011?text=cats+Faker+omnis'
+                        path: /tmp/fakerRqcyRF
+                        nome: 'Aryanna Murphy'
+                        descricao: 'Qui nesciunt eum consequatur et assumenda consectetur cum. Sunt magnam ad unde earum. Pariatur voluptatem velit et.'
+                    items:
+                      type: object
+      tags:
+        - Foto
+      security: []
+    post:
+      summary: 'Cadastrando a foto de um predio ou sala'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'foto test'
+                    descricao: 'description foto test'
+                    url: 'http://localhost:9000/storage/predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg'
+                    path: predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg
+                    uuid: 46a3d089-dc55-4432-bf56-ea8f1f13fdc7
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'foto test'
+                      descricao: 'description foto test'
+                      url: 'http://localhost:9000/storage/predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg'
+                      path: predio/bz4IxCtxyQF2oDR0xRJUtAbqaQI5FMsSSBUGo717.jpg
+                      uuid: 46a3d089-dc55-4432-bf56-ea8f1f13fdc7
+      tags:
+        - Foto
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da foto.'
+                  example: 'Foto 1'
+                descricao:
+                  type: string
+                  description: 'Descrição da foto.'
+                  example: 'Foto 1'
+                foto:
+                  type: string
+                  format: binary
+                  description: Foto.
+                tipo:
+                  type: string
+                  description: 'Tipo do recurso a ser utilizado (sala ou predio).'
+                  example: predio
+              required:
+                - nome
+                - descricao
+                - foto
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid da sala.'
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        required: true
+        schema:
+          type: string
+  '/api/v1/sala/{uuid}/foto/{foto_uuid}':
+    put:
+      summary: 'Atualização de registro de uma foto'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'foto test'
+                    descricao: 'description foto test'
+                    url: 'http://localhost:9000/storage/predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg'
+                    path: predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg
+                    uuid: e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'foto test'
+                      descricao: 'description foto test'
+                      url: 'http://localhost:9000/storage/predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg'
+                      path: predio/BFa2ZUoe0nABOm1qYlKoyRtviBS6LLf838Zv27yq.jpg
+                      uuid: e3ee01d3-c66f-4e4f-aa0d-bfd6976fb622
+      tags:
+        - Foto
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da foto.'
+                  example: 'Foto 1'
+                descricao:
+                  type: string
+                  description: 'Descrição da foto.'
+                  example: 'Foto 1'
+                foto:
+                  type: string
+                  format: binary
+                  description: Foto.
+                tipo:
+                  type: string
+                  description: 'Tipo do recurso a ser utilizado (sala ou predio).'
+                  example: predio
+      security: []
+    delete:
+      summary: 'Removendo o registro de um prédio'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Foto
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'O Uuid do Sala ou Prédio.'
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: foto_uuid
+        description: ''
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/v1/cliente/{uuid}/predio':
+    get:
+      summary: 'Listagem de prédios relacionado a um cliente'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: 1436a969-96b1-4e70-976d-426601fc4d55
+                      nome: 'Price Blanda'
+                      descricao: 'Qui laudantium eos asperiores rerum. Sapiente voluptatum ea tempore et pariatur dicta consequuntur. Rem ut voluptas et sunt.'
+                    -
+                      uuid: cd3aa9b8-51fb-4858-bb59-40dad883de83
+                      nome: 'Emile Dooley'
+                      descricao: 'Fuga occaecati molestiae sequi quibusdam veritatis. Qui dolores sunt aut labore. Molestiae dignissimos inventore perferendis et qui.'
+                    -
+                      uuid: 544d13f4-7b1b-46e0-aa9d-e30c54b2a286
+                      nome: 'Devon Feil'
+                      descricao: 'Deleniti sint quia veritatis asperiores quisquam aut. Numquam pariatur expedita voluptas voluptas soluta. Molestiae est perferendis ipsa et.'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: 1436a969-96b1-4e70-976d-426601fc4d55
+                        nome: 'Price Blanda'
+                        descricao: 'Qui laudantium eos asperiores rerum. Sapiente voluptatum ea tempore et pariatur dicta consequuntur. Rem ut voluptas et sunt.'
+                      -
+                        uuid: cd3aa9b8-51fb-4858-bb59-40dad883de83
+                        nome: 'Emile Dooley'
+                        descricao: 'Fuga occaecati molestiae sequi quibusdam veritatis. Qui dolores sunt aut labore. Molestiae dignissimos inventore perferendis et qui.'
+                      -
+                        uuid: 544d13f4-7b1b-46e0-aa9d-e30c54b2a286
+                        nome: 'Devon Feil'
+                        descricao: 'Deleniti sint quia veritatis asperiores quisquam aut. Numquam pariatur expedita voluptas voluptas soluta. Molestiae est perferendis ipsa et.'
+                    items:
+                      type: object
+      tags:
+        - Prédio
+      security: []
+    post:
+      summary: 'Cadastrando um prédio relacionado a um cliente'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'Predio 1'
+                    descricao: 'Predio 1'
+                    uuid: cecd43a5-46a6-44f6-a016-584a88e264e2
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'Predio 1'
+                      descricao: 'Predio 1'
+                      uuid: cecd43a5-46a6-44f6-a016-584a88e264e2
+      tags:
+        - Prédio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome do prédio.'
+                  example: 'Prédio 1'
+                descricao:
+                  type: string
+                  description: 'Descrição do prédio.'
+                  example: 'Prédio 1'
+              required:
+                - nome
+                - descricao
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'uuid do cliente.'
+        example: 1436a969-96b1-4e70-976d-426601fc4d55
+        required: true
+        schema:
+          type: string
+  '/api/v1/predio/{uuid}':
+    get:
+      summary: 'Retornando o registro de um prédio.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro encontrado com sucesso'
+                  data:
+                    uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+                    nome: 'Rogers Crist'
+                    descricao: 'Iure labore odit sint ipsa quo. Laboriosam corrupti et deserunt id quisquam. Et est ad a quidem.'
+                    endereco:
+                      uuid: 892f84b8-7761-4ff0-b50b-03928e76812d
+                      cep: '66599'
+                      logradouro: ''
+                      numero: '78394'
+                      complemento: 'Suite 357'
+                      bairro: side
+                      cidade: Erdmanberg
+                      uf: ND
+                      url_google_maps: ''
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro encontrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 746fe4d9-66de-4074-bf4b-077927164b03
+                      nome: 'Rogers Crist'
+                      descricao: 'Iure labore odit sint ipsa quo. Laboriosam corrupti et deserunt id quisquam. Et est ad a quidem.'
+                      endereco:
+                        uuid: 892f84b8-7761-4ff0-b50b-03928e76812d
+                        cep: '66599'
+                        logradouro: ''
+                        numero: '78394'
+                        complemento: 'Suite 357'
+                        bairro: side
+                        cidade: Erdmanberg
+                        uf: ND
+                        url_google_maps: ''
+      tags:
+        - Prédio
+      security: []
+    put:
+      summary: 'Atualização de registro de um prédio'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: a36b1b02-38b0-4a00-916b-fbb306ead110
+                    nome: 'Predio updated'
+                    descricao: 'Predio updated'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: a36b1b02-38b0-4a00-916b-fbb306ead110
+                      nome: 'Predio updated'
+                      descricao: 'Predio updated'
+      tags:
+        - Prédio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome do prédio.'
+                  example: 'Prédio 1 Updated'
+                descricao:
+                  type: string
+                  description: 'Descrição do prédio.'
+                  example: 'Prédio 1 Updated'
+              required:
+                - nome
+                - descricao
+      security: []
+    delete:
+      summary: 'Removendo o registro de um prédio'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Prédio
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'uuid do prédio.'
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        required: true
+        schema:
+          type: string
+  '/api/v1/predio/{uuid}/sala':
+    get:
+      summary: 'Listagem de salas relacionadas a um prédio'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
+                      nome: 'Ms. Amina Mosciski'
+                      numero: '67'
+                      descricao: 'Quisquam sed et optio. Eius sunt assumenda dolor eligendi magni unde quia. Quia quos exercitationem nihil iste dolorem in.'
+                    -
+                      uuid: 2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1
+                      nome: 'Ines Raynor'
+                      numero: '47'
+                      descricao: 'Possimus quaerat accusantium ad deleniti consectetur cumque. Debitis et aperiam beatae aliquid. Ex qui aperiam amet unde non.'
+                    -
+                      uuid: 147fd51f-9683-4950-84fa-1eb5247bdc1a
+                      nome: 'Raquel Weissnat'
+                      numero: '38'
+                      descricao: 'Nobis consectetur hic dicta ut hic. Molestiae mollitia autem et sint veniam reprehenderit eaque. Quia sit dolore et voluptates ducimus. Debitis temporibus dolor voluptatem alias omnis et.'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
+                        nome: 'Ms. Amina Mosciski'
+                        numero: '67'
+                        descricao: 'Quisquam sed et optio. Eius sunt assumenda dolor eligendi magni unde quia. Quia quos exercitationem nihil iste dolorem in.'
+                      -
+                        uuid: 2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1
+                        nome: 'Ines Raynor'
+                        numero: '47'
+                        descricao: 'Possimus quaerat accusantium ad deleniti consectetur cumque. Debitis et aperiam beatae aliquid. Ex qui aperiam amet unde non.'
+                      -
+                        uuid: 147fd51f-9683-4950-84fa-1eb5247bdc1a
+                        nome: 'Raquel Weissnat'
+                        numero: '38'
+                        descricao: 'Nobis consectetur hic dicta ut hic. Molestiae mollitia autem et sint veniam reprehenderit eaque. Quia sit dolore et voluptates ducimus. Debitis temporibus dolor voluptatem alias omnis et.'
+                    items:
+                      type: object
+      tags:
+        - Sala
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: 'Cadastrando um prédio relacionado a um cliente'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'Sala 1'
+                    numero: 1
+                    descricao: 'Sala 1'
+                    uuid: 9bf7502d-a7ab-4874-9279-272bd2b8ff04
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'Sala 1'
+                      numero: 1
+                      descricao: 'Sala 1'
+                      uuid: 9bf7502d-a7ab-4874-9279-272bd2b8ff04
+      tags:
+        - Sala
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da sala.'
+                  example: 'Sala 1'
+                numero:
+                  type: string
+                  description: 'Número da sala.'
+                  example: '1'
+                descricao:
+                  type: string
+                  description: 'Descrição da sala.'
+                  example: 'Sala de reunião'
+                tipagem_uuid:
+                  type: string
+                  description: 'Uuid da tipagem.'
+                  example: 2b9a49bb-cb1f-4a21-ab60-8fdc5c43a2d1
+              required:
+                - nome
+                - numero
+                - descricao
+                - tipagem_uuid
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'uuid do prédio.'
+        example: ac07ae3c-79aa-4460-bc17-1b9b5ae9be01
+        required: true
+        schema:
+          type: string
+  '/api/v1/predio/{uuid}/sala/{sala_uuid}':
+    get:
+      summary: 'Retornando o registro de uma sala.'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro encontrado com sucesso'
+                  data:
+                    uuid: 02f26f7c-6ac4-4dbd-ab89-d87d1f3dd02e
+                    nome: 'Dr. Donato Gerhold'
+                    numero: '47'
+                    descricao: 'Magnam dolor vero culpa a. Praesentium sit totam unde aut et doloribus nam officiis. Sint et veritatis est qui velit dolor tempora. Nam dolor architecto atque tenetur commodi architecto.'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro encontrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 02f26f7c-6ac4-4dbd-ab89-d87d1f3dd02e
+                      nome: 'Dr. Donato Gerhold'
+                      numero: '47'
+                      descricao: 'Magnam dolor vero culpa a. Praesentium sit totam unde aut et doloribus nam officiis. Sint et veritatis est qui velit dolor tempora. Nam dolor architecto atque tenetur commodi architecto.'
+      tags:
+        - Sala
+      security: []
+    put:
+      summary: 'Atualização de registro de uma sala'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: e9cb6c8b-496e-469b-8048-e38003afd846
+                    nome: 'Sala updated'
+                    numero: '5'
+                    descricao: 'Sala 5'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: e9cb6c8b-496e-469b-8048-e38003afd846
+                      nome: 'Sala updated'
+                      numero: '5'
+                      descricao: 'Sala 5'
+      tags:
+        - Sala
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da sala.'
+                  example: 'Sala 1'
+                numero:
+                  type: string
+                  description: 'Número da sala.'
+                  example: '1'
+                descricao:
+                  type: string
+                  description: 'Descrição da sala.'
+                  example: 'Sala de reunião'
+      security: []
+    delete:
+      summary: 'Removendo o registro de uma sala'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Sala
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'uuid do prédio.'
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: sala_uuid
+        description: 'uuid da sala.'
+        example: 746fe4d9-66de-4074-bf4b-077927164b03
+        required: true
+        schema:
+          type: string
+  /api/v1/tipagem:
+    get:
+      summary: 'Listagem de tipagem de salas'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Listagem retornada com sucesso'
+                  data:
+                    -
+                      uuid: 162d1a32-74bf-4e39-b528-8f2ff4eff152
+                      nome: 'Cali Schowalter'
+                      descricao: 'Qui blanditiis alias id porro omnis itaque laudantium. Et rerum in aperiam ea maiores nulla et. Voluptatem maxime qui maiores. Suscipit accusamus eum quia dolorem saepe et eos.'
+                      preco: 417.76
+                    -
+                      uuid: 6d4fadb6-c385-4cbc-a161-6c9a91c5ed56
+                      nome: 'Dr. Coby Harris'
+                      descricao: 'Et rerum aut est deserunt pariatur debitis asperiores. Et non qui voluptatem. Qui illum at assumenda minus nihil soluta.'
+                      preco: 513.02
+                    -
+                      uuid: ec84da4a-b8d9-4574-871c-202343271485
+                      nome: 'Prof. Cesar Oberbrunner III'
+                      descricao: 'Est ipsa aut accusantium vero eaque omnis ullam. Ducimus nam quos dolor ab. Maxime hic dolorem asperiores laboriosam.'
+                      preco: 332.79
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Listagem retornada com sucesso'
+                  data:
+                    type: array
+                    example:
+                      -
+                        uuid: 162d1a32-74bf-4e39-b528-8f2ff4eff152
+                        nome: 'Cali Schowalter'
+                        descricao: 'Qui blanditiis alias id porro omnis itaque laudantium. Et rerum in aperiam ea maiores nulla et. Voluptatem maxime qui maiores. Suscipit accusamus eum quia dolorem saepe et eos.'
+                        preco: 417.76
+                      -
+                        uuid: 6d4fadb6-c385-4cbc-a161-6c9a91c5ed56
+                        nome: 'Dr. Coby Harris'
+                        descricao: 'Et rerum aut est deserunt pariatur debitis asperiores. Et non qui voluptatem. Qui illum at assumenda minus nihil soluta.'
+                        preco: 513.02
+                      -
+                        uuid: ec84da4a-b8d9-4574-871c-202343271485
+                        nome: 'Prof. Cesar Oberbrunner III'
+                        descricao: 'Est ipsa aut accusantium vero eaque omnis ullam. Ducimus nam quos dolor ab. Maxime hic dolorem asperiores laboriosam.'
+                        preco: 332.79
+                    items:
+                      type: object
+      tags:
+        - Tipagem
+      security: []
+    post:
+      summary: 'Cadastrando uma tipagem de sala'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro cadastrado com sucesso'
+                  data:
+                    nome: 'Tipagem Teste'
+                    preco: 10
+                    descricao: 'Descrição da tipagem teste'
+                    uuid: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro cadastrado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      nome: 'Tipagem Teste'
+                      preco: 10
+                      descricao: 'Descrição da tipagem teste'
+                      uuid: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+      tags:
+        - Tipagem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da tipagem.'
+                  example: 'Sala de reunião'
+                preco:
+                  type: number
+                  description: 'Preço da tipagem.'
+                  example: 100.0
+                descricao:
+                  type: string
+                  description: 'Descrição da tipagem.'
+                  example: 'Sala de reunião para 10 pessoas'
+              required:
+                - nome
+                - preco
+                - descricao
+      security: []
+  '/api/v1/tipagem/{uuid}':
+    put:
+      summary: 'Atualizando uma tipagem de sala'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro autalizado com sucesso'
+                  data:
+                    uuid: 4d845a8f-aa41-4b81-85f9-78839a77167f
+                    nome: 'Tipagem Teste'
+                    descricao: 'Descrição da tipagem teste'
+                    preco: 10
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro autalizado com sucesso'
+                  data:
+                    type: object
+                    example:
+                      uuid: 4d845a8f-aa41-4b81-85f9-78839a77167f
+                      nome: 'Tipagem Teste'
+                      descricao: 'Descrição da tipagem teste'
+                      preco: 10
+      tags:
+        - Tipagem
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Nome da tipagem.'
+                  example: 'Sala de reunião'
+                preco:
+                  type: number
+                  description: 'Preço da tipagem.'
+                  example: 100.0
+                descricao:
+                  type: string
+                  description: 'Descrição da tipagem.'
+                  example: 'Sala de reunião para 10 pessoas'
+      security: []
+    delete:
+      summary: 'Removendo o registro de uma tipagem de sala'
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  message: 'Registro removido com sucesso'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Registro removido com sucesso'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Tipagem
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: 'UUID da tipagem.'
+        example: 49a7fb54-9ef7-4559-8ec8-9e933eaad9b0
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: Cliente
+    description: ''
+  -
+    name: Endereço
+    description: ''
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: Foto
+    description: ''
+  -
+    name: Prédio
+    description: ''
+  -
+    name: Sala
+    description: ''
+  -
+    name: Tipagem
+    description: ''

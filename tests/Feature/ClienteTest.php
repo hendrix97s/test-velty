@@ -93,7 +93,7 @@ class ClienteTest extends TestCase
       $cliente = Cliente::factory()->create();
       $response = $this->delete(route('cliente.destroy', ['uuid' => $cliente->uuid]));
       $response->assertStatus(200);
-      $this->assertEquals(__('response.delete.success'), $response->json('message'));
+      $this->assertEquals(__('response.destroy.success'), $response->json('message'));
     }
 
     /** @test*/
