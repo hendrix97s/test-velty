@@ -1,0 +1,19 @@
+<?php
+
+return [
+  'routes' => [
+    [
+      'match' => [
+        'domains' => ['*'],
+        'prefixes' => ['api/*'],
+        'versions' => ['v1'],
+      ],
+      'include' => [
+        // 'users.index', 'healthcheck*'
+      ],
+      'exclude' => [
+        // '/health', 'admin.*'
+      ],
+    ],
+  ]
+];

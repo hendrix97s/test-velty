@@ -1,0 +1,983 @@
+openapi: 3.0.3
+info:
+  title: Velty
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:9000'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/cliente:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                razao_social:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: hipfmpivxmzfxdbyzuxlpcwmjivsjgyiaktmuuwrltpdgpopgyicdyicudnkijiymazqpxffrgupilrdqanjsztbglnpmdcfhwlndjdivrhhnwnzsnarejtgaiekaxbaizhtuupgzistfnxpmvyajnyrok
+                nome_fantasia:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: wkuqbamyywmptdqdrwzshewmqugprnjiyikfulqjqbbyvdrhvbzspszcyytmfhjettcmabvzghsgmkcofxgbvefzohiiktwhomxqlhhpcsdmnxncazlqkxqxckquechzefib
+                cnpj:
+                  type: string
+                  description: 'Must not be greater than 17 characters.'
+                  example: rpexghwaiizcq
+                telefone:
+                  type: string
+                  description: 'Must not be greater than 20 characters.'
+                  example: kgalna
+                email:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: dmyievoipnskliqobyxvljdlsyzbtxruzdfcinwoustsjwesipkosoharudqrtjplavuemtfglcmxguymxkzcdhxtvacppipvnciatgsvftnmjotnksipeiueomcxwjvbynnjx
+                inicio_atividade:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2022-09-16T02:16:47'
+              required:
+                - razao_social
+                - nome_fantasia
+                - cnpj
+                - telefone
+                - email
+                - inicio_atividade
+      security: []
+  '/api/v1/cliente/{uuid}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                razao_social:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: omifieywdbitrzxuqoutuvfqermohantdvmbuezgxkwzonywlr
+                nome_fantasia:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: psoudvygkctibzvaaihhcxlkjlskyywrncjyagtjkhfkchqypluxyodyljccqudbbllbfeunldjkifauertvvhjyjodmzvzctizclwlxzwmgmlmjbmxvlvbfeyflehgtexptrmapklxemqayrltivwummlgligptpmonayyphkwxjxhdopployglb
+                cnpj:
+                  type: string
+                  description: 'Must not be greater than 17 characters.'
+                  example: ol
+                telefone:
+                  type: string
+                  description: 'Must not be greater than 20 characters.'
+                  example: rbrglevwciqmiahocst
+                email:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ubetaiupgydegepjzpaoybccffmavnwzvobwvmlmzetrnxbdrgviiubzolzwirxmtwaequmpfolteirbnk
+                inicio_atividade:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2022-09-16T02:16:47'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 5
+        required: true
+        schema:
+          type: integer
+  '/api/v1/cliente/{uuid}/predio':
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: qfvudthtbitdymorcfbjmdxytuudpubmgafevrwvbusbjkpgmzfnjydjwbuqfpqhttqafhufjbmhtimtptcobhphpzlcolcwwpcirnptwjgfqgojzhzzqtcobcxzycykzihyddlrojkelkiyxtjpwlsaptlfketacqddzgrfhousqmdjsdelivxcrzrxrlyxniunjwvcuuswykwrmgkuecmslaqsvsbpsbeaiwjrykcvezqedbbqylrfvn
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: obsdriqcazqchfaqfyfehincpkfqmlorezbpcmnifbatmlidfizijwhofwbqerdeqvbutjmqtahfbrrbqdwoizagknhqllcasiihkahlgynkscolksztecfuixmalwbphklmbtnzqqbyfwciypdkgl
+              required:
+                - nome
+                - descricao
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/v1/cliente/{uuid}/endereco':
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: ''
+                  example: dolores
+                numero:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: zbawjtqecghzfxpdxbwicimwjydzpmaardpdhcwxkqdtikkdmjklnkhzwxnmamlvdwyhzvxgottfzxdtqoyetrkaxeautuwwevqzpcbapppuqnomgsgjfofkahawofdyubwnvascqndxdxgmckkrikpwzdouuvhuvnyelwirwwcrgoousxtdeyufzdhot
+                complemento:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vsegxegvwljeh
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+                  example: predio
+              required:
+                - cep
+                - numero
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 16
+        required: true
+        schema:
+          type: integer
+  '/api/v1/cliente/{uuid}/endereco/{endereco_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: ''
+                  example: reprehenderit
+                numero:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: abbvpuryhhkbfgtqydgbpaaqrbxoqhgzootakkluikfuucvxknchueiwaseoqnymzalnrpqxzmdvhozvaaynsyiujaslmtvfmulnultgsmjudlcszhcbfpvmaqhqnryatlhtihxaonmrvvqtjsjxhplgnccyrtdcdjdkbnbkjsjemswxqiedzofhrlndkllguwjlyjgoxwgjnbpjdobnuegjcsnreotflnd
+                complemento:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: tcmfofomhgikhgiruegfktmaikiwwveyqsbrjatlpbddzcqyxszjaukmnqjitojq
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+                  example: cliente
+              required:
+                - cep
+                - tipo
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 20
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: endereco_uuid
+        description: ''
+        example: 7
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: rotawqexszfgwnnxcadzpnweoqbuvqntrtsjbcjfsyffzfytaepigadltenrkiqehhacfcvhlolhnsqkqmimfixczxxfpakqyqbznzhcivhyulazfvveoxdycoamooiczyoaswbxdfgprspwylefwysdhhpeipnjdjaqscergszsoneuqtof
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: nrmoexplmzfjlgpjepmkmqqtrwtysbeaboxzh
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 17
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}/endereco':
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: ''
+                  example: excepturi
+                numero:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: iaoolrjsycsduunbwrvlmgauqbojhqfkfqbymihpoexzehdhusknawlacgfuwdwxgrnhzwdjlseshddbnxxezdxvmkyyhajmgiwlbwoqgedggmhzxlewagxazeiwdboltboazbjigdwhbkrcjgllkdooayjggejfcysivjuigmteifcxgngzyncmtohlvhnuqokb
+                complemento:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mzuuytmaaycxrtvqmgjhutfhowvzplymheqlpiaxjvfljempzfulcbcyeoinaspjsgrgxyvlishruacpazqlbfcumlwiuttqmjjfeevdehovunupxibkemaghmrxyppudkjgtejyzhiilwgtcwvzwfrcuzwcgfjbxqxfklxjvkbaoklmldjmveqhtyrbwuajfcjeeigdlzc
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+                  example: predio
+              required:
+                - cep
+                - numero
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 14
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}/endereco/{endereco_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cep:
+                  type: string
+                  description: ''
+                  example: expedita
+                numero:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: tgscgroxiwqafupzzziozrzvogkdtkpnvcuoarsgnxtyxnthnklhxltocxakrqfcxayhnozqbpcghtkkjczedyyexek
+                complemento:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: dxazewnjpurhc
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+                  example: cliente
+              required:
+                - cep
+                - tipo
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: endereco_uuid
+        description: ''
+        example: 20
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}/foto':
+    get:
+      summary: ''
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: lyjrvxplzohdhpnsxskyfucvdrxzobymowitwsitgkjtvbleuupccmmudvjysiofcxaqrtjdjylttcrjuqxicwpairigjuulphypqajrqdhxscvqlgiksizjnydczvyiudxzrxrmpgdxarxxnpksnuevpaejgsldfjjklzyxdsbltdxamqxtykjuoyxsvmsgymss
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: snojlfgormyolazcoksxdsrgkwqpeojpwwwnhncdcakyxoeiyneninjwgczzolgijsapuuqbkqjxggtzrdpdtzjtubbmdrorjikodczehymfzkkgrfcuozexhytrixnsbzkyappurdkmdrhbftcszjarogkpuglucnrygyrmzhbmcvizmkyosnvukjpcwvnuolnewjbtmpvcxjchjdbhoxay
+                foto:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+                  example: owbiihknxamrixfkoqte
+              required:
+                - nome
+                - descricao
+                - foto
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}/foto/{foto_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: valexdcefegogofbwdpieqotkbmjljtuozidthcopejjp
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: pcimqzcwtkkuoaoqgiragbvuvmucsizgrwrqfthjagjwhplctmsvxkktdkgpsxzfeidsvskgmcuufbnmhgroqulcopazepnrwrcdidwpqzymkfydvvmvchbpifgrgwpkwfmyliwcchbfhoctmpoowueeiazmoraxnonftzfyfbkkmkhwzdnifkk
+                foto:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+                  example: bxilfzzankbpdynliwkszefubydumpnauxhgzkakpwsrhcibpsriujxpqhycaejxfxcknfmqsfpuirlwzzybfurvdgwuafzvvdzhwuaboskjbkhzfievxaeamnqzrcvnixabjqrgfsoedwcogajhtfbvrgcknlfeqmypvoty
+              required:
+                - tipo
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 18
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: foto_uuid
+        description: ''
+        example: 14
+        required: true
+        schema:
+          type: integer
+  '/api/v1/sala/{uuid}/foto':
+    get:
+      summary: ''
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: teqipyogjlmq
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: rorxwotlneeldtsmpnyvkvcdtbmxloirdddzxdxgdhpeksdxnpxkawgrsashahgfmuqyxfynolaokjakozfpcjebbdvtqlnxdywzmyfchsciykfqwrqpurwtoofsvgolukephhkwqdwevtivkbzuhfqaqwcohwuibqewpnihdqxvifplkmlrjkpvpmqhfqtpmbtzzuttxsabt
+                foto:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+                  example: etwbptvmpdtjxmlwirusanwpdojscmqhwphflyvibqilbblyurjehwdnrmgrgpkemkgrntgdgbjcifldlygzcvldupuuoqznlgnqqjtrbwnninkofxmfougyhrfooxscmvwsznheibyidkwmbcwogvcczjblmotwicqlszhhspb
+              required:
+                - nome
+                - descricao
+                - foto
+                - tipo
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/v1/sala/{uuid}/foto/{foto_uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: bxmiledczcwxciylqwtaqtgjmjpkjsgel
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ncyyzgrcepmhizuifewucmriyyazcntqxijiyvsjvuuqkkrhtzmlrnadtgvaqfauzdswbluxqzflrqenvbvcibibcysjuwrmuvknripblvzghsmuhklzxbwdvvrybfkkfrwyftcsvhwroliayzrcrlxuozhzzdgougkhqtvzytawasfdjlyvkjztqskwkinaemgzwskktrfrhicetsgjfpxqnjzkorlcvjozhogeuvd
+                foto:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                tipo:
+                  type: string
+                  description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
+                  example: qkfqtxvicntapvsdgbakyiwfivrtxnzrwarmjifjugllmtmqamtunwzdapkxwiciwczckyjcdbkcyjvzthaadfkeyoxtdouvuytqwmawnavtjbhnhwhgpcwbzasjsqizvyw
+              required:
+                - tipo
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 9
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: foto_uuid
+        description: ''
+        example: 10
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}/sala':
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: ''
+                  example: ab
+                numero:
+                  type: integer
+                  description: ''
+                  example: 3
+                descricao:
+                  type: string
+                  description: ''
+                  example: aliquid
+                tipagem_uuid:
+                  type: string
+                  description: ''
+                  example: ut
+              required:
+                - nome
+                - numero
+                - descricao
+                - tipagem_uuid
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 7
+        required: true
+        schema:
+          type: integer
+  '/api/v1/predio/{uuid}/sala/{sala_uuid}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: ''
+                  example: dicta
+                numero:
+                  type: integer
+                  description: ''
+                  example: 8
+                descricao:
+                  type: string
+                  description: ''
+                  example: commodi
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 20
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: sala_uuid
+        description: ''
+        example: 20
+        required: true
+        schema:
+          type: integer
+  /api/v1/tipagem:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: llaqosennibhlfoirgsfgkmabmntuzmzreqaoeskabnplslpbalzypyslvarfiybeinidjnndgknqyqprnmmwvjdtiiryzypxnbdysrhriixjbuimutlwduqirjyeqfynwvmxrypadwicgbdikihkkyaiztbctjbjsifjnkeheazdgwtsajcqbtebhpuqqvvaaznshqbfeqvhbusyyamsjoboebb
+                preco:
+                  type: number
+                  description: ''
+                  example: 5.7738179
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: zjkggdflgygczztdzrsnighxdyqdhyqkbtbvprsjrjvwhtvjuhezlcyqttjqltzwqttywtiueamwgncigfgknnyqtifgbxlccwssckzjrvgkaeeuyqfvcxswkpkhihaoyvmeutunuvhxefbba
+              required:
+                - nome
+                - preco
+                - descricao
+      security: []
+  '/api/v1/tipagem/{uuid}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: crzawzrcddrxujsrpmlvaozhvkkmbaqidoihqwlytnaqezobkjqjzemcwqcergrxiywvueqlmjzjvwlzymtioksxecxbwxeufbpinyguubxhuqyvnphfdlrwmobyexgcpfuomkjuewollzedugykedngwxwpevnlklzcrnfhkboftpyjkdcrovlyyk
+                preco:
+                  type: number
+                  description: ''
+                  example: 2179233.586641
+                descricao:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: wfpspkoqvbaalzsagvkuetwmfzmemqhchcqftjbufvbopwrbvzgwheqaqqmmkaytjbbmiiutinlvqjhoymkzdgggspkzesnqkbx
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 5
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
