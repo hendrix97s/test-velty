@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateModuloSalaRequest extends FormRequest
+class UpdateSalaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class UpdateModuloSalaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return  true;
     }
 
     /**
@@ -24,7 +24,9 @@ class UpdateModuloSalaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'nome' => 'sometimes|string',
+          'numero' => 'sometimes|integer', 
+          'descricao' => 'sometimes|string', 
         ];
     }
 }

@@ -21,6 +21,7 @@ class Predio extends Model
     ];
 
     protected $fillable = [
+      'cliente_id',
       'nome',
       'descricao',
     ];
@@ -30,6 +31,11 @@ class Predio extends Model
       'cliente_id',
       'created_at',
       'updated_at',
+      'cliente',
+      'fotos',
+      'salas',
+      'endereco',
+      'enderecos',
       'pivot'
     ];
 
@@ -43,6 +49,11 @@ class Predio extends Model
       return $this->hasMany(Sala::class, 'predio_id', 'id');
     }
 
+    public function enderecos()
+    {
+      return $this->belongsToMany(Endereco::class)->using(EnderecoPredio::class);
+    }
+
     public function getEnderecoAttribute()
     {
       return $this->belongsToMany(Endereco::class)->using(EnderecoPredio::class)->first();
@@ -50,10 +61,8 @@ class Predio extends Model
 
     public function getClienteAttribute()
     {
-      return $this->hasOne(Cliente::class, 'id', 'cliente_id')->first();
+      $cliente = $this->hasOne(Cliente::class, 'id', 'cliente_id')->first();
+      $cliente->makeHidden(['endereco']);
+      return $cliente;
     }
-
-
-
-    
 }

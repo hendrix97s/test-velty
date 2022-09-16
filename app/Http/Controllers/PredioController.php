@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePredioRequest;
 use App\Http\Requests\UpdatePredioRequest;
 use App\Models\Predio;
+use App\Repositories\ClienteRepository;
+use App\Repositories\PredioRepository;
 
 class PredioController extends Controller
 {
@@ -13,19 +15,10 @@ class PredioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($uuid, PredioRepository $repository)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+      $predios = $repository->getPrediosByClienteUuid($uuid);
+      return $this->response('response.list',$predios);
     }
 
     /**
@@ -34,9 +27,13 @@ class PredioController extends Controller
      * @param  \App\Http\Requests\StorePredioRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePredioRequest $request)
+    public function store(StorePredioRequest $request, PredioRepository $repository)
     {
-        //
+      $data = $request->validated();
+      $cliente = (new ClienteRepository())->findByUuid($request->uuid);
+      $data['cliente_id'] = $cliente->id;
+      $predio = $repository->create($data);
+      return $this->response('response.create', $predio);
     }
 
     /**
@@ -45,20 +42,13 @@ class PredioController extends Controller
      * @param  \App\Models\Predio  $predio
      * @return \Illuminate\Http\Response
      */
-    public function show(Predio $predio)
+    public function show($uuid, PredioRepository $repository)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Predio  $predio
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Predio $predio)
-    {
-        //
+      $predio = $repository->findByUuid($uuid);
+      if($predio instanceof Predio){
+        $predio->makeVisible(['endereco']);
+      }
+      return $this->response('response.show', $predio);
     }
 
     /**
@@ -68,9 +58,11 @@ class PredioController extends Controller
      * @param  \App\Models\Predio  $predio
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePredioRequest $request, Predio $predio)
+    public function update(UpdatePredioRequest $request, PredioRepository $repository)
     {
-        //
+      $data = $request->validated();
+      $predio = $repository->updateByUuid($request->uuid, $data);
+      return $this->response('response.update', $predio);
     }
 
     /**
@@ -79,8 +71,19 @@ class PredioController extends Controller
      * @param  \App\Models\Predio  $predio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Predio $predio)
+    public function destroy($uuid, PredioRepository $repository)
     {
-        //
+      $predio = $repository->deleteByUuid($uuid);
+      return $this->response('response.delete', $predio);
+    }
+
+    public function listFotos($uuid, PredioRepository $repository)
+    {
+      $fotos = $repository->findByUuid($uuid);
+      if($fotos){
+        $fotos->makeVisible(['fotos']);
+        $fotos = $fotos->fotos;
+      }
+      return $this->response('response.list', $fotos);
     }
 }

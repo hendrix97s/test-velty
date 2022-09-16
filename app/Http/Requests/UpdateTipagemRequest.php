@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateTipagemSalaRequest extends FormRequest
+class UpdateTipagemRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class UpdateTipagemSalaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class UpdateTipagemSalaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'nome' => 'sometimes|string|max:255',
+          'preco' => 'sometimes|numeric',
+          'descricao' => 'sometimes|string|max:255',
         ];
     }
 }

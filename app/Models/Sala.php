@@ -18,10 +18,14 @@ class Sala extends Model
       'nome',
       'numero', 
       'descricao', 
+      'predio_id',
+      'tipagem_id',
     ];
 
     protected $hidden = [
       'id',
+      'fotos',
+      'predio_id',
       'tipagem_id',
       'created_at',
       'updated_at',

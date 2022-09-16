@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipagem', function (Blueprint $table) {
-            $table->id();
-            $table->uuid('uuid');
-            $table->string('nome');
-            $table->string('descricao');
-            $table->float('preco', 8, 2);
-            $table->timestamps();
-        });
+      Schema::create('tipagem', function (Blueprint $table) {
+        $table->id();
+        $table->uuid('uuid');
+        $table->string('nome');
+        $table->string('descricao');
+        $table->float('preco', 8, 2);
+        $table->timestamps();
+      });
     }
 
     /**

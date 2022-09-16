@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTipagemSalaRequest extends FormRequest
+class StoreTipagemRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreTipagemSalaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,10 @@ class StoreTipagemSalaRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'nome' => 'required|string|max:255',
+        'preco' => 'required|numeric',
+        'descricao' => 'required|string|max:255',
+      ];
     }
 }

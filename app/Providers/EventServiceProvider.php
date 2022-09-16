@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Endereco;
+use App\Models\Foto;
+use App\Models\Predio;
+use App\Observers\EnderecoObserver;
+use App\Observers\FotoObserver;
+use App\Observers\PredioObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -27,7 +33,9 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+      Endereco::observe(EnderecoObserver::class);
+      Foto::observe(FotoObserver::class);
+      Predio::observe(PredioObserver::class);
     }
 
     /**

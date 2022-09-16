@@ -28,4 +28,14 @@ class Endereco extends Model
     'pivot'
   ];
 
+  public function clienteEndereco()
+  {
+    return $this->hasMany(ClienteEndereco::class, 'endereco_id', 'id');
+  }
+
+  public function predioEndereco()
+  {
+    return $this->hasMany(EnderecoPredio::class, 'endereco_id', 'id');
+  }
+
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreModuloSalaRequest extends FormRequest
+class StoreSalaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreModuloSalaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,11 @@ class StoreModuloSalaRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+        'nome' => 'required|string',
+        'numero' => 'required|integer', 
+        'descricao' => 'required|string', 
+        'tipagem_uuid' => 'required|string|exists:tipagem,uuid',
+      ];
     }
 }

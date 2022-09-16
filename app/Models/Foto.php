@@ -13,13 +13,25 @@ class Foto extends Model
     protected $fillable = [
       'nome', 
       'descricao', 
+      'url',
+      'path'
     ];
 
     protected $hidden = [
       'id',
-      'path',
       'created_at', 
       'updated_at',
       'pivot'
     ];
+
+    public function fotoSala()
+    {
+      return $this->hasMany(FotoSala::class, 'foto_id', 'id');
+    }
+  
+    public function fotoPredio()
+    {
+      return $this->hasMany(FotoPredio::class, 'foto_id', 'id');
+    }
+  
 }

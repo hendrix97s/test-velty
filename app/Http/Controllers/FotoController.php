@@ -5,28 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFotoRequest;
 use App\Http\Requests\UpdateFotoRequest;
 use App\Models\Foto;
+use App\Repositories\FotoRepository;
+use App\Services\FotoService;
+use Illuminate\Http\Request;
 
 class FotoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,9 +18,12 @@ class FotoController extends Controller
      * @param  \App\Http\Requests\StoreFotoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFotoRequest $request)
+    public function store(StoreFotoRequest $request, FotoService $service)
     {
-        //
+      $data = $request->validated();
+
+      $response = $service->store($request->uuid, $data);
+      return $this->response('response.create', $response);
     }
 
     /**
@@ -51,36 +38,29 @@ class FotoController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Foto  $foto
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Foto $foto)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateFotoRequest  $request
      * @param  \App\Models\Foto  $foto
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFotoRequest $request, Foto $foto)
+    public function update(UpdateFotoRequest $request, FotoService $service)
     {
-        //
+      $data = $request->validated();
+      $response = $service->update($request->foto_uuid, $data);
+      return $this->response('response.update', $response);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Foto  $foto
+     * @param string $uuid Foto uuid
+     * @param FotoRepository $repository
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Foto $foto)
+    public function destroy(Request $request, FotoRepository $repository)
     {
-        //
+      $response = $repository->deleteByUuid($request->foto_uuid);
+      return $this->response('response.delete', $response);
     }
 }
