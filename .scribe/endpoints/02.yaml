@@ -10,7 +10,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Cadastro de endereço'
       description: ''
       authenticated: false
       custom: []
@@ -19,97 +19,49 @@ endpoints:
     urlParameters:
       uuid:
         name: uuid
-        description: ''
+        description: 'O uuid do Cliente ou Prédio.'
         required: true
-        example: 2
-        type: integer
+        example: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+        type: string
         custom: []
     cleanUrlParameters:
-      uuid: 2
+      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       cep:
         name: cep
-        description: ''
+        description: 'O CEP do endereço.'
         required: true
-        example: autem
+        example: 13606-536
         type: string
         custom: []
       numero:
         name: numero
-        description: 'Must not be greater than 255 characters.'
+        description: 'O número do endereço.'
         required: true
-        example: avkoiypwrcfecxckiw
+        example: '123'
         type: string
         custom: []
       complemento:
         name: complemento
-        description: 'Must not be greater than 255 characters.'
+        description: 'O complemento do endereço.'
         required: false
-        example: mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj
+        example: 'Apto 123'
         type: string
         custom: []
       tipo:
         name: tipo
-        description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+        description: 'O tipo do recurso a ser utilizado (cliente ou predio).'
         required: true
         example: cliente
         type: string
         custom: []
-      razao_social:
-        name: razao_social
-        description: 'Razão social do cliente.'
-        required: true
-        example: 'Luiz F. Lima'
-        type: string
-        custom: []
-      nome_fantasia:
-        name: nome_fantasia
-        description: 'string Nome fantasia do cliente.'
-        required: true
-        example: 'lf system'
-        type: string
-        custom: []
-      cnpj:
-        name: cnpj
-        description: 'string CNPJ do cliente.'
-        required: true
-        example: '43897291000175'
-        type: string
-        custom: []
-      telefone:
-        name: telefone
-        description: 'string Telefone do cliente.'
-        required: true
-        example: '11999999999'
-        type: string
-        custom: []
-      email:
-        name: email
-        description: 'string Email do cliente.'
-        required: true
-        example: lf.system@outlook.com
-        type: string
-        custom: []
-      inicio_atividade:
-        name: inicio_atividade
-        description: 'date Data de inicio de atividade.'
-        required: true
-        example: '2021-10-29'
-        type: string
-        custom: []
     cleanBodyParameters:
-      cep: autem
-      numero: avkoiypwrcfecxckiw
-      complemento: mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj
+      cep: 13606-536
+      numero: '123'
+      complemento: 'Apto 123'
       tipo: cliente
-      razao_social: 'Luiz F. Lima'
-      nome_fantasia: 'lf system'
-      cnpj: '43897291000175'
-      telefone: '11999999999'
-      email: lf.system@outlook.com
-      inicio_atividade: '2021-10-29'
     fileParameters: []
     responses:
       -
@@ -301,7 +253,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Cadastro de endereço'
       description: ''
       authenticated: false
       custom: []
@@ -310,97 +262,49 @@ endpoints:
     urlParameters:
       uuid:
         name: uuid
-        description: ''
+        description: 'O uuid do Cliente ou Prédio.'
         required: true
-        example: 1
-        type: integer
+        example: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+        type: string
         custom: []
     cleanUrlParameters:
-      uuid: 1
+      uuid: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       cep:
         name: cep
-        description: ''
+        description: 'O CEP do endereço.'
         required: true
-        example: qui
+        example: 13606-536
         type: string
         custom: []
       numero:
         name: numero
-        description: 'Must not be greater than 255 characters.'
+        description: 'O número do endereço.'
         required: true
-        example: auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq
+        example: '123'
         type: string
         custom: []
       complemento:
         name: complemento
-        description: 'Must not be greater than 255 characters.'
+        description: 'O complemento do endereço.'
         required: false
-        example: ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj
+        example: 'Apto 123'
         type: string
         custom: []
       tipo:
         name: tipo
-        description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+        description: 'O tipo do recurso a ser utilizado (cliente ou predio).'
         required: true
-        example: predio
-        type: string
-        custom: []
-      razao_social:
-        name: razao_social
-        description: 'Razão social do cliente.'
-        required: true
-        example: 'Luiz F. Lima'
-        type: string
-        custom: []
-      nome_fantasia:
-        name: nome_fantasia
-        description: 'string Nome fantasia do cliente.'
-        required: true
-        example: 'lf system'
-        type: string
-        custom: []
-      cnpj:
-        name: cnpj
-        description: 'string CNPJ do cliente.'
-        required: true
-        example: '43897291000175'
-        type: string
-        custom: []
-      telefone:
-        name: telefone
-        description: 'string Telefone do cliente.'
-        required: true
-        example: '11999999999'
-        type: string
-        custom: []
-      email:
-        name: email
-        description: 'string Email do cliente.'
-        required: true
-        example: lf.system@outlook.com
-        type: string
-        custom: []
-      inicio_atividade:
-        name: inicio_atividade
-        description: 'date Data de inicio de atividade.'
-        required: true
-        example: '2021-10-29'
+        example: cliente
         type: string
         custom: []
     cleanBodyParameters:
-      cep: qui
-      numero: auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq
-      complemento: ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj
-      tipo: predio
-      razao_social: 'Luiz F. Lima'
-      nome_fantasia: 'lf system'
-      cnpj: '43897291000175'
-      telefone: '11999999999'
-      email: lf.system@outlook.com
-      inicio_atividade: '2021-10-29'
+      cep: 13606-536
+      numero: '123'
+      complemento: 'Apto 123'
+      tipo: cliente
     fileParameters: []
     responses:
       -

@@ -94,7 +94,7 @@
                 </li>
                                     <ul id="tocify-subheader-endereco" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="endereco-POSTapi-v1-cliente--uuid--endereco">
-                                <a href="#endereco-POSTapi-v1-cliente--uuid--endereco">Store a newly created resource in storage.</a>
+                                <a href="#endereco-POSTapi-v1-cliente--uuid--endereco">Cadastro de endereço</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endereco-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-">
                                 <a href="#endereco-PUTapi-v1-cliente--uuid--endereco--endereco_uuid-">Update the specified resource in storage.</a>
@@ -103,7 +103,7 @@
                                 <a href="#endereco-DELETEapi-v1-cliente--uuid--endereco--endereco_uuid-">Removendo o endereço de um cliente ou Prédio.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endereco-POSTapi-v1-predio--uuid--endereco">
-                                <a href="#endereco-POSTapi-v1-predio--uuid--endereco">Store a newly created resource in storage.</a>
+                                <a href="#endereco-POSTapi-v1-predio--uuid--endereco">Cadastro de endereço</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endereco-PUTapi-v1-predio--uuid--endereco--endereco_uuid-">
                                 <a href="#endereco-PUTapi-v1-predio--uuid--endereco--endereco_uuid-">Update the specified resource in storage.</a>
@@ -634,7 +634,7 @@ fetch(url, {
     \"nome_fantasia\": \"lf system\",
     \"cnpj\": \"43897291000175\",
     \"telefone\": \"11999999999\",
-    \"email\": \"kzrbogcafhcqoxgomnsqjdbbt\",
+    \"email\": \"aqitkhuwctoxmwjehkwninvzhpxfgkqnphbotwcazznatdwhicetyyazdltuldhyemdfsxneopygaemsqvahiyrnmjqgzlyispywbbjabhwhwslagudmkdjjpjuziamxtizyknntzymnfopbstrscnpopmcdiangupvfvtailrsabigfzzmqashfgrmcbawm\",
     \"inicio_atividade\": \"2021-10-29\"
 }"
 </code></pre></div>
@@ -655,7 +655,7 @@ let body = {
     "nome_fantasia": "lf system",
     "cnpj": "43897291000175",
     "telefone": "11999999999",
-    "email": "kzrbogcafhcqoxgomnsqjdbbt",
+    "email": "aqitkhuwctoxmwjehkwninvzhpxfgkqnphbotwcazznatdwhicetyyazdltuldhyemdfsxneopygaemsqvahiyrnmjqgzlyispywbbjabhwhwslagudmkdjjpjuziamxtizyknntzymnfopbstrscnpopmcdiangupvfvtailrsabigfzzmqashfgrmcbawm",
     "inicio_atividade": "2021-10-29"
 };
 
@@ -800,7 +800,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="PUTapi-v1-cliente--uuid-"
-               value="kzrbogcafhcqoxgomnsqjdbbt"
+               value="aqitkhuwctoxmwjehkwninvzhpxfgkqnphbotwcazznatdwhicetyyazdltuldhyemdfsxneopygaemsqvahiyrnmjqgzlyispywbbjabhwhwslagudmkdjjpjuziamxtizyknntzymnfopbstrscnpopmcdiangupvfvtailrsabigfzzmqashfgrmcbawm"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -917,7 +917,7 @@ fetch(url, {
 
     
 
-                                <h2 id="endereco-POSTapi-v1-cliente--uuid--endereco">Store a newly created resource in storage.</h2>
+                                <h2 id="endereco-POSTapi-v1-cliente--uuid--endereco">Cadastro de endereço</h2>
 
 <p>
 </p>
@@ -930,26 +930,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/cliente/2/endereco" \
+    "http://localhost:9000/api/v1/cliente/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco" \
     --header "Content-Type: application/json" \
     --data "{
-    \"cep\": \"autem\",
-    \"numero\": \"avkoiypwrcfecxckiw\",
-    \"complemento\": \"mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj\",
-    \"tipo\": \"cliente\",
-    \"razao_social\": \"Luiz F. Lima\",
-    \"nome_fantasia\": \"lf system\",
-    \"cnpj\": \"43897291000175\",
-    \"telefone\": \"11999999999\",
-    \"email\": \"lf.system@outlook.com\",
-    \"inicio_atividade\": \"2021-10-29\"
+    \"cep\": \"13606-536\",
+    \"numero\": \"123\",
+    \"complemento\": \"Apto 123\",
+    \"tipo\": \"cliente\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/2/endereco"
+    "http://localhost:9000/api/v1/cliente/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco"
 );
 
 const headers = {
@@ -958,16 +952,10 @@ const headers = {
 };
 
 let body = {
-    "cep": "autem",
-    "numero": "avkoiypwrcfecxckiw",
-    "complemento": "mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj",
-    "tipo": "cliente",
-    "razao_social": "Luiz F. Lima",
-    "nome_fantasia": "lf system",
-    "cnpj": "43897291000175",
-    "telefone": "11999999999",
-    "email": "lf.system@outlook.com",
-    "inicio_atividade": "2021-10-29"
+    "cep": "13606-536",
+    "numero": "123",
+    "complemento": "Apto 123",
+    "tipo": "cliente"
 };
 
 fetch(url, {
@@ -1042,15 +1030,15 @@ fetch(url, {
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>uuid</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number"
+                <input type="text"
                name="uuid"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="2"
+               value="32a29cbe-6cae-45d8-b8b7-610baca99a3b"
                data-component="url" hidden>
     <br>
-
+<p>O uuid do Cliente ou Prédio.</p>
             </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
@@ -1060,10 +1048,10 @@ fetch(url, {
                 <input type="text"
                name="cep"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="autem"
+               value="13606-536"
                data-component="body" hidden>
     <br>
-
+<p>O CEP do endereço.</p>
         </p>
                 <p>
             <b><code>numero</code></b>&nbsp;&nbsp;
@@ -1072,10 +1060,10 @@ fetch(url, {
                 <input type="text"
                name="numero"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="avkoiypwrcfecxckiw"
+               value="123"
                data-component="body" hidden>
     <br>
-<p>Must not be greater than 255 characters.</p>
+<p>O número do endereço.</p>
         </p>
                 <p>
             <b><code>complemento</code></b>&nbsp;&nbsp;
@@ -1084,10 +1072,10 @@ fetch(url, {
                 <input type="text"
                name="complemento"
                data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj"
+               value="Apto 123"
                data-component="body" hidden>
     <br>
-<p>Must not be greater than 255 characters.</p>
+<p>O complemento do endereço.</p>
         </p>
                 <p>
             <b><code>tipo</code></b>&nbsp;&nbsp;
@@ -1099,79 +1087,7 @@ fetch(url, {
                value="cliente"
                data-component="body" hidden>
     <br>
-<p>Must be one of <code>cliente</code> or <code>predio</code>.</p>
-        </p>
-                <p>
-            <b><code>razao_social</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="razao_social"
-               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="Luiz F. Lima"
-               data-component="body" hidden>
-    <br>
-<p>Razão social do cliente.</p>
-        </p>
-                <p>
-            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="nome_fantasia"
-               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="lf system"
-               data-component="body" hidden>
-    <br>
-<p>string Nome fantasia do cliente.</p>
-        </p>
-                <p>
-            <b><code>cnpj</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="cnpj"
-               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="43897291000175"
-               data-component="body" hidden>
-    <br>
-<p>string CNPJ do cliente.</p>
-        </p>
-                <p>
-            <b><code>telefone</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="telefone"
-               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="11999999999"
-               data-component="body" hidden>
-    <br>
-<p>string Telefone do cliente.</p>
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="lf.system@outlook.com"
-               data-component="body" hidden>
-    <br>
-<p>string Email do cliente.</p>
-        </p>
-                <p>
-            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="inicio_atividade"
-               data-endpoint="POSTapi-v1-cliente--uuid--endereco"
-               value="2021-10-29"
-               data-component="body" hidden>
-    <br>
-<p>date Data de inicio de atividade.</p>
+<p>O tipo do recurso a ser utilizado (cliente ou predio).</p>
         </p>
         </form>
 
@@ -1472,7 +1388,7 @@ fetch(url, {
             </p>
                     </form>
 
-                    <h2 id="endereco-POSTapi-v1-predio--uuid--endereco">Store a newly created resource in storage.</h2>
+                    <h2 id="endereco-POSTapi-v1-predio--uuid--endereco">Cadastro de endereço</h2>
 
 <p>
 </p>
@@ -1485,26 +1401,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/predio/1/endereco" \
+    "http://localhost:9000/api/v1/predio/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco" \
     --header "Content-Type: application/json" \
     --data "{
-    \"cep\": \"qui\",
-    \"numero\": \"auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq\",
-    \"complemento\": \"ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj\",
-    \"tipo\": \"predio\",
-    \"razao_social\": \"Luiz F. Lima\",
-    \"nome_fantasia\": \"lf system\",
-    \"cnpj\": \"43897291000175\",
-    \"telefone\": \"11999999999\",
-    \"email\": \"lf.system@outlook.com\",
-    \"inicio_atividade\": \"2021-10-29\"
+    \"cep\": \"13606-536\",
+    \"numero\": \"123\",
+    \"complemento\": \"Apto 123\",
+    \"tipo\": \"cliente\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/1/endereco"
+    "http://localhost:9000/api/v1/predio/32a29cbe-6cae-45d8-b8b7-610baca99a3b/endereco"
 );
 
 const headers = {
@@ -1513,16 +1423,10 @@ const headers = {
 };
 
 let body = {
-    "cep": "qui",
-    "numero": "auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq",
-    "complemento": "ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj",
-    "tipo": "predio",
-    "razao_social": "Luiz F. Lima",
-    "nome_fantasia": "lf system",
-    "cnpj": "43897291000175",
-    "telefone": "11999999999",
-    "email": "lf.system@outlook.com",
-    "inicio_atividade": "2021-10-29"
+    "cep": "13606-536",
+    "numero": "123",
+    "complemento": "Apto 123",
+    "tipo": "cliente"
 };
 
 fetch(url, {
@@ -1597,15 +1501,15 @@ fetch(url, {
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>uuid</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number"
+                <input type="text"
                name="uuid"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="1"
+               value="32a29cbe-6cae-45d8-b8b7-610baca99a3b"
                data-component="url" hidden>
     <br>
-
+<p>O uuid do Cliente ou Prédio.</p>
             </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
@@ -1615,10 +1519,10 @@ fetch(url, {
                 <input type="text"
                name="cep"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="qui"
+               value="13606-536"
                data-component="body" hidden>
     <br>
-
+<p>O CEP do endereço.</p>
         </p>
                 <p>
             <b><code>numero</code></b>&nbsp;&nbsp;
@@ -1627,10 +1531,10 @@ fetch(url, {
                 <input type="text"
                name="numero"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq"
+               value="123"
                data-component="body" hidden>
     <br>
-<p>Must not be greater than 255 characters.</p>
+<p>O número do endereço.</p>
         </p>
                 <p>
             <b><code>complemento</code></b>&nbsp;&nbsp;
@@ -1639,10 +1543,10 @@ fetch(url, {
                 <input type="text"
                name="complemento"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj"
+               value="Apto 123"
                data-component="body" hidden>
     <br>
-<p>Must not be greater than 255 characters.</p>
+<p>O complemento do endereço.</p>
         </p>
                 <p>
             <b><code>tipo</code></b>&nbsp;&nbsp;
@@ -1651,82 +1555,10 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="predio"
+               value="cliente"
                data-component="body" hidden>
     <br>
-<p>Must be one of <code>cliente</code> or <code>predio</code>.</p>
-        </p>
-                <p>
-            <b><code>razao_social</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="razao_social"
-               data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="Luiz F. Lima"
-               data-component="body" hidden>
-    <br>
-<p>Razão social do cliente.</p>
-        </p>
-                <p>
-            <b><code>nome_fantasia</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="nome_fantasia"
-               data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="lf system"
-               data-component="body" hidden>
-    <br>
-<p>string Nome fantasia do cliente.</p>
-        </p>
-                <p>
-            <b><code>cnpj</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="cnpj"
-               data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="43897291000175"
-               data-component="body" hidden>
-    <br>
-<p>string CNPJ do cliente.</p>
-        </p>
-                <p>
-            <b><code>telefone</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="telefone"
-               data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="11999999999"
-               data-component="body" hidden>
-    <br>
-<p>string Telefone do cliente.</p>
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="lf.system@outlook.com"
-               data-component="body" hidden>
-    <br>
-<p>string Email do cliente.</p>
-        </p>
-                <p>
-            <b><code>inicio_atividade</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text"
-               name="inicio_atividade"
-               data-endpoint="POSTapi-v1-predio--uuid--endereco"
-               value="2021-10-29"
-               data-component="body" hidden>
-    <br>
-<p>date Data de inicio de atividade.</p>
+<p>O tipo do recurso a ser utilizado (cliente ou predio).</p>
         </p>
         </form>
 
@@ -2197,18 +2029,18 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/cliente/17/predio" \
+    "http://localhost:9000/api/v1/cliente/15/predio" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"ihcxtcznknujmhqwpvjrbmrpxxsfbanchzzjjkhpmeskyfbknyizbqaotfmszteuvfzpdqkuxhwqrivcobssuxjifleejdakzjokwazrlcvhlsofznjmolrpfhwtdjnktjhygfpmjkdbqljigbopbohp\",
-    \"descricao\": \"pbrelpydofcdtsdhyagjeettjuuhuwhntoawpsapesvokawceptsrggcfkzkpskkxtykpwpuumyuurejlfbfzupwkazuqyykaiwgsxvoltbrdxwaztnlceucgbeibwkavnughzufeiwpeqhyzvjtsrwpqojxrexngqchdqpfrwwita\"
+    \"nome\": \"utlyevdikuznvjsiwzsnlemjdsyyjijrxmrqlbdidhstvpvllgcxdzejurvuanrtatnpqxokdtiwfnupryrgsonbfakergwtuwyztimmvtpuyfdukltggkpaxthfoctpqpnkdfcgwjhnml\",
+    \"descricao\": \"rlwtvlvivonnvxsezvlqvlwzwhaohykdtvfivzeybufdvedmowzxfftquxonjrdkyxuvfgusgfnrdcjawehqopvbmcrwsiabfqtsugtwwzheyndjxuvixhgnimdutipinayzerejeapdefnnvumthireykdmtsdzihxrxdcpnhucsamtgcdrvbjizmndpfscfztyioydykzttrsqcpehmyujavhgnjrhznfydmqrudkybisyvxkrdav\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/cliente/17/predio"
+    "http://localhost:9000/api/v1/cliente/15/predio"
 );
 
 const headers = {
@@ -2217,8 +2049,8 @@ const headers = {
 };
 
 let body = {
-    "nome": "ihcxtcznknujmhqwpvjrbmrpxxsfbanchzzjjkhpmeskyfbknyizbqaotfmszteuvfzpdqkuxhwqrivcobssuxjifleejdakzjokwazrlcvhlsofznjmolrpfhwtdjnktjhygfpmjkdbqljigbopbohp",
-    "descricao": "pbrelpydofcdtsdhyagjeettjuuhuwhntoawpsapesvokawceptsrggcfkzkpskkxtykpwpuumyuurejlfbfzupwkazuqyykaiwgsxvoltbrdxwaztnlceucgbeibwkavnughzufeiwpeqhyzvjtsrwpqojxrexngqchdqpfrwwita"
+    "nome": "utlyevdikuznvjsiwzsnlemjdsyyjijrxmrqlbdidhstvpvllgcxdzejurvuanrtatnpqxokdtiwfnupryrgsonbfakergwtuwyztimmvtpuyfdukltggkpaxthfoctpqpnkdfcgwjhnml",
+    "descricao": "rlwtvlvivonnvxsezvlqvlwzwhaohykdtvfivzeybufdvedmowzxfftquxonjrdkyxuvfgusgfnrdcjawehqopvbmcrwsiabfqtsugtwwzheyndjxuvixhgnimdutipinayzerejeapdefnnvumthireykdmtsdzihxrxdcpnhucsamtgcdrvbjizmndpfscfztyioydykzttrsqcpehmyujavhgnjrhznfydmqrudkybisyvxkrdav"
 };
 
 fetch(url, {
@@ -2278,7 +2110,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-cliente--uuid--predio"
-               value="17"
+               value="15"
                data-component="url" hidden>
     <br>
 
@@ -2291,7 +2123,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-cliente--uuid--predio"
-               value="ihcxtcznknujmhqwpvjrbmrpxxsfbanchzzjjkhpmeskyfbknyizbqaotfmszteuvfzpdqkuxhwqrivcobssuxjifleejdakzjokwazrlcvhlsofznjmolrpfhwtdjnktjhygfpmjkdbqljigbopbohp"
+               value="utlyevdikuznvjsiwzsnlemjdsyyjijrxmrqlbdidhstvpvllgcxdzejurvuanrtatnpqxokdtiwfnupryrgsonbfakergwtuwyztimmvtpuyfdukltggkpaxthfoctpqpnkdfcgwjhnml"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2303,7 +2135,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-cliente--uuid--predio"
-               value="pbrelpydofcdtsdhyagjeettjuuhuwhntoawpsapesvokawceptsrggcfkzkpskkxtykpwpuumyuurejlfbfzupwkazuqyykaiwgsxvoltbrdxwaztnlceucgbeibwkavnughzufeiwpeqhyzvjtsrwpqojxrexngqchdqpfrwwita"
+               value="rlwtvlvivonnvxsezvlqvlwzwhaohykdtvfivzeybufdvedmowzxfftquxonjrdkyxuvfgusgfnrdcjawehqopvbmcrwsiabfqtsugtwwzheyndjxuvixhgnimdutipinayzerejeapdefnnvumthireykdmtsdzihxrxdcpnhucsamtgcdrvbjizmndpfscfztyioydykzttrsqcpehmyujavhgnjrhznfydmqrudkybisyvxkrdav"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2323,12 +2155,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/7"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/1"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/7"
+    "http://localhost:9000/api/v1/predio/1"
 );
 
 fetch(url, {
@@ -2386,7 +2218,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid-"
-               value="7"
+               value="1"
                data-component="url" hidden>
     <br>
 
@@ -2406,18 +2238,18 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/predio/5" \
+    "http://localhost:9000/api/v1/predio/18" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"heiialzmzmjmeutluluuukxehkdxuhcbiqsyplxwyyrzibudgyqizyxemkrokmpyomuelos\",
-    \"descricao\": \"wzybjssnnlhxtzcxjkircxhzdaeixdzaacjrkbzretgobnawfkdezqcdxiukfrqypzddnborbqwsnohxzmaqyggosumkzrejfphohrjhowowhfesxygjizzwtklmkjcsvcdbdwmrhreixeoqwmehtotfxzblquwgueiybdumgtrfddterhfrgedcahutppitahnquokbnaaguzksdawwriquwbkn\"
+    \"nome\": \"ozhvufmbutfhhpiremcdyydubdrwyscsxpjmvttvn\",
+    \"descricao\": \"sxijldkhacjwqfhjgsrvsobjcxfnykwdzoppxymtbgmpbrznbbxvennvxwnmxxprqqhjbedoxhmdldkxrhqplpftgekiemgsigkbgrr\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/5"
+    "http://localhost:9000/api/v1/predio/18"
 );
 
 const headers = {
@@ -2426,8 +2258,8 @@ const headers = {
 };
 
 let body = {
-    "nome": "heiialzmzmjmeutluluuukxehkdxuhcbiqsyplxwyyrzibudgyqizyxemkrokmpyomuelos",
-    "descricao": "wzybjssnnlhxtzcxjkircxhzdaeixdzaacjrkbzretgobnawfkdezqcdxiukfrqypzddnborbqwsnohxzmaqyggosumkzrejfphohrjhowowhfesxygjizzwtklmkjcsvcdbdwmrhreixeoqwmehtotfxzblquwgueiybdumgtrfddterhfrgedcahutppitahnquokbnaaguzksdawwriquwbkn"
+    "nome": "ozhvufmbutfhhpiremcdyydubdrwyscsxpjmvttvn",
+    "descricao": "sxijldkhacjwqfhjgsrvsobjcxfnykwdzoppxymtbgmpbrznbbxvennvxwnmxxprqqhjbedoxhmdldkxrhqplpftgekiemgsigkbgrr"
 };
 
 fetch(url, {
@@ -2491,7 +2323,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-predio--uuid-"
-               value="5"
+               value="18"
                data-component="url" hidden>
     <br>
 
@@ -2504,7 +2336,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-predio--uuid-"
-               value="heiialzmzmjmeutluluuukxehkdxuhcbiqsyplxwyyrzibudgyqizyxemkrokmpyomuelos"
+               value="ozhvufmbutfhhpiremcdyydubdrwyscsxpjmvttvn"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2516,7 +2348,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-predio--uuid-"
-               value="wzybjssnnlhxtzcxjkircxhzdaeixdzaacjrkbzretgobnawfkdezqcdxiukfrqypzddnborbqwsnohxzmaqyggosumkzrejfphohrjhowowhfesxygjizzwtklmkjcsvcdbdwmrhreixeoqwmehtotfxzblquwgueiybdumgtrfddterhfrgedcahutppitahnquokbnaaguzksdawwriquwbkn"
+               value="sxijldkhacjwqfhjgsrvsobjcxfnykwdzoppxymtbgmpbrznbbxvennvxwnmxxprqqhjbedoxhmdldkxrhqplpftgekiemgsigkbgrr"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2536,12 +2368,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/predio/2"</code></pre></div>
+    "http://localhost:9000/api/v1/predio/18"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/2"
+    "http://localhost:9000/api/v1/predio/18"
 );
 
 fetch(url, {
@@ -2599,7 +2431,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-predio--uuid-"
-               value="2"
+               value="18"
                data-component="url" hidden>
     <br>
 
@@ -2619,12 +2451,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/14/foto"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/13/foto"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/14/foto"
+    "http://localhost:9000/api/v1/predio/13/foto"
 );
 
 fetch(url, {
@@ -2682,7 +2514,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid--foto"
-               value="14"
+               value="13"
                data-component="url" hidden>
     <br>
 
@@ -2702,17 +2534,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/predio/7/foto" \
+    "http://localhost:9000/api/v1/predio/5/foto" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=msdcparspwsaqiplprfixsetpyjsnshqxpanonsnvonhgguaznlqtbuijsfjswthkiwdltohwjvyi" \
-    --form "descricao=lwqwykdhhyujxwzgzttzpqguzppxgbpsnrkrznoxlcoyiiqcwqblkpz" \
-    --form "tipo=nqqfaqlgueqqekacrisofooeqekubcfcygtjedsnjtzvyhporvxjewndvpfhrbamc" \
-    --form "foto=@/tmp/phpvnCMTl" </code></pre></div>
+    --form "nome=flbfzlhuqluemtfqylpqiztdbewyeiucdsuntpssojioeqqvicwxusaeyepzqtullmvsaoqgxhgjmsprclddmdgyvniykjkljht" \
+    --form "descricao=oaqhhxqzofwalgstpimdmqmwpkcrnl" \
+    --form "tipo=fxeimmduxrzmcoatlwpfzlywtcoqycktqmbuimqyvenmzavitfnddxjcknnuwbprtovoxnhqhgbxxzbekaxxhuydnlcwvfzxokvyowgkdnnysjrqoqjdhjjvlhgptvlarbiljqzzqxugjxzpchmabjeiyjozzdblehgdssuscesoybbfkstjcsqludidxdobeinufnssqhecyhfbrwxxvj" \
+    --form "foto=@/tmp/phpaEAvYH" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/7/foto"
+    "http://localhost:9000/api/v1/predio/5/foto"
 );
 
 const headers = {
@@ -2721,9 +2553,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'msdcparspwsaqiplprfixsetpyjsnshqxpanonsnvonhgguaznlqtbuijsfjswthkiwdltohwjvyi');
-body.append('descricao', 'lwqwykdhhyujxwzgzttzpqguzppxgbpsnrkrznoxlcoyiiqcwqblkpz');
-body.append('tipo', 'nqqfaqlgueqqekacrisofooeqekubcfcygtjedsnjtzvyhporvxjewndvpfhrbamc');
+body.append('nome', 'flbfzlhuqluemtfqylpqiztdbewyeiucdsuntpssojioeqqvicwxusaeyepzqtullmvsaoqgxhgjmsprclddmdgyvniykjkljht');
+body.append('descricao', 'oaqhhxqzofwalgstpimdmqmwpkcrnl');
+body.append('tipo', 'fxeimmduxrzmcoatlwpfzlywtcoqycktqmbuimqyvenmzavitfnddxjcknnuwbprtovoxnhqhgbxxzbekaxxhuydnlcwvfzxokvyowgkdnnysjrqoqjdhjjvlhgptvlarbiljqzzqxugjxzpchmabjeiyjozzdblehgdssuscesoybbfkstjcsqludidxdobeinufnssqhecyhfbrwxxvj');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -2783,7 +2615,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="7"
+               value="5"
                data-component="url" hidden>
     <br>
 
@@ -2796,7 +2628,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="msdcparspwsaqiplprfixsetpyjsnshqxpanonsnvonhgguaznlqtbuijsfjswthkiwdltohwjvyi"
+               value="flbfzlhuqluemtfqylpqiztdbewyeiucdsuntpssojioeqqvicwxusaeyepzqtullmvsaoqgxhgjmsprclddmdgyvniykjkljht"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2808,7 +2640,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="lwqwykdhhyujxwzgzttzpqguzppxgbpsnrkrznoxlcoyiiqcwqblkpz"
+               value="oaqhhxqzofwalgstpimdmqmwpkcrnl"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2832,7 +2664,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="POSTapi-v1-predio--uuid--foto"
-               value="nqqfaqlgueqqekacrisofooeqekubcfcygtjedsnjtzvyhporvxjewndvpfhrbamc"
+               value="fxeimmduxrzmcoatlwpfzlywtcoqycktqmbuimqyvenmzavitfnddxjcknnuwbprtovoxnhqhgbxxzbekaxxhuydnlcwvfzxokvyowgkdnnysjrqoqjdhjjvlhgptvlarbiljqzzqxugjxzpchmabjeiyjozzdblehgdssuscesoybbfkstjcsqludidxdobeinufnssqhecyhfbrwxxvj"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -2852,17 +2684,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/predio/14/foto/18" \
+    "http://localhost:9000/api/v1/predio/9/foto/1" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=kekmmiztineftcddykfisdbotipvbtheoccetfntlyjqnayqkwfanotppjrhvsavzuenzfagvzdqrjouboeexuvazkmjkabvsunsunbxbmiuhxztcxnzhxqwxyopsiagrynebsqjuaeibfmoxanucvctgydxoqrvtbyzrngwntrcpmwemmv" \
-    --form "descricao=rcjzjvxwfxnogdaokykfqoncmhwqyxvrwfkgqk" \
-    --form "tipo=iehsismxwjttytngmanjqkpmozgqqaygoqhhpohqezsxrjkpdk" \
-    --form "foto=@/tmp/phpg3iOdJ" </code></pre></div>
+    --form "nome=zrtgusstomzlwtvgxmyqlhgyjetrmifbxyugbhghuiwmimcgrvwspspwhadbbzgnqprqbhovgkfxknjnkjgfccywpnuwuxbozniwjdzewbxsitszhccvbqifhfcwcstfwutranxpzajrhthjkhwopxalcqlfipgqhjvgegaqdiwhunxiyhaeaymiamkarnoadfilczfkrfmuxoboqavfjfhncxebzhthhvb" \
+    --form "descricao=xkywierkkbauqgtqabz" \
+    --form "tipo=kxgndxozvpfgqrjgzevwypcmawpqwatpwplymsfjzffihwzpgwmjcexyartdhykldkayabzhzgcgxzcjlrplsvhzvszxkiuatxgpfnqdbhodfxrfunbfoofjlqfysajaonwkwazhxvmboqcdcbijtyouuovyorecaptzdgicqxyebcucxsnznvlfrnybkimdujormssmjvxpqgkjayhtpsnozsjrhexvtwzavcdvuxdmdnhli" \
+    --form "foto=@/tmp/phpAyC2ga" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/14/foto/18"
+    "http://localhost:9000/api/v1/predio/9/foto/1"
 );
 
 const headers = {
@@ -2871,9 +2703,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'kekmmiztineftcddykfisdbotipvbtheoccetfntlyjqnayqkwfanotppjrhvsavzuenzfagvzdqrjouboeexuvazkmjkabvsunsunbxbmiuhxztcxnzhxqwxyopsiagrynebsqjuaeibfmoxanucvctgydxoqrvtbyzrngwntrcpmwemmv');
-body.append('descricao', 'rcjzjvxwfxnogdaokykfqoncmhwqyxvrwfkgqk');
-body.append('tipo', 'iehsismxwjttytngmanjqkpmozgqqaygoqhhpohqezsxrjkpdk');
+body.append('nome', 'zrtgusstomzlwtvgxmyqlhgyjetrmifbxyugbhghuiwmimcgrvwspspwhadbbzgnqprqbhovgkfxknjnkjgfccywpnuwuxbozniwjdzewbxsitszhccvbqifhfcwcstfwutranxpzajrhthjkhwopxalcqlfipgqhjvgegaqdiwhunxiyhaeaymiamkarnoadfilczfkrfmuxoboqavfjfhncxebzhthhvb');
+body.append('descricao', 'xkywierkkbauqgtqabz');
+body.append('tipo', 'kxgndxozvpfgqrjgzevwypcmawpqwatpwplymsfjzffihwzpgwmjcexyartdhykldkayabzhzgcgxzcjlrplsvhzvszxkiuatxgpfnqdbhodfxrfunbfoofjlqfysajaonwkwazhxvmboqcdcbijtyouuovyorecaptzdgicqxyebcucxsnznvlfrnybkimdujormssmjvxpqgkjayhtpsnozsjrhexvtwzavcdvuxdmdnhli');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -2937,7 +2769,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="14"
+               value="9"
                data-component="url" hidden>
     <br>
 
@@ -2949,7 +2781,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="18"
+               value="1"
                data-component="url" hidden>
     <br>
 
@@ -2962,7 +2794,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="kekmmiztineftcddykfisdbotipvbtheoccetfntlyjqnayqkwfanotppjrhvsavzuenzfagvzdqrjouboeexuvazkmjkabvsunsunbxbmiuhxztcxnzhxqwxyopsiagrynebsqjuaeibfmoxanucvctgydxoqrvtbyzrngwntrcpmwemmv"
+               value="zrtgusstomzlwtvgxmyqlhgyjetrmifbxyugbhghuiwmimcgrvwspspwhadbbzgnqprqbhovgkfxknjnkjgfccywpnuwuxbozniwjdzewbxsitszhccvbqifhfcwcstfwutranxpzajrhthjkhwopxalcqlfipgqhjvgegaqdiwhunxiyhaeaymiamkarnoadfilczfkrfmuxoboqavfjfhncxebzhthhvb"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2974,7 +2806,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="rcjzjvxwfxnogdaokykfqoncmhwqyxvrwfkgqk"
+               value="xkywierkkbauqgtqabz"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2998,7 +2830,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="PUTapi-v1-predio--uuid--foto--foto_uuid-"
-               value="iehsismxwjttytngmanjqkpmozgqqaygoqhhpohqezsxrjkpdk"
+               value="kxgndxozvpfgqrjgzevwypcmawpqwatpwplymsfjzffihwzpgwmjcexyartdhykldkayabzhzgcgxzcjlrplsvhzvszxkiuatxgpfnqdbhodfxrfunbfoofjlqfysajaonwkwazhxvmboqcdcbijtyouuovyorecaptzdgicqxyebcucxsnznvlfrnybkimdujormssmjvxpqgkjayhtpsnozsjrhexvtwzavcdvuxdmdnhli"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -3018,12 +2850,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/predio/4/foto/14"</code></pre></div>
+    "http://localhost:9000/api/v1/predio/17/foto/1"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/4/foto/14"
+    "http://localhost:9000/api/v1/predio/17/foto/1"
 );
 
 fetch(url, {
@@ -3081,7 +2913,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--foto--foto_uuid-"
-               value="4"
+               value="17"
                data-component="url" hidden>
     <br>
 
@@ -3093,7 +2925,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--foto--foto_uuid-"
-               value="14"
+               value="1"
                data-component="url" hidden>
     <br>
 
@@ -3113,12 +2945,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/sala/15/foto"</code></pre></div>
+    --get "http://localhost:9000/api/v1/sala/20/foto"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/15/foto"
+    "http://localhost:9000/api/v1/sala/20/foto"
 );
 
 fetch(url, {
@@ -3176,7 +3008,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-sala--uuid--foto"
-               value="15"
+               value="20"
                data-component="url" hidden>
     <br>
 
@@ -3196,17 +3028,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/sala/20/foto" \
+    "http://localhost:9000/api/v1/sala/7/foto" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=wuahuovcsgbpzfwtjjbpsffkciyslnjzzpqznkbeldhqytqaaakxshxbjhlpjzgvrtntiurbejgmqfemmsuircuoznhivphedjwwwwwjkuhrsqgfhdvjwpxjlcqpxwobeyofiqcgbjsselfluexcjjbxwzwwxcpxsoanzfkemrvtkghwhaiqpleopyagvbrftlsrtcwyjlsbiilbau" \
-    --form "descricao=fofhutzahzemvhwkjaojnwictbjsdvgtrqukctmegsjcabkzjdhjwvncqjhahfjqaeypawnapjwqtpwlgvrduygqkqzstepwwbarvvueleqciebitdiaaskcathxetoqhvgvhghzwdoyzlpwba" \
-    --form "tipo=uhotdiuafsutxvyvuqjutkdnkixdyqtxxbcxxcqdtgzuvbzx" \
-    --form "foto=@/tmp/phpYBACek" </code></pre></div>
+    --form "nome=myjwlbihngdibuihorjtuirbdmlbbzkbahaxwvffbxmhmmwcwmnttqty" \
+    --form "descricao=pwqerfxerlnuoaduwlhpxlsuqbegffdozrarvhefkxqnmqtomkdofbjndqsmgxhthvgbapzmwfpjmafhdrjdouzkgpawbumtfxyvexqxyxhyqxgoszvqyccwisaexy" \
+    --form "tipo=jpdfyxvuonocvgstrpbbmjkmkqnfcknzpyzequtuxzsmtpqfirhqkjfpmkwyxmhlxyddgvollookcenuqnlvlhyznoikluqshshgzrsxmqxhnnhqnguozapojttztoihuqvpobkqtqzjfsmmxxhetzabgalefknamuvsiilcbwpnxiacvsugqcjcfimktyctsaqwmewxfnzyamtrstjbvpckuzhrygpjruekxgckeuszyxcltiokpcxkezm" \
+    --form "foto=@/tmp/phpVK1tqm" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/20/foto"
+    "http://localhost:9000/api/v1/sala/7/foto"
 );
 
 const headers = {
@@ -3215,9 +3047,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'wuahuovcsgbpzfwtjjbpsffkciyslnjzzpqznkbeldhqytqaaakxshxbjhlpjzgvrtntiurbejgmqfemmsuircuoznhivphedjwwwwwjkuhrsqgfhdvjwpxjlcqpxwobeyofiqcgbjsselfluexcjjbxwzwwxcpxsoanzfkemrvtkghwhaiqpleopyagvbrftlsrtcwyjlsbiilbau');
-body.append('descricao', 'fofhutzahzemvhwkjaojnwictbjsdvgtrqukctmegsjcabkzjdhjwvncqjhahfjqaeypawnapjwqtpwlgvrduygqkqzstepwwbarvvueleqciebitdiaaskcathxetoqhvgvhghzwdoyzlpwba');
-body.append('tipo', 'uhotdiuafsutxvyvuqjutkdnkixdyqtxxbcxxcqdtgzuvbzx');
+body.append('nome', 'myjwlbihngdibuihorjtuirbdmlbbzkbahaxwvffbxmhmmwcwmnttqty');
+body.append('descricao', 'pwqerfxerlnuoaduwlhpxlsuqbegffdozrarvhefkxqnmqtomkdofbjndqsmgxhthvgbapzmwfpjmafhdrjdouzkgpawbumtfxyvexqxyxhyqxgoszvqyccwisaexy');
+body.append('tipo', 'jpdfyxvuonocvgstrpbbmjkmkqnfcknzpyzequtuxzsmtpqfirhqkjfpmkwyxmhlxyddgvollookcenuqnlvlhyznoikluqshshgzrsxmqxhnnhqnguozapojttztoihuqvpobkqtqzjfsmmxxhetzabgalefknamuvsiilcbwpnxiacvsugqcjcfimktyctsaqwmewxfnzyamtrstjbvpckuzhrygpjruekxgckeuszyxcltiokpcxkezm');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -3277,7 +3109,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="20"
+               value="7"
                data-component="url" hidden>
     <br>
 
@@ -3290,7 +3122,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="wuahuovcsgbpzfwtjjbpsffkciyslnjzzpqznkbeldhqytqaaakxshxbjhlpjzgvrtntiurbejgmqfemmsuircuoznhivphedjwwwwwjkuhrsqgfhdvjwpxjlcqpxwobeyofiqcgbjsselfluexcjjbxwzwwxcpxsoanzfkemrvtkghwhaiqpleopyagvbrftlsrtcwyjlsbiilbau"
+               value="myjwlbihngdibuihorjtuirbdmlbbzkbahaxwvffbxmhmmwcwmnttqty"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3302,7 +3134,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="fofhutzahzemvhwkjaojnwictbjsdvgtrqukctmegsjcabkzjdhjwvncqjhahfjqaeypawnapjwqtpwlgvrduygqkqzstepwwbarvvueleqciebitdiaaskcathxetoqhvgvhghzwdoyzlpwba"
+               value="pwqerfxerlnuoaduwlhpxlsuqbegffdozrarvhefkxqnmqtomkdofbjndqsmgxhthvgbapzmwfpjmafhdrjdouzkgpawbumtfxyvexqxyxhyqxgoszvqyccwisaexy"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3326,7 +3158,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="POSTapi-v1-sala--uuid--foto"
-               value="uhotdiuafsutxvyvuqjutkdnkixdyqtxxbcxxcqdtgzuvbzx"
+               value="jpdfyxvuonocvgstrpbbmjkmkqnfcknzpyzequtuxzsmtpqfirhqkjfpmkwyxmhlxyddgvollookcenuqnlvlhyznoikluqshshgzrsxmqxhnnhqnguozapojttztoihuqvpobkqtqzjfsmmxxhetzabgalefknamuvsiilcbwpnxiacvsugqcjcfimktyctsaqwmewxfnzyamtrstjbvpckuzhrygpjruekxgckeuszyxcltiokpcxkezm"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -3346,17 +3178,17 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/sala/18/foto/18" \
+    "http://localhost:9000/api/v1/sala/5/foto/1" \
     --header "Content-Type: multipart/form-data" \
-    --form "nome=chjjbchodiwhfafqlwtyjicavrebhkknfyvnlocupcoyonjnzfkvdzyoebxajbzdk" \
-    --form "descricao=vadjtmnigbosgvrfbvlkpewidqldqbyemfgauinheqonubkacqmjcflgsyjkcjgmrivkzetkmbqccisdcihytbcafvvdgcnmmbdwcbrfvehhlebvpxomhnohgystrdmsvepkzvvzwqnpbvxbhoaqfxmnwlhvaskhpcvykxwirvpdrrwqcolcpipjwtk" \
-    --form "tipo=aznbcqligtybrtcaryfwtvgnkwfduvniqfbhhrixckh" \
-    --form "foto=@/tmp/php0J2pyH" </code></pre></div>
+    --form "nome=rpdlvbllpeyquehrijeqwktvycoweeqypgjqyzwjvgfmnyfveegyyzlqyinhjxvkqbxoixjjotpkfbykjufdwmrqcztxdynavyukqlnaodbfspesyrscgvasqtksyllrynmbqisqtbjcpnufmxyjmntihpmwzrnoxxwzobctyyfrlctcywlmsyaxekeatfhdfqsdvnhbwawriqedmejapjvqysigkuapwjzo" \
+    --form "descricao=zlmycyrk" \
+    --form "tipo=fvgkmyzqmevelmjzemjofqkhzceecmuglhsbrepujrdrmobpmvxngbrootabiyzeeayirqnuvcjgqgwfpftysqgvjaikororcbozceymrnehimbvrkdzwrivytsvnzuamjvsmzuuidkgmwqrlawyopmidulocbktbuhnezbqmpstcniljnnjowlsjxhcegmazozhmfytglcwxvdcupziyscavomqffierlszb" \
+    --form "foto=@/tmp/phpNdeVf8" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/18/foto/18"
+    "http://localhost:9000/api/v1/sala/5/foto/1"
 );
 
 const headers = {
@@ -3365,9 +3197,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('nome', 'chjjbchodiwhfafqlwtyjicavrebhkknfyvnlocupcoyonjnzfkvdzyoebxajbzdk');
-body.append('descricao', 'vadjtmnigbosgvrfbvlkpewidqldqbyemfgauinheqonubkacqmjcflgsyjkcjgmrivkzetkmbqccisdcihytbcafvvdgcnmmbdwcbrfvehhlebvpxomhnohgystrdmsvepkzvvzwqnpbvxbhoaqfxmnwlhvaskhpcvykxwirvpdrrwqcolcpipjwtk');
-body.append('tipo', 'aznbcqligtybrtcaryfwtvgnkwfduvniqfbhhrixckh');
+body.append('nome', 'rpdlvbllpeyquehrijeqwktvycoweeqypgjqyzwjvgfmnyfveegyyzlqyinhjxvkqbxoixjjotpkfbykjufdwmrqcztxdynavyukqlnaodbfspesyrscgvasqtksyllrynmbqisqtbjcpnufmxyjmntihpmwzrnoxxwzobctyyfrlctcywlmsyaxekeatfhdfqsdvnhbwawriqedmejapjvqysigkuapwjzo');
+body.append('descricao', 'zlmycyrk');
+body.append('tipo', 'fvgkmyzqmevelmjzemjofqkhzceecmuglhsbrepujrdrmobpmvxngbrootabiyzeeayirqnuvcjgqgwfpftysqgvjaikororcbozceymrnehimbvrkdzwrivytsvnzuamjvsmzuuidkgmwqrlawyopmidulocbktbuhnezbqmpstcniljnnjowlsjxhcegmazozhmfytglcwxvdcupziyscavomqffierlszb');
 body.append('foto', document.querySelector('input[name="foto"]').files[0]);
 
 fetch(url, {
@@ -3431,7 +3263,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="18"
+               value="5"
                data-component="url" hidden>
     <br>
 
@@ -3443,7 +3275,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="18"
+               value="1"
                data-component="url" hidden>
     <br>
 
@@ -3456,7 +3288,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="chjjbchodiwhfafqlwtyjicavrebhkknfyvnlocupcoyonjnzfkvdzyoebxajbzdk"
+               value="rpdlvbllpeyquehrijeqwktvycoweeqypgjqyzwjvgfmnyfveegyyzlqyinhjxvkqbxoixjjotpkfbykjufdwmrqcztxdynavyukqlnaodbfspesyrscgvasqtksyllrynmbqisqtbjcpnufmxyjmntihpmwzrnoxxwzobctyyfrlctcywlmsyaxekeatfhdfqsdvnhbwawriqedmejapjvqysigkuapwjzo"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3468,7 +3300,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="vadjtmnigbosgvrfbvlkpewidqldqbyemfgauinheqonubkacqmjcflgsyjkcjgmrivkzetkmbqccisdcihytbcafvvdgcnmmbdwcbrfvehhlebvpxomhnohgystrdmsvepkzvvzwqnpbvxbhoaqfxmnwlhvaskhpcvykxwirvpdrrwqcolcpipjwtk"
+               value="zlmycyrk"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -3492,7 +3324,7 @@ fetch(url, {
                 <input type="text"
                name="tipo"
                data-endpoint="PUTapi-v1-sala--uuid--foto--foto_uuid-"
-               value="aznbcqligtybrtcaryfwtvgnkwfduvniqfbhhrixckh"
+               value="fvgkmyzqmevelmjzemjofqkhzceecmuglhsbrepujrdrmobpmvxngbrootabiyzeeayirqnuvcjgqgwfpftysqgvjaikororcbozceymrnehimbvrkdzwrivytsvnzuamjvsmzuuidkgmwqrlawyopmidulocbktbuhnezbqmpstcniljnnjowlsjxhcegmazozhmfytglcwxvdcupziyscavomqffierlszb"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.</p>
@@ -3512,12 +3344,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/sala/2/foto/4"</code></pre></div>
+    "http://localhost:9000/api/v1/sala/17/foto/2"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/sala/2/foto/4"
+    "http://localhost:9000/api/v1/sala/17/foto/2"
 );
 
 fetch(url, {
@@ -3575,7 +3407,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-sala--uuid--foto--foto_uuid-"
-               value="2"
+               value="17"
                data-component="url" hidden>
     <br>
 
@@ -3587,7 +3419,7 @@ fetch(url, {
                 <input type="number"
                name="foto_uuid"
                data-endpoint="DELETEapi-v1-sala--uuid--foto--foto_uuid-"
-               value="4"
+               value="2"
                data-component="url" hidden>
     <br>
 
@@ -3607,12 +3439,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/12/sala"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/11/sala"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/12/sala"
+    "http://localhost:9000/api/v1/predio/11/sala"
 );
 
 fetch(url, {
@@ -3670,7 +3502,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid--sala"
-               value="12"
+               value="11"
                data-component="url" hidden>
     <br>
 
@@ -3690,20 +3522,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:9000/api/v1/predio/3/sala" \
+    "http://localhost:9000/api/v1/predio/2/sala" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"est\",
-    \"numero\": 10,
-    \"descricao\": \"atque\",
-    \"tipagem_uuid\": \"pariatur\"
+    \"nome\": \"repudiandae\",
+    \"numero\": 17,
+    \"descricao\": \"aut\",
+    \"tipagem_uuid\": \"tenetur\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/3/sala"
+    "http://localhost:9000/api/v1/predio/2/sala"
 );
 
 const headers = {
@@ -3712,10 +3544,10 @@ const headers = {
 };
 
 let body = {
-    "nome": "est",
-    "numero": 10,
-    "descricao": "atque",
-    "tipagem_uuid": "pariatur"
+    "nome": "repudiandae",
+    "numero": 17,
+    "descricao": "aut",
+    "tipagem_uuid": "tenetur"
 };
 
 fetch(url, {
@@ -3775,7 +3607,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="3"
+               value="2"
                data-component="url" hidden>
     <br>
 
@@ -3788,7 +3620,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="est"
+               value="repudiandae"
                data-component="body" hidden>
     <br>
 
@@ -3800,7 +3632,7 @@ fetch(url, {
                 <input type="number"
                name="numero"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="10"
+               value="17"
                data-component="body" hidden>
     <br>
 
@@ -3812,7 +3644,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="atque"
+               value="aut"
                data-component="body" hidden>
     <br>
 
@@ -3824,7 +3656,7 @@ fetch(url, {
                 <input type="text"
                name="tipagem_uuid"
                data-endpoint="POSTapi-v1-predio--uuid--sala"
-               value="pariatur"
+               value="tenetur"
                data-component="body" hidden>
     <br>
 
@@ -3844,12 +3676,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:9000/api/v1/predio/19/sala/10"</code></pre></div>
+    --get "http://localhost:9000/api/v1/predio/8/sala/12"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/19/sala/10"
+    "http://localhost:9000/api/v1/predio/8/sala/12"
 );
 
 fetch(url, {
@@ -3907,7 +3739,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="GETapi-v1-predio--uuid--sala--sala_uuid-"
-               value="19"
+               value="8"
                data-component="url" hidden>
     <br>
 
@@ -3919,7 +3751,7 @@ fetch(url, {
                 <input type="number"
                name="sala_uuid"
                data-endpoint="GETapi-v1-predio--uuid--sala--sala_uuid-"
-               value="10"
+               value="12"
                data-component="url" hidden>
     <br>
 
@@ -3939,19 +3771,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/predio/10/sala/5" \
+    "http://localhost:9000/api/v1/predio/3/sala/16" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"inventore\",
-    \"numero\": 5,
-    \"descricao\": \"minima\"
+    \"nome\": \"dolor\",
+    \"numero\": 8,
+    \"descricao\": \"et\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/10/sala/5"
+    "http://localhost:9000/api/v1/predio/3/sala/16"
 );
 
 const headers = {
@@ -3960,9 +3792,9 @@ const headers = {
 };
 
 let body = {
-    "nome": "inventore",
-    "numero": 5,
-    "descricao": "minima"
+    "nome": "dolor",
+    "numero": 8,
+    "descricao": "et"
 };
 
 fetch(url, {
@@ -4026,7 +3858,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="10"
+               value="3"
                data-component="url" hidden>
     <br>
 
@@ -4038,7 +3870,7 @@ fetch(url, {
                 <input type="number"
                name="sala_uuid"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="5"
+               value="16"
                data-component="url" hidden>
     <br>
 
@@ -4051,7 +3883,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="inventore"
+               value="dolor"
                data-component="body" hidden>
     <br>
 
@@ -4063,7 +3895,7 @@ fetch(url, {
                 <input type="number"
                name="numero"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="5"
+               value="8"
                data-component="body" hidden>
     <br>
 
@@ -4075,7 +3907,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-predio--uuid--sala--sala_uuid-"
-               value="minima"
+               value="et"
                data-component="body" hidden>
     <br>
 
@@ -4095,12 +3927,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/predio/18/sala/16"</code></pre></div>
+    "http://localhost:9000/api/v1/predio/5/sala/18"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/predio/18/sala/16"
+    "http://localhost:9000/api/v1/predio/5/sala/18"
 );
 
 fetch(url, {
@@ -4158,7 +3990,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--sala--sala_uuid-"
-               value="18"
+               value="5"
                data-component="url" hidden>
     <br>
 
@@ -4170,7 +4002,7 @@ fetch(url, {
                 <input type="number"
                name="sala_uuid"
                data-endpoint="DELETEapi-v1-predio--uuid--sala--sala_uuid-"
-               value="16"
+               value="18"
                data-component="url" hidden>
     <br>
 
@@ -4263,9 +4095,9 @@ fetch(url, {
     "http://localhost:9000/api/v1/tipagem" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"ylpoyobisbvmvkyjjpguqindkmqv\",
-    \"preco\": 1.022,
-    \"descricao\": \"abqkizgheiflxhrmvcalccnwwpkgwccgycehkqsfmjxblwlnzkcbhexjedinkxxodknllyuphyjjffvdhaaiqolnhnvsyhfkhllxfqlqzjjalfndodnalrblgaqwkufqauhggyuend\"
+    \"nome\": \"fauuppkqilwlxeeobcaihndnqlucucwmqkofdzbbncskbbvm\",
+    \"preco\": 5299765.826648191,
+    \"descricao\": \"pwikgwlxiamyndecnxbrjgsqfasbfifsq\"
 }"
 </code></pre></div>
 
@@ -4281,9 +4113,9 @@ const headers = {
 };
 
 let body = {
-    "nome": "ylpoyobisbvmvkyjjpguqindkmqv",
-    "preco": 1.022,
-    "descricao": "abqkizgheiflxhrmvcalccnwwpkgwccgycehkqsfmjxblwlnzkcbhexjedinkxxodknllyuphyjjffvdhaaiqolnhnvsyhfkhllxfqlqzjjalfndodnalrblgaqwkufqauhggyuend"
+    "nome": "fauuppkqilwlxeeobcaihndnqlucucwmqkofdzbbncskbbvm",
+    "preco": 5299765.826648191,
+    "descricao": "pwikgwlxiamyndecnxbrjgsqfasbfifsq"
 };
 
 fetch(url, {
@@ -4343,7 +4175,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="POSTapi-v1-tipagem"
-               value="ylpoyobisbvmvkyjjpguqindkmqv"
+               value="fauuppkqilwlxeeobcaihndnqlucucwmqkofdzbbncskbbvm"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4355,7 +4187,7 @@ fetch(url, {
                 <input type="number"
                name="preco"
                data-endpoint="POSTapi-v1-tipagem"
-               value="1.022"
+               value="5299765.8266482"
                data-component="body" hidden>
     <br>
 
@@ -4367,7 +4199,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="POSTapi-v1-tipagem"
-               value="abqkizgheiflxhrmvcalccnwwpkgwccgycehkqsfmjxblwlnzkcbhexjedinkxxodknllyuphyjjffvdhaaiqolnhnvsyhfkhllxfqlqzjjalfndodnalrblgaqwkufqauhggyuend"
+               value="pwikgwlxiamyndecnxbrjgsqfasbfifsq"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4387,19 +4219,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:9000/api/v1/tipagem/20" \
+    "http://localhost:9000/api/v1/tipagem/16" \
     --header "Content-Type: application/json" \
     --data "{
-    \"nome\": \"ffntrfmadwqcfbhxnjatzpfqxfuqkmikwkegydxhjxpdkdysrcfgzfjmwllinnjhpatdowbtqykasftsimobufxehzgdpkhmjqtastqzgyidxdygcdhljwtahzszjmmrovxmdchphlvwdqtjituatjgcwijkuzbchgjjhlmwoyxmtgqvqwbnizljgwzwugzvnoipmyrvnkrfdhbae\",
-    \"preco\": 388652.1,
-    \"descricao\": \"psjylhsxjkzqnekjnbvgaeermbgwkafiehpwxbvrynahujlfewwsupcmkvszzsafbyzxwe\"
+    \"nome\": \"phkgjkfezriuviwzkaxdvtwsurajigauijseaqtmgexjl\",
+    \"preco\": 73.39,
+    \"descricao\": \"dnfmlhtly\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/tipagem/20"
+    "http://localhost:9000/api/v1/tipagem/16"
 );
 
 const headers = {
@@ -4408,9 +4240,9 @@ const headers = {
 };
 
 let body = {
-    "nome": "ffntrfmadwqcfbhxnjatzpfqxfuqkmikwkegydxhjxpdkdysrcfgzfjmwllinnjhpatdowbtqykasftsimobufxehzgdpkhmjqtastqzgyidxdygcdhljwtahzszjmmrovxmdchphlvwdqtjituatjgcwijkuzbchgjjhlmwoyxmtgqvqwbnizljgwzwugzvnoipmyrvnkrfdhbae",
-    "preco": 388652.1,
-    "descricao": "psjylhsxjkzqnekjnbvgaeermbgwkafiehpwxbvrynahujlfewwsupcmkvszzsafbyzxwe"
+    "nome": "phkgjkfezriuviwzkaxdvtwsurajigauijseaqtmgexjl",
+    "preco": 73.39,
+    "descricao": "dnfmlhtly"
 };
 
 fetch(url, {
@@ -4474,7 +4306,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="20"
+               value="16"
                data-component="url" hidden>
     <br>
 
@@ -4487,7 +4319,7 @@ fetch(url, {
                 <input type="text"
                name="nome"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="ffntrfmadwqcfbhxnjatzpfqxfuqkmikwkegydxhjxpdkdysrcfgzfjmwllinnjhpatdowbtqykasftsimobufxehzgdpkhmjqtastqzgyidxdygcdhljwtahzszjmmrovxmdchphlvwdqtjituatjgcwijkuzbchgjjhlmwoyxmtgqvqwbnizljgwzwugzvnoipmyrvnkrfdhbae"
+               value="phkgjkfezriuviwzkaxdvtwsurajigauijseaqtmgexjl"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4499,7 +4331,7 @@ fetch(url, {
                 <input type="number"
                name="preco"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="388652.1"
+               value="73.39"
                data-component="body" hidden>
     <br>
 
@@ -4511,7 +4343,7 @@ fetch(url, {
                 <input type="text"
                name="descricao"
                data-endpoint="PUTapi-v1-tipagem--uuid-"
-               value="psjylhsxjkzqnekjnbvgaeermbgwkafiehpwxbvrynahujlfewwsupcmkvszzsafbyzxwe"
+               value="dnfmlhtly"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -4531,12 +4363,12 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:9000/api/v1/tipagem/15"</code></pre></div>
+    "http://localhost:9000/api/v1/tipagem/5"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:9000/api/v1/tipagem/15"
+    "http://localhost:9000/api/v1/tipagem/5"
 );
 
 fetch(url, {
@@ -4594,7 +4426,7 @@ fetch(url, {
                 <input type="number"
                name="uuid"
                data-endpoint="DELETEapi-v1-tipagem--uuid-"
-               value="15"
+               value="5"
                data-component="url" hidden>
     <br>
 

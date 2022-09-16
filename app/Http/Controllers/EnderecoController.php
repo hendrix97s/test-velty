@@ -12,16 +12,15 @@ use Illuminate\Http\Request;
 class EnderecoController extends Controller
 {
     /**
-     * Store a newly created resource in storage.
+     * Cadastro de endereço
      * 
      * @group Endereço
+     * @urlParam uuid required O uuid do Cliente ou Prédio. Example: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
+     * @bodyParam cep string required O CEP do endereço. Example: 13606-536
+     * @bodyParam numero string required O número do endereço. Example: 123
+     * @bodyParam complemento string O complemento do endereço. Example: Apto 123
+     * @bodyParam tipo string required O tipo do recurso a ser utilizado (cliente ou predio). Example: cliente
      * 
-     * @bodyParam razao_social string required Razão social do cliente. Example: Luiz F. Lima
-     * @bodyParam nome_fantasia string required string Nome fantasia do cliente. Example: lf system
-     * @bodyParam cnpj string required string CNPJ do cliente. Example: 43897291000175
-     * @bodyParam telefone string required string Telefone do cliente. Example: 11999999999
-     * @bodyParam email string required string Email do cliente. Example: lf.system@outlook.com
-     * @bodyParam inicio_atividade string required date Data de inicio de atividade. Example: 2021-10-29
      * @response {
      *  "status": true,
      *  "message": "Registro cadastrado com sucesso",

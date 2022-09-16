@@ -255,7 +255,7 @@ paths:
                 email:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kzrbogcafhcqoxgomnsqjdbbt
+                  example: aqitkhuwctoxmwjehkwninvzhpxfgkqnphbotwcazznatdwhicetyyazdltuldhyemdfsxneopygaemsqvahiyrnmjqgzlyispywbbjabhwhwslagudmkdjjpjuziamxtizyknntzymnfopbstrscnpopmcdiangupvfvtailrsabigfzzmqashfgrmcbawm
                 inicio_atividade:
                   type: string
                   description: 'date Data de inicio de atividade.'
@@ -300,7 +300,7 @@ paths:
           type: string
   '/api/v1/cliente/{uuid}/endereco':
     post:
-      summary: 'Store a newly created resource in storage.'
+      summary: 'Cadastro de endereço'
       description: ''
       parameters:
         -
@@ -358,64 +358,34 @@ paths:
               properties:
                 cep:
                   type: string
-                  description: ''
-                  example: autem
+                  description: 'O CEP do endereço.'
+                  example: 13606-536
                 numero:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: avkoiypwrcfecxckiw
+                  description: 'O número do endereço.'
+                  example: '123'
                 complemento:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: mxhutumgdxpwhfjpcjnbhlabljneatykferkkwiyxdccffdpzelvvaipbqkraxtdfvj
+                  description: 'O complemento do endereço.'
+                  example: 'Apto 123'
                 tipo:
                   type: string
-                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
+                  description: 'O tipo do recurso a ser utilizado (cliente ou predio).'
                   example: cliente
-                razao_social:
-                  type: string
-                  description: 'Razão social do cliente.'
-                  example: 'Luiz F. Lima'
-                nome_fantasia:
-                  type: string
-                  description: 'string Nome fantasia do cliente.'
-                  example: 'lf system'
-                cnpj:
-                  type: string
-                  description: 'string CNPJ do cliente.'
-                  example: '43897291000175'
-                telefone:
-                  type: string
-                  description: 'string Telefone do cliente.'
-                  example: '11999999999'
-                email:
-                  type: string
-                  description: 'string Email do cliente.'
-                  example: lf.system@outlook.com
-                inicio_atividade:
-                  type: string
-                  description: 'date Data de inicio de atividade.'
-                  example: '2021-10-29'
               required:
                 - cep
                 - numero
                 - tipo
-                - razao_social
-                - nome_fantasia
-                - cnpj
-                - telefone
-                - email
-                - inicio_atividade
       security: []
     parameters:
       -
         in: path
         name: uuid
-        description: ''
-        example: 2
+        description: 'O uuid do Cliente ou Prédio.'
+        example: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
         required: true
         schema:
-          type: integer
+          type: string
   '/api/v1/cliente/{uuid}/endereco/{endereco_uuid}':
     put:
       summary: 'Update the specified resource in storage.'
@@ -540,7 +510,7 @@ paths:
           type: string
   '/api/v1/predio/{uuid}/endereco':
     post:
-      summary: 'Store a newly created resource in storage.'
+      summary: 'Cadastro de endereço'
       description: ''
       parameters:
         -
@@ -598,64 +568,34 @@ paths:
               properties:
                 cep:
                   type: string
-                  description: ''
-                  example: qui
+                  description: 'O CEP do endereço.'
+                  example: 13606-536
                 numero:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: auhfbzjgexftkkslkuqvxmfcxjniyrkqpzzpjypzhqkpq
+                  description: 'O número do endereço.'
+                  example: '123'
                 complemento:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ncrnamqekwmkvrhlqodprmcwyixecqzkyfnunmrborjvmaxxzfgrvnssztdboevfpumfwlkjggogaapjtrenhqxgytriiuqbdghkwrwjkvlafsopoxpgbamelgnicgpnhhrvrrfrzzebifuancjeheaqmrrnbieysiwdqnvccj
+                  description: 'O complemento do endereço.'
+                  example: 'Apto 123'
                 tipo:
                   type: string
-                  description: 'Must be one of <code>cliente</code> or <code>predio</code>.'
-                  example: predio
-                razao_social:
-                  type: string
-                  description: 'Razão social do cliente.'
-                  example: 'Luiz F. Lima'
-                nome_fantasia:
-                  type: string
-                  description: 'string Nome fantasia do cliente.'
-                  example: 'lf system'
-                cnpj:
-                  type: string
-                  description: 'string CNPJ do cliente.'
-                  example: '43897291000175'
-                telefone:
-                  type: string
-                  description: 'string Telefone do cliente.'
-                  example: '11999999999'
-                email:
-                  type: string
-                  description: 'string Email do cliente.'
-                  example: lf.system@outlook.com
-                inicio_atividade:
-                  type: string
-                  description: 'date Data de inicio de atividade.'
-                  example: '2021-10-29'
+                  description: 'O tipo do recurso a ser utilizado (cliente ou predio).'
+                  example: cliente
               required:
                 - cep
                 - numero
                 - tipo
-                - razao_social
-                - nome_fantasia
-                - cnpj
-                - telefone
-                - email
-                - inicio_atividade
       security: []
     parameters:
       -
         in: path
         name: uuid
-        description: ''
-        example: 1
+        description: 'O uuid do Cliente ou Prédio.'
+        example: 32a29cbe-6cae-45d8-b8b7-610baca99a3b
         required: true
         schema:
-          type: integer
+          type: string
   '/api/v1/predio/{uuid}/endereco/{endereco_uuid}':
     put:
       summary: 'Update the specified resource in storage.'
@@ -820,11 +760,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ihcxtcznknujmhqwpvjrbmrpxxsfbanchzzjjkhpmeskyfbknyizbqaotfmszteuvfzpdqkuxhwqrivcobssuxjifleejdakzjokwazrlcvhlsofznjmolrpfhwtdjnktjhygfpmjkdbqljigbopbohp
+                  example: utlyevdikuznvjsiwzsnlemjdsyyjijrxmrqlbdidhstvpvllgcxdzejurvuanrtatnpqxokdtiwfnupryrgsonbfakergwtuwyztimmvtpuyfdukltggkpaxthfoctpqpnkdfcgwjhnml
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: pbrelpydofcdtsdhyagjeettjuuhuwhntoawpsapesvokawceptsrggcfkzkpskkxtykpwpuumyuurejlfbfzupwkazuqyykaiwgsxvoltbrdxwaztnlceucgbeibwkavnughzufeiwpeqhyzvjtsrwpqojxrexngqchdqpfrwwita
+                  example: rlwtvlvivonnvxsezvlqvlwzwhaohykdtvfivzeybufdvedmowzxfftquxonjrdkyxuvfgusgfnrdcjawehqopvbmcrwsiabfqtsugtwwzheyndjxuvixhgnimdutipinayzerejeapdefnnvumthireykdmtsdzihxrxdcpnhucsamtgcdrvbjizmndpfscfztyioydykzttrsqcpehmyujavhgnjrhznfydmqrudkybisyvxkrdav
               required:
                 - nome
                 - descricao
@@ -871,11 +811,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: heiialzmzmjmeutluluuukxehkdxuhcbiqsyplxwyyrzibudgyqizyxemkrokmpyomuelos
+                  example: ozhvufmbutfhhpiremcdyydubdrwyscsxpjmvttvn
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wzybjssnnlhxtzcxjkircxhzdaeixdzaacjrkbzretgobnawfkdezqcdxiukfrqypzddnborbqwsnohxzmaqyggosumkzrejfphohrjhowowhfesxygjizzwtklmkjcsvcdbdwmrhreixeoqwmehtotfxzblquwgueiybdumgtrfddterhfrgedcahutppitahnquokbnaaguzksdawwriquwbkn
+                  example: sxijldkhacjwqfhjgsrvsobjcxfnykwdzoppxymtbgmpbrznbbxvennvxwnmxxprqqhjbedoxhmdldkxrhqplpftgekiemgsigkbgrr
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -890,7 +830,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 7
+        example: 1
         required: true
         schema:
           type: integer
@@ -927,11 +867,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: msdcparspwsaqiplprfixsetpyjsnshqxpanonsnvonhgguaznlqtbuijsfjswthkiwdltohwjvyi
+                  example: flbfzlhuqluemtfqylpqiztdbewyeiucdsuntpssojioeqqvicwxusaeyepzqtullmvsaoqgxhgjmsprclddmdgyvniykjkljht
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: lwqwykdhhyujxwzgzttzpqguzppxgbpsnrkrznoxlcoyiiqcwqblkpz
+                  example: oaqhhxqzofwalgstpimdmqmwpkcrnl
                 foto:
                   type: string
                   format: binary
@@ -939,7 +879,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: nqqfaqlgueqqekacrisofooeqekubcfcygtjedsnjtzvyhporvxjewndvpfhrbamc
+                  example: fxeimmduxrzmcoatlwpfzlywtcoqycktqmbuimqyvenmzavitfnddxjcknnuwbprtovoxnhqhgbxxzbekaxxhuydnlcwvfzxokvyowgkdnnysjrqoqjdhjjvlhgptvlarbiljqzzqxugjxzpchmabjeiyjozzdblehgdssuscesoybbfkstjcsqludidxdobeinufnssqhecyhfbrwxxvj
               required:
                 - nome
                 - descricao
@@ -951,7 +891,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 14
+        example: 13
         required: true
         schema:
           type: integer
@@ -980,11 +920,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kekmmiztineftcddykfisdbotipvbtheoccetfntlyjqnayqkwfanotppjrhvsavzuenzfagvzdqrjouboeexuvazkmjkabvsunsunbxbmiuhxztcxnzhxqwxyopsiagrynebsqjuaeibfmoxanucvctgydxoqrvtbyzrngwntrcpmwemmv
+                  example: zrtgusstomzlwtvgxmyqlhgyjetrmifbxyugbhghuiwmimcgrvwspspwhadbbzgnqprqbhovgkfxknjnkjgfccywpnuwuxbozniwjdzewbxsitszhccvbqifhfcwcstfwutranxpzajrhthjkhwopxalcqlfipgqhjvgegaqdiwhunxiyhaeaymiamkarnoadfilczfkrfmuxoboqavfjfhncxebzhthhvb
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rcjzjvxwfxnogdaokykfqoncmhwqyxvrwfkgqk
+                  example: xkywierkkbauqgtqabz
                 foto:
                   type: string
                   format: binary
@@ -992,7 +932,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: iehsismxwjttytngmanjqkpmozgqqaygoqhhpohqezsxrjkpdk
+                  example: kxgndxozvpfgqrjgzevwypcmawpqwatpwplymsfjzffihwzpgwmjcexyartdhykldkayabzhzgcgxzcjlrplsvhzvszxkiuatxgpfnqdbhodfxrfunbfoofjlqfysajaonwkwazhxvmboqcdcbijtyouuovyorecaptzdgicqxyebcucxsnznvlfrnybkimdujormssmjvxpqgkjayhtpsnozsjrhexvtwzavcdvuxdmdnhli
               required:
                 - tipo
       security: []
@@ -1009,7 +949,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 14
+        example: 9
         required: true
         schema:
           type: integer
@@ -1017,7 +957,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 18
+        example: 1
         required: true
         schema:
           type: integer
@@ -1054,11 +994,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wuahuovcsgbpzfwtjjbpsffkciyslnjzzpqznkbeldhqytqaaakxshxbjhlpjzgvrtntiurbejgmqfemmsuircuoznhivphedjwwwwwjkuhrsqgfhdvjwpxjlcqpxwobeyofiqcgbjsselfluexcjjbxwzwwxcpxsoanzfkemrvtkghwhaiqpleopyagvbrftlsrtcwyjlsbiilbau
+                  example: myjwlbihngdibuihorjtuirbdmlbbzkbahaxwvffbxmhmmwcwmnttqty
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: fofhutzahzemvhwkjaojnwictbjsdvgtrqukctmegsjcabkzjdhjwvncqjhahfjqaeypawnapjwqtpwlgvrduygqkqzstepwwbarvvueleqciebitdiaaskcathxetoqhvgvhghzwdoyzlpwba
+                  example: pwqerfxerlnuoaduwlhpxlsuqbegffdozrarvhefkxqnmqtomkdofbjndqsmgxhthvgbapzmwfpjmafhdrjdouzkgpawbumtfxyvexqxyxhyqxgoszvqyccwisaexy
                 foto:
                   type: string
                   format: binary
@@ -1066,7 +1006,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: uhotdiuafsutxvyvuqjutkdnkixdyqtxxbcxxcqdtgzuvbzx
+                  example: jpdfyxvuonocvgstrpbbmjkmkqnfcknzpyzequtuxzsmtpqfirhqkjfpmkwyxmhlxyddgvollookcenuqnlvlhyznoikluqshshgzrsxmqxhnnhqnguozapojttztoihuqvpobkqtqzjfsmmxxhetzabgalefknamuvsiilcbwpnxiacvsugqcjcfimktyctsaqwmewxfnzyamtrstjbvpckuzhrygpjruekxgckeuszyxcltiokpcxkezm
               required:
                 - nome
                 - descricao
@@ -1078,7 +1018,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 15
+        example: 20
         required: true
         schema:
           type: integer
@@ -1107,11 +1047,11 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: chjjbchodiwhfafqlwtyjicavrebhkknfyvnlocupcoyonjnzfkvdzyoebxajbzdk
+                  example: rpdlvbllpeyquehrijeqwktvycoweeqypgjqyzwjvgfmnyfveegyyzlqyinhjxvkqbxoixjjotpkfbykjufdwmrqcztxdynavyukqlnaodbfspesyrscgvasqtksyllrynmbqisqtbjcpnufmxyjmntihpmwzrnoxxwzobctyyfrlctcywlmsyaxekeatfhdfqsdvnhbwawriqedmejapjvqysigkuapwjzo
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vadjtmnigbosgvrfbvlkpewidqldqbyemfgauinheqonubkacqmjcflgsyjkcjgmrivkzetkmbqccisdcihytbcafvvdgcnmmbdwcbrfvehhlebvpxomhnohgystrdmsvepkzvvzwqnpbvxbhoaqfxmnwlhvaskhpcvykxwirvpdrrwqcolcpipjwtk
+                  example: zlmycyrk
                 foto:
                   type: string
                   format: binary
@@ -1119,7 +1059,7 @@ paths:
                 tipo:
                   type: string
                   description: 'Must be one of <code>predio</code> or <code>sala</code> Must not be greater than 255 characters.'
-                  example: aznbcqligtybrtcaryfwtvgnkwfduvniqfbhhrixckh
+                  example: fvgkmyzqmevelmjzemjofqkhzceecmuglhsbrepujrdrmobpmvxngbrootabiyzeeayirqnuvcjgqgwfpftysqgvjaikororcbozceymrnehimbvrkdzwrivytsvnzuamjvsmzuuidkgmwqrlawyopmidulocbktbuhnezbqmpstcniljnnjowlsjxhcegmazozhmfytglcwxvdcupziyscavomqffierlszb
               required:
                 - tipo
       security: []
@@ -1136,7 +1076,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 18
+        example: 5
         required: true
         schema:
           type: integer
@@ -1144,7 +1084,7 @@ paths:
         in: path
         name: foto_uuid
         description: ''
-        example: 18
+        example: 1
         required: true
         schema:
           type: integer
@@ -1181,19 +1121,19 @@ paths:
                 nome:
                   type: string
                   description: ''
-                  example: est
+                  example: repudiandae
                 numero:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 17
                 descricao:
                   type: string
                   description: ''
-                  example: atque
+                  example: aut
                 tipagem_uuid:
                   type: string
                   description: ''
-                  example: pariatur
+                  example: tenetur
               required:
                 - nome
                 - numero
@@ -1205,7 +1145,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 12
+        example: 11
         required: true
         schema:
           type: integer
@@ -1242,15 +1182,15 @@ paths:
                 nome:
                   type: string
                   description: ''
-                  example: inventore
+                  example: dolor
                 numero:
                   type: integer
                   description: ''
-                  example: 5
+                  example: 8
                 descricao:
                   type: string
                   description: ''
-                  example: minima
+                  example: et
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -1265,7 +1205,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 19
+        example: 8
         required: true
         schema:
           type: integer
@@ -1273,7 +1213,7 @@ paths:
         in: path
         name: sala_uuid
         description: ''
-        example: 10
+        example: 12
         required: true
         schema:
           type: integer
@@ -1310,15 +1250,15 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ylpoyobisbvmvkyjjpguqindkmqv
+                  example: fauuppkqilwlxeeobcaihndnqlucucwmqkofdzbbncskbbvm
                 preco:
                   type: number
                   description: ''
-                  example: 1.022
+                  example: 5299765.8266482
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: abqkizgheiflxhrmvcalccnwwpkgwccgycehkqsfmjxblwlnzkcbhexjedinkxxodknllyuphyjjffvdhaaiqolnhnvsyhfkhllxfqlqzjjalfndodnalrblgaqwkufqauhggyuend
+                  example: pwikgwlxiamyndecnxbrjgsqfasbfifsq
               required:
                 - nome
                 - preco
@@ -1349,15 +1289,15 @@ paths:
                 nome:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ffntrfmadwqcfbhxnjatzpfqxfuqkmikwkegydxhjxpdkdysrcfgzfjmwllinnjhpatdowbtqykasftsimobufxehzgdpkhmjqtastqzgyidxdygcdhljwtahzszjmmrovxmdchphlvwdqtjituatjgcwijkuzbchgjjhlmwoyxmtgqvqwbnizljgwzwugzvnoipmyrvnkrfdhbae
+                  example: phkgjkfezriuviwzkaxdvtwsurajigauijseaqtmgexjl
                 preco:
                   type: number
                   description: ''
-                  example: 388652.1
+                  example: 73.39
                 descricao:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: psjylhsxjkzqnekjnbvgaeermbgwkafiehpwxbvrynahujlfewwsupcmkvszzsafbyzxwe
+                  example: dnfmlhtly
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -1372,7 +1312,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 20
+        example: 16
         required: true
         schema:
           type: integer
